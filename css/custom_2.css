@@ -1,0 +1,56 @@
+.nav-container{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {    
+    display: inline-block;
+    height: inherit;
+    width: 200px;
+}
+
+.nav-items {
+    display: flex;
+}
+
+.nav-items a:not(:last-child){
+    margin-right: 50px;
+}
+
+[class*="-logo"] {
+    background-image: url("../img/kisfaludy_logo.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: inherit;
+}
+
+#hero{
+    height: 100vh;
+    width: 100%;
+    margin-top: -100px;
+    position: relative;
+}
+
+#hero:before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url("../img/kisfaludy_1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    z-index: -1;
+    filter: grayscale(100%);
+}
+
+.hero-text-holder {
+    height: 100%;
+}

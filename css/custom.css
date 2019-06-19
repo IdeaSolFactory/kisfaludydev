@@ -1,1 +1,62 @@
-/*! Place your custom styles here */
+/*Common items*/
+[class*="logo"]{
+    fill: blue;
+}
+
+[class*="--section"]
+{
+    padding-top: 5em;
+}
+
+.switchable__text h2{
+    font-size: 3em;
+}
+
+strong{
+    font-weight: 800;
+}
+
+.simple-list li{
+    padding: 0.1em 0 0.1em 1em;
+    margin: 1em 0;
+    line-height: 145%;
+}
+
+
+.hero-wrapper{
+    position: relative;
+    padding-top: 17.5em;
+    padding-bottom: 17em;
+}
+
+.hero-wrapper:before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    background: url("../img/kisfaludy_1.jpg") no-repeat center;
+    z-index: -1;
+    opacity: .65;
+    filter: grayscale(100%) brightness(30%) contrast(120%) sepia(1);
+}
+
+.hero-wrapper h1,
+.hero-wrapper p{
+    color: white;
+}
+
+.hero-wrapper h1{
+    font-size: 4em;
+    font-weight: 800;
+}
+.hero-wrapper .lead{
+    text-align: center;
+}
+
+.contact-form {
+    padding: 1em 0;
+    max-width: 450px;
+}
