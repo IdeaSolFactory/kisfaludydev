@@ -1,11 +1,87 @@
+/*RESETS*/
+table, tr, td{
+    padding:0;
+    margin: 0;
+    border: none;
+    border-spacing: 0;
+}
+
+img {
+    padding: 0;
+    margin: 0;
+}
+
+
+/*COLORS*/
+
+.bg--maincol,
+.boxed.bg--maincol,
+.boxed.boxed--border.bg-maincol{
+    background-color: #EAB02F;
+}
+
+.bg--secondarycol,
+.boxed.bg--secondarycol,
+.boxed.boxed--border.bg-secondarycol{
+    background-color: #212023;
+}
+
+.boxed.boxed--border.border--main{
+    border: 1px solid #EAB02F;
+}
+
+.boxed.boxed--border.border--secondary {
+    border: 1px solid #212023;
+}
+
+
 /*Common items*/
-[class*="logo"]{
-    fill: blue;
+
+.boxed.boxed--shadow{
+    box-shadow: 0 0 20px rgba(2, 32, 33, 0.05);
+}
+
+hr.short {
+    border-width: .45em;
+    border-color: #EAB02F;
 }
 
 [class*="--section"]
 {
     padding-top: 5em;
+}
+.btn,
+.btn--primary,
+.btn .btn__text,
+.btn--primary .btn__text,
+.btn--primary:visited .btn__text{
+    color: #212023;
+}
+
+.btn, .btn--primary{
+    border: #212023 1px solid !important;
+}
+
+.btn:not([class*='primary']),
+.btn{
+    background-color: transparent;
+    
+}
+
+.btn:hover,
+.btn--primary:hover{
+    background-color: #EAB02F;
+    
+}
+
+.btn--primary {
+    background-color: #EAB02F !important;
+    color: #212023 !important;
+    border: #212023 1px solid !important;
+}
+
+.btn__text {
+    color: #212023;
 }
 
 .switchable__text h2{
@@ -22,11 +98,42 @@ strong{
     line-height: 145%;
 }
 
+    /*common items / TABLES*/
+    th, td{
+        font-size: 1.25em;        
+    }
+
+    th span {
+        font-size: 0.8em;
+        opacity: .4;
+        font-weight: 400;
+    }
+
+
+/*NAV*/
+.nav-container{
+    /*background-color: #212023;*/
+    background-color: transparent;
+}
+
+.menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger{
+    color: white;
+}
+
+.menu-horizontal > li > a:hover,
+.menu-horizontal > li > span:hover,
+.menu-horizontal > li > .modal-instance > .modal-trigger:hover{
+    color: white;
+}
+
+/*BODY*/
+
 
 .hero-wrapper{
     position: relative;
-    padding-top: 17.5em;
+    padding-top: 20em;
     padding-bottom: 17em;
+    margin-top: -6em;
 }
 
 .hero-wrapper:before{
@@ -37,10 +144,24 @@ strong{
     top: 0;
     left: 0;
     display: block;
-    background: url("../img/kisfaludy_1.jpg") no-repeat center;
+    background: url("../img/hajo/kisfaludy_img_15-min.jpg") no-repeat left;
+    background-size: cover;
     z-index: -1;
     opacity: .65;
-    filter: grayscale(100%) brightness(30%) contrast(120%) sepia(1);
+    filter: grayscale(100%) brightness(70%) contrast(125%) sepia(.2);
+}
+
+.hero-wrapper:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: black;
+    opacity: .8;
+    z-index: -1;
 }
 
 .hero-wrapper h1,
@@ -60,3 +181,170 @@ strong{
     padding: 1em 0;
     max-width: 450px;
 }
+
+.departure-sites-img {
+    overflow: hidden;
+    background-color: #e4f1f9;
+}
+
+.departures--section{
+    position: relative;
+}
+
+/*.departures--section::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: -1;
+    background: url("../img/map_bkcgrnd.png") no-repeat;
+    background-position: top;
+    background-size: cover;
+    
+
+    filter: grayscale(100%) contrast(125%);
+    opacity: 0.15;
+} */
+
+    /*MAP section*/
+
+    .map--section{
+        position: relative;
+        height: 100%;
+        min-height: 600px;
+        overflow: hidden;
+    }
+
+    @media (max-width: 768px){
+        .map--section{
+            height: 100vh;
+        }
+
+        #gmap,
+        #gmap iframe {
+            height: 100vh;
+        }
+    }
+
+   #gmap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        filter: contrast(110%);
+    }
+
+    #gmap:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: block;
+        background-color: rgba(0, 0, 0, .45);
+    }
+
+
+
+    /*Infos section*/
+    .info--section{
+        position: relative;
+    }
+    /*.info--section:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        background: url("../img/hajo/kisfaludy_img_7-min.jpg") no-repeat;
+        background-size: cover;
+        background-position: top;
+        opacity: .95;
+        filter: grayscale(100%);
+    }
+
+    .info--section:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        background-color: black;
+        opacity: .85; 
+    } */
+
+    .timetable tr:not(:last-child) td{
+        border-bottom: 1px solid #EAB02F;
+    }
+
+    .timetable td{
+        font-size: 1.25em;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    .timetable td:not(:last-child)
+    {
+        border-right: 1px solid #EAB02F;
+    }
+
+    .ticket-table td{
+        width: 50%;
+    }
+
+    /*Slider section*/
+
+    .gallery--section{
+        padding: 0;
+        margin: 0;
+    }
+    .image-slider{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+
+    [class*="slide__"] {
+        width: 100%;
+        max-width: 650px;
+        position: relative;
+    }
+
+    [class*="slide__"] img{
+        width: 100%;
+    }
+
+    [class*="slide__"] img:not(:last-child){
+        padding-right: 1em;       
+    }
+
+    /*FORM section*/
+
+    .form--section:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        background: url("../img/hajo/kisfaludy_img_12-min.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: .08;
+        filter: grayscale(100%);
+    }
