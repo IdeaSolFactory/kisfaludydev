@@ -51,6 +51,134 @@ img {
 
 /*Common items*/
 
+    /*Paddings*/
+    .py-6 {
+        padding-top: 6em !important;
+        padding-bottom: 6em !important;
+    }
+
+    .py-7 {
+        padding-top: 7em !important;;
+        padding-bottom: 7em !important;;
+    }
+
+    .py-8{
+        padding-top: 8em !important;;
+        padding-bottom: 8em !important;;
+    }
+
+    .pt-6{
+        padding-top: 6em !important;
+    }
+
+    .pt-7{
+        padding-top: 7em !important;
+    }
+
+    .pt-8{
+        padding-top: 8em !important;
+    }
+
+    .pb-6{
+        padding-bottom: 6em !important;
+    }
+
+    .pb-7 {
+        padding-bottom: 7em !important;
+    }
+
+    .pb-8 {
+        padding-bottom: 8em !important;
+    }
+
+    @media (min-width: 768px){
+        .py-md-6{
+            padding-top: 6em !important;;
+            padding-bottom: 6em !important;;            
+        }
+
+        .py-md-7{
+            padding-top: 7em !important;;
+            padding-bottom: 7em !important;;            
+        }
+
+        .py-md-8{
+            padding-top: 8em !important;;
+            padding-bottom: 8em !important;;            
+        }
+
+        .pt-md-6{
+            padding-top: 6em !important;
+        }
+    
+        .pt-md-7{
+            padding-top: 7em !important;
+        }
+    
+        .pt-md-8{
+            padding-top: 8em !important;
+        }
+
+        .pb-md-6{
+            padding-bottom: 6em !important;
+        }
+    
+        .pb-md-7 {
+            padding-bottom: 7em !important;
+        }
+    
+        .pb-md-8 {
+            padding-bottom: 8em !important;
+        }
+        
+        
+    }
+
+    @media (min-width: 1200px){
+        .py-lg-6{
+            padding-top: 6em !important;;
+            padding-bottom: 6em !important;;            
+        }
+
+        .py-lg-7{
+            padding-top: 7em !important;;
+            padding-bottom: 7em !important;;            
+        }
+
+        .py-lg-8{
+            padding-top: 8em !important;;
+            padding-bottom: 8em !important;;            
+        }
+
+        .pt-lg-6{
+            padding-top: 6em !important;
+        }
+    
+        .pt-lg-7{
+            padding-top: 7em !important;
+        }
+    
+        .pt-lg-8{
+            padding-top: 8em !important;
+        }
+
+        .pb-lg-6{
+            padding-bottom: 6em !important;
+        }
+    
+        .pb-lg-7 {
+            padding-bottom: 7em !important;
+        }
+    
+        .pb-lg-8 {
+            padding-bottom: 8em !important;
+        }
+
+      
+    }
+
+
+
 .border--main{
     border-color: #EAB02F; 
 }
@@ -221,11 +349,11 @@ html{
     top: 0;
     left: 0;
     display: block;
-    background: url("../img/hajo/kisfaludy_img_15-min.jpg") no-repeat left;
+    background: url("../img/hajo/kisfaludy_img_39-min.jpg") no-repeat center;
     background-size: cover;
     z-index: -1;
     opacity: .65;
-    filter: grayscale(100%) brightness(70%) contrast(125%) sepia(.2);
+    filter: grayscale(100%) brightness(90%) contrast(125%) sepia(.2);
 }
 
 .hero-wrapper:after{
@@ -254,6 +382,9 @@ html{
     text-align: center;
 }
 
+    /*INTRODUCTION*/
+    /*end of introduction*/
+
 .contact-form {
     padding: 1em 0;
     max-width: 450px;
@@ -268,70 +399,11 @@ html{
     position: relative;
 }
 
-/*.departures--section::before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: block;
-    z-index: -1;
-    background: url("../img/map_bkcgrnd.png") no-repeat;
-    background-position: top;
-    background-size: cover;
-    
-
-    filter: grayscale(100%) contrast(125%);
-    opacity: 0.15;
-} */
-
     /*TICKETS section*/
 
   
  
     /*MAP section*/
-
-    .map--section{
-        position: relative;
-        height: 100%;
-        min-height: 600px;
-        overflow: hidden;
-    }
-
-    @media (max-width: 768px){
-        .map--section{
-            height: 100vh;
-        }
-
-        #gmap,
-        #gmap iframe {
-            height: 100vh;
-        }
-    }
-
-   #gmap {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -2;
-        filter: contrast(110%);
-    }
-
-    #gmap:after{
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        display: block;
-        background-color: rgba(0, 0, 0, .45);
-    }
-
 
 
     /*Infos section*/
@@ -403,10 +475,27 @@ html{
         width: 100%;
         max-width: 650px;
         position: relative;
+        
     }
 
-    [class*="slide__"] img{
+    [class*="slide__"] .img-container{
         width: 100%;
+        height: 500px;
+        position: relative;    
+        overflow: hidden;  
+        display: block;  
+    }
+
+    [class*="slide__"] .img-container img{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        min-height: 100%;
+        width: auto;
+        object-fit: cover;
     }
 
     [class*="slide__"] img:not(:last-child){
