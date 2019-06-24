@@ -34,8 +34,71 @@ img {
     border: 1px solid #212023;
 }
 
+/*BACKGROUNDS*/
+
+[class*="bg--"].texture-dark::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    position: absolute;
+    top:0;
+    left: 0;
+    opacity: .8;
+}
+
 
 /*Common items*/
+
+.border--main{
+    border-color: #EAB02F; 
+}
+
+.border--light{
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.border-top-m{
+    border-width: 0;
+    border-top-width: 10px;
+    border-style: solid;
+}
+
+.border-right{
+    border-width: 0;
+    border-right-width: 10px;
+    border-style: solid;
+}
+
+.image-side {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    min-height: 100%;
+    min-width: 100%;
+    position: relative;
+}
+
+.image-side img{
+    flex-shrink: 0;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;    
+}
+
+@media (max-width: 768px){
+    .image-side{
+        min-height: 100vh;
+    }
+
+  
+}
 
 .boxed.boxed--shadow{
     box-shadow: 0 0 20px rgba(2, 32, 33, 0.05);
@@ -49,6 +112,7 @@ hr.short {
 [class*="--section"]
 {
     padding-top: 5em;
+    position: relative;
 }
 .btn,
 .btn--primary,
@@ -114,6 +178,15 @@ strong{
 .nav-container{
     /*background-color: #212023;*/
     background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.hamburger-toggle i{
+    color: #EAB02F;
+
 }
 
 .menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger{
@@ -126,6 +199,11 @@ strong{
     color: white;
 }
 
+/*HEADER*/
+html{
+    scroll-behavior: smooth;
+}
+
 /*BODY*/
 
 
@@ -133,7 +211,6 @@ strong{
     position: relative;
     padding-top: 20em;
     padding-bottom: 17em;
-    margin-top: -6em;
 }
 
 .hero-wrapper:before{
@@ -209,6 +286,10 @@ strong{
     opacity: 0.15;
 } */
 
+    /*TICKETS section*/
+
+  
+ 
     /*MAP section*/
 
     .map--section{
@@ -332,6 +413,42 @@ strong{
         padding-right: 1em;       
     }
 
+    /*FAQ section*/
+    .accordion .accordion__title {
+        position: relative;
+        opacity: .65;
+    }
+    .accordion__title,
+    .accordion li:last-child .accordion__title{
+        border-color: black;
+    }
+
+    .accordion .accordion__title:before{
+        content:'\e80c';
+    }
+
+    .accordion__title span,
+    .accordion-1 li.active .accordion__title span,
+    .accordion .accordion__title:before,
+    .accordion-1 li.active .accordion__title:before{
+        color: black;
+    }
+
+    .accordion-1 li.active .accordion__title{
+        background-color: #EAB02F;
+        border-color: black;
+    }
+
+    .accordion__title:before{
+        position: absolute;
+        left: 10px;
+        top: 7px;
+    }
+
+    .accordion__title span{
+        margin-left: 12px;
+    }
+
     /*FORM section*/
 
     .form--section:after{
@@ -348,3 +465,10 @@ strong{
         opacity: .08;
         filter: grayscale(100%);
     }
+
+
+/*FOOTER*/
+
+footer .logo{
+    max-width: 120px;
+}
