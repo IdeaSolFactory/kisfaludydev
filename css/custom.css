@@ -11,6 +11,10 @@ img {
     margin: 0;
 }
 
+section.bg--secondary:not(.imagebg) + section:not(.imagebg):not([class*='bg-']) {
+    border-top: 1px solid #ebebeb;
+}
+
 /*GRID SYSTEM*/
 
 .container{
@@ -20,15 +24,16 @@ img {
 @media (min-width: 1640px){
     .container-xl{
         width: 100%;
-        max-width: 1360px;
+        max-width: 1400px;
     }
 }
 
-
-
-
-
 /*COLORS*/
+
+.text--maincol,
+span.text--maincol strong{
+    color: #EAB02F !important;
+}
 
 .bg--maincol,
 .boxed.bg--maincol,
@@ -52,6 +57,10 @@ img {
 
 /*BACKGROUNDS*/
 
+[class*="bg--"]{
+    position: relative;
+}
+
 [class*="bg--"].texture-dark::before{
     content: "";
     width: 100%;
@@ -61,7 +70,7 @@ img {
     position: absolute;
     top:0;
     left: 0;
-    opacity: .8;
+    opacity: .45;
 }
 
 
@@ -194,8 +203,6 @@ img {
     }
 
 
-
-
 .border--main{
     border-color: #EAB02F; 
 }
@@ -240,9 +247,7 @@ img {
 @media (max-width: 768px){
     .image-side{
         min-height: 100vh;
-    }
-
-  
+    }  
 }
 
 .boxed.boxed--shadow{
@@ -256,9 +261,16 @@ hr.short {
 
 [class*="--section"]
 {
-    padding-top: 5em;
+    padding-top: 0;
     position: relative;
 }
+
+@media (min-width: 768px){
+    [class*="--section"]{
+        padding-top: 5em;
+    }
+}
+
 .btn,
 .btn--primary,
 .btn .btn__text,
@@ -354,9 +366,10 @@ html{
 
 .hero-wrapper{
     position: relative;
-    padding-top: 40vh;
+    padding-top: 30vh;
     padding-bottom: 17em;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .hero-wrapper:before{
@@ -365,13 +378,12 @@ html{
     height: 100%;
     width: 100%;
     top: 0;
-    left: 0;
+    right: 0;
     display: block;
-    background: url("../img/hajo/kisfaludy_img_39-min.jpg") no-repeat center;
+    background: url("../img/hajo/kisfaludy_img_40-min.jpg") no-repeat center;
     background-size: cover;
+    filter: sepia(10%) grayscale(100%);
     z-index: -20;
-    opacity: .9;
-    filter: grayscale(100%) contrast(120%) sepia(.2);
 }
 
 .hero-wrapper:after{
@@ -383,7 +395,7 @@ html{
     left: 0;
     display: block;
     background-color: black;
-    opacity: .7;
+    opacity: .65;
     z-index: -10;
 }
 
@@ -397,7 +409,7 @@ html{
     display: block;
     background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
     opacity: 1;
-    z-index: -5;
+    z-index: -5;  
 }
 
 .hero-wrapper .hero-text-container{
@@ -409,22 +421,40 @@ html{
     width: 100%;
 }
 
+
+.hero-background *{
+    transform: skewY(0);
+}
+
 .hero-wrapper h1,
 .hero-wrapper p{
     color: white;
-    text-shadow: 0px 3px 5px rgba(0, 0, 0, .6)
+    text-shadow: 0px 3px 8px rgba(0, 0, 0, .45)
 }
 
 .hero-wrapper h1{
     font-size: 4em;
     font-weight: 800;
 }
-.hero-wrapper .lead{
-    text-align: center;
+
+.hero-wrapper .btn.hero-CTA{
+    border: 1px white solid !important;
+    background-color: rgba(0, 0, 0, 0.3)
 }
 
-    /*INTRODUCTION*/
-    /*end of introduction*/
+.hero-wrapper .btn.hero-CTA .btn__text{
+    color: white !important;
+}
+
+.hero-wrapper .btn.hero-CTA:hover .btn__text{
+    color: black !important;
+}
+
+.hero-wrapper .btn.hero-CTA:hover{
+    border: 1px black solid !important;
+    background-color: #EAB02F;
+}
+
 
 .contact-form {
     padding: 1em 0;
@@ -450,7 +480,9 @@ html{
     /*Infos section*/
     .info--section{
         position: relative;
+        padding-top: 5em;
     }
+   
     /*.info--section:before{
         content: "";
         position: absolute;
@@ -495,6 +527,22 @@ html{
 
     .ticket-table td{
         width: 50%;
+    }
+
+    /*PROGRAMS SECTION*/
+
+    [class*="-icon"] img{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .programs--section .icon-pirate{
+        max-width: 50px;
+        max-height: 65px;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        opacity: .35
     }
 
     /*Slider section*/
@@ -600,5 +648,33 @@ html{
 /*FOOTER*/
 
 footer .logo{
-    max-width: 120px;
+    height: 100%;
+    display: block;
+}
+
+.footer-desc{
+    line-height: 160%;
+    padding-top: 1em;
+    opacity: .6 !important;
+}
+
+.footer-nav li{
+    display: block;
+}
+
+.footer-nav li:before{
+    font-family: "stack-interface";
+    content:'\e80c';
+    margin-right: 1em;
+    opacity: .3;
+}
+
+footer .list-contact .contact-icon{
+    font-size: 1.5em !important;
+}
+
+
+
+.list-contact a:not(:last-child){
+    margin-right: 0.25em;
 }
