@@ -662,6 +662,10 @@ footer .logo{
     display: block;
 }
 
+footer .list-inline li{
+    display: inline-block !important;
+}
+
 .footer-nav li:before{
     font-family: "stack-interface";
     content:'\e80c';
