@@ -300,6 +300,16 @@ span.text--maincol strong{
         }
     }
 
+    .btn{
+        width: 100% !important;
+    }
+
+        @media (min-width: 768px){
+            .btn{
+                width: auto !important;
+            }
+        }
+
     .btn,
     .btn--primary,
     .btn .btn__text,
@@ -618,6 +628,25 @@ html{
     background-size: cover;
 }
 
+.route-img{
+    background-color: #e4f1f9;
+    height: 420px;
+    height: 100vh;
+    min-height: 420px;
+    min-width: 100%;
+    display: block;
+    
+    background: url("../img/route-map.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+    @media (min-width: 768px){
+        .route-img{
+            height: 100%;
+        }
+    }
+
+
 
 .departures--section{
     position: relative;
@@ -663,6 +692,17 @@ html{
         opacity: .85; 
     } */
 
+    .schedule-timetable .schedule-time{
+        text-align: center;
+        padding: 2em 1em;
+        font-size: 1.65em;
+        font-weight: 600;
+    }
+
+    .timetable table{
+        table-layout: fixed;
+    }
+    
     .timetable tr:not(:last-child) td{
         border-bottom: 1px solid #f5d745;
     }
@@ -670,7 +710,7 @@ html{
     .timetable td{
         font-size: 1.65em;
         text-align: center;
-        padding: 1.2em;
+        padding: 1em;
         font-weight: 600;
     }
 
@@ -730,10 +770,7 @@ html{
         margin-top: 2em;
         padding-bottom: 1.25em;
     }
-
-    .programs--section .program .program-content{
-        width: 100%;
-    }
+   
 
     [class*="-icon"] img{
         width: 100%;
@@ -744,12 +781,11 @@ html{
         max-height: 65px;
         display: block;
         width: 100%;
-        margin: 0 auto;
         opacity: .35
     }
 
     .programs--section .icon-moon img{
-       height: 40px;
+       height: 36px;
     }
 
     /*Slider section*/
@@ -806,40 +842,52 @@ html{
     }
 
     /*FAQ section*/
-    .accordion .accordion__title {
-        position: relative;
-        opacity: .65;
-    }
-    .accordion__title,
-    .accordion li:last-child .accordion__title{
-        border-color: black;
-    }
 
-    .accordion .accordion__title:before{
-        content:'\e80c';
-    }
+        /*resets*/
+        .accordion .accordion__title {
+            position: relative;
+            opacity: .65;
+        }
+        .accordion__title,
+        .accordion li:last-child .accordion__title{
+            border-color: black;
+        }
 
-    .accordion__title span,
-    .accordion-1 li.active .accordion__title span,
-    .accordion .accordion__title:before,
-    .accordion-1 li.active .accordion__title:before{
-        color: black;
-    }
+        .accordion .accordion__title:before{
+            content:'\e80c';
+        }
 
-    .accordion-1 li.active .accordion__title{
-        background-color: #f5d745;
-        border-color: black;
-    }
+        .accordion__title span,
+        .accordion-1 li.active .accordion__title span,
+        .accordion .accordion__title:before,
+        .accordion-1 li.active .accordion__title:before{
+            color: black;
+        }
 
-    .accordion__title:before{
-        position: absolute;
-        left: 10px;
-        top: 7px;
-    }
+        .accordion-1 li.active .accordion__title{
+            background-color: #f5d745;
+            border-color: black;
+        }
 
-    .accordion__title span{
-        margin-left: 12px;
+        .accordion__title:before{
+            position: absolute;
+            left: 10px;
+            top: 7px;
+        }
+
+        .accordion__title span{
+            margin-left: 12px;
+        }
+
+
+    @media (max-width: 768px){
+        .faq--section .question:last-child{
+            padding-bottom: 2em;
+        }     
     }
+       
+
+
 
     /*FORM section*/
 
