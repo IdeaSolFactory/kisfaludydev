@@ -689,8 +689,6 @@ html{
     position: relative;
 }
 
-    /*TICKETS section*/
-
   
  
     /*MAP section*/
@@ -840,39 +838,52 @@ html{
         width: 50%;
     }*/
 
-    /*Ticket prices*/ 
-
-    .ticket-price{
-        margin-bottom: .65em;        
-    }
-
-    .price{
-        align-self: center;
-    }
-
-    .ticket-price p{
-        font-size: 1.35rem;
-        margin: 0;
+    /*Ticket box*/ 
+    .ticket-block{
+        position: relative;
         padding: 0;
+    }    
+
+    .ticket-block span{
+        vertical-align: middle;
     }
 
-    .ticket-price .price p,
-    .box-content .price p,
-    .box-content .box-header .price p{
-        font-size: 1.25rem;
+    .ticket-block .ticket-block-header{
+        height: 65px;
+        display: block;       
     }
 
-    .box-content-section .ticket-price{
-        margin-top: .65em;
+    .ticket-block:not(:first-child) .ticket-block-header{
+        border-top: 1px solid rgba(0, 0, 0, .05);
     }
 
+    .ticket-block .ticket-block-content{
+        padding: 1em 25px;
+        font-size: 1.15em;
+    }
 
-    .box-content-section h5{
-        margin: 0;
-        padding: 0;
+    .ticket-block-header + .ticket-block-content{
+        padding-left: 85px;
+        width: 100%;
+    }
+
+    .ticket-block-header-text{
+        margin-left: 15px;
+        font-size: 1.25em;
         font-weight: 800;
-        font-size: 1.25rem;
+        text-transform: uppercase;
+        color: black;
     }
+
+    .ticket-block-icon{
+        display: block;
+        height: 100%;
+        max-width: 65px;
+        padding: .45em;
+        opacity: 1;
+    }
+
+    
 
     /*PROGRAMS SECTION*/
 
