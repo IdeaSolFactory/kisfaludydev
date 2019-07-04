@@ -1,4 +1,10 @@
 /*RESETS*/
+
+html,
+body {
+    height: 100%;
+}
+
 table, tr, td{
     padding:0;
     margin: 0;
@@ -494,6 +500,10 @@ span.text--maincol strong{
             content: url("../img/icons/moon.svg");
         }
 
+        .icon.ship{
+            content: url("../img/icons/ship.svg");
+        }
+
 
         /*Symbols*/    
         .symbol-container{
@@ -848,26 +858,45 @@ html{
         vertical-align: middle;
     }
 
-    .ticket-block .ticket-block-header{
-        height: 65px;
-        display: block;       
-    }
 
-    .ticket-block:not(:first-child) .ticket-block-header{
+    .ticket-block:not(:first-child){
         border-top: 1px solid rgba(0, 0, 0, .05);
     }
 
+    .ticket-category{
+        display: flex;
+        align-items: stretch;
+        min-height: 65px;
+        height: auto;
+        align-self: stretch;
+        flex-grow: 1;
+    }
+
+    .ticket-category-block{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: stretch;
+    }
+
     .ticket-block .ticket-block-content{
-        padding: 1em 25px;
+        padding: 1.25em 3em 1.25em 0;
         font-size: 1.15em;
     }
 
-    .ticket-block-header + .ticket-block-content{
-        padding-left: 85px;
-        width: 100%;
+    .ticket-block .ticket-block-content .row:not(:first-child){
+        padding-top: 0.65em;
+    } 
+
+    .ticket-block .ticket-block-content p{
+        padding: 0;
+        margin: 0;
     }
 
+
     .ticket-block-header-text{
+        align-self: center;
         margin-left: 15px;
         font-size: 1.25em;
         font-weight: 800;
@@ -877,7 +906,7 @@ html{
 
     .ticket-block-icon{
         display: block;
-        height: 100%;
+        height: auto;
         max-width: 65px;
         padding: .45em;
         opacity: 1;
