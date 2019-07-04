@@ -881,18 +881,27 @@ html{
     }
 
     .ticket-block .ticket-block-content{
-        padding: 1.25em 3em 1.25em 0;
+        padding: 0;
         font-size: 1.15em;
     }
 
-    .ticket-block .ticket-block-content .row:not(:first-child){
-        padding-top: 0.65em;
-    } 
+    .ticket-block .ticket-block-content .block-content-row div{
+        padding: 0 1em;
+    }
 
     .ticket-block .ticket-block-content p{
         padding: 0;
         margin: 0;
     }
+
+    .ticket-block .ticket-block-content .block-content-row{
+        padding: 1.25em 0;
+    }
+
+    .ticket-block .ticket-block-content .block-content-row:not(:first-child){
+        border-top: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
 
 
     .ticket-block-header-text{
@@ -907,8 +916,8 @@ html{
     .ticket-block-icon{
         display: block;
         height: auto;
-        max-width: 65px;
-        padding: .45em;
+        max-width: 90px;
+        padding: .65em;
         opacity: 1;
     }
 
