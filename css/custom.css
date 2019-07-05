@@ -250,6 +250,18 @@ span.text--maincol strong{
       
     }
 
+    hr.center{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    hr.medium{      
+        border-width: .25em;
+        width: 35%;
+        border-color: #f5d745;
+        opacity: 1 !important;        
+    }
+
 
     .border--main{
         border-color: #f5d745;  
@@ -399,6 +411,26 @@ span.text--maincol strong{
     .btn__text {
         color: #212023;
     }
+
+        /*BTN MAIN*/
+        .btn.btn--main{
+            min-width: 100%;
+            padding: 1.25em;
+            background-color: #f5d745;
+        }
+
+        .bg--dark .btn--main .btn__text{
+            font-size: 1.2em;
+            padding: 2em;
+            color: black;
+        }
+
+            @media (min-width: 768px){
+                .btn.btn--main{
+                    width: 100%;
+                    width: auto !important;
+                }
+            }
 
     .switchable__text h2{
         font-size: 3em;
@@ -1155,6 +1187,32 @@ html{
         -webkit-filter: grayscale(100%);
                 filter: grayscale(100%);
     }
+
+/*MAIN CTA SECTION*/
+
+.main-cta--section{
+    padding: 8em 0;
+}
+
+.main-cta--section:before{
+    content:"";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("../img/hajo/kisfaludy_img_20-min.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%) brightness(35%);
+    opacity: .2;
+}
+
+.main-cta--section .main-cta-container{
+    padding-top: 2em;
+}
+
 /*EMAIL SECTION*/
 .email--section [class*="col"]:first-child{
     border-right: 1px solid rgba(0, 0, 0, 0.3);
