@@ -875,18 +875,7 @@ html{
 
 
     .ticket-block:not(:first-child){
-        border-top: 1px solid rgba(45, 45, 45, .15);
-    }
-
-    .ticket-block:not(:first-child):after{
-        content: "";
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        border-top: 1px solid rgba(0, 0, 0, .4);
+        border-top: 1px solid rgba(2, 32, 33, 0.1);
     }
 
     .ticket-category{
@@ -906,7 +895,7 @@ html{
     }
 
     .ticket-category:not(:first-child){
-        border-top: 1px solid rgba(0, 0, 0, .12);
+        border-top: 1px solid rgba(2, 32, 33, 0.1);
     }
 
     .ticket-category-block{
@@ -945,35 +934,60 @@ html{
         padding: 1.25em 0;
     }
 
+    .ticket-block .ticket-block-content .block-content-row:last-child{
+        padding-bottom: 0.5em;
+    }
+
     .ticket-block .ticket-block-content .block-content-row:not(:first-child){
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(2, 32, 33, 0.05);
     }
 
 
 
     .ticket-block-header-text{
         -ms-flex-item-align: center;
-            -ms-grid-row-align: center;
-            align-self: center;
-        margin-left: 15px;
-        font-size: 1em;
+        -ms-grid-row-align: center;
+        align-self: center;
+        font-size: .8em;
         font-weight: 800;
         text-transform: uppercase;
         color: black;
-    }
+        padding-right: 1em;
+    }       
 
     .ticket-block-icon{
         display: block;
         height: auto;
-        max-width: 70px;
-        max-height: 70px;
-        padding: .45em;
+        max-width: 60px;
+        max-height: 60px;
+        padding:.5em;
         opacity: .8;
     }
 
     .ticket-block-icon.icon-sm{
         padding: .5em;
+    }  
+
+    @media (min-width: 768px){
+
+        .ticket-block-header-text{
+            font-size: 1em;
+            padding-right: 0;
+        }
+
+
+        .ticket-block-icon{
+            padding: .45em;
+            max-width: 70px;
+            max-height: 70px;
+        }
+
+        .ticket-block-icon.icon-sm{
+            padding: .5em;
+        }
     }
+
+   
 
     
 
