@@ -423,6 +423,7 @@ span.text--maincol strong{
             font-size: 1.2em;
             padding: 2em;
             color: black;
+            text-transform: uppercase;
         }
 
             @media (min-width: 768px){
@@ -993,7 +994,7 @@ html{
         max-width: 60px;
         max-height: 60px;
         padding:.5em;
-        opacity: .8;
+        opacity: .45;
     }
 
     .ticket-block-icon.icon-sm{
