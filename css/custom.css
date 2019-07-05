@@ -860,7 +860,18 @@ html{
 
 
     .ticket-block:not(:first-child){
-        border-top: 1px solid rgba(0, 0, 0, .05);
+        border-top: 1px solid rgba(45, 45, 45, .15);
+    }
+
+    .ticket-block:not(:first-child):after{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-top: 1px solid rgba(0, 0, 0, .4);
     }
 
     .ticket-category{
@@ -870,6 +881,10 @@ html{
         height: auto;
         align-self: stretch;
         flex-grow: 1;
+    }
+
+    .ticket-category:not(:first-child){
+        border-top: 1px solid rgba(0, 0, 0, .12);
     }
 
     .ticket-category-block{
@@ -882,7 +897,7 @@ html{
 
     .ticket-block .ticket-block-content{
         padding: 0;
-        font-size: 1.15em;
+        font-size: 1em;
     }
 
     .ticket-block .ticket-block-content .block-content-row div{
@@ -892,6 +907,7 @@ html{
     .ticket-block .ticket-block-content p{
         padding: 0;
         margin: 0;
+        line-height: 100%;
     }
 
     .ticket-block .ticket-block-content .block-content-row{
@@ -899,7 +915,7 @@ html{
     }
 
     .ticket-block .ticket-block-content .block-content-row:not(:first-child){
-        border-top: 1px solid rgba(0, 0, 0, 0.25);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 
 
@@ -907,7 +923,7 @@ html{
     .ticket-block-header-text{
         align-self: center;
         margin-left: 15px;
-        font-size: 1.25em;
+        font-size: 1em;
         font-weight: 800;
         text-transform: uppercase;
         color: black;
@@ -916,9 +932,13 @@ html{
     .ticket-block-icon{
         display: block;
         height: auto;
-        max-width: 90px;
-        padding: .65em;
-        opacity: 1;
+        max-width: 70px;
+        padding: .45em;
+        opacity: .8;
+    }
+
+    .ticket-block-icon.icon-sm{
+        padding: .5em;
     }
 
     
