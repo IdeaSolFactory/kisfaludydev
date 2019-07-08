@@ -382,8 +382,16 @@ span.text--maincol strong{
     .btn--primary,
     .btn .btn__text,
     .btn--primary .btn__text,
-    .btn--primary:visited .btn__text{
+    .btn--primary:visited,
+    .btn:active,
+    .btn:hover{
         color: #212023;
+        font-weight: 800;
+        box-shadow: none;
+    }
+
+    .btn.hero-CTA{
+        color: white;
     }
 
     .btn, .btn--primary{
@@ -398,8 +406,7 @@ span.text--maincol strong{
 
     .btn:hover,
     .btn--primary:hover{
-        background-color: #f5d745;
-        
+        background-color: #f5d745;        
     }
 
     .btn--primary {
@@ -408,28 +415,24 @@ span.text--maincol strong{
         border: #212023 1px solid !important;
     }
 
-    .btn__text {
-        color: #212023;
-    }
-
         /*BTN MAIN*/
         .btn.btn--main{
             min-width: 100%;
-            padding: 1.25em;
             background-color: #f5d745;
         }
 
-        .bg--dark .btn--main .btn__text{
+        .bg--dark .btn--main {
             font-size: 1.2em;
-            padding: 2em;
+            padding: .65em;
             color: black;
+            text-transform: uppercase;
+            font-weight: 800;
         }
 
             @media (min-width: 768px){
                 .btn.btn--main{
                     width: 100%;
-                    width: auto !important;
-                }
+                    width: auto !important;                }
             }
 
     .switchable__text h2{
@@ -993,7 +996,7 @@ html{
         max-width: 60px;
         max-height: 60px;
         padding:.5em;
-        opacity: .8;
+        opacity: .45;
     }
 
     .ticket-block-icon.icon-sm{
