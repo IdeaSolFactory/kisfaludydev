@@ -627,7 +627,9 @@ span.text--maincol strong{
 
 .switch-lang-box{
  padding: 1em;
- position: relative;
+ position: absolute;
+ top: 3em;
+right: 0;
  width: 100%;
  text-align: right;  
 }  
@@ -635,9 +637,10 @@ span.text--maincol strong{
 
 .switch-lang-container{
     max-height: 25px;
-    padding: 0;
+    padding: 1em .3em;
     margin: 0;
-    display: inline-block;    
+    display: inline-block;
+        
 }
 
     @media (min-width: 1200px){
@@ -648,7 +651,7 @@ span.text--maincol strong{
         }
 
         .switch-lang-container{
-            padding: 0.25em;
+            padding: 0.45em;
         }
     }
 

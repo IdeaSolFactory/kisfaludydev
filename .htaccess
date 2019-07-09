@@ -1,3 +1,16 @@
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+RewriteCond %{HTTP:Accept-Language} ^hu [NC]
+RewriteRule ^$ https://kisfaludygozos.hu/index.html
+
+RewriteCond %{HTTP:Accept-language} !^(nl|fr|en|dk|se|ru|sk|fr|hr|ro|gr|it|al|mc|jp|cn|us).* [NC]
+RewriteRule ^$ https://kisfaludygozos.hu/kisfaludy-kreuzfahrtschiff.html [L,R=301]
+
+RewriteCond %{HTTP:Accept-Language} ^de [NC]
+RewriteRule ^$ https://kisfaludygozos.hu/kisfaludy-kreuzfahrtschiff.html [L,R=301]
+
+
+
+
