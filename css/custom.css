@@ -608,6 +608,22 @@ span.text--maincol strong{
     color: white;
 }
 
+
+.switch-lang-container{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden;
+    border-radius: 200%;
+    max-height: 30px;
+    max-width: 30px;
+    vertical-align: middle;
+}
+.switch-lang-container img{
+    height: 30px;
+    width: auto;
+    display: block;
+}
+
 /*HEADER*/
 html{
     scroll-behavior: smooth;
