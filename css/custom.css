@@ -64,8 +64,6 @@ span.text--maincol strong{
 
 /*IMAGES*/
 
-
-
 .fillimage{
    width: 100%;
    height: 100%;
@@ -77,6 +75,15 @@ span.text--maincol strong{
        object-fit: cover;
     min-height: 100%;
 }
+
+
+/*TEXT*/
+
+    /*text sizes*/
+    .text-xs,
+    p.text-xs{
+        font-size: .8em !important;
+    }
 
 /*BACKGROUNDS*/
 
@@ -358,6 +365,7 @@ span.text--maincol strong{
 
     .btn{
         width: 100% !important;
+        white-space: normal;
     }
 
     .autowidth [class*="btn"] {
@@ -535,6 +543,10 @@ span.text--maincol strong{
             height: 16px;
         }
 
+        .icon-xs{
+            height: 8px;
+        }
+
         .icon.pirate-flag{
             content: url("../img/icons/pirate-flag.svg");            
         }
@@ -595,6 +607,7 @@ span.text--maincol strong{
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 100;
 }
 
 .hamburger-toggle i{
@@ -612,20 +625,45 @@ span.text--maincol strong{
     color: white;
 }
 
+.switch-lang-box{
+ padding: 1em;
+ position: relative;
+ width: 100%;
+ text-align: right;  
+}  
+
 
 .switch-lang-container{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    overflow: hidden;
-    border-radius: 200%;
-    max-height: 30px;
-    max-width: 30px;
-    vertical-align: middle;
+    max-height: 25px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;    
 }
-.switch-lang-container img{
+
+    @media (min-width: 1200px){
+        .switch-lang-box{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .switch-lang-container{
+            padding: 0.25em;
+        }
+    }
+
+.lang-flag{
     height: 30px;
-    width: auto;
-    display: block;
+    width: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+}
+
+.lang-flag img{
+    width: 100%;
+    height: 100%;
 }
 
 /*HEADER*/
@@ -652,11 +690,25 @@ html{
     top: 0;
     right: 0;
     display: block;
-    background: url("../img/hajo/kisfaludy_img_40-min.jpg") no-repeat center;
+    background: url("../img/hajo/kisfaludy_img_40-small.jpg") no-repeat center;
     background-size: cover;
     -webkit-filter: sepia(10%) grayscale(100%);
             filter: sepia(10%) grayscale(100%);
     z-index: -20;
+}
+
+@media (min-width: 768px){
+    .hero-wrapper:before{
+        background: url("../img/hajo/kisfaludy_img_40-medium.jpg") no-repeat center;
+    background-size: cover;
+    }
+}
+
+@media (min-width: 1200px){
+    .hero-wrapper:before{
+        background: url("../img/hajo/kisfaludy_img_40-big.jpg") no-repeat center;
+    background-size: cover;
+    }
 }
 
 .hero-wrapper:after{
@@ -762,6 +814,16 @@ html{
     background-size: cover;
 }
 
+.departure-sites-img.de{
+    background: url("../img/departures-map_de.svg") no-repeat;
+    overflow: hidden;
+    background-color: #e4f1f9;
+    height: 360px;
+    
+    background-position: bottom;
+    background-size: cover;
+}
+
 .route-img{
     background-color: #e4f1f9;
     height: 100%;
@@ -780,6 +842,17 @@ html{
     display: block;
     
     background: url("../img/route-map_en.svg") no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.route-img.de{
+    background-color: #e4f1f9;
+    height: 100%;
+    min-height: 400px;
+    display: block;
+    
+    background: url("../img/route-map_de.svg") no-repeat;
     background-size: cover;
     background-position: top;
 }
@@ -1255,12 +1328,20 @@ html{
     height: 100%;
     left: 0;
     top: 0;
-    background: url("../img/hajo/kisfaludy_img_20-min.jpg") no-repeat;
+    background: url("../img/hajo/kisfaludy_img_20-small.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     filter: grayscale(100%) brightness(35%);
     opacity: .2;
 }
+
+    @media (max-width: 768px){
+        .main-cta--section:before{
+            background: url("../img/hajo/kisfaludy_img_20-medium.jpg") no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
 
 .main-cta--section .main-cta-container{
     padding-top: 2em;
