@@ -394,6 +394,10 @@ span.text--maincol strong{
         color: white;
     }
 
+    .btn.hero-CTA:hover{
+        color: black;
+    }
+
     .btn, .btn--primary{
         border: #212023 1px solid !important;
     }
@@ -748,6 +752,16 @@ html{
     background-size: cover;
 }
 
+.departure-sites-img.en{
+    background: url("../img/departures-map_en.svg") no-repeat;
+    overflow: hidden;
+    background-color: #e4f1f9;
+    height: 360px;
+    
+    background-position: bottom;
+    background-size: cover;
+}
+
 .route-img{
     background-color: #e4f1f9;
     height: 100%;
@@ -755,6 +769,17 @@ html{
     display: block;
     
     background: url("../img/route-map.svg") no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.route-img.en{
+    background-color: #e4f1f9;
+    height: 100%;
+    min-height: 400px;
+    display: block;
+    
+    background: url("../img/route-map_en.svg") no-repeat;
     background-size: cover;
     background-position: top;
 }
