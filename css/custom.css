@@ -85,6 +85,10 @@ span.text--maincol strong{
         font-size: .8em !important;
     }
 
+    .type--fine-print{
+        line-height: 1.8em;
+    }
+
 /*BACKGROUNDS*/
 
 [class*="bg--"]{
