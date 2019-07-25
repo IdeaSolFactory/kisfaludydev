@@ -544,11 +544,11 @@ span.text--maincol strong{
         }
 
         .icon-sm{
-            height: 16px;
+            height: 16px !important;
         }
 
         .icon-xs{
-            height: 8px;
+            height: 8px !important;
         }
 
         .icon.pirate-flag{
@@ -949,6 +949,21 @@ html{
             }
         }
 
+
+    .schedule-timetable .schedule-header{
+        width: 100%;
+        text-align: center;
+        font-weight: 800;
+        position: absolute;
+        top: 7px;
+        left: 0;
+    }
+
+    .schedule-timetable .schedule-header span{
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+
     .schedule-timetable .schedule-time{
         position: relative;
         text-align: center;
@@ -968,7 +983,8 @@ html{
             bottom: 0;
             left: 0;            
             font-size: .5em;
-            padding: .2em 0 1.25em 0;
+            line-height: 120%;
+            padding: .6em 0 1em 0;
         }
 
        
@@ -986,7 +1002,7 @@ html{
 
         .schedule-timetable .icon{
             height: .65em;            
-            opacity: .4;
+            opacity: .4;            
         }
         
         .schedule-timetable .icon.pirate-flag,
