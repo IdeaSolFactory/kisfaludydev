@@ -919,10 +919,25 @@ html{
 
     .schedule-timetable > div{
         border-bottom: 1px solid rgba(2, 32, 33, 0.05);
+        position: relative;
     }
 
     .schedule-timetable > div:last-child{
         border-bottom: none;
+    }
+
+    .schedule-timetable > .schedule-column{
+        min-height: 150px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .schedule-timetable > .schedule-column:nth-last-of-type(-n+1){
+        display: none;
     }
 
         @media (min-width: 768px){
@@ -947,6 +962,10 @@ html{
             .schedule-timetable > div:nth-last-child(-n+3){
                 border-bottom: none;
             }
+
+            .schedule-timetable > [class*="col"]:nth-last-of-type(-n+1){
+                display: unset;
+            }
         }
 
 
@@ -954,37 +973,33 @@ html{
         width: 100%;
         text-align: center;
         font-weight: 800;
-        position: absolute;
-        top: 7px;
-        left: 0;
+        padding-top: 10px;
     }
 
     .schedule-timetable .schedule-header span{
         vertical-align: middle;
-        padding-right: 5px;
+        padding-right: 5px;       
     }
 
     .schedule-timetable .schedule-time{
-        position: relative;
+
         text-align: center;
-        padding: 2em 1em;
+        align-self: stretch;
         font-size: 1.65em;
         font-weight: 600;
-        color: black;
+        color: black;        
     }
     
 
         /*schedule details / icons */
 
         .schedule-timetable .schedule-details{
-            position: absolute;
             display: block;
-            width: 100%;
-            bottom: 0;
-            left: 0;            
-            font-size: .5em;
+            width: 100%;        
+            font-size: .8em;
             line-height: 120%;
-            padding: .6em 0 1em 0;
+            padding: 10px 15px;
+            text-align: center;
         }
 
        
