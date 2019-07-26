@@ -399,7 +399,8 @@ span.text--maincol strong{
     .btn:hover{
         color: #212023;
         font-weight: 800;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
 
     .btn.hero-CTA{
@@ -929,11 +930,23 @@ html{
     .schedule-timetable > .schedule-column{
         min-height: 150px;
 
+        display: -webkit-box;
+
+        display: -ms-flexbox;
+
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
     }
 
     .schedule-timetable > .schedule-column:nth-last-of-type(-n+1){
@@ -984,7 +997,9 @@ html{
     .schedule-timetable .schedule-time{
 
         text-align: center;
-        align-self: stretch;
+        -ms-flex-item-align: stretch;
+            -ms-grid-row-align: stretch;
+            align-self: stretch;
         font-size: 1.65em;
         font-weight: 600;
         color: black;        
@@ -1369,7 +1384,8 @@ html{
     background: url("../img/hajo/kisfaludy_img_20-small.jpg") no-repeat;
     background-position: center;
     background-size: cover;
-    filter: grayscale(100%) brightness(35%);
+    -webkit-filter: grayscale(100%) brightness(35%);
+            filter: grayscale(100%) brightness(35%);
     opacity: .2;
 }
 
