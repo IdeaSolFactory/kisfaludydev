@@ -939,7 +939,7 @@ html{
         padding: 1em;
     }
 
-    .schedule-timetable > div:not(:nth-child(2n+2))
+    .schedule-timetable > div:not(:nth-child(2n+1))
     {
         border-right: 1px solid rgba(2, 32, 33, 0.05);
     }
@@ -986,7 +986,7 @@ html{
                 border-right: transparent;
             }
             
-            .schedule-timetable > div:not(:nth-child(3n+3)){
+            .schedule-timetable > div:not(:nth-child(3n+1)){
                 border-right: 1px solid rgba(2, 32, 33, 0.05);
             }
 
@@ -998,7 +998,7 @@ html{
                 border-bottom: 1px solid rgba(2, 32, 33, 0.05);
             }
 
-            .schedule-timetable > div:nth-last-child(-n+3){
+            .schedule-timetable > div:nth-last-child(-n+2){
                 border-bottom: none;
             }
 

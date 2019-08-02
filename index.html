@@ -225,24 +225,8 @@
                         </div>    
                     </div>
                 </section>
-               <!-- END OF INTRODUCTION-->
+               <!-- END OF INTRODUCTION-->              
                
-               <!--Notification-->
-               <section class="notification--section bg--dark py-4">
-                   <div class="container container-xl">
-                       <div class="notification-wrapper">
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-3">
-                                    <h3>Figyelem!</h3>                               
-                                </div>
-                                <div class="col-6 text-center">
-                                        <p class="notification-body-text"><strong>Kalózhajós</strong> programjaink átmenetileg nem üzemelnek!</p>
-                                </div>
-                            </div>
-                       </div>
-                   </div>
-
-               </section>
             
              <!--DEPARTURES-->
                     <section class="tickets--section">
@@ -260,7 +244,7 @@
                                             <div class="container">
                                                 <div class="schedule-timetable row justify-content-between p-0">
                                                     
-                                                    <div class="schedule-column justify-content-between col-6 col-md-4 bg--secondary p-0 opacity-medium">
+                                                    <div class="schedule-column justify-content-between col-6 col-md-4 bg--secondary p-0" style="display: none">
                                                         <div class="schedule-header"><span class="icon pirate-flag"></span> Különjárat</div>                                                        
                                                         <div class="schedule-time">                                                                
                                                             10:00*
@@ -291,12 +275,12 @@
                                                             16:30
                                                         </div>
                                                     </div>
-                                                    <div class="schedule-column justify-content-between col-6 col-md-4 p-0">
+                                                    <div class="schedule-column col-6 col-md-4 p-0">
                                                         <div></div>
-                                                        <div class="schedule-time align-self-center">
+                                                        <div class="schedule-time">
                                                             18:00                                                           
                                                         </div>
-                                                        <div class="schedule-details bg--secondary opacity-medium">
+                                                        <div class="schedule-details bg--secondary opacity-medium" style="display: none">
                                                             <span class="icon pirate-flag"></span>
                                                             <span class="text-left"><strong>+Kalózhajó</strong> <br>
                                                                 Pénteken / Szombaton</span>
@@ -377,7 +361,7 @@
 
 
                                                 <!--Ticket block-->
-                                                <div class="ticket-block col-12">
+                                                <div class="ticket-block col-12" style="display: none">
 
                                                     <div class="row justify-content-between align-items-stretch no-gutters">
                                                         <div class="col-6">                                                            
@@ -459,7 +443,7 @@
                                 </div>
             
                                 <!--Program-->
-                                <div class="program col-12 col-md-5 text-left boxed boxed--border boxed--shadow"> 
+                                <div class="program col-12 col-md-5 text-left boxed boxed--border boxed--shadow" style="display: none"> 
                                     <div class="program-notice">
                                         <p><b>Ez a program jelenleg nem üzemel!</b></p>
                                     </div>
