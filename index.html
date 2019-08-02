@@ -24,7 +24,7 @@
         <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="css/custom.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
@@ -225,7 +225,24 @@
                         </div>    
                     </div>
                 </section>
-               <!-- END OF INTRODUCTION-->     
+               <!-- END OF INTRODUCTION-->
+               
+               <!--Notification-->
+               <section class="notification--section bg--dark py-4">
+                   <div class="container container-xl">
+                       <div class="notification-wrapper">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-3">
+                                    <h3>Figyelem!</h3>                               
+                                </div>
+                                <div class="col-6 text-center">
+                                        <p class="notification-body-text"><strong>Kalózhajós</strong> programjaink átmenetileg nem üzemelnek!</p>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+
+               </section>
             
              <!--DEPARTURES-->
                     <section class="tickets--section">
@@ -243,7 +260,7 @@
                                             <div class="container">
                                                 <div class="schedule-timetable row justify-content-between p-0">
                                                     
-                                                    <div class="schedule-column justify-content-between col-6 col-md-4 bg--secondary p-0">
+                                                    <div class="schedule-column justify-content-between col-6 col-md-4 bg--secondary p-0 opacity-medium">
                                                         <div class="schedule-header"><span class="icon pirate-flag"></span> Különjárat</div>                                                        
                                                         <div class="schedule-time">                                                                
                                                             10:00*
@@ -279,7 +296,7 @@
                                                         <div class="schedule-time align-self-center">
                                                             18:00                                                           
                                                         </div>
-                                                        <div class="schedule-details bg--secondary">
+                                                        <div class="schedule-details bg--secondary opacity-medium">
                                                             <span class="icon pirate-flag"></span>
                                                             <span class="text-left"><strong>+Kalózhajó</strong> <br>
                                                                 Pénteken / Szombaton</span>
@@ -364,14 +381,14 @@
 
                                                     <div class="row justify-content-between align-items-stretch no-gutters">
                                                         <div class="col-6">                                                            
-                                                            <div class="ticket-category-block  bg--secondary">
+                                                            <div class="ticket-category-block  bg--secondary opacity-medium">
                                                                     <div class="ticket-category">
                                                                         <span class="ticket-block-icon icon pirate-flag"></span>
                                                                         <span class="ticket-block-header-text">Kalózhajó</span>
                                                                     </div>                                                                                                                                
                                                             </div>
                                                         </div>
-                                                        <div class="col-6 ticket-block-content align-self-center">
+                                                        <div class="col-6 ticket-block-content align-self-center opacity-medium">
                                                             <div class="d-flex flex-column align-items-stretch">
                                                                     <div class="row no-gutters justify-content-center block-content-row">
                                                                         <div class="col-5"> <p><strong>Felnőtt:</strong></p></div>
@@ -443,9 +460,12 @@
             
                                 <!--Program-->
                                 <div class="program col-12 col-md-5 text-left boxed boxed--border boxed--shadow"> 
-                                    <div class="container">
+                                    <div class="program-notice">
+                                        <p><b>Ez a program jelenleg nem üzemel!</b></p>
+                                    </div>
+                                    <div class="container opacity-medium">                                       
             
-                                        <div class="row justify-content-between program-header">
+                                        <div class="row justify-content-between program-header">                                            
                                             <div class="col-2 text-left">
                                                 <span class="icon-pirate text-center pb-5"><img src="img/icons/pirate-flag.svg" alt=""></span>
                                             </div>

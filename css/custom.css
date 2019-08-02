@@ -114,6 +114,11 @@ span.text--maincol strong{
 
 /*Common items*/
 
+    /*Opacity*/
+    .opacity-medium{
+        opacity: 0.4;
+    }
+
     /*Flipping*/
     .flip-h{
         -ms-transform: scaleX(-1);
@@ -681,6 +686,27 @@ html{
 
 /*BODY*/
 
+.notification--section{
+    background-color: #f5d745;
+}
+
+.notification--section .notification-wrapper{
+    padding: 15px;
+    border: 2px solid #212023;
+    background-color: #f5d745;
+}
+
+.notification--section h3{
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: black !important;
+}
+
+.notification--section .notification-body-text{
+    font-size: 1.3em;
+    color: black !important;
+}
 
 .hero-wrapper{
     position: relative;
@@ -1207,6 +1233,20 @@ html{
     .programs--section .program{       
         padding-bottom: 1.25em;
         margin-top: 0;
+    }
+
+    .programs--section .program .program-notice{    
+        height: 30px;
+        padding: 10px;
+        display: block;
+        background-color: #f5d745;
+        margin-bottom: 10px;
+    }
+
+    .program-notice p{
+        padding: 0;
+        line-height: 10px;
+        color: black;
     }
 
     .programs--section .program:last-child{
