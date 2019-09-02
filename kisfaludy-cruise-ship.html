@@ -39,6 +39,30 @@
         <link href="css/custom.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style>
+            .site-overlay{
+                display: block;
+                z-index: 999;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                width: 100vw;
+                height: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, .75);
+                color: white;                          
+            }
+
+
+            .main-container{
+                filter: blur(7px);
+                transform: scale(1.02)
+            }
+
+        </style>
+
     </head>
     <body class=" ">
 
@@ -47,6 +71,18 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
         <a id="start"></a>
+
+        <div class="site-overlay">
+            <div class="container h-100">
+                <div class="row justify-content-center align-items-center h-100">                                   
+                    <div class="col-12 col-md-10 col-lg-8 align-self-center text-center pt-0 mt-0">                            
+                        <h1 style="color: #f5d745;"><b>Dear Visitor!</b></h1>
+                        <h3 style="color: white;">The 2019 season has ended. We are very grateful that so many of you have chosen us, and we hope to see you next year as well!</h3>
+                        <img src="img/hajo/kisfaludy_img_44.jpg" alt="" class="pb-4">
+                    </div>
+                </div>
+            </div>
+        </div>
       
         <div class="main-container">
             <section class="hero-wrapper" >
