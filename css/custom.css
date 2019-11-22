@@ -613,6 +613,13 @@ span.text--maincol strong{
             display: inline-block;
         }
 
+
+    /*Effects*/
+
+    .blur-me{
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+    }
     
 
 

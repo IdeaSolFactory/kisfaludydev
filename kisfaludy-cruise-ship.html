@@ -41,44 +41,15 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <style>
-                .site-overlay{
-                   display: block;
-                   z-index: 999;
-                   position: fixed;
-                   top: 0;
-                   left: 0;
-                   width: 100%;
-                   width: 100vw;
-                   height: 100%;
-                   height: 100vh;
-                   background-color: rgba(0, 0, 0, .6);
-                   color: white;                          
-               }
-   
-               .site-overlay .overlay-outer-box{
-                   padding: 10px;
-                   width: 100%;
-                   height: 100%;
-                   border: 1px solid #f5d745;
-               }
-   
-               .site-overlay .overlay-inner-box{
-                   padding: 25px 50px;
-                   width: 100%;
-                   height: 100%;
-                   background-color: rgba(0, 0, 0, .7);
-                   position: relative;
-               }        
-   
-   
-               .main-container{
-                   -webkit-filter: blur(7px);
-                           filter: blur(7px);
-                   -webkit-transform: scale(1.02);
-                       -ms-transform: scale(1.02);
-                           transform: scale(1.02);
-               }
-           </style>
+                .notification-center{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    z-index: 100;
+                }
+             </style>
+                
 
     </head>
     <body class=" ">
@@ -89,25 +60,7 @@
     <!-- End Google Tag Manager (noscript) -->
         <a id="start"></a>
 
-        <div class="site-overlay">
-                <div class="container h-100">
-                    <div class="row justify-content-center align-items-center h-100">                                   
-                        <div class="col-12 col-md-10 col-lg-8 align-self-center text-center pt-0 mt-0">
-                            <div class="overlay-outer-box">
-                                    <div class="overlay-inner-box">                            
-                                            <h1 style="color: #f5d745;"><b>Dear Visitor!</b></h1>
-                                            <h3 style="color: white;">The 2019 season has come to an end. We are grateful that so many of you have chosen us, and hope to see you next year!</h3>
-                                            <img src="img/hajo/kisfaludy_img_44.jpg" alt="" class="pb-4">
-                                            <a href="mailto:info@kisfaludygozos.hu" class="text--maincol" style="font-weight: 400">info@kisfaludygozos.hu</a>
-                                    </div>   
-                            </div>
-                                                     
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-      
+             
         <div class="main-container">
             <section class="hero-wrapper" >
                 <div class="filter"></div>
@@ -315,7 +268,20 @@
              <!--DEPARTURES-->
                     <section class="tickets--section">
                         <a id="scheduleticketprices"></a>
-                        <div class="container container-xl">
+                        <div class="notification-center">
+                                
+                            <div class="container container-xl bg--dark texture-dark boxed py-5">
+                                    <div class="row justify-content-center">
+                                        <div class="col-8 text-center">
+                                            <h2 class="text--maincol"><strong>Dear Visitor!</strong></h2>
+                                            <p class="lead">Our departure informations are currently unavailable, since the 2019 season has come to an end. We are grateful that so many of you have chosen us, and hope to see you next year!
+                                                </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        <div class="container container-xl blur-me">
 
                             <div class="row justify-content-center justify-content-lg-between">                            
 
