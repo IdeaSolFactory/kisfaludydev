@@ -64,8 +64,6 @@ span.text--maincol strong{
 
 /*IMAGES*/
 
-
-
 .fillimage{
    width: 100%;
    height: 100%;
@@ -77,6 +75,19 @@ span.text--maincol strong{
        object-fit: cover;
     min-height: 100%;
 }
+
+
+/*TEXT*/
+
+    /*text sizes*/
+    .text-xs,
+    p.text-xs{
+        font-size: .8em !important;
+    }
+
+    .type--fine-print{
+        line-height: 1.8em;
+    }
 
 /*BACKGROUNDS*/
 
@@ -102,6 +113,11 @@ span.text--maincol strong{
 
 
 /*Common items*/
+
+    /*Opacity*/
+    .opacity-medium{
+        opacity: 0.4;
+    }
 
     /*Flipping*/
     .flip-h{
@@ -295,6 +311,13 @@ span.text--maincol strong{
         border-style: solid;
     }
 
+    .border-top-bottom-m{
+        border-width: 0;
+        border-top-width: 10px;
+        border-bottom-width: 10px;
+        border-style: solid;
+    }
+
     .image-side {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -358,6 +381,7 @@ span.text--maincol strong{
 
     .btn{
         width: 100% !important;
+        white-space: normal;
     }
 
     .autowidth [class*="btn"] {
@@ -387,11 +411,16 @@ span.text--maincol strong{
     .btn:hover{
         color: #212023;
         font-weight: 800;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
 
     .btn.hero-CTA{
         color: white;
+    }
+
+    .btn.hero-CTA:hover{
+        color: black;
     }
 
     .btn, .btn--primary{
@@ -528,7 +557,11 @@ span.text--maincol strong{
         }
 
         .icon-sm{
-            height: 16px;
+            height: 16px !important;
+        }
+
+        .icon-xs{
+            height: 8px !important;
         }
 
         .icon.pirate-flag{
@@ -580,6 +613,13 @@ span.text--maincol strong{
             display: inline-block;
         }
 
+
+    /*Effects*/
+
+    .blur-me{
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+    }
     
 
 
@@ -591,6 +631,7 @@ span.text--maincol strong{
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 100;
 }
 
 .hamburger-toggle i{
@@ -608,6 +649,50 @@ span.text--maincol strong{
     color: white;
 }
 
+.switch-lang-box{
+ padding: 1em;
+ position: absolute;
+ top: 3em;
+right: 0;
+ width: 100%;
+ text-align: right;  
+}  
+
+
+.switch-lang-container{
+    max-height: 25px;
+    padding: 1em .3em;
+    margin: 0;
+    display: inline-block;
+        
+}
+
+    @media (min-width: 1200px){
+        .switch-lang-box{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .switch-lang-container{
+            padding: 0.45em;
+        }
+    }
+
+.lang-flag{
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+}
+
+.lang-flag img{
+    width: 100%;
+    height: 100%;
+}
+
 /*HEADER*/
 html{
     scroll-behavior: smooth;
@@ -615,6 +700,27 @@ html{
 
 /*BODY*/
 
+.notification--section{
+    background-color: #f5d745;
+}
+
+.notification--section .notification-wrapper{
+    padding: 15px;
+    border: 2px solid #212023;
+    background-color: #f5d745;
+}
+
+.notification--section h3{
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: black !important;
+}
+
+.notification--section .notification-body-text{
+    font-size: 1.3em;
+    color: black !important;
+}
 
 .hero-wrapper{
     position: relative;
@@ -632,11 +738,25 @@ html{
     top: 0;
     right: 0;
     display: block;
-    background: url("../img/hajo/kisfaludy_img_40-min.jpg") no-repeat center;
+    background: url("../img/hajo/kisfaludy_img_40-small.jpg") no-repeat center;
     background-size: cover;
     -webkit-filter: sepia(10%) grayscale(100%);
             filter: sepia(10%) grayscale(100%);
     z-index: -20;
+}
+
+@media (min-width: 768px){
+    .hero-wrapper:before{
+        background: url("../img/hajo/kisfaludy_img_40-medium.jpg") no-repeat center;
+    background-size: cover;
+    }
+}
+
+@media (min-width: 1200px){
+    .hero-wrapper:before{
+        background: url("../img/hajo/kisfaludy_img_40-big.jpg") no-repeat center;
+    background-size: cover;
+    }
 }
 
 .hero-wrapper:after{
@@ -732,6 +852,26 @@ html{
     background-size: cover;
 }
 
+.departure-sites-img.en{
+    background: url("../img/departures-map_en.svg") no-repeat;
+    overflow: hidden;
+    background-color: #e4f1f9;
+    height: 360px;
+    
+    background-position: bottom;
+    background-size: cover;
+}
+
+.departure-sites-img.de{
+    background: url("../img/departures-map_de.svg") no-repeat;
+    overflow: hidden;
+    background-color: #e4f1f9;
+    height: 360px;
+    
+    background-position: bottom;
+    background-size: cover;
+}
+
 .route-img{
     background-color: #e4f1f9;
     height: 100%;
@@ -739,6 +879,28 @@ html{
     display: block;
     
     background: url("../img/route-map.svg") no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.route-img.en{
+    background-color: #e4f1f9;
+    height: 100%;
+    min-height: 400px;
+    display: block;
+    
+    background: url("../img/route-map_en.svg") no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.route-img.de{
+    background-color: #e4f1f9;
+    height: 100%;
+    min-height: 400px;
+    display: block;
+    
+    background: url("../img/route-map_de.svg") no-repeat;
     background-size: cover;
     background-position: top;
 }
@@ -791,17 +953,44 @@ html{
         padding: 1em;
     }
 
-    .schedule-timetable > div:not(:nth-child(2n+2))
+    .schedule-timetable > div:not(:nth-child(2n+1))
     {
         border-right: 1px solid rgba(2, 32, 33, 0.05);
     }
 
     .schedule-timetable > div{
         border-bottom: 1px solid rgba(2, 32, 33, 0.05);
+        position: relative;
     }
 
     .schedule-timetable > div:last-child{
         border-bottom: none;
+    }
+
+    .schedule-timetable > .schedule-column{
+        min-height: 150px;
+
+        display: -webkit-box;
+
+        display: -ms-flexbox;
+
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    }
+
+    .schedule-timetable > .schedule-column:nth-last-of-type(-n+1){
+        display: none;
     }
 
         @media (min-width: 768px){
@@ -811,7 +1000,7 @@ html{
                 border-right: transparent;
             }
             
-            .schedule-timetable > div:not(:nth-child(3n+3)){
+            .schedule-timetable > div:not(:nth-child(3n+1)){
                 border-right: 1px solid rgba(2, 32, 33, 0.05);
             }
 
@@ -823,31 +1012,49 @@ html{
                 border-bottom: 1px solid rgba(2, 32, 33, 0.05);
             }
 
-            .schedule-timetable > div:nth-last-child(-n+3){
+            .schedule-timetable > div:nth-last-child(-n+2){
                 border-bottom: none;
+            }
+
+            .schedule-timetable > [class*="col"]:nth-last-of-type(-n+1){
+                display: unset;
             }
         }
 
-    .schedule-timetable .schedule-time{
-        position: relative;
+
+    .schedule-timetable .schedule-header{
+        width: 100%;
         text-align: center;
-        padding: 2em 1em;
+        font-weight: 800;
+        padding-top: 10px;
+    }
+
+    .schedule-timetable .schedule-header span{
+        vertical-align: middle;
+        padding-right: 5px;       
+    }
+
+    .schedule-timetable .schedule-time{
+
+        text-align: center;
+        -ms-flex-item-align: stretch;
+            -ms-grid-row-align: stretch;
+            align-self: stretch;
         font-size: 1.65em;
         font-weight: 600;
-        color: black;
+        color: black;        
     }
     
 
         /*schedule details / icons */
 
         .schedule-timetable .schedule-details{
-            position: absolute;
             display: block;
-            width: 100%;
-            bottom: 0;
-            left: 0;            
-            font-size: .5em;
-            padding: .2em 0 1.25em 0;
+            width: 100%;        
+            font-size: .8em;
+            line-height: 120%;
+            padding: 10px 15px;
+            text-align: center;
         }
 
        
@@ -865,7 +1072,7 @@ html{
 
         .schedule-timetable .icon{
             height: .65em;            
-            opacity: .4;
+            opacity: .4;            
         }
         
         .schedule-timetable .icon.pirate-flag,
@@ -988,7 +1195,16 @@ html{
         text-transform: uppercase;
         color: black;
         padding-right: 1em;
-    }       
+    }
+    
+    .ticket-block-header-subtext{
+        font-weight: 400;
+        text-transform: none;
+        padding: 0;
+        margin: 0;
+        line-height: 120%;
+        color: #666666;
+    }
 
     .ticket-block-icon{
         display: block;
@@ -1031,6 +1247,20 @@ html{
     .programs--section .program{       
         padding-bottom: 1.25em;
         margin-top: 0;
+    }
+
+    .programs--section .program .program-notice{    
+        height: 30px;
+        padding: 10px;
+        display: block;
+        background-color: #f5d745;
+        margin-bottom: 10px;
+    }
+
+    .program-notice p{
+        padding: 0;
+        line-height: 10px;
+        color: black;
     }
 
     .programs--section .program:last-child{
@@ -1205,12 +1435,21 @@ html{
     height: 100%;
     left: 0;
     top: 0;
-    background: url("../img/hajo/kisfaludy_img_20-min.jpg") no-repeat;
+    background: url("../img/hajo/kisfaludy_img_20-small.jpg") no-repeat;
     background-position: center;
     background-size: cover;
-    filter: grayscale(100%) brightness(35%);
+    -webkit-filter: grayscale(100%) brightness(35%);
+            filter: grayscale(100%) brightness(35%);
     opacity: .2;
 }
+
+    @media (max-width: 768px){
+        .main-cta--section:before{
+            background: url("../img/hajo/kisfaludy_img_20-medium.jpg") no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
 
 .main-cta--section .main-cta-container{
     padding-top: 2em;
