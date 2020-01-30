@@ -1,4 +1,53 @@
-/*RESETS*/
+/*
+===========================================
+TITLE:      Kisfaludy style
+            https://kisfaludygozos.hu
+
+Author:     Gábor Tamási
+Email:      tamasi@isf.hu
+
+===========================================
+TABLE OF CONTENTS
+-----------------
+
+00 ---- RESETS
+01 ---- COLORS
+02 ---- IMAGES
+03 ---- TEXTS-----------------------
+        01 - TEXT SIZES
+        02 - TEXT WEIGHTS
+        03 - TEXT DECORATIONS
+        ----------------------------
+04 ---- BACKGROUNDS
+05 ---- GENERAL FORMATTING----------
+        01 - OPACITY            
+        02 - TRANSFORMATIONS
+        03 - PADDINGS
+        04 - DIVIDERS
+        05 - BORDERS
+        06 - IMAGE, IMAGE POSITIONING
+        07 - LISTS
+        08 - TABLES
+        
+06 ---- BUTTONS
+        -----------------------------
+        01 - BTN MAIN
+        -----------------------------
+07 ---- EFFECTS
+08 ---- SECTIONS --------------------
+        01 - HEADER
+             A - NAV
+             B - HERO
+        02 - 
+
+===========================================
+*/
+
+
+
+/*=========================================
+            00 - RESETS
+=========================================*/
 
 html,
 body {
@@ -27,14 +76,20 @@ section.bg--secondary:not(.imagebg) + section:not(.imagebg):not([class*='bg-']) 
     position: relative;
 }
 
-@media (min-width: 1640px){
-    .container-xl{
-        width: 100%;
-        max-width: 1400px;
+    @media (min-width: 1640px){
+        .container-xl{
+            width: 100%;
+            max-width: 1400px;
+        }
     }
-}
 
-/*COLORS*/
+/*=========================================
+            01 - COLORS
+=========================================*/
+
+.textcol-main   { color: #f5d745 !important; }
+.textcol-dark   { color: #212023 !important; }
+.textcol-darker { color: #252525 !important; }
 
 .text--maincol,
 span.text--maincol strong{
@@ -62,7 +117,9 @@ span.text--maincol strong{
 }
 
 
-/*IMAGES*/
+/*=========================================
+            02 - IMAGES
+=========================================*/
 
 .fillimage{
    width: 100%;
@@ -77,9 +134,13 @@ span.text--maincol strong{
 }
 
 
-/*TEXT*/
+/*=========================================
+            03 - TEXTS
+=========================================*/
 
-    /*text sizes*/
+    /*-----------------------------------
+                01 - TEXT SIZES
+    -----------------------------------*/
     .text-xs,
     p.text-xs{
         font-size: .8em !important;
@@ -89,7 +150,70 @@ span.text--maincol strong{
         line-height: 1.8em;
     }
 
-/*BACKGROUNDS*/
+    .switchable__text h2{
+        font-size: 3em;
+    }
+
+     /*-----------------------------------
+                02 - TEXT WEIGHTS
+    -----------------------------------*/
+
+    strong{
+        font-weight: 800;
+    }
+
+     /*-----------------------------------
+                03 - TEXT DECORATIONS
+    -----------------------------------*/
+   [class*="decorline-"]{
+        position: relative;
+        display: inline-block !important;
+        padding-bottom: 12px;
+        width: 100%;
+    }
+
+    [class*="decorline-"]::after{
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+    }
+
+    .decorline-main::after{
+        width: 40px;
+        height: 6px;
+        background-color: #f5d745;
+    }
+
+    .decorline-thin::after{
+        width: 100%;
+        height: 1px;
+        background-color: #252525;
+    }
+    
+
+    [class*="decorline-"] > h1,
+    [class*="decorline-"] > h2,
+    [class*="decorline-"] > h3,
+    [class*="decorline-"] > h4,
+    [class*="decorline-"] > h5,
+    [class*="decorline-"] > h6,
+    [class*="decorline-"] > p{
+        padding-bottom: inherit !important;
+    }
+
+    .decorline-main-small::after{
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 6px;
+    }
+
+/*=========================================
+            04 - BACKGROUNDS
+=========================================*/
 
 [class*="bg--"]{
     position: relative;
@@ -112,14 +236,24 @@ span.text--maincol strong{
 }
 
 
-/*Common items*/
+/*=========================================
+        05 - GENERAL FORMATTING
+=========================================*/
 
-    /*Opacity*/
+    html{
+        scroll-behavior: smooth;
+    }
+
+    /*-----------------------------------
+                01 - OPACITY
+    -----------------------------------*/
     .opacity-medium{
         opacity: 0.4;
     }
 
-    /*Flipping*/
+    /*-----------------------------------
+            02 - TRANSFORMATIONS
+    -----------------------------------*/
     .flip-h{
         -ms-transform: scaleX(-1);
             transform: scaleX(-1);
@@ -140,7 +274,9 @@ span.text--maincol strong{
         -ms-filter: "FlipV";
     }
 
-    /*Paddings*/
+    /*-----------------------------------
+                03 - PADDINGS
+    -----------------------------------*/
     .py-6 {
         padding-top: 6em !important;
         padding-bottom: 6em !important;
@@ -261,10 +397,13 @@ span.text--maincol strong{
     
         .pb-lg-8 {
             padding-bottom: 8em !important;
-        }
+        }      
+    }       
 
-      
-    }
+
+    /*-----------------------------------
+        04 - DIVIDERS
+    -----------------------------------*/
 
     hr.center{
         margin-left: auto;
@@ -278,6 +417,15 @@ span.text--maincol strong{
         opacity: 1 !important;        
     }
 
+    hr.short {
+        border-width: .45em;
+        border-color: #f5d745;
+    }
+
+    
+    /*-----------------------------------
+        05 - BORDERS
+    -----------------------------------*/
 
     .border--main{
         border-color: #f5d745;  
@@ -317,6 +465,10 @@ span.text--maincol strong{
         border-bottom-width: 10px;
         border-style: solid;
     }
+
+    /*-----------------------------------
+        06 - IMAGE, IMAGE POSITIONING
+    -----------------------------------*/
 
     .image-side {
         display: -webkit-box;
@@ -360,11 +512,6 @@ span.text--maincol strong{
                 box-shadow: 0 0 20px rgba(2, 32, 33, 0.05);
     }
 
-    hr.short {
-        border-width: .45em;
-        border-color: #f5d745;
-    }
-
     [class*="--section"]
     {
         padding-top: 3em;
@@ -378,6 +525,119 @@ span.text--maincol strong{
             padding-bottom: 5em;
         }
     }
+
+    /*-----------------------------------
+                07 - LISTS
+    -----------------------------------*/
+
+    .list {
+        display: block;
+        padding: 12px 0;
+    }
+
+    .list-nopadding{
+        padding: 0 !important;
+    }    
+
+    .list > li:not(:first-of-type){
+        padding-top: 6px;
+    }
+
+    .list > li.text-center{
+        text-align: center;
+    }
+
+        /*List style light*/
+
+
+        .list.list-style-light > li{
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+       .list.list-style-light > li:before{
+            content: "";
+            display: block;
+            width: 8px;
+            height: 16px;
+            background-color: #f5d745;
+            margin-right: 15px;
+           
+        }
+
+        .list.list-style-light > li > p{
+            display: inline-block;
+        }
+
+
+        /*Button list*/
+
+        .list.button-list{
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .list.button-list > li{
+            padding: 12px 16px;
+            border: 1px solid #212023;
+            border-radius: 10px;
+            overflow: hidden;
+
+            font-size: 1.2em;
+            color: #212023;
+        }
+
+            @media (min-width: 768px){
+                .list{
+                    padding: 12px;
+                }
+            }
+
+        .list.button-list > li:not(:first-of-type){
+            margin-top: 12px;
+        }
+
+        .list.button-list > li:focus,
+        .list.button-list > li:hover{
+            background-color: #f5d745;
+        }
+
+        .list.button-list.theme-dark > li:focus,
+        .list.button-list.theme-dark > li:hover{
+            background-color: #252525;
+            color: #f5d745;
+        }    
+
+
+
+    .simple-list li{
+        padding: 0.1em 0 0.1em 1em;
+        margin: 1em 0;
+        line-height: 145%;
+    }
+
+
+
+    /*-----------------------------------
+                08 - TABLES
+    -----------------------------------*/
+    th, td{
+        font-size: 1.25em;        
+    }
+
+    th span {
+        font-size: 0.8em;
+        opacity: .4;
+        font-weight: 400;
+    }
+
+/*=========================================
+            06 - BUTTONS
+=========================================*/
 
     .btn{
         width: 100% !important;
@@ -444,50 +704,290 @@ span.text--maincol strong{
         border: #212023 1px solid !important;
     }
 
-        /*BTN MAIN*/
-        .btn.btn--main{
-            min-width: 100%;
-            background-color: #f5d745;
-        }
-
-        .bg--dark .btn--main {
-            font-size: 1.2em;
-            padding: .65em;
-            color: black;
-            text-transform: uppercase;
-            font-weight: 800;
-        }
-
-            @media (min-width: 768px){
-                .btn.btn--main{
-                    width: 100%;
-                    width: auto !important;                }
-            }
-
-    .switchable__text h2{
-        font-size: 3em;
+    /*-----------------------------------
+            01 - BTN MAIN
+    -----------------------------------*/
+    .btn.btn--main{
+        min-width: 100%;
+        background-color: #f5d745;
     }
 
-    strong{
+    .bg--dark .btn--main {
+        font-size: 1.2em;
+        padding: .65em;
+        color: black;
+        text-transform: uppercase;
         font-weight: 800;
     }
 
-    .simple-list li{
-        padding: 0.1em 0 0.1em 1em;
-        margin: 1em 0;
-        line-height: 145%;
+        @media (min-width: 768px){
+            .btn.btn--main{
+                width: 100%;
+                width: auto !important;                }
+        }
+
+/*=========================================
+            07 - EFFECTS
+=========================================*/
+
+.blur-me{
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+
+/*=========================================
+            08 - SECTIONS
+=========================================*/
+
+    /*-----------------------------------
+            01 - NAV
+            [index.html] [rendezvenyek.html]
+    -----------------------------------*/
+
+    .nav-container{
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
     }
 
-        /*common items / TABLES*/
-        th, td{
-            font-size: 1.25em;        
+        .nav-container.nav-secondary{
+            padding: 6px 0;
+            background-color: #252525; 
+            border-bottom: 4px solid #f5d745;
         }
 
-        th span {
-            font-size: 0.8em;
-            opacity: .4;
-            font-weight: 400;
+    .hamburger-toggle i{
+        color: #f5d745;
+    }
+
+    .menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger{
+        color: white;
+    }
+
+    .menu-horizontal > li > a:hover,
+    .menu-horizontal > li > span:hover,
+    .menu-horizontal > li > .modal-instance > .modal-trigger:hover{
+        color: white;
+    }
+
+    .switch-lang-box{
+    padding: 1em;
+    position: absolute;
+    top: 3em;
+    right: 0;
+    width: 100%;
+    text-align: right;  
+    }  
+
+        /*Language selector*/
+
+        .switch-lang-container{
+            max-height: 25px;
+            padding: 1em .3em;
+            margin: 0;
+            display: inline-block;
+                
         }
+        
+            /*Media queries*/
+            @media (min-width: 1200px){
+                .switch-lang-box{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+                .switch-lang-container{
+                    padding: 0.45em;
+                }
+            }
+
+    .lang-flag{
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        overflow: hidden;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .lang-flag img{
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /*-----------------------------------
+            02 - HERO
+    -----------------------------------*/
+    .hero-wrapper{
+        position: relative;
+        padding-top: 30vh;
+        padding-bottom: 17em;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    
+    .hero-wrapper:before{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        display: block;
+        background: url("../img/hajo/kisfaludy_img_40-small.jpg") no-repeat center;
+        background-size: cover;
+        -webkit-filter: sepia(10%) grayscale(100%);
+                filter: sepia(10%) grayscale(100%);
+        z-index: -20;
+    }
+    
+    @media (min-width: 768px){
+        .hero-wrapper:before{
+            background: url("../img/hajo/kisfaludy_img_40-medium.jpg") no-repeat center;
+        background-size: cover;
+        }
+    }
+    
+    @media (min-width: 1200px){
+        .hero-wrapper:before{
+            background: url("../img/hajo/kisfaludy_img_40-big.jpg") no-repeat center;
+        background-size: cover;
+        }
+    }
+    
+    .hero-wrapper:after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        background-color: black;
+        opacity: .65;
+        z-index: -10;
+    }
+    
+    .hero-wrapper .filter {
+        content:"";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
+        opacity: 1;
+        z-index: -5;  
+    }
+    
+    .hero-background *{
+        -webkit-transform: skewY(0);
+            -ms-transform: skewY(0);
+                transform: skewY(0);
+    }
+    
+    .hero-wrapper h1,
+    .hero-wrapper p{
+        color: white;
+        text-shadow: 0px 3px 8px rgba(0, 0, 0, .45)
+    }
+    
+    .hero-wrapper h1{
+        font-size: 4em;
+        font-weight: 800;
+    }
+    
+    .hero-wrapper .btn.hero-CTA{
+        border: 1px white solid !important;
+        background-color: rgba(0, 0, 0, 0.3)
+    }
+    
+    .hero-wrapper .btn.hero-CTA .btn__text{
+        color: white !important;
+    }
+    
+    .hero-wrapper .btn.hero-CTA:hover .btn__text{
+        color: black !important;
+    }
+    
+    .hero-wrapper .btn.hero-CTA:hover{
+        border: 1px black solid !important;
+        background-color: #f5d745;
+    }
+    
+    .introduction--section{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+        @media (min-width: 768px){
+            .introduction--section{
+                padding-top: 3em;
+                padding-bottom: 3em;
+            }
+        }
+
+
+    /*-----------------------------------
+            03 - EVENTS SECTION
+            [rendezvenyek.html]
+    -----------------------------------*/
+
+    .event-description-container.selected{
+        display: flex;
+    }
+
+    .event-description-container{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .event-description-pic{
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        position: relative;
+        display: block;
+    }
+
+    .event-description-pic img{
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 100%;
+        height: auto;
+    }
+
+    .event-description-text{
+        padding: 16px 0;
+    }
+
+    .event-description-text > .event-title > h2{
+        font-size: 2em;
+        font-weight: bold;
+        padding-bottom: 12px;
+        margin: 0;
+    }
+
+    .event-description-text > p{
+        padding: 0;
+        margin: 0;
+    }
+
+
+        @media (min-width: 768){
+        }
+    
     
     /*cusotm boxes*/
     .boxed--style1{
@@ -614,89 +1114,10 @@ span.text--maincol strong{
         }
 
 
-    /*Effects*/
 
-    .blur-me{
-        filter: blur(5px);
-        -webkit-filter: blur(5px);
-    }
-    
-
-
-/*NAV*/
-.nav-container{
-    /*background-color: #212023;*/
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-}
-
-.hamburger-toggle i{
-    color: #f5d745;
-
-}
-
-.menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger{
-    color: white;
-}
-
-.menu-horizontal > li > a:hover,
-.menu-horizontal > li > span:hover,
-.menu-horizontal > li > .modal-instance > .modal-trigger:hover{
-    color: white;
-}
-
-.switch-lang-box{
- padding: 1em;
- position: absolute;
- top: 3em;
-right: 0;
- width: 100%;
- text-align: right;  
-}  
-
-
-.switch-lang-container{
-    max-height: 25px;
-    padding: 1em .3em;
-    margin: 0;
-    display: inline-block;
-        
-}
-
-    @media (min-width: 1200px){
-        .switch-lang-box{
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .switch-lang-container{
-            padding: 0.45em;
-        }
-    }
-
-.lang-flag{
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    overflow: hidden;
-    display: inline-block;
-    text-align: center;
-}
-
-.lang-flag img{
-    width: 100%;
-    height: 100%;
-}
 
 /*HEADER*/
-html{
-    scroll-behavior: smooth;
-}
+
 
 /*BODY*/
 
@@ -722,115 +1143,7 @@ html{
     color: black !important;
 }
 
-.hero-wrapper{
-    position: relative;
-    padding-top: 30vh;
-    padding-bottom: 17em;
-    min-height: 100vh;
-    overflow: hidden;
-}
 
-.hero-wrapper:before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    display: block;
-    background: url("../img/hajo/kisfaludy_img_40-small.jpg") no-repeat center;
-    background-size: cover;
-    -webkit-filter: sepia(10%) grayscale(100%);
-            filter: sepia(10%) grayscale(100%);
-    z-index: -20;
-}
-
-@media (min-width: 768px){
-    .hero-wrapper:before{
-        background: url("../img/hajo/kisfaludy_img_40-medium.jpg") no-repeat center;
-    background-size: cover;
-    }
-}
-
-@media (min-width: 1200px){
-    .hero-wrapper:before{
-        background: url("../img/hajo/kisfaludy_img_40-big.jpg") no-repeat center;
-    background-size: cover;
-    }
-}
-
-.hero-wrapper:after{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: block;
-    background-color: black;
-    opacity: .65;
-    z-index: -10;
-}
-
-.hero-wrapper .filter {
-    content:"";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: block;
-    background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
-    opacity: 1;
-    z-index: -5;  
-}
-
-.hero-background *{
-    -webkit-transform: skewY(0);
-        -ms-transform: skewY(0);
-            transform: skewY(0);
-}
-
-.hero-wrapper h1,
-.hero-wrapper p{
-    color: white;
-    text-shadow: 0px 3px 8px rgba(0, 0, 0, .45)
-}
-
-.hero-wrapper h1{
-    font-size: 4em;
-    font-weight: 800;
-}
-
-.hero-wrapper .btn.hero-CTA{
-    border: 1px white solid !important;
-    background-color: rgba(0, 0, 0, 0.3)
-}
-
-.hero-wrapper .btn.hero-CTA .btn__text{
-    color: white !important;
-}
-
-.hero-wrapper .btn.hero-CTA:hover .btn__text{
-    color: black !important;
-}
-
-.hero-wrapper .btn.hero-CTA:hover{
-    border: 1px black solid !important;
-    background-color: #f5d745;
-}
-
-.introduction--section{
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-@media (min-width: 768px){
-    .introduction--section{
-        padding-top: 3em;
-        padding-bottom: 3em;
-    }
-}
 
 
 .contact-form {
