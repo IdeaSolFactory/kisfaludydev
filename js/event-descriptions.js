@@ -10,6 +10,9 @@ function SelectCategory(){
     $("li[data-event]").click(function(){
 
         var btnData = $(this).data("event");
+
+        $("li[data-event]").removeClass("active");
+        $(this).addClass("active");
         $("li[data-event]").removeClass(classForShow);
         $(this).addClass(classForShow);               
         

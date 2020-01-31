@@ -35,7 +35,8 @@ TABLE OF CONTENTS
         01 - BTN MAIN
         -----------------------------
 07 ---- EFFECTS
-08 ---- SECTIONS --------------------
+08 ---- SITE IMAGES
+09 ---- SECTIONS --------------------
         01 - HEADER
              A - NAV
              B - HERO
@@ -509,6 +510,31 @@ span.text--maincol strong{
         width: 100%;    
     }
 
+    .section-image{
+        width:100%;
+        height: auto;
+        position: relative;
+    }
+
+    .section-image > img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .section-image::after{
+        content: "";
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }    
+
     @media (max-width: 768px){
         .image-side{
             min-height: 100vh;
@@ -525,7 +551,6 @@ span.text--maincol strong{
         padding-top: 3em;
         padding-bottom: 3em;
         position: relative;
-        overflow: hidden;
     }
 
     @media (min-width: 768px){
@@ -637,7 +662,8 @@ span.text--maincol strong{
         }
 
         .list.button-list.theme-dark > li:focus,
-        .list.button-list.theme-dark > li:hover{
+        .list.button-list.theme-dark > li:hover,
+        .list.button-list.theme-dark > li.active {
             background-color: #252525;
             color: #f5d745;
         }    
@@ -764,9 +790,11 @@ span.text--maincol strong{
         @media (min-width: 768px){
             .btn.btn--main{
                 width: 100%;
-                width: auto !important;                }
+                width: auto !important;
+            }
         }
 
+       
 /*=========================================
             07 - EFFECTS
 =========================================*/
@@ -778,7 +806,27 @@ span.text--maincol strong{
 
 
 /*=========================================
-            08 - SECTIONS
+            08 - SITE IMAGES
+=========================================*/
+
+
+@media (min-width: 768px){
+    .section-image::after{
+        display: block;
+    }
+
+
+    /* ---- RENDEZVÉNY OLDAL ---- */
+
+        .section-image.image-rendezveny-1::after{
+            background-image: url(../img/rendezveny_intro_01.jpg);
+        }
+    }
+
+        
+
+/*=========================================
+            09 - SECTIONS
 =========================================*/
 
     /*-----------------------------------
@@ -786,13 +834,24 @@ span.text--maincol strong{
             [index.html] [rendezvenyek.html]
     -----------------------------------*/
 
+    .nav--section{
+        padding: 0;
+        z-index: 1000;
+        min-height: 75px;
+    }
+
     .nav-container{
         background-color: transparent;
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        z-index: 100;
+        min-height: 75px;
+        z-index: 1000;
+        top:-50px;
+        transition: all .5s ease;
+    }
+
+    .nav-container.sticky{
+        position: fixed;
+        top: 0;        
     }
 
         .nav-container.nav-secondary{
@@ -800,6 +859,11 @@ span.text--maincol strong{
             background-color: #252525; 
             border-bottom: 4px solid #f5d745;
         }
+    
+    /* ---- LOGO ---- */
+    .nav-container .logo{
+        top: 10px;
+    }
 
     /* ---- Menu theme resets ---- */
     .menu-horizontal > li:not(:hover) > a{
@@ -824,6 +888,7 @@ span.text--maincol strong{
 
         .menu-horizontal .dropdown{
             position: relative;
+            z-index: 10000;
         }
 
         .menu-horizontal .dropdown > a::after{
@@ -1058,20 +1123,54 @@ span.text--maincol strong{
 
     .event-description-pic{
         width: 100%;
-        height: 320px;
+        height: 250px;
         overflow: hidden;
         position: relative;
         display: block;
     }
 
     .event-description-pic img{
-        position: absolute;
+        position: relative;
         display: block;
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         width: 100%;
         height: auto;
+    }
+
+    @media (min-width: 768px){
+        .event-description-pic{
+            height: 360px;
+        }
+
+        .event-description-pic::after{
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;            
+            background-size: cover;
+            background-position: center;
+        }
+
+        /*Event pics*/
+        .event-description-pic.eskuvo-pic::after{
+            background-image: url(../img/rendezveny_eskuvo_01.jpg);
+        }
+        .event-description-pic.szuletesnap-pic::after{
+            background-image: url(../img/rendezveny_szulinap_01.jpg);
+        }
+        .event-description-pic.ceges-pic::after{
+            background-image: url(../img/rendezveny_ceges_01.jpg);
+        }
+        .event-description-pic.reklam-pic::after{
+            background-image: url(../img/rendezveny_reklam_01.jpg);
+        }
+
+        
     }
 
     .event-description-text{
@@ -1102,6 +1201,19 @@ span.text--maincol strong{
         padding: 0 0 10px 0;
         margin: 0;
         font-weight: bold;
+    }
+
+    .event-details > h5{
+        padding: 0 0 6px 0;
+        margin: 0;
+    }
+
+    .event-details > p{
+        line-height: 1.6em;
+    }
+
+    .event-details > p:last-of-type{
+        margin-bottom: 10px;
     }
 
     .event-list{
