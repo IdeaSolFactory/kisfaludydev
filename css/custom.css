@@ -865,6 +865,12 @@ span.text--maincol strong{
         top: 10px;
     }
 
+    /* ---- General menu functions ---- */
+    .inactive{
+        pointer-events: none !important;
+        opacity: .4;
+    }
+
     /* ---- Menu theme resets ---- */
     .menu-horizontal > li:not(:hover) > a{
         opacity: .8;
