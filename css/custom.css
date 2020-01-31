@@ -28,6 +28,7 @@ TABLE OF CONTENTS
         06 - IMAGE, IMAGE POSITIONING
         07 - LISTS
         08 - TABLES
+        09 - ACHOR OFFSETS
         
 06 ---- BUTTONS
         -----------------------------
@@ -153,6 +154,13 @@ span.text--maincol strong{
     .switchable__text h2{
         font-size: 3em;
     }
+
+    .textsize-small     { font-size: .6em;  line-height: .8em;  }
+    .textsize-medium    { font-size: .85em;  line-height: 1.5em;}
+    .textsize-normal    { font-size: 1em;   line-height: 1.2em; }
+    .textsize-big       { font-size: 1.2em; line-height: 1.8em; }
+    .textsize-bigger    { font-size: 1.4em;  line-height: 2em;  }
+    .textsize-huge      { font-size: 2em; line-height: 2.2em;   }
 
      /*-----------------------------------
                 02 - TEXT WEIGHTS
@@ -517,12 +525,14 @@ span.text--maincol strong{
         padding-top: 3em;
         padding-bottom: 3em;
         position: relative;
+        overflow: hidden;
     }
 
     @media (min-width: 768px){
         [class*="--section"]{
             padding-top: 5em;
             padding-bottom: 5em;
+            
         }
     }
 
@@ -547,31 +557,51 @@ span.text--maincol strong{
         text-align: center;
     }
 
-        /*List style light*/
+    .list li > ul{
+        padding-left: 2em;
+    }
 
+        /*-----LIST STYLES------*/
+
+        /*LIGHT STYLE*/
 
         .list.list-style-light > li{
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            align-items: center;
-            width: 100%;
-            height: 100%;
+            padding: 0 0 0 20px;
+            position: relative;
         }
 
        .list.list-style-light > li:before{
             content: "";
             display: block;
+            position: absolute;
             width: 8px;
-            height: 16px;
+            height: 8px;
             background-color: #f5d745;
-            margin-right: 15px;
-           
+            top: .75em;
+            left: 0;
         }
 
-        .list.list-style-light > li > p{
-            display: inline-block;
-        }
+            /*LIGHT STYLE -- SUBLIST*/
+            .list.list-style-light .list-sublist{
+                padding: 0;
+            }
+
+            .list.list-style-light .list-sublist > li{
+                position: relative;
+                padding: 0 0 0 45px;
+            }
+            .list.list-style-light .list-sublist > li:before{
+                content: "";
+                display: block;
+                position: absolute;
+                top: .8em;
+                left: 0;
+                width: 25px;
+                height: 4px;
+                background-color: #252525;
+                opacity: .2;
+            }   
+
 
 
         /*Button list*/
@@ -634,6 +664,17 @@ span.text--maincol strong{
         opacity: .4;
         font-weight: 400;
     }
+
+
+    /*-----------------------------------
+                09 - ANCHOR OFFSETS
+    -----------------------------------*/
+    :target:before  { 
+        content: "";
+        display: block;
+        height: 100px;
+        margin: -100px 0 0;
+     }
 
 /*=========================================
             06 - BUTTONS
@@ -760,6 +801,11 @@ span.text--maincol strong{
             border-bottom: 4px solid #f5d745;
         }
 
+    /* ---- Menu theme resets ---- */
+    .menu-horizontal > li:not(:hover) > a{
+        opacity: .8;
+    }    
+
     .hamburger-toggle i{
         color: #f5d745;
     }
@@ -774,51 +820,111 @@ span.text--maincol strong{
         color: white;
     }
 
-    .switch-lang-box{
-    padding: 1em;
-    position: absolute;
-    top: 3em;
-    right: 0;
-    width: 100%;
-    text-align: right;  
-    }  
+        /* ---- Dropdown menu ---- */
 
-        /*Language selector*/
-
-        .switch-lang-container{
-            max-height: 25px;
-            padding: 1em .3em;
-            margin: 0;
-            display: inline-block;
-                
+        .menu-horizontal .dropdown{
+            position: relative;
         }
-        
-            /*Media queries*/
-            @media (min-width: 1200px){
-                .switch-lang-box{
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                }
 
-                .switch-lang-container{
-                    padding: 0.45em;
-                }
+        .menu-horizontal .dropdown > a::after{
+            font-family: stack-interface;
+            content: '\e80c';
+            transition: transform ease .2s;
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .menu-horizontal .dropdown:hover > a::after{
+            transform: rotate(90deg);
+        } 
+
+        .menu-horizontal .dropdown > a{
+            pointer-events: none;
+        }
+        .menu-horizontal .dropdown-content{
+            display: none;
+            position: relative;
+            z-index: initial;
+            background-color: transparent;
+            width: auto;
+        }
+
+        .menu-horizontal .dropdown-content > li{
+            display: block;
+            margin: 0 0 10px 0;
+            width: auto;
+        }
+
+        .menu-horizontal .dropdown-content > li:not(:first-of-type){
+            border-top: 1px solid #3c3a38;
+            padding-top: 5px;
+        }
+
+        .menu-horizontal .dropdown-content a{
+            text-decoration: none;
+            display: inline-block;
+            color: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+        }
+
+        .menu-horizontal .dropdown:active .dropdown-content,
+        .menu-horizontal .dropdown:focus .dropdown-content{
+            display: block;
+        }
+
+        .menu-horizontal .dropdown:hover .dropdown-content  {
+            display: block;
+        }
+
+            /* ---- Dropdown menu - LANG ---- */
+            .dropdown 
+            .lang-flag{
+                display: inline-block;
+                height: 20px;
+                width: 25px;
+                background-position: center;
+                background-size: cover;
+                vertical-align: middle;
+
             }
 
-    .lang-flag{
-        height: 30px;
-        width: 30px;
-        border-radius: 100%;
-        overflow: hidden;
-        display: inline-block;
-        text-align: center;
-    }
+            .lang-flag.eng{
+                background-image: url(../img/graphic_assets/flag_en.jpg);
+            }
 
-    .lang-flag img{
-        width: 100%;
-        height: 100%;
-    }
+            .lang-flag.de{
+                background-image: url(../img/graphic_assets/flag_de.jpg);
+            }
+
+        /* ---- Media queries ---- */
+        @media (min-width: 768px){
+
+            .menu-horizontal .dropdown-content{
+                display: none;
+                position: absolute;
+                z-index: 1;
+                background-color: #252525 ;
+                opacity: 0;
+                transition: all ease 0.2s;
+            }
+
+            .menu-horizontal .dropdown:hover .dropdown-content,
+            .menu-horizontal .dropdown--active .dropdown-content {
+                opacity: 1; 
+                transition: all ease 0.2s;              
+            }
+            
+            .menu-horizontal .dropdown-content a{
+                padding: 12px 16px;
+                text-decoration: none;
+                display: inline-block;
+            }
+        }
+
+
+   
 
 
     /*-----------------------------------
@@ -969,7 +1075,9 @@ span.text--maincol strong{
     }
 
     .event-description-text{
-        padding: 16px 0;
+        padding: 32px 0;
+        font-size: 1.2em;
+        line-height: 1.6em;;
     }
 
     .event-description-text > .event-title > h2{
@@ -984,8 +1092,32 @@ span.text--maincol strong{
         margin: 0;
     }
 
+    .event-details{
+        font-size: 1em;
+        line-height: 1.2em;
+        padding-top: 32px;
+    }
 
-        @media (min-width: 768){
+    .event-details > h4{
+        padding: 0 0 10px 0;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .event-list{
+        padding-top: 16px;
+    }
+
+    .event-list li > a{
+        color: unset;
+        text-decoration: none;
+    }
+
+
+        @media (min-width: 768px){
+            .event-list{
+                padding-top: 0;
+            }
         }
     
     

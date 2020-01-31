@@ -57,14 +57,7 @@
             <section class="bg--secondary">
                     <div class="nav-container nav-secondary">                        
                             
-                            <div class="switch-lang-box">                                                
-                                    <div class="switch-lang-container">
-                                            <a href="kisfaludy-cruise-ship.html" class="lang-flag"><img src="./img/graphic_assets/flag_en.jpg" alt="Switch to english icon" title="Switch to English version"></a>
-                                    </div>
-                                    <div class="switch-lang-container">
-                                            <a href="kisfaludy-kreuzfahrtschiff.html" class="lang-flag"><img src="./img/graphic_assets/flag_de.jpg" alt="Switch to english icon" title="Switch to English version"></a>
-                                    </div>                                               
-                            </div>
+                           
                             <div class="bar bar--sm visible-xs">
                                 <div class="container container-xl">
                                     <div class="row">
@@ -102,19 +95,20 @@
                                             <div class="bar__module">
                                                 <ul class="menu-horizontal text-left">
                                                     <li><a href="./index.html" title="Főoldal">Főoldal</a> </li>                                                    
-                                                    <li><a href="#rendezvenyek" title="Rendezvények">Rendezvények</a> </li>
-                                                    <li><a href="#foglalas" title="Foglalás">Foglalás</a> </li>
-                                                    <li><a href="#tortenelem">Történelmi áttekintő</a> </li>
+                                                    <li class="active"><a href="#rendezvenyek" title="Rendezvények">Rendezvények</a> </li>
+                                                    
                                                     <li><a href="./index.html#menetrendjegyarak">Menetrend és jegyárak</a> </li>
+                                                    <li class="dropdown"><a href="">Nyelv</a>
+                                                        <ul class="dropdown-content">
+                                                            <li><a href=""><span class="lang-flag eng"></span></a></li>
+                                                            <li><a href=""><span class="lang-flag de"></span></a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li><a class="btn btn--sm btn--primary type--uppercase" href="#kapcsolat">Kapcsolat</a></li>
                                                 </ul>
                                             </div>
-                                            <!--end module-->
-                                            <div class="bar__module">                                
-                                                <a class="btn btn--sm btn--primary type--uppercase" href="#kapcsolat">
-                                                    Kapcsolat
-                                                </a>
-                                            </div>
-                                            <!--end module-->                                            
+                                                                                     
                                            
                                             
                                         </div>
@@ -172,6 +166,7 @@
                            <div class="col-12 col-md-6">
 
                                 <!--Esküvő-->
+                                <a id="eskuvo" href=""></a>
                                 <div data-event="eskuvo" class="event-description-container selected">
                                     <div class="event-description-pic">
                                         <img src="https://www.stevensegallery.com/630/360" alt="">
@@ -186,7 +181,7 @@
 
                                         <div class="event-details">
 
-                                            <h4 class="font-weight-bold pt-3 mb-2">Fontos tudnivalók:</h4>
+                                            <h4>Fontos tudnivalók:</h4>
                                             <ul class="list list-style-light list-nopadding">
                                                 <li>A házasságkötést a jegyzőkönyv felvételétől számított 31. napra lehet kitűzni legkorábban (indokolt esetben korábban is lehetséges)</li>
                                                 <li>Szertartás díja: 100.000 Ft, melyet a Balatonfüredi Anyakönyvi Hivatalnak kell befizetni.</li>
@@ -194,7 +189,7 @@
                                                 <li>Kérhetitek hivatásos szertartásvezető közreműködését is egy meghittebb, könnyedebb ceremónia esetén</li>
                                                 <li>Maximális létszám: 100 fő   </li>
                                                 <li><b>A ceremónia időtartama:</b>
-                                                    <ul class="pl-4">
+                                                    <ul class="list-sublist">
                                                         <li>1 óra (házasságkötés, gratulációk)</li>
                                                         <li>2 óra: (házasságkötés, állófogadás)</li>
                                                     </ul>
@@ -207,8 +202,10 @@
                                       
                                     </div>
                                 </div>
-
+                                
                                 <!--Céges-->
+                                
+                                <a id="ceges"></a>
                                 <div data-event="ceges" class="event-description-container ">
                                     <div class="event-description-pic">
                                         <img src="https://www.stevensegallery.com/300/360" alt="">
@@ -223,6 +220,7 @@
                                 </div>
 
                                 <!--Születésnapok, családi rendezvények-->
+                                <a id="szuletesnap"></a>
                                 <div data-event="szuletesnap" class="event-description-container ">
                                     <div class="event-description-pic">
                                         <img src="https://placekitten.com/320/400" alt="">
@@ -237,6 +235,7 @@
                                 </div>
 
                                 <!--Borest-->
+                                <a id="borest"></a>
                                 <div data-event="borest" class="event-description-container ">
                                     <div class="event-description-pic">
                                         <img src="https://placekitten.com/600/800" alt="">
@@ -251,6 +250,7 @@
                                 </div>
 
                                 <!--Sörkóstoló-->
+                                <a id="sorkostolo"></a>
                                 <div data-event="sorkostolo" class="event-description-container ">
                                     <div class="event-description-pic">
                                         <img src="https://placekitten.com/360/400" alt="">
@@ -265,6 +265,8 @@
                                 </div>
 
                                 <!--Vacsoraest-->
+                                
+                                <a id="vacsoraest"></a>
                                 <div data-event="vacsoraest" class="event-description-container ">
                                     <div class="event-description-pic">
                                         <img src="https://placekitten.com/420/400" alt="">
@@ -279,11 +281,12 @@
                                 </div>
 
                                 <!--Reklám- és fotóhelyszín-->
+                                <a id="reklamhelyszin"></a>
                                 <div data-event="reklam" class="event-description-container ">
                                     <div class="event-description-pic">
                                         <img src="https://placekitten.com/350/400" alt="">
                                     </div>
-                                    <div class="event-description-text">
+                                    <div class="event-description-text">                                        
                                         <div class="event-title decorline-thin">
                                             <h2>Reklám- és fotóhelyszín</h2>
                                         </div>
@@ -296,14 +299,14 @@
 
                            <div class="col-12 col-md-6 col-lg-5">
                                 
-                                <ul class="event-list list button-list text-center theme-dark pt-0">
-                                    <li data-event="eskuvo" tabindex="0">Esküvői ceremónia</li>
-                                    <li data-event="ceges" tabindex="1">Céges rendezvények</li>
-                                    <li data-event="szuletesnap" tabindex="2">Születésnapok, családi rendezvények</li>
-                                    <li data-event="borest" tabindex="3">Borest</li>
-                                    <li data-event="sorkostolo" tabindex="4">Sörkóstoló</li>
-                                    <li data-event="vacsoraest" tabindex="5">Vacsoraest</li>
-                                    <li data-event="reklam" tabindex="6">Reklám- és fotóhelyszín</li>
+                                <ul class="event-list list button-list text-center theme-dark">
+                                    <li data-event="eskuvo" tabindex="0"><a href="#eskuvo">Esküvői ceremónia</a></li>
+                                    <li data-event="ceges" tabindex="1"><a href="#ceges">Céges rendezvények</a></li>
+                                    <li data-event="szuletesnap" tabindex="2"><a href="#szuletesnap">Születésnapok, családi rendezvények</a></li>
+                                    <li data-event="borest" tabindex="3"><a href="#borest">Borest</a></li>
+                                    <li data-event="sorkostolo" tabindex="4"><a href="#sorkostolo">Sörkóstoló</a></li>
+                                    <li data-event="vacsoraest" tabindex="5"><a href="#vacsoraest">Vacsoraest</a></li>
+                                    <li data-event="reklam" tabindex="6"><a href="#reklamhelyszin">Reklám- és fotóhelyszín</a></li>
                                 </ul>
 
                             </div>
