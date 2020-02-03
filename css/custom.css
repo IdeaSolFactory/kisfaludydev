@@ -991,23 +991,30 @@ th span {
   top: 0;
   right: 0;
   display: block;
-  background: url("../img/hajo/kisfaludy_img_40-small.jpg") no-repeat center;
+  background: url("../img/hero-pic-small.jpg") no-repeat center;
   background-size: cover;
   -webkit-filter: sepia(10%) grayscale(100%);
   filter: sepia(10%) grayscale(100%);
   z-index: -20;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .hero-wrapper:before {
-    background: url("../img/hajo/kisfaludy_img_40-medium.jpg") no-repeat center;
+    background: url("../img/hero-pic-medium.jpg") no-repeat center;
     background-size: cover;
   }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .hero-wrapper:before {
-    background: url("../img/hajo/kisfaludy_img_40-big.jpg") no-repeat center;
+    background: url("../img/hero-pic.jpg") no-repeat center;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .hero-wrapper:before {
+    background: url("../img/hero-pic-xl.jpg") no-repeat center;
     background-size: cover;
   }
 }
