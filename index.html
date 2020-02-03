@@ -37,7 +37,7 @@
         <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="css/custom.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -65,17 +65,10 @@
             <section class="hero-wrapper" >
                 <div class="filter"></div>                
 
-                    <div class="nav-container ">                        
-                            
-                            <div class="switch-lang-box">                                                
-                                    <div class="switch-lang-container">
-                                            <a href="kisfaludy-cruise-ship.html" class="lang-flag"><img src="./img/graphic_assets/flag_en.jpg" alt="Switch to english icon" title="Switch to English version"></a>
-                                    </div>
-                                    <div class="switch-lang-container">
-                                            <a href="kisfaludy-kreuzfahrtschiff.html" class="lang-flag"><img src="./img/graphic_assets/flag_de.jpg" alt="Switch to english icon" title="Switch to English version"></a>
-                                    </div>                                               
-                            </div>
-                            <div class="bar bar--sm visible-xs">
+                <section class="nav--section nav-absolute-top">
+                    <div class="nav-container nav-primary">                            
+                           
+                            <div class="bar bar--md visible-xs">
                                 <div class="container container-xl">
                                     <div class="row">
                                         
@@ -96,7 +89,7 @@
                                 <!--end of container-->
                             </div>
                             <!--end bar-->
-                            <nav id="menu1" class="bar bar--sm bar-1 hidden-xs ">
+                            <nav id="menu1" class="bar bar--sm bar-1 hidden-xs">
                                 <div class="container container-xl">
                                     <div class="row">
                                         <div class="col-lg-3 col-md-2 hidden-xs">
@@ -112,18 +105,22 @@
                                             <div class="bar__module">
                                                 <ul class="menu-horizontal text-left">
                                                     <li><a href="#bemutatkozas" title="Bemutatkozás">Bemutatkozás</a> </li>
-                                                    <li><a href="#terkep" title="Hol találsz minket?">Hol találsz minket?</a> </li>
-                                                    <li><a href="rendezvenyek.html" title="Egyedi Rendezvények">Egyedi rendezvények</a> </li>
+                                                    <li><a href="#terkep" title="Hol találsz minket?">Hol találsz minket?</a> </li>                                                      
+                                                    <li class="active"><a href="./rendezvenyek.html" title="Rendezvények">Rendezvények</a> </li>
+                                                    
+                                                    <li><a href="#menetrendjegyarak">Menetrend és jegyárak</a> </li>
                                                     <li><a href="#gyik">Egyéb tudnivalók</a> </li>
+                                                    <li class="dropdown"><a href="">Nyelv</a>
+                                                        <ul class="dropdown-content">
+                                                            <li><a href="./kisfaludy-cruise-ship.html"><span class="lang-flag eng"></span></a></li>
+                                                            <li><a href="./kisfaludy-kreuzfahrtschiff.html"><span class="lang-flag de"></span></a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li><a class="btn btn--sm btn--primary type--uppercase" href="#kapcsolat">Kapcsolat</a></li>
                                                 </ul>
                                             </div>
-                                            <!--end module-->
-                                            <div class="bar__module">                                
-                                                <a class="btn btn--sm btn--primary type--uppercase" href="#kapcsolat">
-                                                    Kapcsolat
-                                                </a>
-                                            </div>
-                                            <!--end module-->                                            
+                                                                                     
                                            
                                             
                                         </div>
@@ -134,6 +131,13 @@
                             </nav>
                             <!--end bar-->
                         </div>
+                <div class="container container-xl">
+                                      
+                    <div class="row align-items-center justify-content-center ">
+                                            
+                    </div>
+                </div>
+            </section>           
                 <div class="container container-xl">
                                       
                     <div class="row align-items-center justify-content-center ">
