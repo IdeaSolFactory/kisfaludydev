@@ -831,18 +831,16 @@ th span {
   border-bottom: 4px solid #e7cc5e;
 }
 
-.nav-container.sticky {
+.nav--section .nav-container.sticky {
   position: fixed;
   top: 0;
 }
 
-/* ---- LOGO ---- */
-.nav-container .logo {
+.nav--section .nav-container .logo {
   top: 10px;
 }
 
-/* ---- General menu functions ---- */
-.inactive {
+.nav--section .nav-container .inactive {
   pointer-events: none !important;
   opacity: .4;
 }
