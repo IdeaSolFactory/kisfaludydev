@@ -854,6 +854,16 @@ th span {
   color: #e7cc5e;
 }
 
+.menu-horizontal > li {
+  padding: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .menu-horizontal > li {
+    padding: unset;
+  }
+}
+
 .menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger {
   color: white;
 }
