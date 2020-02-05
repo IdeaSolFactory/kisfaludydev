@@ -816,17 +816,45 @@ span.text--maincol strong{
 
 
 @media (min-width: 768px){
+    
     .section-image::after{
         display: block;
     }
+}
 
+/* ---- RENDEZVÉNY OLDAL ---- */
 
-    /* ---- RENDEZVÉNY OLDAL ---- */
+        #kisfaludy-schematics{
+            .schematic-small-text{
+                font-size: 30px;
+                font-family: Roboto, sans-serif;
+                padding: 15px;
+            }
+
+            #orr{
+                transition: ease-in-out .3s all;
+                transform-origin: center;
+                &:hover{
+                    transform: scale(1.2);
+
+                    rect{
+                        fill: color(primary) !important;
+                    }
+                }
+            }
+        }
+        
+        
+    
+@media (min-width: 768px){
 
         .section-image.image-rendezveny-1::after{
             background-image: url(../img/rendezveny_intro_01.jpg);
         }
-    }
+}
+
+
+
 
         
 
@@ -1273,6 +1301,45 @@ span.text--maincol strong{
                 padding-top: 0;
             }
         }
+
+    /*-----------------------------------
+            03 - EVENTS SECTION
+            [rendezvenyek.html]
+    -----------------------------------*/
+
+    .seats--section{
+
+        .seats-section-description{
+            font-size: 1.2em;
+            line-height: 1.6em;
+
+            .seats-section__title{
+                > h2{
+                    margin: 0;
+                    font-weight: bold;
+                }
+            }
+
+            .seats-section__subtext{               
+                font-size: 1em;
+               
+                > h4{
+                    font-weight: bold;
+                    margin: 0;
+                    padding: 0 0 10px 0;
+                }
+            }
+        }
+
+        @media (min-width: 768px){
+            .seats-section__subtext{
+                padding-left: 120px;
+            }
+        }
+            
+            
+        
+    }
     
     
     /*cusotm boxes*/
