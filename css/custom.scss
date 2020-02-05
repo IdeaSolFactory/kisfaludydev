@@ -1,6 +1,7 @@
 // IMPORTS
 @import 'colors';
 @import 'functions';
+@import 'sizes';
 
 /*
 ===========================================
@@ -867,34 +868,54 @@ span.text--maincol strong{
                 background-color: color(dark); 
                 border-bottom: 4px solid color(primary);
             }
+
+            &.sticky{
+                position: fixed;
+                top: 0;
+            }
+            
+            // --- LOGO --- //
+            .logo {
+            top: 10px;
+            }
+
+
+            // --- GENERIC MENU FUNCTIONS --- /
+            .inactive{
+                pointer-events: none !important;
+                opacity: .4;
+            }
+        }
+    }
+        
+
+    /* ---- Menu theme resets ---- */
+    .menu-horizontal{
+        >li{
+            &:not(:hover){
+                > a{
+                    opacity: .8;
+                }
+            }
         }
     }
 
-    .nav-container.sticky{
-        position: fixed;
-        top: 0;        
+    .hamburger-toggle{
+        i{
+            color: color(primary);
+        }
     }
 
-        
-    
-    /* ---- LOGO ---- */
-    .nav-container .logo{
-        top: 10px;
-    }
+    .menu-horizontal{
+        > li{
+            padding: 10px 0;
+        }
 
-    /* ---- General menu functions ---- */
-    .inactive{
-        pointer-events: none !important;
-        opacity: .4;
-    }
-
-    /* ---- Menu theme resets ---- */
-    .menu-horizontal > li:not(:hover) > a{
-        opacity: .8;
-    }    
-
-    .hamburger-toggle i{
-        color: color(primary);
+        @media (min-width: 768px) {
+            > li{
+                padding: unset;
+            }
+        }
     }
 
     .menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger{
