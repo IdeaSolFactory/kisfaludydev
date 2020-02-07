@@ -17,7 +17,8 @@ TABLE OF CONTENTS
 03 ---- TEXTS-----------------------
         01 - TEXT SIZES
         02 - TEXT WEIGHTS
-        03 - TEXT DECORATIONS
+        03 - TEXT STYLES
+        04 - TEXT DECORATIONS
         ----------------------------
 04 ---- BACKGROUNDS
 05 ---- GENERAL FORMATTING----------
@@ -51,6 +52,7 @@ TABLE OF CONTENTS
 html,
 body {
   height: 100%;
+  font-size: 14px;
 }
 
 table, tr, td {
@@ -78,6 +80,114 @@ section.bg--secondary:not(.imagebg) + section:not(.imagebg):not([class*='bg-']) 
   .container-xl {
     width: 100%;
     max-width: 1400px;
+  }
+}
+
+/*=========================================
+            01 - MARGINS / PADDINGS
+=========================================*/
+.py-6 {
+  padding-top: 6em !important;
+  padding-bottom: 6em !important;
+}
+
+.py-7 {
+  padding-top: 7em !important;
+  padding-bottom: 7em !important;
+}
+
+.py-8 {
+  padding-top: 8em !important;
+  padding-bottom: 8em !important;
+}
+
+.pt-6 {
+  padding-top: 6em !important;
+}
+
+.pt-7 {
+  padding-top: 7em !important;
+}
+
+.pt-8 {
+  padding-top: 8em !important;
+}
+
+.pb-6 {
+  padding-bottom: 6em !important;
+}
+
+.pb-7 {
+  padding-bottom: 7em !important;
+}
+
+.pb-8 {
+  padding-bottom: 8em !important;
+}
+
+@media (min-width: 768px) {
+  .py-md-6 {
+    padding-top: 6em !important;
+    padding-bottom: 6em !important;
+  }
+  .py-md-7 {
+    padding-top: 7em !important;
+    padding-bottom: 7em !important;
+  }
+  .py-md-8 {
+    padding-top: 8em !important;
+    padding-bottom: 8em !important;
+  }
+  .pt-md-6 {
+    padding-top: 6em !important;
+  }
+  .pt-md-7 {
+    padding-top: 7em !important;
+  }
+  .pt-md-8 {
+    padding-top: 8em !important;
+  }
+  .pb-md-6 {
+    padding-bottom: 6em !important;
+  }
+  .pb-md-7 {
+    padding-bottom: 7em !important;
+  }
+  .pb-md-8 {
+    padding-bottom: 8em !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .py-lg-6 {
+    padding-top: 6em !important;
+    padding-bottom: 6em !important;
+  }
+  .py-lg-7 {
+    padding-top: 7em !important;
+    padding-bottom: 7em !important;
+  }
+  .py-lg-8 {
+    padding-top: 8em !important;
+    padding-bottom: 8em !important;
+  }
+  .pt-lg-6 {
+    padding-top: 6em !important;
+  }
+  .pt-lg-7 {
+    padding-top: 7em !important;
+  }
+  .pt-lg-8 {
+    padding-top: 8em !important;
+  }
+  .pb-lg-6 {
+    padding-bottom: 6em !important;
+  }
+  .pb-lg-7 {
+    padding-bottom: 7em !important;
+  }
+  .pb-lg-8 {
+    padding-bottom: 8em !important;
   }
 }
 
@@ -193,53 +303,198 @@ strong {
 }
 
 /*-----------------------------------
-                03 - TEXT DECORATIONS
+                03 - TEXT STYLES
     -----------------------------------*/
-[class*="decorline-"] {
+.section-text,
+.subsection-text {
+  line-height: 1.6em;
+  font-size: 1.2rem;
+}
+
+.section-text:not(:first-of-type),
+.subsection-text:not(:first-of-type) {
+  padding: 16px 0;
+}
+
+.section-text .section-title,
+.subsection-text .section-title {
+  display: block;
+  font-size: 1em;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.section-text .section-title[class*="decorline-"],
+.subsection-text .section-title[class*="decorline-"] {
   position: relative;
-  display: inline-block !important;
-  padding-bottom: 12px;
   width: 100%;
 }
 
-[class*="decorline-"]::after {
+.section-text .section-title[class*="decorline-"]::after,
+.subsection-text .section-title[class*="decorline-"]::after {
   content: "";
   display: block;
   bottom: 0;
-  left: 0;
 }
 
-.decorline-main::after {
-  width: 40px;
+.section-text .section-title.decorline-primary,
+.subsection-text .section-title.decorline-primary {
+  margin: 0;
+}
+
+.section-text .section-title.decorline-primary::after,
+.subsection-text .section-title.decorline-primary::after {
+  width: 46px;
   height: 6px;
   background-color: #e7cc5e;
+  margin: 16px 0;
 }
 
-.decorline-thin::after {
+.section-text .section-title.decorline-thin::after,
+.subsection-text .section-title.decorline-thin::after {
   width: 100%;
   height: 1px;
   background-color: #252525;
+  margin: 16px 0;
 }
 
-[class*="decorline-"] > h1,
-[class*="decorline-"] > h2,
-[class*="decorline-"] > h3,
-[class*="decorline-"] > h4,
-[class*="decorline-"] > h5,
-[class*="decorline-"] > h6,
-[class*="decorline-"] > p {
-  padding-bottom: inherit !important;
+.section-text .section-title > h1, .section-text .section-title h2, .section-text .section-title h3, .section-text .section-title h4, .section-text .section-title h5, .section-text .section-title h6,
+.subsection-text .section-title > h1,
+.subsection-text .section-title h2,
+.subsection-text .section-title h3,
+.subsection-text .section-title h4,
+.subsection-text .section-title h5,
+.subsection-text .section-title h6 {
+  font-weight: bold;
+  line-height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.decorline-main-small::after {
-  content: "";
+.section-text .section-title > h1,
+.subsection-text .section-title > h1 {
+  font-size: 4em;
+}
+
+.section-text .section-title > h2,
+.subsection-text .section-title > h2 {
+  font-size: 1.8em;
+}
+
+.section-text .section-title > h3,
+.subsection-text .section-title > h3 {
+  font-size: 1.4em;
+}
+
+.section-text .section-title > h4,
+.subsection-text .section-title > h4 {
+  font-size: 1em;
+}
+
+.section-text .section-title > h5,
+.subsection-text .section-title > h5 {
+  font-size: 0.8em;
+}
+
+.section-text .section-title > h6,
+.subsection-text .section-title > h6 {
+  font-size: 0.65em;
+}
+
+.section-text p,
+.subsection-text p {
+  font-size: inherit;
+  line-height: 1.8em;
+  margin: 0;
+}
+
+.section-text p:not(:last-of-type),
+.subsection-text p:not(:last-of-type) {
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+.section-text p + ul,
+.subsection-text p + ul {
+  padding-top: 16px;
+}
+
+.section-text ul,
+.subsection-text ul {
+  width: 100%;
   display: block;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 6px;
 }
 
+.section-text ul:not(:last-child),
+.subsection-text ul:not(:last-child) {
+  padding-bottom: 16px;
+}
+
+.section-text ul:not(:first-of-type),
+.subsection-text ul:not(:first-of-type) {
+  padding-bottom: 16px;
+}
+
+.section-text .subsection-text .section-title,
+.subsection-text .subsection-text .section-title {
+  padding-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .section-text .subsection-text.indented-medium,
+  .subsection-text .subsection-text.indented-medium {
+    padding-left: 64px;
+  }
+}
+
+/*-----------------------------------
+                04 - TEXT DECORATIONS
+    -----------------------------------*/
+/*[class*="decorline-"]{
+        position: relative;
+        display: inline-block !important;
+        padding-bottom: 12px;
+        width: 100%;
+    }
+
+    [class*="decorline-"]::after{
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+    }
+
+    .decorline-main::after{
+        width: 40px;
+        height: 6px;
+        background-color: color(primary);
+    }
+
+    .decorline-thin::after{
+        width: 100%;
+        height: 1px;
+        background-color: #252525;
+    }
+    
+
+    [class*="decorline-"] > h1,
+    [class*="decorline-"] > h2,
+    [class*="decorline-"] > h3,
+    [class*="decorline-"] > h4,
+    [class*="decorline-"] > h5,
+    [class*="decorline-"] > h6,
+    [class*="decorline-"] > p{
+        padding-bottom: inherit !important;
+    }
+
+    .decorline-main-small::after{
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 6px;
+    }*/
 /*=========================================
             04 - BACKGROUNDS
 =========================================*/
@@ -296,114 +551,6 @@ html {
   -webkit-filter: FlipV;
   filter: FlipV;
   -ms-filter: "FlipV";
-}
-
-/*-----------------------------------
-                03 - PADDINGS
-    -----------------------------------*/
-.py-6 {
-  padding-top: 6em !important;
-  padding-bottom: 6em !important;
-}
-
-.py-7 {
-  padding-top: 7em !important;
-  padding-bottom: 7em !important;
-}
-
-.py-8 {
-  padding-top: 8em !important;
-  padding-bottom: 8em !important;
-}
-
-.pt-6 {
-  padding-top: 6em !important;
-}
-
-.pt-7 {
-  padding-top: 7em !important;
-}
-
-.pt-8 {
-  padding-top: 8em !important;
-}
-
-.pb-6 {
-  padding-bottom: 6em !important;
-}
-
-.pb-7 {
-  padding-bottom: 7em !important;
-}
-
-.pb-8 {
-  padding-bottom: 8em !important;
-}
-
-@media (min-width: 768px) {
-  .py-md-6 {
-    padding-top: 6em !important;
-    padding-bottom: 6em !important;
-  }
-  .py-md-7 {
-    padding-top: 7em !important;
-    padding-bottom: 7em !important;
-  }
-  .py-md-8 {
-    padding-top: 8em !important;
-    padding-bottom: 8em !important;
-  }
-  .pt-md-6 {
-    padding-top: 6em !important;
-  }
-  .pt-md-7 {
-    padding-top: 7em !important;
-  }
-  .pt-md-8 {
-    padding-top: 8em !important;
-  }
-  .pb-md-6 {
-    padding-bottom: 6em !important;
-  }
-  .pb-md-7 {
-    padding-bottom: 7em !important;
-  }
-  .pb-md-8 {
-    padding-bottom: 8em !important;
-  }
-}
-
-@media (min-width: 1200px) {
-  .py-lg-6 {
-    padding-top: 6em !important;
-    padding-bottom: 6em !important;
-  }
-  .py-lg-7 {
-    padding-top: 7em !important;
-    padding-bottom: 7em !important;
-  }
-  .py-lg-8 {
-    padding-top: 8em !important;
-    padding-bottom: 8em !important;
-  }
-  .pt-lg-6 {
-    padding-top: 6em !important;
-  }
-  .pt-lg-7 {
-    padding-top: 7em !important;
-  }
-  .pt-lg-8 {
-    padding-top: 8em !important;
-  }
-  .pb-lg-6 {
-    padding-bottom: 6em !important;
-  }
-  .pb-lg-7 {
-    padding-bottom: 7em !important;
-  }
-  .pb-lg-8 {
-    padding-bottom: 8em !important;
-  }
 }
 
 /*-----------------------------------
@@ -556,63 +703,39 @@ hr.short {
     -----------------------------------*/
 .list {
   display: block;
-  padding: 12px 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.list-nopadding {
-  padding: 0 !important;
+.list:not(:first-of-type) {
+  padding-bottom: 16px;
 }
 
 .list > li:not(:first-of-type) {
-  padding-top: 6px;
+  padding-top: 12px;
 }
 
-.list > li.text-center {
-  text-align: center;
-}
-
-.list li > ul {
-  padding-left: 2em;
+@media (min-width: 768px) {
+  .list .list {
+    padding-left: 16px;
+  }
 }
 
 /*-----LIST STYLES------*/
 /*LIGHT STYLE*/
-.list.list-style-light > li {
-  padding: 0 0 0 20px;
-  position: relative;
+.list.list-style-light > li * {
+  vertical-align: middle;
+  display: inline-block;
 }
 
-.list.list-style-light > li:before {
+.list.list-style-light > li::before {
   content: "";
-  display: block;
-  position: absolute;
+  display: inline-block;
   width: 8px;
   height: 8px;
   background-color: #e7cc5e;
-  top: .75em;
-  left: 0;
-}
-
-/*LIGHT STYLE -- SUBLIST*/
-.list.list-style-light .list-sublist {
-  padding: 0;
-}
-
-.list.list-style-light .list-sublist > li {
-  position: relative;
-  padding: 0 0 0 45px;
-}
-
-.list.list-style-light .list-sublist > li:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: .8em;
-  left: 0;
-  width: 25px;
-  height: 4px;
-  background-color: #252525;
-  opacity: .2;
+  margin-right: 12px;
 }
 
 /*Button list*/
@@ -630,14 +753,8 @@ hr.short {
   color: #212023;
 }
 
-@media (min-width: 768px) {
-  .list {
-    padding: 12px;
-  }
-}
-
-.list.button-list > li:not(:first-of-type) {
-  margin-top: 12px;
+.list.button-list > li:not(:last-of-type) {
+  margin-bottom: 16px;
 }
 
 .list.button-list > li:focus,
@@ -788,26 +905,24 @@ th span {
 }
 
 /* ---- RENDEZVÉNY OLDAL ---- */
-#kisfaludy-schematics .schematic-small-text {
-  font-size: 30px;
-  font-family: Roboto, sans-serif;
-  padding: 15px;
+.schematics-wrapper object {
+  max-height: 760px;
 }
 
-#kisfaludy-schematics #orr {
-  -webkit-transition: ease-in-out .3s all;
-  transition: ease-in-out .3s all;
-  -webkit-transform-origin: center;
-          transform-origin: center;
+#kisfaludy-schematics .animate {
+  -webkit-transition: ease .25s transform;
+  transition: ease .25s transform;
+  -webkit-transform-origin: 25%;
+          transform-origin: 25%;
 }
 
-#kisfaludy-schematics #orr:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+#kisfaludy-schematics .animate:hover {
+  -webkit-transform: translateY(-25px) translateX(12px);
+          transform: translateY(-25px) translateX(12px);
 }
 
-#kisfaludy-schematics #orr:hover rect {
-  fill: #e7cc5e !important;
+#kisfaludy-schematics .animate:hover .bckgrnd {
+  stroke-width: 2px;
 }
 
 @media (min-width: 768px) {
@@ -1149,6 +1264,7 @@ th span {
   overflow: hidden;
   position: relative;
   display: block;
+  margin-bottom: 16px;
 }
 
 .event-description-pic img {
@@ -1254,26 +1370,6 @@ th span {
             03 - EVENTS SECTION
             [rendezvenyek.html]
     -----------------------------------*/
-.seats--section .seats-section-description {
-  font-size: 1.2em;
-  line-height: 1.6em;
-}
-
-.seats--section .seats-section-description .seats-section__title > h2 {
-  margin: 0;
-  font-weight: bold;
-}
-
-.seats--section .seats-section-description .seats-section__subtext {
-  font-size: 1em;
-}
-
-.seats--section .seats-section-description .seats-section__subtext > h4 {
-  font-weight: bold;
-  margin: 0;
-  padding: 0 0 10px 0;
-}
-
 @media (min-width: 768px) {
   .seats--section .seats-section__subtext {
     padding-left: 120px;

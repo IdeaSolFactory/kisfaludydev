@@ -3,6 +3,8 @@
 @import 'functions';
 @import 'sizes';
 
+
+
 /*
 ===========================================
 TITLE:      Kisfaludy style
@@ -21,7 +23,8 @@ TABLE OF CONTENTS
 03 ---- TEXTS-----------------------
         01 - TEXT SIZES
         02 - TEXT WEIGHTS
-        03 - TEXT DECORATIONS
+        03 - TEXT STYLES
+        04 - TEXT DECORATIONS
         ----------------------------
 04 ---- BACKGROUNDS
 05 ---- GENERAL FORMATTING----------
@@ -59,6 +62,7 @@ TABLE OF CONTENTS
 html,
 body {
     height: 100%;
+    font-size: $fontsize-base;
 }
 
 table, tr, td{
@@ -91,206 +95,45 @@ section.bg--secondary:not(.imagebg) + section:not(.imagebg):not([class*='bg-']) 
     }
 
 /*=========================================
-            01 - COLORS
+            01 - MARGINS / PADDINGS
 =========================================*/
-
-.textcol-main   { color: color(primary) !important; }
-.textcol-dark   { color: color(dark-accent) !important; }
-.textcol-darker { color: color(dark) !important; }
-
-.text--maincol,
-span.text--maincol strong{
-    color: color(primary) !important;
-}
-
-.bg--maincol,
-.boxed.bg--maincol,
-.boxed.boxed--border.bg-maincol{
-    background-color: color(primary);
-}
-
-.bg--secondarycol,
-.boxed.bg--secondarycol,
-.boxed.boxed--border.bg-secondarycol{
-    background-color: color(dark);
-}
-
-.boxed.boxed--border.border--main{
-    border: 1px solid color(primary);
-}
-
-.boxed.boxed--border.border--secondary {
-    border: 1px solid color(dark-accent);
-}
+    @mixin nomargin     { margin: 0; }
+    @mixin nopadding    { padding: 0; }
+    @mixin nogutters    { padding: 0; margin: 0; }
 
 
-/*=========================================
-            02 - IMAGES
-=========================================*/
+    // PADDINGS - VERTICAL
+    @mixin padding-v-tiny       { padding: $space-tiny 0; }    
+    @mixin padding-v-smaller    { padding: $space-smaller 0; }
+    @mixin padding-v-small      { padding: $space-small 0; }
+    @mixin padding-v-medium     { padding: $space-medium 0; }
+    @mixin padding-v-big        { padding: $space-big 0; }
+    @mixin padding-v-huge       { padding: $space-huge 0; }
 
-.fillimage{
-   width: 100%;
-   height: 100%;
-   overflow: hidden;   
-}
+    @mixin padding-b-medium     { padding-bottom: $space-medium; }
+    @mixin padding-t-small      { padding-top: $space-small; }
+    @mixin padding-t-medium     { padding-top: $space-medium; }
 
-.fillimage img{
-    -o-object-fit: cover;
-       object-fit: cover;
-    min-height: 100%;
-}
-
-
-/*=========================================
-            03 - TEXTS
-=========================================*/
-
-    /*-----------------------------------
-                01 - TEXT SIZES
-    -----------------------------------*/
-    .text-xs,
-    p.text-xs{
-        font-size: .8em !important;
-    }
-
-    .type--fine-print{
-        line-height: 1.8em;
-    }
-
-    .switchable__text h2{
-        font-size: 3em;
-    }
-
-    .textsize-small     { font-size: .6em;  line-height: .8em;  }
-    .textsize-medium    { font-size: .85em;  line-height: 1.5em;}
-    .textsize-normal    { font-size: 1em;   line-height: 1.2em; }
-    .textsize-big       { font-size: 1.2em; line-height: 1.8em; }
-    .textsize-bigger    { font-size: 1.4em;  line-height: 2em;  }
-    .textsize-huge      { font-size: 2em; line-height: 2.2em;   }
-
-     /*-----------------------------------
-                02 - TEXT WEIGHTS
-    -----------------------------------*/
-
-    strong{
-        font-weight: 800;
-    }
-
-     /*-----------------------------------
-                03 - TEXT DECORATIONS
-    -----------------------------------*/
-   [class*="decorline-"]{
-        position: relative;
-        display: inline-block !important;
-        padding-bottom: 12px;
-        width: 100%;
-    }
-
-    [class*="decorline-"]::after{
-        content: "";
-        display: block;
-        bottom: 0;
-        left: 0;
-    }
-
-    .decorline-main::after{
-        width: 40px;
-        height: 6px;
-        background-color: color(primary);
-    }
-
-    .decorline-thin::after{
-        width: 100%;
-        height: 1px;
-        background-color: #252525;
-    }
+    // PADDINGS - HORIZONTAL
+    @mixin padding-hl-medium    { padding-left: $space-medium; }
+    @mixin padding-hl-huge      { padding-left: $space-huge; }
     
 
-    [class*="decorline-"] > h1,
-    [class*="decorline-"] > h2,
-    [class*="decorline-"] > h3,
-    [class*="decorline-"] > h4,
-    [class*="decorline-"] > h5,
-    [class*="decorline-"] > h6,
-    [class*="decorline-"] > p{
-        padding-bottom: inherit !important;
-    }
+    // MARGINS - VERTICAL
+    @mixin margin-v-tiny    { margin: $space-tiny 0; }
+    @mixin margin-v-smaller { margin: $space-smaller 0; }
+    @mixin margin-v-small   { margin: $space-small 0; }
+    @mixin margin-v-medium  { margin: $space-medium 0; }
+    @mixin margin-v-big     { margin: $space-big 0; }
+    @mixin margin-v-bigger  { margin: $space-bigger 0; }
+    @mixin margin-v-huge    { margin: $space-huge 0; }
 
-    .decorline-main-small::after{
-        content: "";
-        display: block;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 6px;
-    }
+    @mixin margin-b-medium  { margin-bottom: $space-medium; }
 
-/*=========================================
-            04 - BACKGROUNDS
-=========================================*/
-
-[class*="bg--"]{
-    position: relative;
-}
-
-.bg--lightm{
-    background-color: rgba(2, 32, 33, 0.045);
-}
-
-[class*="bg--"].texture-dark::before{
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
-    position: absolute;
-    top:0;
-    left: 0;
-    opacity: .45;
-}
-
-
-/*=========================================
-        05 - GENERAL FORMATTING
-=========================================*/
-
-    html{
-        scroll-behavior: smooth;
-    }
-
-    /*-----------------------------------
-                01 - OPACITY
-    -----------------------------------*/
-    .opacity-medium{
-        opacity: 0.4;
-    }
-
-    /*-----------------------------------
-            02 - TRANSFORMATIONS
-    -----------------------------------*/
-    .flip-h{
-        -ms-transform: scaleX(-1);
-            transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        -webkit-filter: FlipH;
-                filter: FlipH;
-        -ms-filter: "FlipH";
-    }
-
-    .flip-v{
-        -ms-transform: scaleY(-1);
-            transform: scaleY(-1);
-        -webkit-transform: scaleY(-1);
-        transform: scaleY(-1);
-        -webkit-filter: FlipV;
-                filter: FlipV;
-        -ms-filter: "FlipV";
-    }
-
-    /*-----------------------------------
-                03 - PADDINGS
-    -----------------------------------*/
+    // MARGINS - HORIZONTAL
+    @mixin margin-hl-medium { margin-left: $space-medium; }
+    @mixin margin-hr-small { margin-right: $space-small; }
+    @mixin margin-hr-medium { margin-right: $space-medium; }
     .py-6 {
         padding-top: 6em !important;
         padding-bottom: 6em !important;
@@ -414,6 +257,318 @@ span.text--maincol strong{
         }      
     }       
 
+
+/*=========================================
+            01 - COLORS
+=========================================*/
+
+.textcol-main   { color: color(primary) !important; }
+.textcol-dark   { color: color(dark-accent) !important; }
+.textcol-darker { color: color(dark) !important; }
+
+.text--maincol,
+span.text--maincol strong{
+    color: color(primary) !important;
+}
+
+.bg--maincol,
+.boxed.bg--maincol,
+.boxed.boxed--border.bg-maincol{
+    background-color: color(primary);
+}
+
+.bg--secondarycol,
+.boxed.bg--secondarycol,
+.boxed.boxed--border.bg-secondarycol{
+    background-color: color(dark);
+}
+
+.boxed.boxed--border.border--main{
+    border: 1px solid color(primary);
+}
+
+.boxed.boxed--border.border--secondary {
+    border: 1px solid color(dark-accent);
+}
+
+
+/*=========================================
+            02 - IMAGES
+=========================================*/
+
+.fillimage{
+   width: 100%;
+   height: 100%;
+   overflow: hidden;   
+}
+
+.fillimage img{
+    -o-object-fit: cover;
+       object-fit: cover;
+    min-height: 100%;
+}
+
+
+/*=========================================
+            03 - TEXTS
+=========================================*/
+
+    /*-----------------------------------
+                01 - TEXT SIZES
+    -----------------------------------*/
+    .text-xs,
+    p.text-xs{
+        font-size: .8em !important;
+    }
+
+    .type--fine-print{
+        line-height: 1.8em;
+    }
+
+    .switchable__text h2{
+        font-size: 3em;
+    }
+
+    .textsize-small     { font-size: .6em;  line-height: .8em;  }
+    .textsize-medium    { font-size: .85em;  line-height: 1.5em;}
+    .textsize-normal    { font-size: 1em;   line-height: 1.2em; }
+    .textsize-big       { font-size: 1.2em; line-height: 1.8em; }
+    .textsize-bigger    { font-size: 1.4em;  line-height: 2em;  }
+    .textsize-huge      { font-size: 2em; line-height: 2.2em;   }
+
+     /*-----------------------------------
+                02 - TEXT WEIGHTS
+    -----------------------------------*/
+
+    strong{
+        font-weight: 800;
+    }
+
+    /*-----------------------------------
+                03 - TEXT STYLES
+    -----------------------------------*/
+
+    .section-text,
+    .subsection-text{        
+        line-height: 1.6em;
+        font-size: 1.2rem;
+
+        &:not(:first-of-type){
+            @include padding-v-medium;
+        }
+
+         .section-title{
+            display: block;
+            font-size: 1em;   
+            width: 100%;
+            @include margin-b-medium;
+
+            // Decorlines -------------------------
+
+            &[class*="decorline-"]{
+                position: relative;
+                width: 100%;
+
+                &::after{
+                    content: "";
+                    display: block;
+                    bottom: 0;
+                }
+            }
+            
+            &.decorline-primary{
+                margin: 0;
+                &::after{
+                    width: $space-bigger;
+                    height: $width-medium;
+                    background-color: color(primary);
+                    @include margin-v-medium();
+                }
+            }
+
+            &.decorline-thin{
+                &::after{
+                    width: 100%;
+                    height: $width-tiny;
+                    background-color: color(dark);
+                    @include margin-v-medium();
+                }
+            }
+
+            // TITLES -------------------------------
+
+            > h1, h2, h3, h4, h5, h6{
+                font-weight: bold;
+                line-height: 100%;
+                @include nogutters;
+            }
+
+            > h1 { font-size: $fontsize-xl }
+            > h2 { font-size: $fontsize-bigger }
+            > h3 { font-size: $fontsize-big }
+            > h4 { font-size: $fontsize-medium }
+            > h5 { font-size: $fontsize-small }
+            > h6 {font-size: $fontsize-smaller }
+
+        } // #end of section title ----------------
+
+        // TEXT -----------------------------------
+         p{
+            font-size: inherit;
+            line-height: $fontsize-bigger;
+            margin: 0;
+
+            &:not(:last-of-type){
+                @include nomargin;
+                padding-bottom: $space-medium;
+            }
+        }
+
+        // LISTS ----------------------------------
+        p + ul{
+            @include padding-t-medium();
+        }
+
+        ul{
+            width: 100%;
+            display: block;
+
+            &:not(:last-child){
+                @include padding-b-medium;
+            }
+
+            &:not(:first-of-type){
+                @include padding-b-medium();
+            }            
+        }
+
+        .subsection-text{
+            .section-title{
+                @include padding-t-medium();
+            }
+            &.indented-medium{
+                @media (min-width: 768px) {
+                    @include padding-hl-huge(); 
+                }
+            }
+        }
+    }
+
+
+
+     /*-----------------------------------
+                04 - TEXT DECORATIONS
+    -----------------------------------*/
+   /*[class*="decorline-"]{
+        position: relative;
+        display: inline-block !important;
+        padding-bottom: 12px;
+        width: 100%;
+    }
+
+    [class*="decorline-"]::after{
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+    }
+
+    .decorline-main::after{
+        width: 40px;
+        height: 6px;
+        background-color: color(primary);
+    }
+
+    .decorline-thin::after{
+        width: 100%;
+        height: 1px;
+        background-color: #252525;
+    }
+    
+
+    [class*="decorline-"] > h1,
+    [class*="decorline-"] > h2,
+    [class*="decorline-"] > h3,
+    [class*="decorline-"] > h4,
+    [class*="decorline-"] > h5,
+    [class*="decorline-"] > h6,
+    [class*="decorline-"] > p{
+        padding-bottom: inherit !important;
+    }
+
+    .decorline-main-small::after{
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 6px;
+    }*/
+
+/*=========================================
+            04 - BACKGROUNDS
+=========================================*/
+
+[class*="bg--"]{
+    position: relative;
+}
+
+.bg--lightm{
+    background-color: rgba(2, 32, 33, 0.045);
+}
+
+[class*="bg--"].texture-dark::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    position: absolute;
+    top:0;
+    left: 0;
+    opacity: .45;
+}
+
+
+/*=========================================
+        05 - GENERAL FORMATTING
+=========================================*/
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    /*-----------------------------------
+                01 - OPACITY
+    -----------------------------------*/
+    .opacity-medium{
+        opacity: 0.4;
+    }
+
+    /*-----------------------------------
+            02 - TRANSFORMATIONS
+    -----------------------------------*/
+    .flip-h{
+        -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        -webkit-filter: FlipH;
+                filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+
+    .flip-v{
+        -ms-transform: scaleY(-1);
+            transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+        -webkit-filter: FlipV;
+                filter: FlipV;
+        -ms-filter: "FlipV";
+    }
+
+    
 
     /*-----------------------------------
         04 - DIVIDERS
@@ -572,94 +727,77 @@ span.text--maincol strong{
 
     .list {
         display: block;
-        padding: 12px 0;
-    }
+        width: 100%;
+        @include nogutters;
 
-    .list-nopadding{
-        padding: 0 !important;
-    }    
+        &:not(:first-of-type){
+            @include padding-b-medium;
+        }
 
-    .list > li:not(:first-of-type){
-        padding-top: 6px;
-    }
+        >li{
+            &:not(:first-of-type){
+                @include padding-t-small;
+            }
+        }
 
-    .list > li.text-center{
-        text-align: center;
-    }
+        @media (min-width: 768px) {
+            .list {
+                @include padding-hl-medium();
+            }
+        }
+    }  
 
-    .list li > ul{
-        padding-left: 2em;
-    }
 
         /*-----LIST STYLES------*/
 
         /*LIGHT STYLE*/
+        
+        .list{
+            &.list-style-light {
+                > li{
+                    *{
+                        vertical-align: middle;
+                        display: inline-block;
+                    }
 
-        .list.list-style-light > li{
-            padding: 0 0 0 20px;
-            position: relative;
-        }
-
-       .list.list-style-light > li:before{
-            content: "";
-            display: block;
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: color(primary);
-            top: .75em;
-            left: 0;
-        }
-
-            /*LIGHT STYLE -- SUBLIST*/
-            .list.list-style-light .list-sublist{
-                padding: 0;
+                    &::before{
+                        content: "";
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        background-color: color(primary);
+                        @include margin-hr-small;
+                    }
+                }
             }
-
-            .list.list-style-light .list-sublist > li{
-                position: relative;
-                padding: 0 0 0 45px;
-            }
-            .list.list-style-light .list-sublist > li:before{
-                content: "";
-                display: block;
-                position: absolute;
-                top: .8em;
-                left: 0;
-                width: 25px;
-                height: 4px;
-                background-color: #252525;
-                opacity: .2;
-            }   
+        }
 
 
 
         /*Button list*/
 
-        .list.button-list{
-            width: 100%;
-            cursor: pointer;
-        }
+        .list{
 
-        .list.button-list > li{
-            padding: 12px 16px;
-            border: 1px solid #212023;
-            border-radius: 10px;
-            overflow: hidden;
+            &.button-list{
+                width: 100%;
+                cursor: pointer;
 
-            font-size: 1.2em;
-            color: #212023;
-        }
+                > li{
+                    padding: 12px 16px;
+                    border: 1px solid #212023;
+                    border-radius: 10px;
+                    overflow: hidden;        
+                    font-size: 1.2em;
+                    color: #212023;
 
-            @media (min-width: 768px){
-                .list{
-                    padding: 12px;
+                    &:not(:last-of-type){
+                        @include margin-b-medium;
+                    }
                 }
             }
-
-        .list.button-list > li:not(:first-of-type){
-            margin-top: 12px;
         }
+        
+       
 
         .list.button-list > li:focus,
         .list.button-list > li:hover{
@@ -824,24 +962,26 @@ span.text--maincol strong{
 
 /* ---- RENDEZVÉNY OLDAL ---- */
 
+.schematics-wrapper{
+    object{
+        max-height: 760px;
+    }
+   
+}
         #kisfaludy-schematics{
-            .schematic-small-text{
-                font-size: 30px;
-                font-family: Roboto, sans-serif;
-                padding: 15px;
-            }
-
-            #orr{
-                transition: ease-in-out .3s all;
-                transform-origin: center;
+            
+            .animate{
+                transition: ease .25s transform;
+                transform-origin: 25%;
+              
                 &:hover{
-                    transform: scale(1.2);
-
-                    rect{
-                        fill: color(primary) !important;
+                    transform: translateY(-25px) translateX(12px);
+                    .bckgrnd{
+                        stroke-width: 2px;
                     }
                 }
-            }
+            }         
+
         }
         
         
@@ -1197,6 +1337,7 @@ span.text--maincol strong{
         overflow: hidden;
         position: relative;
         display: block;
+        @include margin-b-medium;
     }
 
     .event-description-pic img{
@@ -1309,27 +1450,7 @@ span.text--maincol strong{
 
     .seats--section{
 
-        .seats-section-description{
-            font-size: 1.2em;
-            line-height: 1.6em;
-
-            .seats-section__title{
-                > h2{
-                    margin: 0;
-                    font-weight: bold;
-                }
-            }
-
-            .seats-section__subtext{               
-                font-size: 1em;
-               
-                > h4{
-                    font-weight: bold;
-                    margin: 0;
-                    padding: 0 0 10px 0;
-                }
-            }
-        }
+       
 
         @media (min-width: 768px){
             .seats-section__subtext{
