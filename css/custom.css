@@ -818,11 +818,32 @@ th span {
   top: -50px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
+  /*NAV SECONDARY*/
 }
 
 .nav--section .nav-container.nav-primary {
   padding: 6px 0;
   background-color: transparent;
+}
+
+.nav--section .nav-container.sticky {
+  padding: 6px 0;
+  background-color: #252525;
+  border-bottom: 4px solid #e7cc5e;
+}
+
+.nav--section .nav-container.sticky .logo-container::after {
+  content: "";
+  display: block;
+  min-height: 45px;
+  background-image: url("../img/logo/1x/kisfaludy_logo_compact.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.nav--section .nav-container.sticky .logo-container > .logo-default {
+  display: none;
 }
 
 .nav--section .nav-container.nav-secondary {
@@ -831,13 +852,23 @@ th span {
   border-bottom: 4px solid #e7cc5e;
 }
 
+.nav--section .nav-container.nav-secondary.sticky .logo-container::after {
+  background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
+}
+
 .nav--section .nav-container.sticky {
   position: fixed;
   top: 0;
 }
 
-.nav--section .nav-container .logo {
-  top: 10px;
+.nav--section .nav-container .logo-container {
+  display: block;
+  height: 100%;
+}
+
+.nav--section .nav-container .logo-container .logo {
+  height: 100%;
+  min-height: 80px;
 }
 
 .nav--section .nav-container .inactive {
@@ -845,8 +876,32 @@ th span {
   opacity: .4;
 }
 
-/* ---- Menu theme resets ---- */
-.menu-horizontal > li:not(:hover) > a {
+.menu-container {
+  height: 100%;
+  /* ---- Menu theme resets ---- */
+}
+
+.menu-container .menu-horizontal {
+  top: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-container .menu-horizontal > li:not(:hover) > a {
   opacity: .8;
 }
 

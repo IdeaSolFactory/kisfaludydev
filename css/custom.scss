@@ -862,22 +862,64 @@ span.text--maincol strong{
                 padding: 6px 0;
                 background-color: transparent;
             }
-            
+
+            &.sticky{
+                padding: 6px 0;
+                background-color: color(dark); 
+                border-bottom: 4px solid color(primary);
+                
+
+                .logo-container{
+                    &::after{
+                        content: "";
+                        display: block;
+                        min-height: 45px;
+                        background-image: url("../img/logo/1x/kisfaludy_logo_compact.png");
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                    >.logo-default{
+                        display: none;
+                    }
+                }
+
+            }
+
+            /*NAV SECONDARY*/            
             &.nav-secondary{
                 padding: 6px 0;
                 background-color: color(dark); 
                 border-bottom: 4px solid color(primary);
+
+                &.sticky{
+                    .logo-container{
+                        &::after{
+                            background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
+                        }
+                    }
+                }
             }
 
             &.sticky{
                 position: fixed;
-                top: 0;
+                top: 0;                
             }
             
             // --- LOGO --- //
-            .logo {
-            top: 10px;
+            .logo-container{
+               display: block;
+               height: 100%;
+
+                .logo {
+                    height: 100%;
+                    min-height: 80px;
+                 }
             }
+
+                   
+           
+
 
 
             // --- GENERIC MENU FUNCTIONS --- /
@@ -887,10 +929,20 @@ span.text--maincol strong{
             }
         }
     }
-        
+
+    .menu-container{
+        height: 100%;
 
     /* ---- Menu theme resets ---- */
     .menu-horizontal{
+        top: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+
         >li{
             &:not(:hover){
                 > a{
@@ -899,6 +951,11 @@ span.text--maincol strong{
             }
         }
     }
+
+    }
+        
+
+    
 
     .hamburger-toggle{
         i{
