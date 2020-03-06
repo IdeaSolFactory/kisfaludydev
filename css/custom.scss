@@ -42,7 +42,7 @@ TABLE OF CONTENTS
 07 ---- EFFECTS
 08 ---- SITE IMAGES
 09 ---- SECTIONS --------------------
-        01 - HEADER
+        01 - HEADERS
              A - NAV
              B - HERO
         02 - 
@@ -842,8 +842,9 @@ span.text--maincol strong{
     .nav--section{
         padding: 0;
         z-index: 1000;
-        min-height: 75px;
         width: 100%;
+        position: absolute;
+        top: 0;
 
         &.nav-absolute-top{
             position: absolute;
@@ -853,74 +854,139 @@ span.text--maincol strong{
         .nav-container{
             background-color: transparent;
             width: 100%;
-            min-height: 75px;
             z-index: 1000;
-            top:-50px;
-            transition: all .5s ease;  
+            transition: all .5s ease;
+            display: block;  
 
-            &.nav-primary{               
-                padding: 6px 0;
-                background-color: transparent;
-            }
 
+            // STICKY MENU
             &.sticky{
-                padding: 6px 0;
                 background-color: color(dark); 
                 border-bottom: 4px solid color(primary);
-                
+                max-height: 130px;
+                position: fixed;
+                top: 0;    
 
-                .logo-container{
-                    &::after{
-                        content: "";
-                        display: block;
-                        min-height: 45px;
-                        background-image: url("../img/logo/1x/kisfaludy_logo_compact.png");
-                        background-position: center;
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                    }
-                    >.logo-default{
-                        display: none;
-                    }
-                }
+                .menu-container{
+                    padding: 12px 0;
 
-            }
-
-            /*NAV SECONDARY*/            
-            &.nav-secondary{
-                padding: 6px 0;
-                background-color: color(dark); 
-                border-bottom: 4px solid color(primary);
-
-                &.sticky{
                     .logo-container{
-                        &::after{
-                            background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
+                        
+                        max-height: 60px;
+                        >.logo{
+                            &::before{                               
+                                background-image: url("../img/logo/1x/kisfaludy_logo_compact_white.png");
+                          
+                                }
+                            }
                         }
                     }
                 }
-            }
 
-            &.sticky{
-                position: fixed;
-                top: 0;                
-            }
-            
-            // --- LOGO --- //
-            .logo-container{
-               display: block;
-               height: 100%;
+            /*NAV -- MENU*/
+             .menu-container{
+                display: flex;
+                flex-direction: column;                
+                height: 100%;
+                padding: 25px 0;
 
-                .logo {
+                @media (min-width: 768px){
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    align-content: center;
+                }
+
+                //Menu container
+                >.menu{
+                    display: flex;
+                    flex-direction: column;
                     height: 100%;
-                    min-height: 80px;
-                 }
-            }
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
 
-                   
+                    @media (min-width: 768px){
+                       flex-direction: row;
+                       align-items: center;
+                    }
+
+                    >li{
+                        text-align: left;
+
+                        @media (min-width: 768px){
+                            text-align: center;
+                         }
+
+                        &:not(:last-of-type){
+                            padding-right: 25px;
+                        }
+
+                        >a{
+                            color: white;
+                            text-transform: uppercase;
+                            font-weight: 400;
+                        }
+
+                    }
+
+                    &.menu--left{
+                        justify-content: flex-start;
+                    }
+
+                    &.menu--right{
+                        justify-content: flex-end;
+                    }
+                }
+
+                >.logo-container{
+                    height: 120px;
+                    width: 250px;               
+                    
+                    @media (min-width: 1024px){
+                        height: 120px;
+                        width: 450px;
+                     }
+
+                    .logo{
+                        height: 100%;
+                        width: 100%;
+                        max-height: unset;
+                        top: unset;
+
+                        &::before{
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-image: url("../img/logo/1x/kisfaludy_logo_compact_white.png");
+                            background-position: center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+
+                            @media (min-width: 1024px){
+                                background-image: url("../img/logo/3x/kisfaludy_logo_white-3x.png");
+                             }
+                        }
+                        >a{
+                            height: 100%;
+                            width: 100%;
+                            display: block;
+                        }
+                        img{
+                            height: 100%;
+                            display: none;
+                        }                 
+                    }
+                }
+            }
            
 
-
+            &.sticky{
+                           
+            }
 
             // --- GENERIC MENU FUNCTIONS --- /
             .inactive{
@@ -930,168 +996,219 @@ span.text--maincol strong{
         }
     }
 
-    .menu-container{
-        height: 100%;
+        
 
-    /* ---- Menu theme resets ---- */
-    .menu-horizontal{
-        top: 0;
+        // /* ---- Menu theme resets ---- */
+        // .menu--horizontal{
+        //     height: 100%;
+        //     display: flex;
+        //     flex-direction: row;
+        //     flex-wrap: nowrap;
+        //     align-items: center;
+
+        //         >li{
+        //             &:not(:hover){
+        //                 > a{
+        //                     opacity: .8;
+        //                 }
+        //             }
+        //         }
+        // }    
+
+        // .hamburger-toggle{
+        //     i{
+        //         color: color(primary);
+        //     }
+        // }
+
+        // .menu--horizontal{
+            
+        //     > li{
+        //         padding: 10px 0;
+        //     }
+
+        //     @media (min-width: 768px) {
+        //         > li{
+        //             padding: unset;
+        //         }
+        //     }
+        // }
+
+        // .menu--horizontal > li > a, .menu--horizontal > li > span, .menu--horizontal > li > .modal-instance > .modal-trigger{
+        //     color: white;
+        // }
+
+        // .menu--horizontal > li > a:hover,
+        // .menu--horizontal > li > span:hover,
+        // .menu--horizontal > li > .modal-instance > .modal-trigger:hover{
+        //     color: white;
+        // }
+
+        //     /* ---- Dropdown menu ---- */
+
+        //     .menu--horizontal .dropdown{
+        //         position: relative;
+        //         z-index: 10000;
+        //     }
+
+        //     .menu--horizontal .dropdown > a::after{
+        //         font-family: stack-interface;
+        //         content: '\e80c';
+        //         transition: transform ease .2s;
+        //         display: inline-block;
+        //         margin-left: 10px;
+        //         margin-right: 10px;
+        //     }
+
+        //     .menu--horizontal .dropdown:hover > a::after{
+        //         transform: rotate(90deg);
+        //     } 
+
+        //     .menu--horizontal .dropdown > a{
+        //         pointer-events: none;
+        //     }
+        //     .menu--horizontal .dropdown-content{
+        //         display: none;
+        //         position: relative;
+        //         z-index: initial;
+        //         background-color: transparent;
+        //         width: auto;
+        //     }
+
+        //     .menu--horizontal .dropdown-content > li{
+        //         display: block;
+        //         margin: 0 0 10px 0;
+        //         width: auto;
+        //     }
+
+        //     .menu--horizontal .dropdown-content > li:not(:first-of-type){
+        //         border-top: 1px solid color(dark-accent);
+        //         padding-top: 5px;
+        //     }
+
+        //     .menu--horizontal .dropdown-content a{
+        //         text-decoration: none;
+        //         display: inline-block;
+        //         color: inherit;
+        //         font-weight: inherit;
+        //         font-size: inherit;
+        //     }
+
+        //     .menu--horizontal .dropdown:active .dropdown-content,
+        //     .menu--horizontal .dropdown:focus .dropdown-content{
+        //         display: block;
+        //     }
+
+        //     .menu--horizontal .dropdown:hover .dropdown-content  {
+        //         display: block;
+        //     }
+
+        //         /* ---- Dropdown menu - LANG ---- */
+        //         .dropdown 
+        //         .lang-flag{
+        //             display: inline-block;
+        //             height: 20px;
+        //             width: 25px;
+        //             background-position: center;
+        //             background-size: cover;
+        //             vertical-align: middle;
+
+        //         }
+
+        //         .lang-flag.eng{
+        //             background-image: url(../img/graphic_assets/flag_en.jpg);
+        //         }
+
+        //         .lang-flag.de{
+        //             background-image: url(../img/graphic_assets/flag_de.jpg);
+        //         }
+
+        //     /* ---- Media queries ---- */
+        //     @media (min-width: 768px){
+
+        //         .menu--horizontal .dropdown-content{
+        //             display: none;
+        //             position: absolute;
+        //             z-index: 1;
+        //             background-color: color(dark) ;
+        //             opacity: 0;
+        //             transition: all ease 0.2s;
+        //         }
+
+        //         .menu--horizontal .dropdown:hover .dropdown-content,
+        //         .menu--horizontal .dropdown--active .dropdown-content {
+        //             opacity: 1; 
+        //             transition: all ease 0.2s;              
+        //         }
+                
+        //         .menu--horizontal .dropdown-content a{
+        //             padding: 12px 16px;
+        //             text-decoration: none;
+        //             display: inline-block;
+        //         }
+        //     }
+            
+    /*-----------------------------------
+            02 - HERO TYPES
+    -----------------------------------*/
+
+    /*Generals*/
+    .hero-section{
+        width: 100%;
+        min-height: 650px;
         height: 100%;
+        position: relative;
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-direction: column;
         justify-content: flex-end;
-        align-items: center;
+        align-content: stretch;       
 
-        >li{
-            &:not(:hover){
-                > a{
-                    opacity: .8;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .filter--black{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .6);
+
+            &.filter--black--gradient{
+                background: linear-gradient(0deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.5) 150%);
+            }
+        }
+
+        //Site modifiers
+        &.hero-section--rendezvenyek{
+            &::before{
+                background-image: url("../img/rendezveny_intro_01.jpg");
+            }
+        }
+
+        .hero-section__content{
+            height: 100%;
+            width: 100%;
+
+            .hero-section__text{
+                .h1, p {
+                    color: white;
                 }
             }
         }
     }
 
-    }
-        
-
-    
-
-    .hamburger-toggle{
-        i{
-            color: color(primary);
-        }
-    }
-
-    .menu-horizontal{
-        > li{
-            padding: 10px 0;
-        }
-
-        @media (min-width: 768px) {
-            > li{
-                padding: unset;
-            }
-        }
-    }
-
-    .menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger{
-        color: white;
-    }
-
-    .menu-horizontal > li > a:hover,
-    .menu-horizontal > li > span:hover,
-    .menu-horizontal > li > .modal-instance > .modal-trigger:hover{
-        color: white;
-    }
-
-        /* ---- Dropdown menu ---- */
-
-        .menu-horizontal .dropdown{
-            position: relative;
-            z-index: 10000;
-        }
-
-        .menu-horizontal .dropdown > a::after{
-            font-family: stack-interface;
-            content: '\e80c';
-            transition: transform ease .2s;
-            display: inline-block;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-        .menu-horizontal .dropdown:hover > a::after{
-            transform: rotate(90deg);
-        } 
-
-        .menu-horizontal .dropdown > a{
-            pointer-events: none;
-        }
-        .menu-horizontal .dropdown-content{
-            display: none;
-            position: relative;
-            z-index: initial;
-            background-color: transparent;
-            width: auto;
-        }
-
-        .menu-horizontal .dropdown-content > li{
-            display: block;
-            margin: 0 0 10px 0;
-            width: auto;
-        }
-
-        .menu-horizontal .dropdown-content > li:not(:first-of-type){
-            border-top: 1px solid color(dark-accent);
-            padding-top: 5px;
-        }
-
-        .menu-horizontal .dropdown-content a{
-            text-decoration: none;
-            display: inline-block;
-            color: inherit;
-            font-weight: inherit;
-            font-size: inherit;
-        }
-
-        .menu-horizontal .dropdown:active .dropdown-content,
-        .menu-horizontal .dropdown:focus .dropdown-content{
-            display: block;
-        }
-
-        .menu-horizontal .dropdown:hover .dropdown-content  {
-            display: block;
-        }
-
-            /* ---- Dropdown menu - LANG ---- */
-            .dropdown 
-            .lang-flag{
-                display: inline-block;
-                height: 20px;
-                width: 25px;
-                background-position: center;
-                background-size: cover;
-                vertical-align: middle;
-
-            }
-
-            .lang-flag.eng{
-                background-image: url(../img/graphic_assets/flag_en.jpg);
-            }
-
-            .lang-flag.de{
-                background-image: url(../img/graphic_assets/flag_de.jpg);
-            }
-
-        /* ---- Media queries ---- */
-        @media (min-width: 768px){
-
-            .menu-horizontal .dropdown-content{
-                display: none;
-                position: absolute;
-                z-index: 1;
-                background-color: color(dark) ;
-                opacity: 0;
-                transition: all ease 0.2s;
-            }
-
-            .menu-horizontal .dropdown:hover .dropdown-content,
-            .menu-horizontal .dropdown--active .dropdown-content {
-                opacity: 1; 
-                transition: all ease 0.2s;              
-            }
-            
-            .menu-horizontal .dropdown-content a{
-                padding: 12px 16px;
-                text-decoration: none;
-                display: inline-block;
-            }
-        }
-        
-    /*-----------------------------------
-            02 - HERO
-    -----------------------------------*/
+    /*INDEX*/
     .hero-wrapper{
         position: relative;
         padding-top: 30vh;
@@ -1202,7 +1319,7 @@ span.text--maincol strong{
                 padding-top: 3em;
                 padding-bottom: 3em;
             }
-        }
+        }    
 
 
     /*-----------------------------------

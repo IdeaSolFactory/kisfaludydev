@@ -38,7 +38,7 @@ TABLE OF CONTENTS
 07 ---- EFFECTS
 08 ---- SITE IMAGES
 09 ---- SECTIONS --------------------
-        01 - HEADER
+        01 - HEADERS
              A - NAV
              B - HERO
         02 - 
@@ -801,8 +801,9 @@ th span {
 .nav--section {
   padding: 0;
   z-index: 1000;
-  min-height: 75px;
   width: 100%;
+  position: absolute;
+  top: 0;
 }
 
 .nav--section.nav-absolute-top {
@@ -813,62 +814,167 @@ th span {
 .nav--section .nav-container {
   background-color: transparent;
   width: 100%;
-  min-height: 75px;
   z-index: 1000;
-  top: -50px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  /*NAV SECONDARY*/
-}
-
-.nav--section .nav-container.nav-primary {
-  padding: 6px 0;
-  background-color: transparent;
+  display: block;
+  /*NAV -- MENU*/
 }
 
 .nav--section .nav-container.sticky {
-  padding: 6px 0;
   background-color: #252525;
   border-bottom: 4px solid #e7cc5e;
+  max-height: 130px;
+  position: fixed;
+  top: 0;
 }
 
-.nav--section .nav-container.sticky .logo-container::after {
+.nav--section .nav-container.sticky .menu-container {
+  padding: 12px 0;
+}
+
+.nav--section .nav-container.sticky .menu-container .logo-container {
+  max-height: 60px;
+}
+
+.nav--section .nav-container.sticky .menu-container .logo-container > .logo::before {
+  background-image: url("../img/logo/1x/kisfaludy_logo_compact_white.png");
+}
+
+.nav--section .nav-container .menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  padding: 25px 0;
+}
+
+@media (min-width: 768px) {
+  .nav--section .nav-container .menu-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+.nav--section .nav-container .menu-container > .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .nav--section .nav-container .menu-container > .menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.nav--section .nav-container .menu-container > .menu > li {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .nav--section .nav-container .menu-container > .menu > li {
+    text-align: center;
+  }
+}
+
+.nav--section .nav-container .menu-container > .menu > li:not(:last-of-type) {
+  padding-right: 25px;
+}
+
+.nav--section .nav-container .menu-container > .menu > li > a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.nav--section .nav-container .menu-container > .menu.menu--left {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.nav--section .nav-container .menu-container > .menu.menu--right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.nav--section .nav-container .menu-container > .logo-container {
+  height: 120px;
+  width: 250px;
+}
+
+@media (min-width: 1024px) {
+  .nav--section .nav-container .menu-container > .logo-container {
+    height: 120px;
+    width: 450px;
+  }
+}
+
+.nav--section .nav-container .menu-container > .logo-container .logo {
+  height: 100%;
+  width: 100%;
+  max-height: unset;
+  top: unset;
+}
+
+.nav--section .nav-container .menu-container > .logo-container .logo::before {
   content: "";
   display: block;
-  min-height: 45px;
-  background-image: url("../img/logo/1x/kisfaludy_logo_compact.png");
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/logo/1x/kisfaludy_logo_compact_white.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.nav--section .nav-container.sticky .logo-container > .logo-default {
-  display: none;
+@media (min-width: 1024px) {
+  .nav--section .nav-container .menu-container > .logo-container .logo::before {
+    background-image: url("../img/logo/3x/kisfaludy_logo_white-3x.png");
+  }
 }
 
-.nav--section .nav-container.nav-secondary {
-  padding: 6px 0;
-  background-color: #252525;
-  border-bottom: 4px solid #e7cc5e;
-}
-
-.nav--section .nav-container.nav-secondary.sticky .logo-container::after {
-  background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
-}
-
-.nav--section .nav-container.sticky {
-  position: fixed;
-  top: 0;
-}
-
-.nav--section .nav-container .logo-container {
+.nav--section .nav-container .menu-container > .logo-container .logo > a {
+  height: 100%;
+  width: 100%;
   display: block;
-  height: 100%;
 }
 
-.nav--section .nav-container .logo-container .logo {
+.nav--section .nav-container .menu-container > .logo-container .logo img {
   height: 100%;
-  min-height: 80px;
+  display: none;
 }
 
 .nav--section .nav-container .inactive {
@@ -876,168 +982,70 @@ th span {
   opacity: .4;
 }
 
-.menu-container {
+/*-----------------------------------
+            02 - HERO TYPES
+    -----------------------------------*/
+/*Generals*/
+.hero-section {
+  width: 100%;
+  min-height: 650px;
   height: 100%;
-  /* ---- Menu theme resets ---- */
-}
-
-.menu-container .menu-horizontal {
-  top: 0;
-  height: 100%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
 }
 
-.menu-container .menu-horizontal > li:not(:hover) > a {
-  opacity: .8;
-}
-
-.hamburger-toggle i {
-  color: #e7cc5e;
-}
-
-.menu-horizontal > li {
-  padding: 10px 0;
-}
-
-@media (min-width: 768px) {
-  .menu-horizontal > li {
-    padding: unset;
-  }
-}
-
-.menu-horizontal > li > a, .menu-horizontal > li > span, .menu-horizontal > li > .modal-instance > .modal-trigger {
-  color: white;
-}
-
-.menu-horizontal > li > a:hover,
-.menu-horizontal > li > span:hover,
-.menu-horizontal > li > .modal-instance > .modal-trigger:hover {
-  color: white;
-}
-
-/* ---- Dropdown menu ---- */
-.menu-horizontal .dropdown {
-  position: relative;
-  z-index: 10000;
-}
-
-.menu-horizontal .dropdown > a::after {
-  font-family: stack-interface;
-  content: '\e80c';
-  -webkit-transition: -webkit-transform ease .2s;
-  transition: -webkit-transform ease .2s;
-  transition: transform ease .2s;
-  transition: transform ease .2s, -webkit-transform ease .2s;
-  display: inline-block;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.menu-horizontal .dropdown:hover > a::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.menu-horizontal .dropdown > a {
-  pointer-events: none;
-}
-
-.menu-horizontal .dropdown-content {
-  display: none;
-  position: relative;
-  z-index: initial;
-  background-color: transparent;
-  width: auto;
-}
-
-.menu-horizontal .dropdown-content > li {
-  display: block;
-  margin: 0 0 10px 0;
-  width: auto;
-}
-
-.menu-horizontal .dropdown-content > li:not(:first-of-type) {
-  border-top: 1px solid #353331;
-  padding-top: 5px;
-}
-
-.menu-horizontal .dropdown-content a {
-  text-decoration: none;
-  display: inline-block;
-  color: inherit;
-  font-weight: inherit;
-  font-size: inherit;
-}
-
-.menu-horizontal .dropdown:active .dropdown-content,
-.menu-horizontal .dropdown:focus .dropdown-content {
-  display: block;
-}
-
-.menu-horizontal .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* ---- Dropdown menu - LANG ---- */
-.dropdown
-.lang-flag {
-  display: inline-block;
-  height: 20px;
-  width: 25px;
-  background-position: center;
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.lang-flag.eng {
-  background-image: url(../img/graphic_assets/flag_en.jpg);
+.hero-section .filter--black {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.lang-flag.de {
-  background-image: url(../img/graphic_assets/flag_de.jpg);
+.hero-section .filter--black.filter--black--gradient {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.95)), color-stop(150%, rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 150%);
 }
 
-/* ---- Media queries ---- */
-@media (min-width: 768px) {
-  .menu-horizontal .dropdown-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    background-color: #252525;
-    opacity: 0;
-    -webkit-transition: all ease 0.2s;
-    transition: all ease 0.2s;
-  }
-  .menu-horizontal .dropdown:hover .dropdown-content,
-  .menu-horizontal .dropdown--active .dropdown-content {
-    opacity: 1;
-    -webkit-transition: all ease 0.2s;
-    transition: all ease 0.2s;
-  }
-  .menu-horizontal .dropdown-content a {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: inline-block;
-  }
+.hero-section.hero-section--rendezvenyek::before {
+  background-image: url("../img/rendezveny_intro_01.jpg");
 }
 
-/*-----------------------------------
-            02 - HERO
-    -----------------------------------*/
+.hero-section .hero-section__content {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-section .hero-section__content .hero-section__text .h1, .hero-section .hero-section__content .hero-section__text p {
+  color: white;
+}
+
+/*INDEX*/
 .hero-wrapper {
   position: relative;
   padding-top: 30vh;
