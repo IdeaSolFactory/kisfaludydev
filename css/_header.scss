@@ -30,6 +30,7 @@
         .hamburger-toggle{
             .icon {
                 color: color(primary);
+                opacity: 1;
             }
         }
 
@@ -119,6 +120,33 @@
 
                     &:not(:last-of-type){
                         padding-right: 25px;
+                    }
+
+                    // Dropdown menu item
+                    &.dropdown{
+                        display: block;
+                        position: relative;
+                        width: 100%;
+
+                        >.dropdown__container{
+                            display: none;
+                            >.dropdown__item{
+                                width: 100%;
+                            }                           
+                        }
+
+                        &.dropdown--active,
+                        &:active,
+                        &:focus{
+
+                                >.dropdown__container{
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;                               
+                                }
+                                
+                            }
                     }
 
                     >a{

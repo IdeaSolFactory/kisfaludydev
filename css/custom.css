@@ -828,6 +828,7 @@ th span {
 
 .nav--section .nav-container .hamburger-toggle .icon {
   color: #e7cc5e;
+  opacity: 1;
 }
 
 .nav--section .nav-container .logo--mobile {
@@ -947,6 +948,27 @@ th span {
 
 .nav--section .nav-container .menu-container > .menu > li:not(:last-of-type) {
   padding-right: 25px;
+}
+
+.nav--section .nav-container .menu-container > .menu > li.dropdown {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container {
+  display: none;
+}
+
+.nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container > .dropdown__item {
+  width: 100%;
+}
+
+.nav--section .nav-container .menu-container > .menu > li.dropdown.dropdown--active > .dropdown__container, .nav--section .nav-container .menu-container > .menu > li.dropdown:active > .dropdown__container, .nav--section .nav-container .menu-container > .menu > li.dropdown:focus > .dropdown__container {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .nav--section .nav-container .menu-container > .menu > li > a {
