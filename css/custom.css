@@ -863,7 +863,7 @@ th span {
 }
 
 .nav--section .nav-container.sticky .menu-container .logo-container > .logo::before {
-  background-image: url("../img/logo/1x/kisfaludy_logo_compact_white.png");
+  background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
 }
 
 @media screen and (min-width: 768px) {
@@ -935,11 +935,13 @@ th span {
 
 .nav--section .nav-container .menu-container > .menu > li {
   text-align: left;
+  padding-top: 1.6em;
 }
 
 @media (min-width: 768px) {
   .nav--section .nav-container .menu-container > .menu > li {
     text-align: center;
+    padding-top: 0;
   }
 }
 
@@ -993,7 +995,7 @@ th span {
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/logo/1x/kisfaludy_logo_compact_white.png");
+  background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1001,7 +1003,7 @@ th span {
 
 @media (min-width: 1024px) {
   .nav--section .nav-container .menu-container > .logo-container .logo::before {
-    background-image: url("../img/logo/3x/kisfaludy_logo_white-3x.png");
+    background-image: url("../img/logo/3x/kisfaludy_logo_colored-3x.png");
   }
 }
 
