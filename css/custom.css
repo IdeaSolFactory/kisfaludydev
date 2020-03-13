@@ -973,11 +973,18 @@ th span {
   display: none;
 }
 
+@media screen and (min-width: 768px) {
+  .nav--section .nav-container .menu-container > .logo-container {
+    height: 120px;
+    width: 300px;
+    display: block;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .nav--section .nav-container .menu-container > .logo-container {
     height: 120px;
     width: 450px;
-    display: block;
   }
 }
 

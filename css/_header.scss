@@ -143,11 +143,16 @@
                 width: 250px;  
                 display: none;                             
                 
+                @include mediaQuery(768px){
+                    height: 120px;
+                    width: 300px;
+                    display: block;
+                }
+                
                 @include mediaQuery(1024px){
                     height: 120px;
                     width: 450px;
-                    display: block;
-                }                
+                }  
 
                 .logo{
                     height: 100%;
