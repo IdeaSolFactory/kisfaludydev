@@ -86,7 +86,7 @@
             display: flex;
             flex-direction: column;                
             height: 100%;
-            padding: 25px 0;
+            padding: 25px 0;           
 
             @media (min-width: 768px){
                 flex-direction: row;
@@ -127,26 +127,41 @@
                         display: block;
                         position: relative;
                         width: 100%;
+                        
+                        a{
+                            
+                            &::after{
+                                font-family: stack-interface;                            
+                                content: '\e80c';
+                                display: inline-block;                            
+                                height: 100%;
+                                padding-left: 6px;
 
+                                @at-root .dropdown.dropdown--active >a::after {
+                                    content: "\e80a" !important;
+                                }
+                            }                            
+                        }
+                  
                         >.dropdown__container{
                             display: none;
                             >.dropdown__item{
                                 width: 100%;
+                                color: white;
+                                font-size: inherit;
+                                text-transform: uppercase;
+                                padding-left: 12px;
+                                padding-top: 1.6em;
                             }                           
                         }
 
                         &.dropdown--active,
                         &:active,
                         &:focus{
-
-                                >.dropdown__container{
-                                    display: block;
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;                               
-                                }
-                                
-                            }
+                            >.dropdown__container{
+                                display: block;
+                            }                                
+                        }
                     }
 
                     >a{
