@@ -1093,6 +1093,12 @@ th span {
           justify-content: flex-start;
 }
 
+.nav--section .nav-container .menu-container > .menu.menu--left > li {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .nav--section .nav-container .menu-container > .menu.menu--right {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -1160,6 +1166,10 @@ th span {
 .nav--section .nav-container .inactive {
   pointer-events: none !important;
   opacity: .4;
+}
+
+.nav--section .nav-container .inactive li, .nav--section .nav-container .inactive a {
+  pointer-events: none !important;
 }
 
 /*-----------------------------------

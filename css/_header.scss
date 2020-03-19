@@ -245,6 +245,10 @@
 
                 &.menu--left{
                     justify-content: flex-start;
+
+                    > li{
+                        align-self: center;
+                    }
                 }
 
                 &.menu--right{
@@ -307,6 +311,10 @@
         .inactive{
             pointer-events: none !important;
             opacity: .4;
+
+            li,a{
+                pointer-events: none !important;
+            }
         }
     }
 }
