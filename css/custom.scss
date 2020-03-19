@@ -860,16 +860,22 @@ a{
             02 - HERO TYPES
     -----------------------------------*/
 
-    /*Generals*/
+    /*Generic*/
     .hero-section{
         width: 100%;
-        min-height: 650px;
+        min-height: 100vh;
         height: 100%;
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        align-content: stretch;       
+        justify-content: center;
+        align-content: stretch;
+        
+        @include mqTablet{
+            min-height: 650px;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
 
         &::before{
             content: "";
@@ -907,6 +913,11 @@ a{
         .hero-section__content{
             height: 100%;
             width: 100%;
+            padding-top: 5em;
+
+            @include mqTablet{
+                padding-top: 0;
+            }
 
             .hero-section__text{
                 .h1, p {

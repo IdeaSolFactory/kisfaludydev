@@ -1165,10 +1165,10 @@ th span {
 /*-----------------------------------
             02 - HERO TYPES
     -----------------------------------*/
-/*Generals*/
+/*Generic*/
 .hero-section {
   width: 100%;
-  min-height: 650px;
+  min-height: 100vh;
   height: 100%;
   position: relative;
   display: -webkit-box;
@@ -1178,11 +1178,24 @@ th span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section {
+    min-height: 650px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 
 .hero-section::before {
@@ -1219,6 +1232,13 @@ th span {
 .hero-section .hero-section__content {
   height: 100%;
   width: 100%;
+  padding-top: 5em;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section .hero-section__content {
+    padding-top: 0;
+  }
 }
 
 .hero-section .hero-section__content .hero-section__text .h1, .hero-section .hero-section__content .hero-section__text p {
