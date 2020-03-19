@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@media (max-width: 1024px) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
 /*
 ===========================================
 TITLE:      Kisfaludy style
@@ -857,7 +863,7 @@ th span {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 996px) {
   .nav--section .nav-container.sticky .menu-container .logo-container {
     display: block;
   }
@@ -867,13 +873,13 @@ th span {
   background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 996px) {
   .nav--section .nav-container.sticky .menu-container .logo-container > .logo {
     max-height: 160px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 996px) {
   .nav--section .nav-container.sticky {
     max-height: 160px;
   }
@@ -891,7 +897,7 @@ th span {
   padding: 25px 0;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 996px) {
   .nav--section .nav-container .menu-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -922,7 +928,7 @@ th span {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 996px) {
   .nav--section .nav-container .menu-container > .menu {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -939,7 +945,7 @@ th span {
   padding-top: 1.6em;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 996px) {
   .nav--section .nav-container .menu-container > .menu > li {
     text-align: center;
     padding-top: 0;
@@ -953,7 +959,6 @@ th span {
 .nav--section .nav-container .menu-container > .menu > li.dropdown {
   display: block;
   position: relative;
-  width: 100%;
 }
 
 .nav--section .nav-container .menu-container > .menu > li.dropdown a::after {
@@ -1009,7 +1014,7 @@ th span {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 996px) {
   .nav--section .nav-container .menu-container > .logo-container {
     height: 120px;
     width: 300px;
@@ -1017,7 +1022,7 @@ th span {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .nav--section .nav-container .menu-container > .logo-container {
     height: 120px;
     width: 450px;
@@ -1044,7 +1049,7 @@ th span {
   background-repeat: no-repeat;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .nav--section .nav-container .menu-container > .logo-container .logo::before {
     background-image: url("../img/logo/3x/kisfaludy_logo_colored-3x.png");
   }
