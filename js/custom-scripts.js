@@ -4,7 +4,7 @@ $(document).ready(function(){
         slideDownHeader($(".nav-container"));
     });
 
-    toggleNavBackground();
+    toggleNav();
     showEmailDelay();   
 
 });
@@ -19,16 +19,24 @@ function slideDownHeader(navContainer){
 }
 
 // Toggles sticky menu upon clicking on hamburger menu at the top
-function toggleNavBackground(){
+function toggleNav(){
 
     var hamburgerMenu = $(".hamburger-toggle");
     var navBar = $(".nav-container");
+    var navBarMenu = $("#menu1");
     var stickyClass = "sticky";
+    var menuActive = "active";
 
     $(hamburgerMenu).click(function(){
 
-        if( !$(navBar).hasClass("sticky")){
-            $(navBar).addClass("sticky");
+        if( !$(navBarMenu).hasClass(menuActive) ){
+            $(navBarMenu).addClass(menuActive);
+        } else{
+            $(navBarMenu).removeClass(menuActive);
+        }
+
+        if( !$(navBar).hasClass(stickyClass)){
+            $(navBar).addClass(stickyClass);
         }
     });
 
