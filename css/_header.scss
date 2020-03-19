@@ -83,12 +83,17 @@
 
         /*NAV -- MENU*/
          .menu-container{
-            display: flex;
+            display: none;            
             flex-direction: column;                
             height: 100%;
-            padding: 25px 0;  
+            padding: 25px 0;
+
+            &.active{
+                display: flex !important;
+            }
             
             @include mqSmallScreen{
+                display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
@@ -106,7 +111,7 @@
 
                 @include mqSmallScreen{
                     flex-direction: row;
-                    align-items: center;
+                    align-items: center;                    
                 }            
 
                 >li{                    
@@ -127,12 +132,16 @@
                         display: block;
                         position: relative;
 
+                        &.dropdown--active{
+                            pointer-events: none;
+                        }
+
                         a{
-                            color: color(light);                           
+                            color: color(light);
+                            pointer-events: all;                           
                         }
                         
-                        >a{    
-                            pointer-events: none;                        
+                        >a{                           
 
                             &::after{
                                 font-family: stack-interface;                            
@@ -148,7 +157,7 @@
                         }
                   
                         >.dropdown__container{
-                            display: none;                           
+                            display: none;                         
 
                             // Theme reset
                             position: relative;
@@ -186,7 +195,7 @@
                             @include mqSmallScreen{
                                 
                                 position: absolute;
-                                z-index: 1000;
+                                z-index: 10;
                                 pointer-events: unset;  
                                 padding-top: 0;
                                 background-color: color(dark);

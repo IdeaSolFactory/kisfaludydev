@@ -900,9 +900,7 @@ th span {
 }
 
 .nav--section .nav-container .menu-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -911,8 +909,17 @@ th span {
   padding: 25px 0;
 }
 
+.nav--section .nav-container .menu-container.active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 @media screen and (min-width: 996px) {
   .nav--section .nav-container .menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -975,12 +982,13 @@ th span {
   position: relative;
 }
 
-.nav--section .nav-container .menu-container > .menu > li.dropdown a {
-  color: #ebebeb;
+.nav--section .nav-container .menu-container > .menu > li.dropdown.dropdown--active {
+  pointer-events: none;
 }
 
-.nav--section .nav-container .menu-container > .menu > li.dropdown > a {
-  pointer-events: none;
+.nav--section .nav-container .menu-container > .menu > li.dropdown a {
+  color: #ebebeb;
+  pointer-events: all;
 }
 
 .nav--section .nav-container .menu-container > .menu > li.dropdown > a::after {
@@ -1042,7 +1050,7 @@ th span {
 @media screen and (min-width: 996px) {
   .nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container {
     position: absolute;
-    z-index: 1000;
+    z-index: 10;
     pointer-events: unset;
     padding-top: 0;
     background-color: #252525;
