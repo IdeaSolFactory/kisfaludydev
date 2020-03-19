@@ -913,7 +913,6 @@ a{
         .hero-section__content{
             height: 100%;
             width: 100%;
-            padding-top: 5em;
 
             @include mqTablet{
                 padding-top: 0;
@@ -927,13 +926,14 @@ a{
         }
     }
 
-    /*INDEX*/
+    /*INDEX HERO*/
     .hero-wrapper{
+        align-self: center;
+        justify-content: center;
         position: relative;
-        padding-top: 30vh;
-        padding-bottom: 17em;
         min-height: 100vh;
         overflow: hidden;
+        padding: 0;                
 
         &:before{
             content: "";
@@ -989,6 +989,10 @@ a{
             background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
             opacity: 1;
             z-index: -5;
+        }
+
+        .hero__content{
+            padding-top: 3em;
         }
     } 
     

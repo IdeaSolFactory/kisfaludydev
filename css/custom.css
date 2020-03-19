@@ -1232,7 +1232,6 @@ th span {
 .hero-section .hero-section__content {
   height: 100%;
   width: 100%;
-  padding-top: 5em;
 }
 
 @media screen and (min-width: 768px) {
@@ -1245,13 +1244,18 @@ th span {
   color: white;
 }
 
-/*INDEX*/
+/*INDEX HERO*/
 .hero-wrapper {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
-  padding-top: 30vh;
-  padding-bottom: 17em;
   min-height: 100vh;
   overflow: hidden;
+  padding: 0;
 }
 
 .hero-wrapper:before {
@@ -1314,6 +1318,10 @@ th span {
   background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
   opacity: 1;
   z-index: -5;
+}
+
+.hero-wrapper .hero__content {
+  padding-top: 3em;
 }
 
 .hero-background * {
