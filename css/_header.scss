@@ -126,9 +126,14 @@
                     &.dropdown{
                         display: block;
                         position: relative;
-                        
+
                         a{
-                            
+                            color: color(light);                           
+                        }
+                        
+                        >a{    
+                            pointer-events: none;                        
+
                             &::after{
                                 font-family: stack-interface;                            
                                 content: '\e80c';
@@ -143,15 +148,72 @@
                         }
                   
                         >.dropdown__container{
-                            display: none;
+                            display: none;                           
+
+                            // Theme reset
+                            position: relative;
+                            left: 0 !important;
+                            
+                            &::before{
+                                content: none;
+                            }
+
                             >.dropdown__item{
-                                width: 100%;
-                                color: white;
-                                font-size: inherit;
-                                text-transform: uppercase;
-                                padding-left: 12px;
-                                padding-top: 1.6em;
-                            }                           
+                                >a{
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    flex-wrap: nowrap;
+                                    justify-content: flex-start;
+                                    color: white;
+                                    font-size: inherit;
+                                    text-transform: uppercase;
+                                    width: min-content;
+                                    padding-top: 1.6em;
+                                    padding-left: 2em;
+                                    vertical-align: middle;
+                                    
+                                    >.icon{
+                                        max-height: 16px;
+                                        max-width: unset;
+                                        padding-right: 16px;
+                                        opacity: 1;
+                                    }
+                                }
+                               
+                            }    
+                            
+                            @include mqSmallScreen{
+                                
+                                position: absolute;
+                                z-index: 1000;
+                                pointer-events: unset;  
+                                padding-top: 0;
+                                background-color: color(dark);
+                                width: auto;
+                                padding: 12px;
+                                @include boxShadowSimple;
+
+                                >.dropdown__item{
+
+                                    &:not(:last-of-type){
+                                        padding-bottom: 6px;
+                                    }
+
+                                    >a{
+                                        flex-flow: nowrap;
+                                        align-content: center;
+                                        flex: 1 auto;
+                                        padding: 0;
+                                        
+                                        &:hover{
+                                            > a{
+                                                text-decoration: underline;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
 
                         &.dropdown--active,
@@ -159,6 +221,7 @@
                         &:focus{
                             >.dropdown__container{
                                 display: block;
+                                
                             }                                
                         }
                     }

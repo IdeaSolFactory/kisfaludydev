@@ -1,5 +1,17 @@
 @import 'sizes';
 
+
+// EFFECTS
+
+    //Box Shadow
+    @mixin boxShadowSimple{
+            box-shadow: 0 0 12px rgba(0, 0, 0, .3);         
+    }
+
+
+
+// MEDIA QUERIES
+
 @mixin mediaQuery($args){
     @media screen and (min-width: $args){
         @content;

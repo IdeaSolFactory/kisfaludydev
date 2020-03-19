@@ -147,6 +147,14 @@ span.text--maincol strong{
             03 - TEXTS
 =========================================*/
 
+a{
+    color: color(primary);
+
+    &.white{ 
+        color: color(light) 
+    }
+}
+
     /*-----------------------------------
                 01 - TEXT SIZES
     -----------------------------------*/
@@ -173,7 +181,6 @@ span.text--maincol strong{
      /*-----------------------------------
                 02 - TEXT WEIGHTS
     -----------------------------------*/
-
     strong{
         font-weight: 800;
     }
@@ -181,6 +188,7 @@ span.text--maincol strong{
      /*-----------------------------------
                 03 - TEXT DECORATIONS
     -----------------------------------*/
+
    [class*="decorline-"]{
         position: relative;
         display: inline-block !important;
@@ -811,6 +819,11 @@ span.text--maincol strong{
     -webkit-filter: blur(5px);
 }
 
+/*Shadows*/
+.simple-shadow{
+    box-shadow: 0 0 12px rgba(0, 0, 0, .3); 
+}
+
 
 /*=========================================
             08 - SITE IMAGES
@@ -1205,39 +1218,52 @@ span.text--maincol strong{
             max-width: 100%;
             max-height: 100%;
             opacity: .45;
+
+            &.icon-m{
+                height: 20px;
+            }
+    
+            &.icon-sm{
+                height: 16px !important;
+            }
+    
+            &.icon-xs{
+                height: 8px !important;
+            }
+    
+            &.pirate-flag{
+                content: url("../img/icons/pirate-flag.svg");            
+            }
+    
+            &.wine-glass{
+                content: url("../img/icons/wine-glasses.svg");
+            }
+    
+            &.sunset{
+                content: url("../img/icons/sunset.svg");
+            }
+    
+            &.moon{
+                content: url("../img/icons/moon.svg");
+            }
+    
+            &.ship{
+                content: url("../img/icons/ship.svg");
+            }
+
+            /*Flags*/
+            &.flag-en{ content: url("../img/graphic_assets/flag_en.jpg") }
+
+            &.flag-de{ content: url("../img/graphic_assets/flag_de.jpg") }
+
+            &.flag-hu{ content: url("../img/graphic_assets/flag_hu.jpg") }
+
+
         }
         
-        .icon-m{
-            height: 20px;
-        }
+        
 
-        .icon-sm{
-            height: 16px !important;
-        }
-
-        .icon-xs{
-            height: 8px !important;
-        }
-
-        .icon.pirate-flag{
-            content: url("../img/icons/pirate-flag.svg");            
-        }
-
-        .icon.wine-glass{
-            content: url("../img/icons/wine-glasses.svg");
-        }
-
-        .icon.sunset{
-            content: url("../img/icons/sunset.svg");
-        }
-
-        .icon.moon{
-            content: url("../img/icons/moon.svg");
-        }
-
-        .icon.ship{
-            content: url("../img/icons/ship.svg");
-        }
+        
 
 
         /*Symbols*/    

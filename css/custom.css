@@ -145,6 +145,14 @@ span.text--maincol strong {
 /*=========================================
             03 - TEXTS
 =========================================*/
+a {
+  color: #e7cc5e;
+}
+
+a.white {
+  color: #ebebeb;
+}
+
 /*-----------------------------------
                 01 - TEXT SIZES
     -----------------------------------*/
@@ -784,6 +792,12 @@ th span {
   -webkit-filter: blur(5px);
 }
 
+/*Shadows*/
+.simple-shadow {
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
 /*=========================================
             08 - SITE IMAGES
 =========================================*/
@@ -961,7 +975,15 @@ th span {
   position: relative;
 }
 
-.nav--section .nav-container .menu-container > .menu > li.dropdown a::after {
+.nav--section .nav-container .menu-container > .menu > li.dropdown a {
+  color: #ebebeb;
+}
+
+.nav--section .nav-container .menu-container > .menu > li.dropdown > a {
+  pointer-events: none;
+}
+
+.nav--section .nav-container .menu-container > .menu > li.dropdown > a::after {
   font-family: stack-interface;
   content: '\e80c';
   display: inline-block;
@@ -975,15 +997,76 @@ th span {
 
 .nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container {
   display: none;
+  position: relative;
+  left: 0 !important;
 }
 
-.nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container > .dropdown__item {
-  width: 100%;
+.nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container::before {
+  content: none;
+}
+
+.nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container > .dropdown__item > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   color: white;
   font-size: inherit;
   text-transform: uppercase;
-  padding-left: 12px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
   padding-top: 1.6em;
+  padding-left: 2em;
+  vertical-align: middle;
+}
+
+.nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container > .dropdown__item > a > .icon {
+  max-height: 16px;
+  max-width: unset;
+  padding-right: 16px;
+  opacity: 1;
+}
+
+@media screen and (min-width: 996px) {
+  .nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: unset;
+    padding-top: 0;
+    background-color: #252525;
+    width: auto;
+    padding: 12px;
+    -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+  .nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container > .dropdown__item:not(:last-of-type) {
+    padding-bottom: 6px;
+  }
+  .nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container > .dropdown__item > a {
+    -ms-flex-flow: nowrap;
+        flex-flow: nowrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 auto;
+            flex: 1 auto;
+    padding: 0;
+  }
+  .nav--section .nav-container .menu-container > .menu > li.dropdown > .dropdown__container > .dropdown__item > a:hover > a {
+    text-decoration: underline;
+  }
 }
 
 .nav--section .nav-container .menu-container > .menu > li.dropdown.dropdown--active > .dropdown__container, .nav--section .nav-container .menu-container > .menu > li.dropdown:active > .dropdown__container, .nav--section .nav-container .menu-container > .menu > li.dropdown:focus > .dropdown__container {
@@ -1434,17 +1517,18 @@ th span {
   max-width: 100%;
   max-height: 100%;
   opacity: .45;
+  /*Flags*/
 }
 
-.icon-m {
+.icon.icon-m {
   height: 20px;
 }
 
-.icon-sm {
+.icon.icon-sm {
   height: 16px !important;
 }
 
-.icon-xs {
+.icon.icon-xs {
   height: 8px !important;
 }
 
@@ -1466,6 +1550,18 @@ th span {
 
 .icon.ship {
   content: url("../img/icons/ship.svg");
+}
+
+.icon.flag-en {
+  content: url("../img/graphic_assets/flag_en.jpg");
+}
+
+.icon.flag-de {
+  content: url("../img/graphic_assets/flag_de.jpg");
+}
+
+.icon.flag-hu {
+  content: url("../img/graphic_assets/flag_hu.jpg");
 }
 
 /*Symbols*/
