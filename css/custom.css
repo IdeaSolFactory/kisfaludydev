@@ -1175,9 +1175,13 @@ th span {
 }
 
 .nav--section .nav-container .menu-container > .logo-container .logo > a {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   display: block;
+  z-index: 10;
 }
 
 .nav--section .nav-container .menu-container > .logo-container .logo img {
