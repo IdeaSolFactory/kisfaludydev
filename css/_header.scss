@@ -3,6 +3,11 @@
 @import 'functions';
 @import 'sizes';
 
+// Variables
+$menuItemPadding-big: 36px;
+$menuItemPadding-medium: 32px;
+$menuItemPadding-small: 24px;
+
 .nav--section{
     padding: 0;
     z-index: 1000;
@@ -60,7 +65,7 @@
                     display: none;
 
                     @include mqTablet{
-                        margin: 0 12px;
+                        margin: 0 $menuItemPadding-small;
                     }
 
                     @include mqSmallScreen{
@@ -90,7 +95,7 @@
             display: none;            
             flex-direction: column;                
             height: 100%;
-            padding: 25px 0;
+            padding: $menuItemPadding-small 0;
 
             &.active{
                 display: flex !important;
@@ -113,11 +118,35 @@
                 padding: 0;
                 width: 100%;
 
+
+                &[class*=" menu--"]{
+                    
+                    >li:not(:last-of-type){
+
+                        @include mqSmallScreen{
+                            padding-right: $menuItemPadding-small;
+                        }
+
+                        @include mqMediumScreen{
+                            padding-right: $menuItemPadding-medium;
+                        }
+
+                        @include mqLargeScreen{
+                            padding-right: $menuItemPadding-big;
+                        }
+                    }
+                }
+
+
                 @include mqSmallScreen{
                     flex-direction: row;
-                    align-items: center;
-                    justify-content: space-evenly !important;                    
-                }            
+                    align-items: center;                    
+                    
+                    &.menu--left{ justify-content: flex-end; }
+
+                    &.menu--right{ justify-content: flex-start; }
+                }
+               
 
                 >li{                    
                     text-align: left;
@@ -132,15 +161,16 @@
                         }
                     }
 
-                    @include mqLargeScreen{                      
-                        a{
-                            font-size: 1em;
+                    >a{
+                        color: white;
+                        text-transform: uppercase;
+                        font-weight: 400;
+
+                        &.highlight{
+                            color: color(primary);
                         }
                     }
-
-                    &:not(:last-of-type){
-                        padding-right: 25px;
-                    }
+                   
 
                     // Dropdown menu item
                     &.dropdown{
@@ -156,19 +186,17 @@
                             pointer-events: all;                           
                         }
                         
-                        >a{                           
+                        
+                        >a::after{
+                            font-family: stack-interface;                            
+                            content: '\e80c';
+                            display: inline-block;                            
+                            height: 100%;
+                            padding-left: 6px;
 
-                            &::after{
-                                font-family: stack-interface;                            
-                                content: '\e80c';
-                                display: inline-block;                            
-                                height: 100%;
-                                padding-left: 6px;
-
-                                @at-root .dropdown.dropdown--active >a::after {
-                                    content: "\e80a" !important;
-                                }
-                            }                            
+                            @at-root .dropdown.dropdown--active >a::after {
+                                content: "\e80a" !important;
+                            }
                         }
                   
                         >.dropdown__container{
@@ -203,8 +231,7 @@
                                         padding-right: 16px;
                                         opacity: 1;
                                     }
-                                }
-                               
+                                }                               
                             }    
                             
                             @include mqSmallScreen{
@@ -230,10 +257,8 @@
                                         flex: 1 auto;
                                         padding: 0;
                                         
-                                        &:hover{
-                                            > a{
-                                                text-decoration: underline;
-                                            }
+                                        &:hover > a{
+                                            text-decoration: underline;
                                         }
                                     }
                                 }
@@ -249,23 +274,7 @@
                             }                                
                         }
                     }
-
-                    >a{
-                        color: white;
-                        text-transform: uppercase;
-                        font-weight: 400;
-                    }
-
-                }
-
-                &.menu--left{
-                    justify-content: flex-start;
-                    
-                }
-
-                &.menu--right{
-                    justify-content: flex-end;
-                }
+                }               
             }
 
             >.logo-container{
@@ -277,12 +286,13 @@
                     height: 120px;
                     width: 300px;
                     display: block;
-                    margin: 0 12px;
+                    margin: 0 $menuItemPadding-medium;
                 }               
                 
                 @include mqMediumScreen{
                     height: 120px;
                     width: 450px;
+                    margin: 0 $menuItemPadding-big;
                 }  
 
                 .logo{
@@ -333,153 +343,3 @@
 }
 
     
-
-    // /* ---- Menu theme resets ---- */
-    // .menu--horizontal{
-    //     height: 100%;
-    //     display: flex;
-    //     flex-direction: row;
-    //     flex-wrap: nowrap;
-    //     align-items: center;
-
-    //         >li{
-    //             &:not(:hover){
-    //                 > a{
-    //                     opacity: .8;
-    //                 }
-    //             }
-    //         }
-    // }    
-
-    // .hamburger-toggle{
-    //     i{
-    //         color: color(primary);
-    //     }
-    // }
-
-    // .menu--horizontal{
-        
-    //     > li{
-    //         padding: 10px 0;
-    //     }
-
-    //     @media (min-width: 768px) {
-    //         > li{
-    //             padding: unset;
-    //         }
-    //     }
-    // }
-
-    // .menu--horizontal > li > a, .menu--horizontal > li > span, .menu--horizontal > li > .modal-instance > .modal-trigger{
-    //     color: white;
-    // }
-
-    // .menu--horizontal > li > a:hover,
-    // .menu--horizontal > li > span:hover,
-    // .menu--horizontal > li > .modal-instance > .modal-trigger:hover{
-    //     color: white;
-    // }
-
-    //     /* ---- Dropdown menu ---- */
-
-    //     .menu--horizontal .dropdown{
-    //         position: relative;
-    //         z-index: 10000;
-    //     }
-
-    //     .menu--horizontal .dropdown > a::after{
-    //         font-family: stack-interface;
-    //         content: '\e80c';
-    //         transition: transform ease .2s;
-    //         display: inline-block;
-    //         margin-left: 10px;
-    //         margin-right: 10px;
-    //     }
-
-    //     .menu--horizontal .dropdown:hover > a::after{
-    //         transform: rotate(90deg);
-    //     } 
-
-    //     .menu--horizontal .dropdown > a{
-    //         pointer-events: none;
-    //     }
-    //     .menu--horizontal .dropdown-content{
-    //         display: none;
-    //         position: relative;
-    //         z-index: initial;
-    //         background-color: transparent;
-    //         width: auto;
-    //     }
-
-    //     .menu--horizontal .dropdown-content > li{
-    //         display: block;
-    //         margin: 0 0 10px 0;
-    //         width: auto;
-    //     }
-
-    //     .menu--horizontal .dropdown-content > li:not(:first-of-type){
-    //         border-top: 1px solid color(dark-accent);
-    //         padding-top: 5px;
-    //     }
-
-    //     .menu--horizontal .dropdown-content a{
-    //         text-decoration: none;
-    //         display: inline-block;
-    //         color: inherit;
-    //         font-weight: inherit;
-    //         font-size: inherit;
-    //     }
-
-    //     .menu--horizontal .dropdown:active .dropdown-content,
-    //     .menu--horizontal .dropdown:focus .dropdown-content{
-    //         display: block;
-    //     }
-
-    //     .menu--horizontal .dropdown:hover .dropdown-content  {
-    //         display: block;
-    //     }
-
-    //         /* ---- Dropdown menu - LANG ---- */
-    //         .dropdown 
-    //         .lang-flag{
-    //             display: inline-block;
-    //             height: 20px;
-    //             width: 25px;
-    //             background-position: center;
-    //             background-size: cover;
-    //             vertical-align: middle;
-
-    //         }
-
-    //         .lang-flag.eng{
-    //             background-image: url(../img/graphic_assets/flag_en.jpg);
-    //         }
-
-    //         .lang-flag.de{
-    //             background-image: url(../img/graphic_assets/flag_de.jpg);
-    //         }
-
-    //     /* ---- Media queries ---- */
-    //     @media (min-width: 768px){
-
-    //         .menu--horizontal .dropdown-content{
-    //             display: none;
-    //             position: absolute;
-    //             z-index: 1;
-    //             background-color: color(dark) ;
-    //             opacity: 0;
-    //             transition: all ease 0.2s;
-    //         }
-
-    //         .menu--horizontal .dropdown:hover .dropdown-content,
-    //         .menu--horizontal .dropdown--active .dropdown-content {
-    //             opacity: 1; 
-    //             transition: all ease 0.2s;              
-    //         }
-            
-    //         .menu--horizontal .dropdown-content a{
-    //             padding: 12px 16px;
-    //             text-decoration: none;
-    //             display: inline-block;
-    //         }
-    //     }
