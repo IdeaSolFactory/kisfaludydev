@@ -48,7 +48,8 @@ TABLE OF CONTENTS
              A - HEADER
              B - HERO
         02 - 
-
+10 ---- FUNCTIONS -------------------
+        01 - CONTENT REVEAL
 ===========================================
 */
 
@@ -809,7 +810,6 @@ a{
                 width: auto !important;
             }
         }
-
        
 /*=========================================
             07 - EFFECTS
@@ -2019,10 +2019,7 @@ footer{
                 vertical-align: center;
             }
         }
-
     }
-
-  
 
     .footer__desc{
         line-height: 160%;
@@ -2066,6 +2063,30 @@ footer{
         .contact-icon{
             font-size: 1.5em !important;
             opacity: .6;
+        }
+    }
+
+}
+
+
+
+/*=========================================
+            10 - CONTENT REVEAL
+=========================================*/
+.content-toggle-section{
+    
+    .content-reveal__btn{
+        margin-top: 24px;
+    }
+
+    .hidden-content{
+        display: none;
+        margin-top: -25px;
+        transition: all .3s ease;
+    
+        &.show{
+            display: unset;
+            margin-top: 0;
         }
     }
 

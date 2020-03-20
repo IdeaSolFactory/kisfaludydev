@@ -5,9 +5,30 @@ $(document).ready(function(){
     });
 
     toggleNav();
-    showEmailDelay();   
+    showEmailDelay();
+    contentToggle();   
 
 });
+
+// Content Toggle
+function contentToggle(){
+    var showClass = "show";
+    var initBtnText = "Több";
+    var activeBtnText = "Kevesebb";
+
+    $(".content-reveal__btn").click(function(){
+        var buttonClicked = $(this);
+        var contentToReveal = $(buttonClicked).siblings(".hidden-content");
+
+        if( !$(contentToReveal).hasClass(showClass) ){
+            $(contentToReveal).addClass(showClass);
+            $(buttonClicked).html(activeBtnText);
+        } else{
+            $(contentToReveal).removeClass(showClass);
+            $(buttonClicked).html(initBtnText);
+        }
+    });
+}
 
 // Sticks navigation to top on scrolling down
 function slideDownHeader(navContainer){

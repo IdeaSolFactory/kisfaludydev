@@ -48,7 +48,8 @@ TABLE OF CONTENTS
              A - HEADER
              B - HERO
         02 - 
-
+10 ---- FUNCTIONS -------------------
+        01 - CONTENT REVEAL
 ===========================================
 */
 /*=========================================
@@ -2353,5 +2354,24 @@ footer .list-contact a:not(:last-child) {
 footer .list-contact .contact-icon {
   font-size: 1.5em !important;
   opacity: .6;
+}
+
+/*=========================================
+            10 - CONTENT REVEAL
+=========================================*/
+.content-toggle-section .content-reveal__btn {
+  margin-top: 24px;
+}
+
+.content-toggle-section .hidden-content {
+  display: none;
+  margin-top: -25px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.content-toggle-section .hidden-content.show {
+  display: unset;
+  margin-top: 0;
 }
 /*# sourceMappingURL=custom.css.map */
