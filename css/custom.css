@@ -1024,6 +1024,7 @@ th span {
 .nav--section .nav-container .menu-container > .menu > li.dropdown {
   display: block;
   position: relative;
+  cursor: pointer;
 }
 
 .nav--section .nav-container .menu-container > .menu > li.dropdown.dropdown--active {

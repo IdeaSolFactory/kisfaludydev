@@ -176,6 +176,7 @@ $menuItemPadding-small: 24px;
                     &.dropdown{
                         display: block;
                         position: relative;
+                        cursor: pointer;
 
                         &.dropdown--active{
                             pointer-events: none;
