@@ -1171,7 +1171,7 @@ th span {
 
 @media screen and (min-width: 1200px) {
   .nav--section .nav-container .menu-container > .logo-container .logo::before {
-    background-image: url("../img/logo/3x/kisfaludy_logo_colored-3x.png");
+    background-image: url("../img/logo/3x/kisfaludy_logo_multicolored-3x.png");
   }
 }
 
