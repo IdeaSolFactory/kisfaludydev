@@ -442,6 +442,7 @@ a{
     }
 
     hr.short {
+        width: 6.5em;
         border-width: .45em;
         border-color: color(primary);
     }
@@ -913,6 +914,7 @@ a{
         .hero-section__content{
             height: 100%;
             width: 100%;
+            padding-top: 6em;
 
             @include mqTablet{
                 padding-top: 0;

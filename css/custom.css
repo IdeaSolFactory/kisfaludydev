@@ -436,6 +436,7 @@ hr.medium {
 }
 
 hr.short {
+  width: 6.5em;
   border-width: .45em;
   border-color: #e7cc5e;
 }
@@ -1263,6 +1264,7 @@ th span {
 .hero-section .hero-section__content {
   height: 100%;
   width: 100%;
+  padding-top: 6em;
 }
 
 @media screen and (min-width: 768px) {
