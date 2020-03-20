@@ -126,6 +126,16 @@
                     @include mqSmallScreen{
                         text-align: center;
                         padding-top: 0;
+
+                        a{
+                            font-size: .9em;
+                        }
+                    }
+
+                    @include mqLargeScreen{                      
+                        a{
+                            font-size: 1em;
+                        }
                     }
 
                     &:not(:last-of-type){
@@ -250,10 +260,7 @@
 
                 &.menu--left{
                     justify-content: flex-start;
-
-                    > li{
-                        align-self: center;
-                    }
+                    
                 }
 
                 &.menu--right{

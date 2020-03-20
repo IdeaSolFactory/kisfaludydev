@@ -980,6 +980,15 @@ th span {
     text-align: center;
     padding-top: 0;
   }
+  .nav--section .nav-container .menu-container > .menu > li a {
+    font-size: .9em;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .nav--section .nav-container .menu-container > .menu > li a {
+    font-size: 1em;
+  }
 }
 
 .nav--section .nav-container .menu-container > .menu > li:not(:last-of-type) {
@@ -1100,12 +1109,6 @@ th span {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-
-.nav--section .nav-container .menu-container > .menu.menu--left > li {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
 }
 
 .nav--section .nav-container .menu-container > .menu.menu--right {
