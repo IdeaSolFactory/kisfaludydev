@@ -1369,8 +1369,16 @@ th span {
   }
 }
 
-.hero-section .hero-section__content .hero-section__text .h1, .hero-section .hero-section__content .hero-section__text p {
+.hero-section .hero-section__content .hero-section__text {
   color: white;
+}
+
+.hero-section .hero-section__content .hero-section__text .hero-section__title {
+  font-size: 3em;
+}
+
+.hero-section .hero-section__content .hero-section__text .hero-section__bodytext {
+  font-size: 1.3em;
 }
 
 /*INDEX HERO*/
