@@ -35,20 +35,24 @@ TABLE OF CONTENTS
         06 - IMAGE, IMAGE POSITIONING
         07 - LISTS
         08 - TABLES
-        09 - ACHOR OFFSETS
+        09 - ANCHOR OFFSETS
+
+06 ---- ELEMENTS --------------------
+        01 - BOXED CONTENT
+
         
-06 ---- BUTTONS
+07 ---- BUTTONS
         -----------------------------
         01 - BTN MAIN
         -----------------------------
-07 ---- EFFECTS
-08 ---- SITE IMAGES
-09 ---- SECTIONS --------------------
+08 ---- EFFECTS
+09 ---- SITE IMAGES
+10 ---- SECTIONS --------------------
         01 - HEADERS
              A - HEADER
              B - HERO
         02 - 
-10 ---- FUNCTIONS -------------------
+11 ---- FUNCTIONS -------------------
         01 - CONTENT REVEAL
 ===========================================
 */
@@ -698,7 +702,87 @@ th span {
 }
 
 /*=========================================
-            06 - BUTTONS
+            06 - ELEMENTS
+=========================================*/
+/*-----------------------------------
+                01 - BOXED CONTENT
+        -----------------------------------*/
+.boxed--style1 {
+  padding: 0;
+  background-color: white;
+}
+
+.boxed--style1 .box-header {
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: white;
+  border-bottom: 5px solid #e7cc5e;
+  padding: 1em 2.5em;
+}
+
+/*box-header fonts*/
+.boxed--style1 .box-header h1,
+.boxed--style1 .box-header h2,
+.boxed--style1 .box-header h3,
+.boxed--style1 .box-header h4,
+.boxed--style1 .box-header h5,
+.boxed--style1 .box-header h6 {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #e7cc5e;
+}
+
+.boxed--style1 .box-header h3 {
+  font-weight: 600;
+}
+
+.boxed--style1 .box-content {
+  padding: 1em 2.5em;
+}
+
+.boxed--style1 .box-content-section:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.boxed--style1 .box-content-section div {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.box-content-section .box-section-header {
+  font-size: 1.65em;
+  background-color: rgba(0, 0, 0, 0.045);
+  padding-top: 0.65em;
+  padding-bottom: 0.65em;
+}
+
+.boxed .boxed__title {
+  font-size: 3em;
+  font-weight: 800;
+  color: #252525;
+  line-height: 120%;
+}
+
+.boxed .boxed__title[class*="--medium"] {
+  font-size: 2.3em;
+}
+
+.boxed .boxed__bodytext {
+  font-size: 1.3em;
+  line-height: 160%;
+}
+
+.boxed .boxed__bodytext:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+
+.boxed .boxed__bodytext > p:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+
+/*=========================================
+            07 - BUTTONS
 =========================================*/
 .btn {
   width: 100% !important;
@@ -787,7 +871,7 @@ th span {
 }
 
 /*=========================================
-            07 - EFFECTS
+            08 - EFFECTS
 =========================================*/
 .blur-me {
   filter: blur(5px);
@@ -801,7 +885,7 @@ th span {
 }
 
 /*=========================================
-            08 - SITE IMAGES
+            09 - SITE IMAGES
 =========================================*/
 @media (min-width: 768px) {
   .section-image::after {
@@ -814,7 +898,7 @@ th span {
 }
 
 /*=========================================
-            09 - SECTIONS
+            10 - SECTIONS
 =========================================*/
 /*-----------------------------------
             01 - HEADER
@@ -1533,57 +1617,6 @@ th span {
   .event-list {
     padding-top: 0;
   }
-}
-
-/*cusotm boxes*/
-.boxed--style1 {
-  padding: 0;
-  background-color: white;
-}
-
-.boxed--style1 .box-header {
-  text-align: center;
-  display: block;
-  width: 100%;
-  color: white;
-  border-bottom: 5px solid #e7cc5e;
-  padding: 1em 2.5em;
-}
-
-/*box-header fonts*/
-.boxed--style1 .box-header h1,
-.boxed--style1 .box-header h2,
-.boxed--style1 .box-header h3,
-.boxed--style1 .box-header h4,
-.boxed--style1 .box-header h5,
-.boxed--style1 .box-header h6 {
-  padding: 0 !important;
-  margin: 0 !important;
-  color: #e7cc5e;
-}
-
-.boxed--style1 .box-header h3 {
-  font-weight: 600;
-}
-
-.boxed--style1 .box-content {
-  padding: 1em 2.5em;
-}
-
-.boxed--style1 .box-content-section:not(:last-of-type) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.boxed--style1 .box-content-section div {
-  padding-right: 25px;
-  padding-left: 25px;
-}
-
-.box-content-section .box-section-header {
-  font-size: 1.65em;
-  background-color: rgba(0, 0, 0, 0.045);
-  padding-top: 0.65em;
-  padding-bottom: 0.65em;
 }
 
 /*Graphic assets*/
@@ -2357,8 +2390,11 @@ footer .list-contact .contact-icon {
 }
 
 /*=========================================
-            10 - CONTENT REVEAL
+            11 - FUNCTIONS
 =========================================*/
+/*-----------------------------------
+                   01 - CONTENT REVEAL
+        -----------------------------------*/
 .content-toggle-section .content-reveal__btn {
   margin-top: 24px;
 }
