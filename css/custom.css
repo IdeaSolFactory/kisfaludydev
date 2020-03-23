@@ -1348,7 +1348,13 @@ th span {
 }
 
 .hero-section.hero-section--rendezvenyek::before {
-  background-image: url("../img/rendezveny_intro_01.jpg");
+  background-image: url("../img/rendezveny_intro_01_tablet.jpg");
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-section.hero-section--rendezvenyek::before {
+    background-image: url("../img/rendezveny_intro_01.jpg");
+  }
 }
 
 .hero-section .hero-section__content {

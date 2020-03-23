@@ -997,7 +997,11 @@ a{
         //Site modifiers
         &.hero-section--rendezvenyek{
             &::before{
-                background-image: url("../img/rendezveny_intro_01.jpg");
+                background-image: url("../img/rendezveny_intro_01_tablet.jpg");               
+
+                @include mqMediumScreen{
+                    background-image: url("../img/rendezveny_intro_01.jpg");
+                }
             }
         }
 
