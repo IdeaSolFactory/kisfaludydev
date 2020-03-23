@@ -1015,8 +1015,19 @@ a{
             }
 
             .hero-section__text{
-                .h1, p {
-                    color: white;
+                color: white;
+
+                .hero-section__title{
+                    font-size: $textsize-title;
+                }
+
+                .hero-section__bodytext{
+                    font-size: $textsize-lead;
+                    font-weight: lighter;
+
+                    >p:not(:last-of-type){
+                        margin-bottom: 1em;
+                    }
                 }
             }
         }

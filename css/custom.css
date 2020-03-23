@@ -769,7 +769,7 @@ th span {
 }
 
 .boxed .boxed__bodytext {
-  font-size: 1.3em;
+  font-size: 1.36em;
   line-height: 160%;
 }
 
@@ -1369,8 +1369,21 @@ th span {
   }
 }
 
-.hero-section .hero-section__content .hero-section__text .h1, .hero-section .hero-section__content .hero-section__text p {
+.hero-section .hero-section__content .hero-section__text {
   color: white;
+}
+
+.hero-section .hero-section__content .hero-section__text .hero-section__title {
+  font-size: 3em;
+}
+
+.hero-section .hero-section__content .hero-section__text .hero-section__bodytext {
+  font-size: 1.36em;
+  font-weight: lighter;
+}
+
+.hero-section .hero-section__content .hero-section__text .hero-section__bodytext > p:not(:last-of-type) {
+  margin-bottom: 1em;
 }
 
 /*INDEX HERO*/
