@@ -783,6 +783,12 @@ th span {
   padding-bottom: 0.65em;
 }
 
+.boxed .boxed__text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .boxed .boxed__title {
   font-size: 2.5em;
   font-weight: 800;
@@ -813,6 +819,11 @@ th span {
   position: relative;
 }
 
+.boxed .boxed__pic > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .boxed .boxed__pic::after {
   content: "";
   display: block;
@@ -828,13 +839,13 @@ th span {
 
 @media screen and (min-width: 768px) {
   .boxed__pic.boxed__overview::after {
-    background-image: url("..img/kisfaludy_balatonfured_elott_tablet.jpg");
+    background-image: url("../img/kisfaludy_balatonfured_elott_tablet.jpg");
   }
 }
 
 @media screen and (min-width: 991px) {
   .boxed__pic.boxed__overview::after {
-    background-image: url("..img/kisfaludy_balatonfured_elott.jpg");
+    background-image: url("../img/kisfaludy_balatonfured_elott.jpg");
   }
 }
 
@@ -924,11 +935,6 @@ section {
   .btn {
     width: 100% !important;
   }
-  .autowidth [class*="btn"] {
-    width: auto !important;
-    margin-left: 0;
-    margin-right: 0;
-  }
 }
 
 .btn,
@@ -942,6 +948,14 @@ section {
   font-weight: 800;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+@media screen and (min-width: 768px) {
+  .btn.autowidth {
+    width: auto !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .btn.hero-CTA {
@@ -1913,6 +1927,8 @@ section {
 
 .notification--section .notification__content .notification__bodytext > p {
   font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
 
 .notification--section .notification-wrapper {
