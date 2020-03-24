@@ -926,6 +926,7 @@ section {
 
 .btn.hero-CTA {
   color: white;
+  margin-left: 2px;
 }
 
 .btn.hero-CTA:hover {
@@ -950,6 +951,17 @@ section {
   background-color: #e7cc5e !important;
   color: #212023 !important;
   border: #212023 1px solid !important;
+}
+
+.btn--primary.bordered {
+  background-color: transparent !important;
+  color: white !important;
+  border: #e7cc5e 1px solid !important;
+}
+
+.btn--primary.bordered:hover {
+  background-color: #e7cc5e !important;
+  color: #252525 !important;
 }
 
 /*-----------------------------------
@@ -1615,24 +1627,6 @@ section {
 .hero-wrapper h1 {
   font-size: 4em;
   font-weight: 800;
-}
-
-.hero-wrapper .btn.hero-CTA {
-  border: 1px white solid !important;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.hero-wrapper .btn.hero-CTA .btn__text {
-  color: white !important;
-}
-
-.hero-wrapper .btn.hero-CTA:hover .btn__text {
-  color: black !important;
-}
-
-.hero-wrapper .btn.hero-CTA:hover {
-  border: 1px black solid !important;
-  background-color: #e7cc5e;
 }
 
 .introduction--section {

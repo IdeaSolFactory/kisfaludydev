@@ -967,12 +967,17 @@ a{
                 box-shadow: none;
     }
 
-    .btn.hero-CTA{
-        color: white;
-    }
+    .btn{
 
-    .btn.hero-CTA:hover{
-        color: black;
+        &.hero-CTA{
+            color: white;
+            margin-left: 2px;
+            
+            &:hover{
+                color: black;
+            }
+        }
+
     }
 
     .btn, .btn--primary{
@@ -994,6 +999,17 @@ a{
         background-color: color(primary) !important;
         color: #212023 !important;
         border: #212023 1px solid !important;
+    }
+
+    .btn--primary.bordered{
+        background-color: transparent !important;
+        color: white !important;
+        border: color(primary) 1px solid !important;
+
+        &:hover{
+            background-color: color(primary) !important;
+            color: color(dark) !important;
+        }
     }
 
     /*-----------------------------------
@@ -1260,23 +1276,6 @@ a{
         font-weight: 800;
     }
     
-    .hero-wrapper .btn.hero-CTA{
-        border: 1px white solid !important;
-        background-color: rgba(0, 0, 0, 0.3)
-    }
-    
-    .hero-wrapper .btn.hero-CTA .btn__text{
-        color: white !important;
-    }
-    
-    .hero-wrapper .btn.hero-CTA:hover .btn__text{
-        color: black !important;
-    }
-    
-    .hero-wrapper .btn.hero-CTA:hover{
-        border: 1px black solid !important;
-        background-color: color(primary);
-    }
     
     .introduction--section{
         padding-top: 0;
