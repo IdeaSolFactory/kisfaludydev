@@ -74,7 +74,8 @@ $menuItemPadding-small: 24px;
                     
                     >.logo{                      
                         &::before{                               
-                            background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");                          
+                            background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
+                            margin-left: 2px;                          
                         }
 
                         @include mqSmallScreen{
@@ -96,6 +97,7 @@ $menuItemPadding-small: 24px;
             flex-direction: column;                
             height: 100%;
             padding: $menuItemPadding-small 0;
+            font-size: $textsize-compact;
 
             &.active{
                 display: flex !important;
@@ -158,6 +160,9 @@ $menuItemPadding-small: 24px;
 
                         a{
                             font-size: .9em;
+                            &.active{
+                                text-decoration: underline;
+                            }
                         }
                     }
 
@@ -313,6 +318,7 @@ $menuItemPadding-small: 24px;
                         background-position: center;
                         background-size: contain;
                         background-repeat: no-repeat;
+                        margin-left: 1px;
 
                         @include mqMediumScreen{
                             background-image: url("../img/logo/3x/kisfaludy_logo_multicolored-3x.png");

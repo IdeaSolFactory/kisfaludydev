@@ -6,7 +6,7 @@ $(document).ready(function(){
 
     toggleNav();
     showEmailDelay();
-    contentToggle();   
+    contentToggle(); 
 
 });
 

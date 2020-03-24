@@ -24,6 +24,7 @@ TABLE OF CONTENTS
         01 - TEXT SIZES
         02 - TEXT WEIGHTS
         03 - TEXT DECORATIONS
+        04 - TEXT BREAKERS
         ----------------------------
 04 ---- BACKGROUNDS
 05 ---- GENERAL FORMATTING----------
@@ -35,20 +36,25 @@ TABLE OF CONTENTS
         06 - IMAGE, IMAGE POSITIONING
         07 - LISTS
         08 - TABLES
-        09 - ACHOR OFFSETS
+        09 - ANCHOR OFFSETS
+
+06 ---- ELEMENTS --------------------
+        01 - BOXED CONTENT
+        02 - SECTION CONTENT
+
         
-06 ---- BUTTONS
+07 ---- BUTTONS
         -----------------------------
         01 - BTN MAIN
         -----------------------------
-07 ---- EFFECTS
-08 ---- SITE IMAGES
-09 ---- SECTIONS --------------------
+08 ---- EFFECTS
+09 ---- SITE IMAGES
+10 ---- SECTIONS --------------------
         01 - HEADERS
              A - HEADER
              B - HERO
         02 - 
-10 ---- FUNCTIONS -------------------
+11 ---- FUNCTIONS -------------------
         01 - CONTENT REVEAL
 ===========================================
 */
@@ -236,6 +242,23 @@ a{
         height: 6px;
     }
 
+
+     /*-----------------------------------
+            04 - TEXT BREAKERS
+    -----------------------------------*/
+    .break-tablet{
+        display: inline;
+        line-height: inherit;
+        font-size: inherit;
+        color: inherit;
+        font-weight: inherit;
+
+
+        @include mqTablet{
+            display: block;
+        }
+    }
+
 /*=========================================
             04 - BACKGROUNDS
 =========================================*/
@@ -302,6 +325,7 @@ a{
     /*-----------------------------------
                 03 - PADDINGS
     -----------------------------------*/
+    .nopadding{ padding: 0; }
     .py-6 {
         padding-top: 6em !important;
         padding-bottom: 6em !important;
@@ -430,24 +454,35 @@ a{
         04 - DIVIDERS
     -----------------------------------*/
 
-    hr.center{
-        margin-left: auto;
-        margin-right: auto;
-    }
+    hr{
 
-    hr.medium{      
-        border-width: .25em;
-        width: 35%;
-        border-color: color(primary);
-        opacity: 1 !important;        
-    }
+        &.center{
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    hr.short {
-        width: 6.5em;
-        border-width: .45em;
-        border-color: color(primary);
-    }
+        &.compact{
+            margin-top: $padding-smaller;
+            margin-bottom: $padding-smaller;
+        }
 
+        &.medium{
+            border-width: .25em;
+            width: 35%;
+            border-color: color(primary);
+            opacity: 1 !important;
+        }
+
+        &.short{
+            width: 6.5em;
+            border-width: .45em;
+            border-color: color(primary);
+
+            &.dark{
+                border-color: color(dark);
+            }
+        }
+    }
     
     /*-----------------------------------
         05 - BORDERS
@@ -562,21 +597,15 @@ a{
         -webkit-box-shadow: 0 0 20px rgba(2, 32, 33, 0.05);
                 box-shadow: 0 0 20px rgba(2, 32, 33, 0.05);
     }
-
+    
     [class*="--section"]
     {
         padding-top: 3em;
         padding-bottom: 3em;
         position: relative;
     }
-
-    @media (min-width: 768px){
-        [class*="--section"]{
-            padding-top: 5em;
-            padding-bottom: 5em;
-            
-        }
-    }
+    
+    
 
     /*-----------------------------------
                 07 - LISTS
@@ -585,6 +614,8 @@ a{
     .list {
         display: block;
         padding: 12px 0;
+
+        font-size: $textsize-body;
     }
 
     .list-nopadding{
@@ -720,7 +751,207 @@ a{
      }
 
 /*=========================================
-            06 - BUTTONS
+            06 - ELEMENTS
+=========================================*/
+
+        /*-----------------------------------
+                01 - BOXED CONTENT
+        -----------------------------------*/
+        .boxed--style1{
+            padding: 0;
+            background-color: white;
+        }
+    
+        .boxed--style1 .box-header{
+            text-align: center;
+            display: block;
+            width: 100%;
+            color: white;
+            border-bottom: 5px solid color(primary);
+            padding: 1em 2.5em;
+        }
+    
+            /*box-header fonts*/
+            .boxed--style1 .box-header h1,
+            .boxed--style1 .box-header h2,
+            .boxed--style1 .box-header h3,
+            .boxed--style1 .box-header h4,
+            .boxed--style1 .box-header h5,
+            .boxed--style1 .box-header h6
+            {
+                padding: 0 !important;
+                margin: 0 !important;
+                color: color(primary);
+            }
+    
+            .boxed--style1 .box-header h3{          
+                
+                font-weight: 600;
+            }
+    
+        .boxed--style1 .box-content{
+            padding: 1em 2.5em;
+        }
+    
+        .boxed--style1 .box-content-section:not(:last-of-type){
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        }
+        .boxed--style1 .box-content-section div{
+            padding-right: 25px;
+            padding-left: 25px ;
+        }
+    
+        .box-content-section .box-section-header{
+            font-size: 1.65em;
+            background-color: rgba(0, 0, 0, .045);
+            padding-top: 0.65em;
+            padding-bottom: 0.65em;
+        }
+
+        .boxed{
+            .boxed__title{
+                font-size: $textsize-title;
+                font-weight: 800;
+                color: color(dark);
+                line-height: 120%;
+
+                &[class*="--medium"]{
+                    font-size: $textsize-title-medium;
+                }
+            }
+
+            .boxed__bodytext{
+                line-height: 160%;
+
+                &:not(:last-of-type){
+                    margin-bottom: 1em;
+                }
+
+                >p:not(:last-of-type){
+                    margin-bottom: 1em;
+                }
+            }
+
+            .boxed__pic{
+                height: 100%;
+                width: 100%;
+                display: block;
+                position: relative;
+
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-position: center;
+                    background-size:cover;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+
+        // BOXED versions
+        .boxed__pic
+        {
+            // Overview
+            &.boxed__overview::after{
+                @include mqTablet{
+                    background-image: url("..img/kisfaludy_balatonfured_elott_tablet.jpg");
+                }
+                @include mqSmallScreen{
+                    background-image: url("..img/kisfaludy_balatonfured_elott.jpg");
+                }                
+            }
+        }
+
+
+    /*-----------------------------------
+            02 - SECTION CONTENT
+    -----------------------------------*/ 
+    section{
+        font-size: $textsize-body;
+    }
+    
+    .section-content__wrapper{
+
+        .section-content__text{
+            &:not(:last-of-type){
+                padding-bottom: 1em;
+            }
+
+            @include mqSmallScreen{
+                &:not(:last-child){
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .section-content__title{
+            font-size: $textsize-title-medium;
+            font-weight: bold;  
+        }
+
+        .section-content__bodytext {           
+
+            > p{
+                font-size: $textsize-body;
+            }
+        }
+
+        .section-content__pic{
+            position: relative;
+
+            &::after{
+                content:"";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            > img{
+                object-fit: cover;
+                width: auto;
+                height: 100%;
+            }
+
+            // Tortenelem.html
+            &.story{                
+                &::after{
+                    @include mqTablet{ 
+                        background-image: url(../img/kisfaludy_balatonfured_elott_tablet.jpg);
+                    }
+
+                    @include mqSmallScreen{
+                        background-image: url(../img/kisfaludy_balatonfured_elott.jpg); 
+                    }
+                    
+                }
+            }
+
+            &.rebuild{
+                &::after{
+                    @include mqTablet{ 
+                        background-image: url(../img/ujjaepites_mobile.jpg);
+                    }                   
+                }
+            }
+           
+        }
+    }
+
+
+
+/*=========================================
+            07 - BUTTONS
 =========================================*/
 
     .btn{
@@ -759,12 +990,17 @@ a{
                 box-shadow: none;
     }
 
-    .btn.hero-CTA{
-        color: white;
-    }
+    .btn{
 
-    .btn.hero-CTA:hover{
-        color: black;
+        &.hero-CTA{
+            color: white;
+            margin-left: 2px;
+            
+            &:hover{
+                color: black;
+            }
+        }
+
     }
 
     .btn, .btn--primary{
@@ -786,6 +1022,17 @@ a{
         background-color: color(primary) !important;
         color: #212023 !important;
         border: #212023 1px solid !important;
+    }
+
+    .btn--primary.bordered{
+        background-color: transparent !important;
+        color: white !important;
+        border: color(primary) 1px solid !important;
+
+        &:hover{
+            background-color: color(primary) !important;
+            color: color(dark) !important;
+        }
     }
 
     /*-----------------------------------
@@ -812,7 +1059,7 @@ a{
         }
        
 /*=========================================
-            07 - EFFECTS
+            08 - EFFECTS
 =========================================*/
 
 .blur-me{
@@ -827,7 +1074,7 @@ a{
 
 
 /*=========================================
-            08 - SITE IMAGES
+            09 - SITE IMAGES
 =========================================*/
 
 
@@ -847,7 +1094,7 @@ a{
         
 
 /*=========================================
-            09 - SECTIONS
+            10 - SECTIONS
 =========================================*/
 
     /*-----------------------------------
@@ -876,6 +1123,15 @@ a{
             min-height: 650px;
             flex-direction: column;
             justify-content: flex-end;
+
+            .container {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+
+        @include mqSmallScreen{
+            padding-bottom: $padding-big;
         }
 
         &::before{
@@ -902,12 +1158,31 @@ a{
             &.filter--black--gradient{
                 background: linear-gradient(0deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.5) 150%);
             }
-        }
+        }      
 
         //Site modifiers
         &.hero-section--rendezvenyek{
             &::before{
-                background-image: url("../img/rendezveny_intro_01.jpg");
+                background-image: url("../img/rendezveny_intro_01_tablet.jpg");               
+
+                @include mqMediumScreen{
+                    background-image: url("../img/rendezveny_intro_01.jpg");
+                }
+            }
+        }
+
+        &.hero-section--tortenelem{
+            &::before{
+                background-position: bottom;
+                background-image: url("../img/tortenelem_intro_mobile.jpg");
+                
+                @include mqTablet{
+                    background-image: url("../img/tortenelem_intro_tablet.jpg");
+                }
+
+                @include mqMediumScreen{
+                    background-image: url("../img/tortenelem_intro.jpg");
+                }
             }
         }
 
@@ -921,8 +1196,22 @@ a{
             }
 
             .hero-section__text{
-                .h1, p {
+                color: white;
+                
+
+                .hero-section__title{
+                    font-size: $textsize-title;
                     color: white;
+                }
+
+                .hero-section__bodytext{
+                    font-size: $textsize-lead;
+                    line-height: 160%;
+                    font-weight: lighter;
+
+                    >p:not(:last-of-type){
+                        margin-bottom: 1em;
+                    }
                 }
             }
         }
@@ -995,6 +1284,33 @@ a{
 
         .hero__content{
             padding-top: 3em;
+
+            .hero__text{
+                h1, p{
+                    color: white;
+                    text-shadow: 0px 3px 8px rgba(0, 0, 0, .45)
+                }
+
+                .hero__title{
+                    font-size: $textsize-subtitle;
+                    font-weight: 800;
+
+                    @include mqTablet{
+                        font-size: $textsize-title-medium;
+                    }
+
+                    @include mqMediumScreen{
+                        font-size: $textsize-title;
+                    }
+                }
+                .hero__subtitle{
+                    font-size: $textsize-body;
+
+                    @include mqTablet{
+                        font-size: $textsize-lead;
+                    }
+                }
+            }
         }
     } 
     
@@ -1003,35 +1319,6 @@ a{
         -webkit-transform: skewY(0);
             -ms-transform: skewY(0);
                 transform: skewY(0);
-    }
-    
-    .hero-wrapper h1,
-    .hero-wrapper p{
-        color: white;
-        text-shadow: 0px 3px 8px rgba(0, 0, 0, .45)
-    }
-    
-    .hero-wrapper h1{
-        font-size: 4em;
-        font-weight: 800;
-    }
-    
-    .hero-wrapper .btn.hero-CTA{
-        border: 1px white solid !important;
-        background-color: rgba(0, 0, 0, 0.3)
-    }
-    
-    .hero-wrapper .btn.hero-CTA .btn__text{
-        color: white !important;
-    }
-    
-    .hero-wrapper .btn.hero-CTA:hover .btn__text{
-        color: black !important;
-    }
-    
-    .hero-wrapper .btn.hero-CTA:hover{
-        border: 1px black solid !important;
-        background-color: color(primary);
     }
     
     .introduction--section{
@@ -1116,7 +1403,6 @@ a{
 
     .event-description-text{
         padding: 32px 0;
-        font-size: 1.2em;
         line-height: 1.6em;;
     }
 
@@ -1172,59 +1458,7 @@ a{
                 padding-top: 0;
             }
         }
-    
-    
-    /*cusotm boxes*/
-    .boxed--style1{
-        padding: 0;
-        background-color: white;
-    }
 
-    .boxed--style1 .box-header{
-        text-align: center;
-        display: block;
-        width: 100%;
-        color: white;
-        border-bottom: 5px solid color(primary);
-        padding: 1em 2.5em;
-    }
-
-        /*box-header fonts*/
-        .boxed--style1 .box-header h1,
-        .boxed--style1 .box-header h2,
-        .boxed--style1 .box-header h3,
-        .boxed--style1 .box-header h4,
-        .boxed--style1 .box-header h5,
-        .boxed--style1 .box-header h6
-        {
-            padding: 0 !important;
-            margin: 0 !important;
-            color: color(primary);
-        }
-
-        .boxed--style1 .box-header h3{          
-            
-            font-weight: 600;
-        }
-
-    .boxed--style1 .box-content{
-        padding: 1em 2.5em;
-    }
-
-    .boxed--style1 .box-content-section:not(:last-of-type){
-        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    }
-    .boxed--style1 .box-content-section div{
-        padding-right: 25px;
-        padding-left: 25px ;
-    }
-
-    .box-content-section .box-section-header{
-        font-size: 1.65em;
-        background-color: rgba(0, 0, 0, .045);
-        padding-top: 0.65em;
-        padding-bottom: 0.65em;
-    }
 
     /*Graphic assets*/
 
@@ -1319,8 +1553,29 @@ a{
 
 /*BODY*/
 
+//Notification -- Bar
 .notification--section{
     background-color: color(primary);
+    color: color(dark);
+
+    .notification__content{
+        padding: 24px;
+
+        .notification__title{
+            margin: 0;
+            font-weight: bold;
+            color: color(dark);
+            font-size: $textsize-title-medium;
+        }
+    
+        .notification__bodytext > p{
+            font-size: $textsize-body;
+        }
+        
+    }
+
+    
+
 }
 
 .notification--section .notification-wrapper{
@@ -1979,7 +2234,10 @@ a{
 
 
 .email--section [class*="col"]{
-    padding: 0 5em;
+
+    @include mqSmallScreen{
+        padding: 0 5em;
+    }
 }
 
 /*Additional Info Section*/
@@ -2071,23 +2329,27 @@ footer{
 
 
 /*=========================================
-            10 - CONTENT REVEAL
+            11 - FUNCTIONS
 =========================================*/
-.content-toggle-section{
-    
-    .content-reveal__btn{
-        margin-top: 24px;
-    }
 
-    .hidden-content{
-        display: none;
-        margin-top: -25px;
-        transition: all .3s ease;
-    
-        &.show{
-            display: unset;
-            margin-top: 0;
+        /*-----------------------------------
+                   01 - CONTENT REVEAL
+        -----------------------------------*/
+        .content-toggle-section{
+            
+            .content-reveal__btn{
+                margin-top: 24px;
+            }
+
+            .hidden-content{
+                display: none;
+                margin-top: -25px;
+                transition: all .3s ease;
+            
+                &.show{
+                    display: unset;
+                    margin-top: 0;
+                }
+            }
+
         }
-    }
-
-}

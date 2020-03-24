@@ -24,6 +24,7 @@ TABLE OF CONTENTS
         01 - TEXT SIZES
         02 - TEXT WEIGHTS
         03 - TEXT DECORATIONS
+        04 - TEXT BREAKERS
         ----------------------------
 04 ---- BACKGROUNDS
 05 ---- GENERAL FORMATTING----------
@@ -35,20 +36,25 @@ TABLE OF CONTENTS
         06 - IMAGE, IMAGE POSITIONING
         07 - LISTS
         08 - TABLES
-        09 - ACHOR OFFSETS
+        09 - ANCHOR OFFSETS
+
+06 ---- ELEMENTS --------------------
+        01 - BOXED CONTENT
+        02 - SECTION CONTENT
+
         
-06 ---- BUTTONS
+07 ---- BUTTONS
         -----------------------------
         01 - BTN MAIN
         -----------------------------
-07 ---- EFFECTS
-08 ---- SITE IMAGES
-09 ---- SECTIONS --------------------
+08 ---- EFFECTS
+09 ---- SITE IMAGES
+10 ---- SECTIONS --------------------
         01 - HEADERS
              A - HEADER
              B - HERO
         02 - 
-10 ---- FUNCTIONS -------------------
+11 ---- FUNCTIONS -------------------
         01 - CONTENT REVEAL
 ===========================================
 */
@@ -255,6 +261,23 @@ strong {
   height: 6px;
 }
 
+/*-----------------------------------
+            04 - TEXT BREAKERS
+    -----------------------------------*/
+.break-tablet {
+  display: inline;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  .break-tablet {
+    display: block;
+  }
+}
+
 /*=========================================
             04 - BACKGROUNDS
 =========================================*/
@@ -316,6 +339,10 @@ html {
 /*-----------------------------------
                 03 - PADDINGS
     -----------------------------------*/
+.nopadding {
+  padding: 0;
+}
+
 .py-6 {
   padding-top: 6em !important;
   padding-bottom: 6em !important;
@@ -429,6 +456,11 @@ hr.center {
   margin-right: auto;
 }
 
+hr.compact {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 hr.medium {
   border-width: .25em;
   width: 35%;
@@ -440,6 +472,10 @@ hr.short {
   width: 6.5em;
   border-width: .45em;
   border-color: #e7cc5e;
+}
+
+hr.short.dark {
+  border-color: #252525;
 }
 
 /*-----------------------------------
@@ -560,19 +596,13 @@ hr.short {
   position: relative;
 }
 
-@media (min-width: 768px) {
-  [class*="--section"] {
-    padding-top: 5em;
-    padding-bottom: 5em;
-  }
-}
-
 /*-----------------------------------
                 07 - LISTS
     -----------------------------------*/
 .list {
   display: block;
   padding: 12px 0;
+  font-size: 16px;
 }
 
 .list-nopadding {
@@ -698,7 +728,186 @@ th span {
 }
 
 /*=========================================
-            06 - BUTTONS
+            06 - ELEMENTS
+=========================================*/
+/*-----------------------------------
+                01 - BOXED CONTENT
+        -----------------------------------*/
+.boxed--style1 {
+  padding: 0;
+  background-color: white;
+}
+
+.boxed--style1 .box-header {
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: white;
+  border-bottom: 5px solid #e7cc5e;
+  padding: 1em 2.5em;
+}
+
+/*box-header fonts*/
+.boxed--style1 .box-header h1,
+.boxed--style1 .box-header h2,
+.boxed--style1 .box-header h3,
+.boxed--style1 .box-header h4,
+.boxed--style1 .box-header h5,
+.boxed--style1 .box-header h6 {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #e7cc5e;
+}
+
+.boxed--style1 .box-header h3 {
+  font-weight: 600;
+}
+
+.boxed--style1 .box-content {
+  padding: 1em 2.5em;
+}
+
+.boxed--style1 .box-content-section:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.boxed--style1 .box-content-section div {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.box-content-section .box-section-header {
+  font-size: 1.65em;
+  background-color: rgba(0, 0, 0, 0.045);
+  padding-top: 0.65em;
+  padding-bottom: 0.65em;
+}
+
+.boxed .boxed__title {
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #252525;
+  line-height: 120%;
+}
+
+.boxed .boxed__title[class*="--medium"] {
+  font-size: 2em;
+}
+
+.boxed .boxed__bodytext {
+  line-height: 160%;
+}
+
+.boxed .boxed__bodytext:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+
+.boxed .boxed__bodytext > p:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+
+.boxed .boxed__pic {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.boxed .boxed__pic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+  .boxed__pic.boxed__overview::after {
+    background-image: url("..img/kisfaludy_balatonfured_elott_tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .boxed__pic.boxed__overview::after {
+    background-image: url("..img/kisfaludy_balatonfured_elott.jpg");
+  }
+}
+
+/*-----------------------------------
+            02 - SECTION CONTENT
+    -----------------------------------*/
+section {
+  font-size: 16px;
+}
+
+.section-content__wrapper .section-content__text:not(:last-of-type) {
+  padding-bottom: 1em;
+}
+
+@media screen and (min-width: 991px) {
+  .section-content__wrapper .section-content__text:not(:last-child) {
+    padding-bottom: 0;
+  }
+}
+
+.section-content__wrapper .section-content__title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.section-content__wrapper .section-content__bodytext > p {
+  font-size: 16px;
+}
+
+.section-content__wrapper .section-content__pic {
+  position: relative;
+}
+
+.section-content__wrapper .section-content__pic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-content__wrapper .section-content__pic > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: auto;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .section-content__wrapper .section-content__pic.story::after {
+    background-image: url(../img/kisfaludy_balatonfured_elott_tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .section-content__wrapper .section-content__pic.story::after {
+    background-image: url(../img/kisfaludy_balatonfured_elott.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section-content__wrapper .section-content__pic.rebuild::after {
+    background-image: url(../img/ujjaepites_mobile.jpg);
+  }
+}
+
+/*=========================================
+            07 - BUTTONS
 =========================================*/
 .btn {
   width: 100% !important;
@@ -737,6 +946,7 @@ th span {
 
 .btn.hero-CTA {
   color: white;
+  margin-left: 2px;
 }
 
 .btn.hero-CTA:hover {
@@ -763,6 +973,17 @@ th span {
   border: #212023 1px solid !important;
 }
 
+.btn--primary.bordered {
+  background-color: transparent !important;
+  color: white !important;
+  border: #e7cc5e 1px solid !important;
+}
+
+.btn--primary.bordered:hover {
+  background-color: #e7cc5e !important;
+  color: #252525 !important;
+}
+
 /*-----------------------------------
             01 - BTN MAIN
     -----------------------------------*/
@@ -787,7 +1008,7 @@ th span {
 }
 
 /*=========================================
-            07 - EFFECTS
+            08 - EFFECTS
 =========================================*/
 .blur-me {
   filter: blur(5px);
@@ -801,7 +1022,7 @@ th span {
 }
 
 /*=========================================
-            08 - SITE IMAGES
+            09 - SITE IMAGES
 =========================================*/
 @media (min-width: 768px) {
   .section-image::after {
@@ -814,7 +1035,7 @@ th span {
 }
 
 /*=========================================
-            09 - SECTIONS
+            10 - SECTIONS
 =========================================*/
 /*-----------------------------------
             01 - HEADER
@@ -893,6 +1114,7 @@ th span {
 
 .nav--section .nav-container.sticky .menu-container .logo-container > .logo::before {
   background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
+  margin-left: 2px;
 }
 
 @media screen and (min-width: 991px) {
@@ -915,6 +1137,7 @@ th span {
           flex-direction: column;
   height: 100%;
   padding: 24px 0;
+  font-size: 0.9em;
 }
 
 .nav--section .nav-container .menu-container.active {
@@ -1009,6 +1232,9 @@ th span {
   }
   .nav--section .nav-container .menu-container > .menu > li a {
     font-size: .9em;
+  }
+  .nav--section .nav-container .menu-container > .menu > li a.active {
+    text-decoration: underline;
   }
 }
 
@@ -1168,6 +1394,7 @@ th span {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  margin-left: 1px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -1234,6 +1461,16 @@ th span {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
+  .hero-section .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .hero-section {
+    padding-bottom: 64px;
+  }
 }
 
 .hero-section::before {
@@ -1264,7 +1501,30 @@ th span {
 }
 
 .hero-section.hero-section--rendezvenyek::before {
-  background-image: url("../img/rendezveny_intro_01.jpg");
+  background-image: url("../img/rendezveny_intro_01_tablet.jpg");
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-section.hero-section--rendezvenyek::before {
+    background-image: url("../img/rendezveny_intro_01.jpg");
+  }
+}
+
+.hero-section.hero-section--tortenelem::before {
+  background-position: bottom;
+  background-image: url("../img/tortenelem_intro_mobile.jpg");
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section.hero-section--tortenelem::before {
+    background-image: url("../img/tortenelem_intro_tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-section.hero-section--tortenelem::before {
+    background-image: url("../img/tortenelem_intro.jpg");
+  }
 }
 
 .hero-section .hero-section__content {
@@ -1279,8 +1539,23 @@ th span {
   }
 }
 
-.hero-section .hero-section__content .hero-section__text .h1, .hero-section .hero-section__content .hero-section__text p {
+.hero-section .hero-section__content .hero-section__text {
   color: white;
+}
+
+.hero-section .hero-section__content .hero-section__text .hero-section__title {
+  font-size: 2.5em;
+  color: white;
+}
+
+.hero-section .hero-section__content .hero-section__text .hero-section__bodytext {
+  font-size: 1.2em;
+  line-height: 160%;
+  font-weight: lighter;
+}
+
+.hero-section .hero-section__content .hero-section__text .hero-section__bodytext > p:not(:last-of-type) {
+  margin-bottom: 1em;
 }
 
 /*INDEX HERO*/
@@ -1363,38 +1638,41 @@ th span {
   padding-top: 3em;
 }
 
-.hero-background * {
-  -webkit-transform: skewY(0);
-  transform: skewY(0);
-}
-
-.hero-wrapper h1,
-.hero-wrapper p {
+.hero-wrapper .hero__content .hero__text h1, .hero-wrapper .hero__content .hero__text p {
   color: white;
   text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.45);
 }
 
-.hero-wrapper h1 {
-  font-size: 4em;
+.hero-wrapper .hero__content .hero__text .hero__title {
+  font-size: 1.8em;
   font-weight: 800;
 }
 
-.hero-wrapper .btn.hero-CTA {
-  border: 1px white solid !important;
-  background-color: rgba(0, 0, 0, 0.3);
+@media screen and (min-width: 768px) {
+  .hero-wrapper .hero__content .hero__text .hero__title {
+    font-size: 2em;
+  }
 }
 
-.hero-wrapper .btn.hero-CTA .btn__text {
-  color: white !important;
+@media screen and (min-width: 1200px) {
+  .hero-wrapper .hero__content .hero__text .hero__title {
+    font-size: 2.5em;
+  }
 }
 
-.hero-wrapper .btn.hero-CTA:hover .btn__text {
-  color: black !important;
+.hero-wrapper .hero__content .hero__text .hero__subtitle {
+  font-size: 16px;
 }
 
-.hero-wrapper .btn.hero-CTA:hover {
-  border: 1px black solid !important;
-  background-color: #e7cc5e;
+@media screen and (min-width: 768px) {
+  .hero-wrapper .hero__content .hero__text .hero__subtitle {
+    font-size: 1.2em;
+  }
+}
+
+.hero-background * {
+  -webkit-transform: skewY(0);
+  transform: skewY(0);
 }
 
 .introduction--section {
@@ -1479,7 +1757,6 @@ th span {
 
 .event-description-text {
   padding: 32px 0;
-  font-size: 1.2em;
   line-height: 1.6em;
 }
 
@@ -1533,57 +1810,6 @@ th span {
   .event-list {
     padding-top: 0;
   }
-}
-
-/*cusotm boxes*/
-.boxed--style1 {
-  padding: 0;
-  background-color: white;
-}
-
-.boxed--style1 .box-header {
-  text-align: center;
-  display: block;
-  width: 100%;
-  color: white;
-  border-bottom: 5px solid #e7cc5e;
-  padding: 1em 2.5em;
-}
-
-/*box-header fonts*/
-.boxed--style1 .box-header h1,
-.boxed--style1 .box-header h2,
-.boxed--style1 .box-header h3,
-.boxed--style1 .box-header h4,
-.boxed--style1 .box-header h5,
-.boxed--style1 .box-header h6 {
-  padding: 0 !important;
-  margin: 0 !important;
-  color: #e7cc5e;
-}
-
-.boxed--style1 .box-header h3 {
-  font-weight: 600;
-}
-
-.boxed--style1 .box-content {
-  padding: 1em 2.5em;
-}
-
-.boxed--style1 .box-content-section:not(:last-of-type) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.boxed--style1 .box-content-section div {
-  padding-right: 25px;
-  padding-left: 25px;
-}
-
-.box-content-section .box-section-header {
-  font-size: 1.65em;
-  background-color: rgba(0, 0, 0, 0.045);
-  padding-top: 0.65em;
-  padding-bottom: 0.65em;
 }
 
 /*Graphic assets*/
@@ -1671,6 +1897,22 @@ th span {
 /*BODY*/
 .notification--section {
   background-color: #e7cc5e;
+  color: #252525;
+}
+
+.notification--section .notification__content {
+  padding: 24px;
+}
+
+.notification--section .notification__content .notification__title {
+  margin: 0;
+  font-weight: bold;
+  color: #252525;
+  font-size: 2em;
+}
+
+.notification--section .notification__content .notification__bodytext > p {
+  font-size: 16px;
 }
 
 .notification--section .notification-wrapper {
@@ -2270,8 +2512,10 @@ th span {
   }
 }
 
-.email--section [class*="col"] {
-  padding: 0 5em;
+@media screen and (min-width: 991px) {
+  .email--section [class*="col"] {
+    padding: 0 5em;
+  }
 }
 
 /*Additional Info Section*/
@@ -2357,8 +2601,11 @@ footer .list-contact .contact-icon {
 }
 
 /*=========================================
-            10 - CONTENT REVEAL
+            11 - FUNCTIONS
 =========================================*/
+/*-----------------------------------
+                   01 - CONTENT REVEAL
+        -----------------------------------*/
 .content-toggle-section .content-reveal__btn {
   margin-top: 24px;
 }
