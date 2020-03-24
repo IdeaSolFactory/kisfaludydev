@@ -5,12 +5,12 @@
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MLZKZ7K');</script>
     <!-- End Google Tag Manager -->
 
@@ -103,7 +103,7 @@
                         <ul class="menu menu--left menu--horizontal">
                             <li><a href="#bemutatkozas">Bemutatkozás</a></li>
                             <li><a href="#menetrendjegyarak">Hol találsz minket?</a></li>
-                            <li><a href="/rendezvenyek.html">Rendezvények</a></li>                            
+                            <li><a href="/rendezvenyek.html">Rendezvények</a></li>
                         </ul>
 
                         <div class="logo-container">
@@ -114,7 +114,7 @@
                         </div>
 
                         <ul class="menu menu--horizontal menu--right">
-                            <li class="inactive"><a href="#">Történelem</a></li>
+                            <li><a href="/tortenelem.html">Történelem</a></li>
                             <li class="dropdown"><a>Language</a>
                                 <ul class="dropdown__container">
                                     <li class="dropdown__item lang-select">
@@ -154,12 +154,14 @@
 
                 <div class="container container-xl">
                     <div class="row justify-content-center">
-                        
-                        <div class="hero-text col-12 col-lg-8 justify-content-start align-items-center text-center">
-                            <h1>Sétahajózz velünk te is a Balatonon!</h1>
+
+                        <div class="hero__text col-12 col-lg-8 justify-content-start align-items-center text-center">
+                            <h1 class="hero__title">Sétahajózz vagy szervezz rendezvényt a Balatonon a Kisfaludyval!
+                            </h1>
                             <hr class="short center">
-                            <p class="lead">
-                                Sétahajózás Balatonfüredről Tihanyra a történelmi Kisfaludy <b>lapátkerekes gőzössel</b>.
+                            <p class="hero__subtitle">
+                                Sétahajózás Balatonfüredről Tihanyra a történelmi <span
+                                    class="break-tablet"></span>Kisfaludy <b>lapátkerekes gőzössel</b>.
                             </p>
                             <div class="autowidth">
                                 <a class="btn hero-CTA btn--primary bordered type--uppercase" href="#bemutatkozas">
@@ -176,6 +178,31 @@
             </div>
         </section>
 
+        <section class="notification--section bg--maincol py-4">
+            <div class="container container-xl">
+                <div class="row justify-content-center align-content-center">
+                    <div class="col-12 col-md-10">
+
+                        <div class="notification__content">
+                            <h1 class="notification__title">Kedves Utasaink!</h1>
+                            <hr class="short dark compact">
+                            <div class="notification__bodytext">
+                                <p>A jelenleg kialakult helyzetre való tekintettel a Kisfaludy lapátkerekes gőzhajó
+                                    bizonytalan ideig nem üzemel, annak menetrendszerinti járatai nem indulnak el. Kis
+                                    létszámú rendezvények esetén kérünk, a honlapon található elérhetőségeink egyikén
+                                    vegyétek fel velünk a kapcsolatot, és a mindenkori szabályozások figyelembevételével
+                                    és betartásával segítünk megszervezni a kívánt eseményt. Reméljük, mihamarabb
+                                    találkozunk a balatonfüredi mólón, addig is vigyázzatok magatokra és maradjatok
+                                    otthon!</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!--INTRODUCTION-->
 
@@ -183,13 +210,13 @@
             <a id="bemutatkozas"></a>
             <div class="container container-xl">
 
-                <div class="row justify-content-between align-items-center pb-3">
+                <div class="row justify-content-between align-items-center pb-3 pt-3 pt-md-0">
                     <div class="col-12 col-md-12 boxed boxed--border boxed--shadow p-5">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-12 col-md-6 order-2 order-md-1">
                                 <div class="boxed__pic">
                                     <img src="img/hajo/kisfaludy_img_41-min.jpg"
-                                    alt="Kisfaludy sétahajó a balatonfüredi kikötő közelében">
+                                        alt="Kisfaludy sétahajó a balatonfüredi kikötő közelében">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 pb-3 pb-md-0 order-1 order-md-2">
@@ -203,7 +230,8 @@
                                         bejárni a magyar tengert?</p>
                                     <p>A Kisfaludy sétahajón naponta nyolcszor felpörögnek a lapátkerekek, amelyek
                                         egyedülálló élményt biztosítanak neked és családodnak! Frissülj fel egy hideg
-                                        üdítővel vagy tekintsd meg a hajótörténeti múzeumot, és élj át egy valóságos időutazást!
+                                        üdítővel vagy tekintsd meg a hajótörténeti múzeumot, és add át magad a tihanyi
+                                        panoráma szépségének!
                                     </p>
                                 </div>
                                 <!--<div class="text-left text-md-center">
@@ -216,13 +244,43 @@
                     </div>
                 </div>
 
+                <!-- Egyedi Rendezvények -->
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-12 col-md-12 boxed boxed--border boxed--shadow p-5">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-12 col-md-6 mt-3 mt-md-0 order-2">
+                                <img src="img/hajo/kisfaludy_img_43-medium.jpg"
+                                    alt="A Kisfaludy gőzös fedélzete éjszaka">
+                            </div>
+                            <div class="col-12 col-md-6 pb-3 pb-md-0 order-1">
+                                <span class="boxed__title">
+                                    <strong>Egyedi rendezvények</strong>
+                                </span>
+
+                                <hr class="short">
+                                <div class="boxed__bodytext">
+                                    <p>Családi vagy céges rendezvény, borest, esküvői ceremónia vagy reklám
+                                        helyszín esetén keress minket bizalommal, egyedi ötleteid megvalósításával!
+                                    </p>
+                                </div>
+
+                                <div class="text-center">
+                                    <a class="btn type--uppercase" href="rendezvenyek.html">
+                                        Tovább</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row justify-content-between align-items-center pb-3">
                     <div class="col-12 col-md-12 boxed boxed--border boxed--shadow p-5">
                         <div class="row justify-content-between align-items-center">
-                            <div class="col-12 col-md-6 order-2">
+                            <div class="col-12 col-md-6 order-2 order-md-1">
                                 <img src="img/hajo/kisfaludy_img_14-min.jpg" alt="Kisfaludy sétahajó szalontér">
                             </div>
-                            <div class="col-12 col-md-6 pb-3 pb-md-0">
+                            <div class="col-12 col-md-6 pb-3 pb-md-0 order-1 order-md-2">
                                 <span class="boxed__title boxed__title--medium">
                                     <strong>Légy részese egy különleges időutazásnak a szalontérben!</strong>
                                 </span>
@@ -235,37 +293,8 @@
                                         bepillantást nyerhetsz a hajó előkelő utazóközönségének és a hajó legénységének
                                         mindennapjaiba is.</p>
                                 </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-12 col-md-12 boxed boxed--border boxed--shadow p-5">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col-12 col-md-6 mt-3 mt-md-0 order-2 order-md-1">
-                                <img src="img/hajo/kisfaludy_img_43-medium.jpg"
-                                    alt="A Kisfaludy gőzös fedélzete éjszaka">
                             </div>
-                            <div class="col-12 col-md-6 pb-3 pb-md-0 order-1 order-md-2">
-                                <span class="boxed__title">
-                                    <strong>Egyedi rendezvények</strong>
-                                </span>
-                                
-                                <hr class="short">
-                                <div class="boxed__bodytext">
-                                    <p>Családi vagy céges rendezvény, borest, esküvői ceremónia vagy reklám
-                                        helyszín esetén keress minket bizalommal, egyedi ötleteid megvalósításával!
-                                    </p>
-                                </div>
-                                
-                                <div class="text-center">
-                                    <a class="btn type--uppercase" href="rendezvenyek.html">
-                                        Tovább</a>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -277,7 +306,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="boxed__pic boxed__overview">
                                     <img src="img/kisfaludy_balatonfured_elott_mobile.jpg"
-                                    alt="Kisfaludy sétahajó a balatonfüredi kikötő közelében">
+                                        alt="Kisfaludy sétahajó a balatonfüredi kikötő közelében">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 pb-3 pb-md-0 order-first">
@@ -288,10 +317,12 @@
                                 <div class="boxed__bodytext">
                                     <p>A Kisfaludy volt az első balatoni gőzhajó, ami gróf Széchenyi István
                                         kezdeményezésére épült.</p>
-                                    <p>A hajó először 1846 és 1887 között tett szolgálatot a magyar tengeren, majd 127 évvel
-                                        később, 2015-ben újraépítették pontos mását, ami jelenleg az egyetlen lapátkerekes
+                                    <p>A hajó először 1846 és 1887 között tett szolgálatot a magyar tengeren, majd 127
+                                        évvel
+                                        később, 2015-ben újraépítették pontos mását, ami jelenleg az egyetlen
+                                        lapátkerekes
                                         gőzhajó a Balatonon.</p>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -312,10 +343,13 @@
 
                 <div class="row justify-content-center">
                     <div class="col-10 col-lg-8 text-center bg--dark texture-dark boxed py-5">
-                        <h2 class="text--maincol"><strong>Kedves Látogatók!</strong></h2>
-                        <p class="lead">Menetrendi információink jelenleg nem elérhetők, mivel a 2019-es szezon
-                            számunkra véget ért. Köszönjünk, hogy ennyien bennünket választottatok! <br> Reméljük,
-                            jövőre újra találkozunk!</p>
+                        <h2 class="text--maincol"><strong>Kedves Utasaink!</strong></h2>
+                        <p class="lead">A jelenleg kialakult helyzetre való tekintettel a Kisfaludy lapátkerekes gőzhajó
+                            bizonytalan ideig nem üzemel, annak menetrendszerinti járatai nem indulnak el.</p>
+                        <p>Kis létszámú rendezvények esetén kérünk, a honlapon található elérhetőségeink egyikén
+                            vegyétek fel velünk a kapcsolatot, és a mindenkori szabályozások figyelembevételével és
+                            betartásával segítünk megszervezni a kívánt eseményt. Reméljük, mihamarabb találkozunk a
+                            balatonfüredi mólón, addig is vigyázzatok magatokra és maradjatok otthon!</p>
                     </div>
 
                 </div>
@@ -1162,17 +1196,19 @@
             <div class="container container-xl">
 
                 <div class="row align-items-start justify-content-center justify-content-md-between">
-                    
+
                     <div class="col-12 col-md-8 col-lg-6 pb-5 pb-md-0 align-self-center">
 
-                        <div class="row justify-content-between align-content-center">                            
+                        <div class="row justify-content-between align-content-center">
                             <div class="footer__logo__wrapper col-12 col-sm-6 col-md-5">
-                                <img src="img/logo/2x/kisfaludy_logo_multicolored-2x.png" class="logo" alt="Kisfaludy Logó">
+                                <img src="img/logo/2x/kisfaludy_logo_multicolored-2x.png" class="logo"
+                                    alt="Kisfaludy Logó">
                             </div>
                             <div class="col-12 col-sm-6 col-md-7">
                                 <p class="footer__desc type--fine-print">Legyél részese te is a kalandnak, amely során
                                     egyedülálló hajónk ad különleges élményt a Balatonon. A Kisfaludy gőzös legénysége
-                                    szeretettel áll rendelkezésedre bármikor akár online, akár a helyszínen. Tarts velünk a
+                                    szeretettel áll rendelkezésedre bármikor akár online, akár a helyszínen. Tarts
+                                    velünk a
                                     következő induláskor!
                                 </p>
                             </div>
@@ -1197,7 +1233,8 @@
                         </ul>
                     </div>
 
-                    <div class="footer__contact col-12 col-lg-3 text-lg-right text-center align-self-center align-self-md-end">
+                    <div
+                        class="footer__contact col-12 col-lg-3 text-lg-right text-center align-self-center align-self-md-end">
                         <div class="row">
                             <div class="col-12 py-4 py-md-0">
                                 <ul class="list-inline list--hover list-contact">

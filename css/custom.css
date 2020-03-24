@@ -24,6 +24,7 @@ TABLE OF CONTENTS
         01 - TEXT SIZES
         02 - TEXT WEIGHTS
         03 - TEXT DECORATIONS
+        04 - TEXT BREAKERS
         ----------------------------
 04 ---- BACKGROUNDS
 05 ---- GENERAL FORMATTING----------
@@ -260,6 +261,23 @@ strong {
   height: 6px;
 }
 
+/*-----------------------------------
+            04 - TEXT BREAKERS
+    -----------------------------------*/
+.break-tablet {
+  display: inline;
+  line-height: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  .break-tablet {
+    display: block;
+  }
+}
+
 /*=========================================
             04 - BACKGROUNDS
 =========================================*/
@@ -438,6 +456,11 @@ hr.center {
   margin-right: auto;
 }
 
+hr.compact {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 hr.medium {
   border-width: .25em;
   width: 35%;
@@ -449,6 +472,10 @@ hr.short {
   width: 6.5em;
   border-width: .45em;
   border-color: #e7cc5e;
+}
+
+hr.short.dark {
+  border-color: #252525;
 }
 
 /*-----------------------------------
@@ -567,13 +594,6 @@ hr.short {
   padding-top: 3em;
   padding-bottom: 3em;
   position: relative;
-}
-
-@media (min-width: 768px) {
-  [class*="--section"] {
-    padding-top: 5em;
-    padding-bottom: 5em;
-  }
 }
 
 /*-----------------------------------
@@ -1441,6 +1461,10 @@ section {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
+  .hero-section .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 @media screen and (min-width: 991px) {
@@ -1487,6 +1511,7 @@ section {
 }
 
 .hero-section.hero-section--tortenelem::before {
+  background-position: bottom;
   background-image: url("../img/tortenelem_intro_mobile.jpg");
 }
 
@@ -1613,20 +1638,41 @@ section {
   padding-top: 3em;
 }
 
-.hero-background * {
-  -webkit-transform: skewY(0);
-  transform: skewY(0);
-}
-
-.hero-wrapper h1,
-.hero-wrapper p {
+.hero-wrapper .hero__content .hero__text h1, .hero-wrapper .hero__content .hero__text p {
   color: white;
   text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.45);
 }
 
-.hero-wrapper h1 {
-  font-size: 4em;
+.hero-wrapper .hero__content .hero__text .hero__title {
+  font-size: 1.8em;
   font-weight: 800;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-wrapper .hero__content .hero__text .hero__title {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-wrapper .hero__content .hero__text .hero__title {
+    font-size: 2.5em;
+  }
+}
+
+.hero-wrapper .hero__content .hero__text .hero__subtitle {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-wrapper .hero__content .hero__text .hero__subtitle {
+    font-size: 1.2em;
+  }
+}
+
+.hero-background * {
+  -webkit-transform: skewY(0);
+  transform: skewY(0);
 }
 
 .introduction--section {
@@ -1851,6 +1897,22 @@ section {
 /*BODY*/
 .notification--section {
   background-color: #e7cc5e;
+  color: #252525;
+}
+
+.notification--section .notification__content {
+  padding: 24px;
+}
+
+.notification--section .notification__content .notification__title {
+  margin: 0;
+  font-weight: bold;
+  color: #252525;
+  font-size: 2em;
+}
+
+.notification--section .notification__content .notification__bodytext > p {
+  font-size: 16px;
 }
 
 .notification--section .notification-wrapper {

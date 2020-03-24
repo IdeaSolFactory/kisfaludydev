@@ -24,6 +24,7 @@ TABLE OF CONTENTS
         01 - TEXT SIZES
         02 - TEXT WEIGHTS
         03 - TEXT DECORATIONS
+        04 - TEXT BREAKERS
         ----------------------------
 04 ---- BACKGROUNDS
 05 ---- GENERAL FORMATTING----------
@@ -241,6 +242,23 @@ a{
         height: 6px;
     }
 
+
+     /*-----------------------------------
+            04 - TEXT BREAKERS
+    -----------------------------------*/
+    .break-tablet{
+        display: inline;
+        line-height: inherit;
+        font-size: inherit;
+        color: inherit;
+        font-weight: inherit;
+
+
+        @include mqTablet{
+            display: block;
+        }
+    }
+
 /*=========================================
             04 - BACKGROUNDS
 =========================================*/
@@ -436,24 +454,35 @@ a{
         04 - DIVIDERS
     -----------------------------------*/
 
-    hr.center{
-        margin-left: auto;
-        margin-right: auto;
-    }
+    hr{
 
-    hr.medium{      
-        border-width: .25em;
-        width: 35%;
-        border-color: color(primary);
-        opacity: 1 !important;        
-    }
+        &.center{
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    hr.short {
-        width: 6.5em;
-        border-width: .45em;
-        border-color: color(primary);
-    }
+        &.compact{
+            margin-top: $padding-smaller;
+            margin-bottom: $padding-smaller;
+        }
 
+        &.medium{
+            border-width: .25em;
+            width: 35%;
+            border-color: color(primary);
+            opacity: 1 !important;
+        }
+
+        &.short{
+            width: 6.5em;
+            border-width: .45em;
+            border-color: color(primary);
+
+            &.dark{
+                border-color: color(dark);
+            }
+        }
+    }
     
     /*-----------------------------------
         05 - BORDERS
@@ -575,14 +604,8 @@ a{
         padding-bottom: 3em;
         position: relative;
     }
-
-    @media (min-width: 768px){
-        [class*="--section"]{
-            padding-top: 5em;
-            padding-bottom: 5em;
-            
-        }
-    }
+    
+    
 
     /*-----------------------------------
                 07 - LISTS
@@ -1100,6 +1123,11 @@ a{
             min-height: 650px;
             flex-direction: column;
             justify-content: flex-end;
+
+            .container {
+                padding-right: 0;
+                padding-left: 0;
+            }
         }
 
         @include mqSmallScreen{
@@ -1130,7 +1158,7 @@ a{
             &.filter--black--gradient{
                 background: linear-gradient(0deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.5) 150%);
             }
-        }
+        }      
 
         //Site modifiers
         &.hero-section--rendezvenyek{
@@ -1145,6 +1173,7 @@ a{
 
         &.hero-section--tortenelem{
             &::before{
+                background-position: bottom;
                 background-image: url("../img/tortenelem_intro_mobile.jpg");
                 
                 @include mqTablet{
@@ -1255,6 +1284,33 @@ a{
 
         .hero__content{
             padding-top: 3em;
+
+            .hero__text{
+                h1, p{
+                    color: white;
+                    text-shadow: 0px 3px 8px rgba(0, 0, 0, .45)
+                }
+
+                .hero__title{
+                    font-size: $textsize-subtitle;
+                    font-weight: 800;
+
+                    @include mqTablet{
+                        font-size: $textsize-title-medium;
+                    }
+
+                    @include mqMediumScreen{
+                        font-size: $textsize-title;
+                    }
+                }
+                .hero__subtitle{
+                    font-size: $textsize-body;
+
+                    @include mqTablet{
+                        font-size: $textsize-lead;
+                    }
+                }
+            }
         }
     } 
     
@@ -1264,18 +1320,6 @@ a{
             -ms-transform: skewY(0);
                 transform: skewY(0);
     }
-    
-    .hero-wrapper h1,
-    .hero-wrapper p{
-        color: white;
-        text-shadow: 0px 3px 8px rgba(0, 0, 0, .45)
-    }
-    
-    .hero-wrapper h1{
-        font-size: 4em;
-        font-weight: 800;
-    }
-    
     
     .introduction--section{
         padding-top: 0;
@@ -1509,8 +1553,29 @@ a{
 
 /*BODY*/
 
+//Notification -- Bar
 .notification--section{
     background-color: color(primary);
+    color: color(dark);
+
+    .notification__content{
+        padding: 24px;
+
+        .notification__title{
+            margin: 0;
+            font-weight: bold;
+            color: color(dark);
+            font-size: $textsize-title-medium;
+        }
+    
+        .notification__bodytext > p{
+            font-size: $textsize-body;
+        }
+        
+    }
+
+    
+
 }
 
 .notification--section .notification-wrapper{
