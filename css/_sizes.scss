@@ -1,31 +1,19 @@
-// -- LINE WIDTHS -- //
-$width-tiny: 1px;
-$width-smaller: 2px;
-$width-small: 4px;
-$width-medium: 6px;
-$width-big: 12px;
-$width-bigger: 16px;
-$width-huge: 32px;
-$width-xl: 64px;
+// BREAKPOINTS
+$breakpoint-mobile: 312px;
+$breakpoint-tablet: 768px;
+$breakpoint-small-screen: 991px;
+$breakpoint-medium-screen: 1200px;
+$breakpoint-large-screen: 1600px;
 
-// -- SPACES -- //
-$space-tiny: 6px;
-$space-smaller: 10px;
-$space-small: 12px;
-$space-medium: 16px;
-$space-big: 32px;
-$space-bigger: 46px;
-$space-huge: 64px;
+// TEXTS
+$textsize-title: 2.5em;
+$textsize-title-medium: 2em;
+$textsize-subtitle: 1.8em;
+$textsize-lead: 1.2em;
+$textsize-body: 16px;
+$textsize-compact: .9em;
 
-// -- FONT SIZES -- //
-$fontsize-base: 14px;
-
-$fontsize-xs: .25em;
-$fontsize-tiny: .4em;
-$fontsize-smaller: .65em;
-$fontsize-small: .8em;
-$fontsize-medium: 1em;
-$fontsize-big: 1.4em;
-$fontsize-bigger: 1.8em;
-$fontsize-huge: 2em;
-$fontsize-xl: 4em;
+// PADDINGS
+$padding-small: 24px;
+$padding-medium: 32px;
+$padding-big: 64px;
