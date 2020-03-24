@@ -39,6 +39,7 @@ TABLE OF CONTENTS
 
 06 ---- ELEMENTS --------------------
         01 - BOXED CONTENT
+        02 - SECTION CONTENT
 
         
 07 ---- BUTTONS
@@ -320,6 +321,10 @@ html {
 /*-----------------------------------
                 03 - PADDINGS
     -----------------------------------*/
+.nopadding {
+  padding: 0;
+}
+
 .py-6 {
   padding-top: 6em !important;
   padding-bottom: 6em !important;
@@ -577,6 +582,7 @@ hr.short {
 .list {
   display: block;
   padding: 12px 0;
+  font-size: 16px;
 }
 
 .list-nopadding {
@@ -758,18 +764,17 @@ th span {
 }
 
 .boxed .boxed__title {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 800;
   color: #252525;
   line-height: 120%;
 }
 
 .boxed .boxed__title[class*="--medium"] {
-  font-size: 2.3em;
+  font-size: 2em;
 }
 
 .boxed .boxed__bodytext {
-  font-size: 1.3em;
   line-height: 160%;
 }
 
@@ -810,6 +815,74 @@ th span {
 @media screen and (min-width: 991px) {
   .boxed__pic.boxed__overview::after {
     background-image: url("..img/kisfaludy_balatonfured_elott.jpg");
+  }
+}
+
+/*-----------------------------------
+            02 - SECTION CONTENT
+    -----------------------------------*/
+section {
+  font-size: 16px;
+}
+
+.section-content__wrapper .section-content__text:not(:last-of-type) {
+  padding-bottom: 1em;
+}
+
+@media screen and (min-width: 991px) {
+  .section-content__wrapper .section-content__text:not(:last-child) {
+    padding-bottom: 0;
+  }
+}
+
+.section-content__wrapper .section-content__title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.section-content__wrapper .section-content__bodytext > p {
+  font-size: 16px;
+}
+
+.section-content__wrapper .section-content__pic {
+  position: relative;
+}
+
+.section-content__wrapper .section-content__pic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-content__wrapper .section-content__pic > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: auto;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .section-content__wrapper .section-content__pic.story::after {
+    background-image: url(../img/kisfaludy_balatonfured_elott_tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .section-content__wrapper .section-content__pic.story::after {
+    background-image: url(../img/kisfaludy_balatonfured_elott.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section-content__wrapper .section-content__pic.rebuild::after {
+    background-image: url(../img/ujjaepites_mobile.jpg);
   }
 }
 
@@ -1032,6 +1105,7 @@ th span {
           flex-direction: column;
   height: 100%;
   padding: 24px 0;
+  font-size: 0.9em;
 }
 
 .nav--section .nav-container .menu-container.active {
@@ -1126,6 +1200,9 @@ th span {
   }
   .nav--section .nav-container .menu-container > .menu > li a {
     font-size: .9em;
+  }
+  .nav--section .nav-container .menu-container > .menu > li a.active {
+    text-decoration: underline;
   }
 }
 
@@ -1354,6 +1431,12 @@ th span {
   }
 }
 
+@media screen and (min-width: 991px) {
+  .hero-section {
+    padding-bottom: 64px;
+  }
+}
+
 .hero-section::before {
   content: "";
   position: absolute;
@@ -1391,6 +1474,22 @@ th span {
   }
 }
 
+.hero-section.hero-section--tortenelem::before {
+  background-image: url("../img/tortenelem_intro_mobile.jpg");
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section.hero-section--tortenelem::before {
+    background-image: url("../img/tortenelem_intro_tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-section.hero-section--tortenelem::before {
+    background-image: url("../img/tortenelem_intro.jpg");
+  }
+}
+
 .hero-section .hero-section__content {
   height: 100%;
   width: 100%;
@@ -1408,11 +1507,13 @@ th span {
 }
 
 .hero-section .hero-section__content .hero-section__text .hero-section__title {
-  font-size: 3em;
+  font-size: 2.5em;
+  color: white;
 }
 
 .hero-section .hero-section__content .hero-section__text .hero-section__bodytext {
-  font-size: 1.3em;
+  font-size: 1.2em;
+  line-height: 160%;
   font-weight: lighter;
 }
 
@@ -1616,7 +1717,6 @@ th span {
 
 .event-description-text {
   padding: 32px 0;
-  font-size: 1.2em;
   line-height: 1.6em;
 }
 
@@ -2356,8 +2456,10 @@ th span {
   }
 }
 
-.email--section [class*="col"] {
-  padding: 0 5em;
+@media screen and (min-width: 991px) {
+  .email--section [class*="col"] {
+    padding: 0 5em;
+  }
 }
 
 /*Additional Info Section*/

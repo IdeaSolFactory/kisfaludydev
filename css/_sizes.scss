@@ -6,8 +6,14 @@ $breakpoint-medium-screen: 1200px;
 $breakpoint-large-screen: 1600px;
 
 // TEXTS
-$textsize-title: 3em;
-$textsize-title-medium: 2.3em;
+$textsize-title: 2.5em;
+$textsize-title-medium: 2em;
 $textsize-subtitle: 1.8em;
-$textsize-lead: 1.3em;
-$textsize-body: 1em;
+$textsize-lead: 1.2em;
+$textsize-body: 16px;
+$textsize-compact: .9em;
+
+// PADDINGS
+$padding-small: 24px;
+$padding-medium: 32px;
+$padding-big: 64px;

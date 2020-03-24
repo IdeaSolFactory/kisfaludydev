@@ -39,6 +39,7 @@ TABLE OF CONTENTS
 
 06 ---- ELEMENTS --------------------
         01 - BOXED CONTENT
+        02 - SECTION CONTENT
 
         
 07 ---- BUTTONS
@@ -306,6 +307,7 @@ a{
     /*-----------------------------------
                 03 - PADDINGS
     -----------------------------------*/
+    .nopadding{ padding: 0; }
     .py-6 {
         padding-top: 6em !important;
         padding-bottom: 6em !important;
@@ -566,7 +568,7 @@ a{
         -webkit-box-shadow: 0 0 20px rgba(2, 32, 33, 0.05);
                 box-shadow: 0 0 20px rgba(2, 32, 33, 0.05);
     }
-
+    
     [class*="--section"]
     {
         padding-top: 3em;
@@ -589,6 +591,8 @@ a{
     .list {
         display: block;
         padding: 12px 0;
+
+        font-size: $textsize-body;
     }
 
     .list-nopadding{
@@ -794,7 +798,6 @@ a{
             }
 
             .boxed__bodytext{
-                font-size: $textsize-lead;
                 line-height: 160%;
 
                 &:not(:last-of-type){
@@ -840,6 +843,87 @@ a{
                 }                
             }
         }
+
+
+    /*-----------------------------------
+            02 - SECTION CONTENT
+    -----------------------------------*/ 
+    section{
+        font-size: $textsize-body;
+    }
+    
+    .section-content__wrapper{
+
+        .section-content__text{
+            &:not(:last-of-type){
+                padding-bottom: 1em;
+            }
+
+            @include mqSmallScreen{
+                &:not(:last-child){
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .section-content__title{
+            font-size: $textsize-title-medium;
+            font-weight: bold;  
+        }
+
+        .section-content__bodytext {           
+
+            > p{
+                font-size: $textsize-body;
+            }
+        }
+
+        .section-content__pic{
+            position: relative;
+
+            &::after{
+                content:"";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            > img{
+                object-fit: cover;
+                width: auto;
+                height: 100%;
+            }
+
+            // Tortenelem.html
+            &.story{                
+                &::after{
+                    @include mqTablet{ 
+                        background-image: url(../img/kisfaludy_balatonfured_elott_tablet.jpg);
+                    }
+
+                    @include mqSmallScreen{
+                        background-image: url(../img/kisfaludy_balatonfured_elott.jpg); 
+                    }
+                    
+                }
+            }
+
+            &.rebuild{
+                &::after{
+                    @include mqTablet{ 
+                        background-image: url(../img/ujjaepites_mobile.jpg);
+                    }                   
+                }
+            }
+           
+        }
+    }
 
 
 
@@ -1002,6 +1086,10 @@ a{
             justify-content: flex-end;
         }
 
+        @include mqSmallScreen{
+            padding-bottom: $padding-big;
+        }
+
         &::before{
             content: "";
             position: absolute;
@@ -1039,6 +1127,20 @@ a{
             }
         }
 
+        &.hero-section--tortenelem{
+            &::before{
+                background-image: url("../img/tortenelem_intro_mobile.jpg");
+                
+                @include mqTablet{
+                    background-image: url("../img/tortenelem_intro_tablet.jpg");
+                }
+
+                @include mqMediumScreen{
+                    background-image: url("../img/tortenelem_intro.jpg");
+                }
+            }
+        }
+
         .hero-section__content{
             height: 100%;
             width: 100%;
@@ -1050,13 +1152,16 @@ a{
 
             .hero-section__text{
                 color: white;
+                
 
                 .hero-section__title{
                     font-size: $textsize-title;
+                    color: white;
                 }
 
                 .hero-section__bodytext{
                     font-size: $textsize-lead;
+                    line-height: 160%;
                     font-weight: lighter;
 
                     >p:not(:last-of-type){
@@ -1255,7 +1360,6 @@ a{
 
     .event-description-text{
         padding: 32px 0;
-        font-size: 1.2em;
         line-height: 1.6em;;
     }
 
@@ -2066,7 +2170,10 @@ a{
 
 
 .email--section [class*="col"]{
-    padding: 0 5em;
+
+    @include mqSmallScreen{
+        padding: 0 5em;
+    }
 }
 
 /*Additional Info Section*/
