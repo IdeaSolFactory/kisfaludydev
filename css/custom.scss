@@ -809,6 +809,11 @@ a{
         }
 
         .boxed{
+
+            .boxed__text{
+                align-self: center;
+            }
+
             .boxed__title{
                 font-size: $textsize-title;
                 font-weight: 800;
@@ -838,6 +843,10 @@ a{
                 display: block;
                 position: relative;
 
+                >img{
+                    object-fit: cover;
+                }
+
                 &::after{
                     content: "";
                     display: block;
@@ -859,10 +868,10 @@ a{
             // Overview
             &.boxed__overview::after{
                 @include mqTablet{
-                    background-image: url("..img/kisfaludy_balatonfured_elott_tablet.jpg");
+                    background-image: url("../img/kisfaludy_balatonfured_elott_tablet.jpg");
                 }
                 @include mqSmallScreen{
-                    background-image: url("..img/kisfaludy_balatonfured_elott.jpg");
+                    background-image: url("../img/kisfaludy_balatonfured_elott.jpg");
                 }                
             }
         }
@@ -970,11 +979,7 @@ a{
             width: 100% !important;
         }
     
-        .autowidth [class*="btn"] {
-            width: auto !important;
-            margin-left: 0;
-            margin-right: 0;
-        }
+       
     }
 
     .btn,
@@ -991,6 +996,15 @@ a{
     }
 
     .btn{
+
+        &.autowidth {
+            @include mqTablet{
+                width: auto !important;
+            margin-left: 0;
+            margin-right: 0;
+            }
+            
+        }
 
         &.hero-CTA{
             color: white;
@@ -1570,6 +1584,8 @@ a{
     
         .notification__bodytext > p{
             font-size: $textsize-body;
+            padding: 0;
+            margin: 0;
         }
         
     }
