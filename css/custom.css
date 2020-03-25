@@ -264,7 +264,7 @@ strong {
 /*-----------------------------------
             04 - TEXT BREAKERS
     -----------------------------------*/
-.break-tablet {
+[class*="break-"] {
   display: inline;
   line-height: inherit;
   font-size: inherit;
@@ -272,9 +272,43 @@ strong {
   font-weight: inherit;
 }
 
+.break--mobile {
+  display: block;
+}
+
 @media screen and (min-width: 768px) {
-  .break-tablet {
+  [class*="break-tablet"] {
     display: block;
+  }
+  [class*="break-tablet"][class*="-nobreak"] {
+    display: initial;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  [class*="break-smallscreen"] {
+    display: block;
+  }
+  [class*="break-smallscreen"][class*="-nobreak"] {
+    display: initial;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  [class*="break-mediumscreen"] {
+    display: block;
+  }
+  [class*="break-mediumscreen"][class*="-nobreak"] {
+    display: initial;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  [class*="break-largescreen"] {
+    display: block;
+  }
+  [class*="break-largescreen"][class*="-nobreak"] {
+    display: initial;
   }
 }
 

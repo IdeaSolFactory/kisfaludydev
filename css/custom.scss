@@ -246,19 +246,59 @@ a{
      /*-----------------------------------
             04 - TEXT BREAKERS
     -----------------------------------*/
-    .break-tablet{
+    [class*="break-"] {
         display: inline;
         line-height: inherit;
         font-size: inherit;
         color: inherit;
         font-weight: inherit;
+    }
+    
+    .break--mobile{
+        display: block;
+    }
 
-
+    [class*="break-tablet"]{
         @include mqTablet{
             display: block;
+
+            &[class*="-nobreak"]{
+                display: initial;
+            }
         }
     }
 
+    [class*="break-smallscreen"]{
+        @include mqSmallScreen{
+            display: block;
+
+            &[class*="-nobreak"]{
+                display: initial;
+            }
+        }
+    }
+
+    [class*="break-mediumscreen"]{
+        @include mqMediumScreen{
+            display: block;
+
+            &[class*="-nobreak"]{
+                display: initial;
+            }
+        }
+    }  
+
+
+    [class*="break-largescreen"]{
+        @include mqLargeScreen{
+            display: block;
+
+            &[class*="-nobreak"]{
+                display: initial;
+            }
+        }
+    }
+    
 /*=========================================
             04 - BACKGROUNDS
 =========================================*/
