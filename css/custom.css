@@ -817,6 +817,10 @@ th span {
   padding-bottom: 0.65em;
 }
 
+.boxed {
+  padding: 46px;
+}
+
 .boxed .boxed__text {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -839,7 +843,7 @@ th span {
 }
 
 .boxed .boxed__bodytext:not(:last-of-type) {
-  margin-bottom: 1em;
+  margin-bottom: 46px;
 }
 
 .boxed .boxed__bodytext > p:not(:last-of-type) {
@@ -959,16 +963,16 @@ section {
   white-space: normal;
 }
 
+@media screen and (min-width: 768px) {
+  .btn {
+    min-width: 250px !important;
+  }
+}
+
 .autowidth [class*="btn"] {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-}
-
-@media (min-width: 768px) {
-  .btn {
-    width: 100% !important;
-  }
 }
 
 .btn,
@@ -1307,7 +1311,7 @@ section {
 }
 
 .nav--section .nav-container .menu-container > .menu > li.dropdown a {
-  color: #ebebeb;
+  color: white;
   pointer-events: all;
 }
 
