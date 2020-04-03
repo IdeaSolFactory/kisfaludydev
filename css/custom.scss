@@ -246,19 +246,59 @@ a{
      /*-----------------------------------
             04 - TEXT BREAKERS
     -----------------------------------*/
-    .break-tablet{
+    [class*="break-"] {
         display: inline;
         line-height: inherit;
         font-size: inherit;
         color: inherit;
         font-weight: inherit;
+    }
+    
+    .break--mobile{
+        display: block;
+    }
 
-
+    [class*="break-tablet"]{
         @include mqTablet{
             display: block;
+
+            &[class*="-nobreak"]{
+                display: initial;
+            }
         }
     }
 
+    [class*="break-smallscreen"]{
+        @include mqSmallScreen{
+            display: block;
+
+            &[class*="-nobreak"]{
+                display: initial;
+            }
+        }
+    }
+
+    [class*="break-mediumscreen"]{
+        @include mqMediumScreen{
+            display: block;
+
+            &[class*="-nobreak"]{
+                display: initial;
+            }
+        }
+    }  
+
+
+    [class*="break-largescreen"]{
+        @include mqLargeScreen{
+            display: block;
+
+            &[class*="-nobreak"]{
+                display: initial;
+            }
+        }
+    }
+    
 /*=========================================
             04 - BACKGROUNDS
 =========================================*/
@@ -809,6 +849,7 @@ a{
         }
 
         .boxed{
+            padding: $padding-big;       
 
             .boxed__text{
                 align-self: center;
@@ -829,7 +870,7 @@ a{
                 line-height: 160%;
 
                 &:not(:last-of-type){
-                    margin-bottom: 1em;
+                    margin-bottom: $padding-big;
                 }
 
                 >p:not(:last-of-type){
@@ -966,21 +1007,18 @@ a{
     .btn{
         width: 100% !important;
         white-space: normal;
+
+        @include mqTablet{
+            min-width: 250px !important;
+        }
     }
 
     .autowidth [class*="btn"] {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-    }
-
-    @media (min-width: 768px){
-        .btn{
-            width: 100% !important;
-        }
+    }   
     
-       
-    }
 
     .btn,
     .btn--primary,
@@ -1145,7 +1183,7 @@ a{
         }
 
         @include mqSmallScreen{
-            padding-bottom: $padding-big;
+            padding-bottom: $padding-huge;
         }
 
         &::before{
@@ -1314,7 +1352,7 @@ a{
                     }
 
                     @include mqMediumScreen{
-                        font-size: $textsize-title;
+                        font-size: $textsize-title-xxl;
                     }
                 }
                 .hero__subtitle{
