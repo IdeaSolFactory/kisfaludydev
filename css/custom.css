@@ -1115,8 +1115,8 @@ section {
   background-color: transparent;
   width: 100%;
   z-index: 1000;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
   display: block;
   /*NAV -- MENU*/
 }
