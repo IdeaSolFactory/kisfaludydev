@@ -206,6 +206,15 @@ p.text-xs {
   line-height: 2.2em;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 /*-----------------------------------
                 02 - TEXT WEIGHTS
     -----------------------------------*/
@@ -828,14 +837,14 @@ th span {
 }
 
 .boxed .boxed__title {
-  font-size: 2.5em;
+  font-size: 40px;
   font-weight: 800;
   color: #252525;
   line-height: 120%;
 }
 
 .boxed .boxed__title[class*="--medium"] {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .boxed .boxed__bodytext {
@@ -905,7 +914,7 @@ section {
 }
 
 .section-content__wrapper .section-content__title {
-  font-size: 2em;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -1596,7 +1605,7 @@ section {
 }
 
 .hero-section .hero-section__content .hero-section__text .hero-section__title {
-  font-size: 2.5em;
+  font-size: 40px;
   color: white;
 }
 
@@ -1702,7 +1711,7 @@ section {
 
 @media screen and (min-width: 768px) {
   .hero-wrapper .hero__content .hero__text .hero__title {
-    font-size: 2em;
+    font-size: 2rem;
   }
 }
 
@@ -1960,7 +1969,7 @@ section {
   margin: 0;
   font-weight: bold;
   color: #252525;
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .notification--section .notification__content .notification__bodytext > p {

@@ -185,6 +185,9 @@ a{
     .textsize-bigger    { font-size: 1.4em;  line-height: 2em;  }
     .textsize-huge      { font-size: 2em; line-height: 2.2em;   }
 
+    h1{ font-size: $textsize-title; font-weight: bold;}
+    h2{ font-size: $textsize-title-medium}
+
      /*-----------------------------------
                 02 - TEXT WEIGHTS
     -----------------------------------*/
@@ -940,7 +943,7 @@ a{
         }
 
         .section-content__title{
-            font-size: $textsize-title-medium;
+            font-size: $textsize-title;
             font-weight: bold;  
         }
 
