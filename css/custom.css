@@ -859,19 +859,27 @@ th span {
   margin-bottom: 1em;
 }
 
-.boxed .boxed__pic {
+.boxed .boxed__pic-container {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.boxed .boxed__pic-container .boxed__pic {
   height: 100%;
   width: 100%;
   display: block;
   position: relative;
 }
 
-.boxed .boxed__pic > img {
+.boxed .boxed__pic-container .boxed__pic > img {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-.boxed .boxed__pic::after {
+.boxed .boxed__pic-container .boxed__pic::after {
   content: "";
   display: block;
   position: absolute;

@@ -881,28 +881,36 @@ a{
                 }
             }
 
-            .boxed__pic{
-                height: 100%;
-                width: 100%;
-                display: block;
-                position: relative;
+            .boxed__pic-container{
 
-                >img{
-                    object-fit: cover;
-                }
+                align-self: stretch;
 
-                &::after{
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
+                .boxed__pic{
                     height: 100%;
-                    background-position: center;
-                    background-size:cover;
-                    background-repeat: no-repeat;
+                    width: 100%;
+                    display: block;
+                    position: relative;                   
+    
+                    >img{
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+    
+                    &::after{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-position: center;
+                        background-size:cover;
+                        background-repeat: no-repeat;
+                    }
                 }
+
             }
         }
 
