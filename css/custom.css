@@ -2396,8 +2396,8 @@ section {
 .programs--section .program span.program-icon {
   display: block;
   position: absolute;
-  top: 24px;
-  right: 0;
+  top: 32px;
+  left: 0;
   height: 60px;
   width: 90px;
   background-color: #e7cc5e;
@@ -2407,7 +2407,7 @@ section {
   content: "";
   position: absolute;
   top: 50%;
-  left: 10px;
+  right: 15px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-position: center;
@@ -2426,8 +2426,14 @@ section {
 }
 
 .programs--section .program .program-header {
-  padding-bottom: 24px;
-  padding-right: 60px;
+  padding-bottom: 32px;
+  padding-left: 65px;
+}
+
+@media screen and (min-width: 768px) {
+  .programs--section .program .program-header {
+    padding-left: 45px;
+  }
 }
 
 .programs--section .program .program-header span {
