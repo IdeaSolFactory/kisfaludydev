@@ -673,7 +673,7 @@ hr.short.dark {
   position: relative;
 }
 
-.list.list-style-light > li:before {
+.list.list-style-light > li::before {
   content: "";
   display: block;
   position: absolute;
@@ -682,6 +682,10 @@ hr.short.dark {
   background-color: #e7cc5e;
   top: 0.75em;
   left: 0;
+}
+
+.list.list-style-light.list-loose li {
+  padding-bottom: 10px !important;
 }
 
 /*LIGHT STYLE -- SUBLIST*/

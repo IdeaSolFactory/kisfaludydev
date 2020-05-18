@@ -699,21 +699,34 @@ hr {
 
 /*LIGHT STYLE*/
 
-.list.list-style-light > li {
-    padding: 0 0 0 20px;
-    position: relative;
+.list{   
+
+    &.list-style-light{
+
+       > li{
+            padding: 0 0 0 20px;
+            position: relative;
+
+            &::before{
+                content: "";
+                display: block;
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background-color: color(primary);
+                top: 0.75em;
+                left: 0;
+            }
+        }
+        
+        &.list-loose{
+            li{
+                padding-bottom: 10px !important;
+            } 
+        }
+    }
 }
 
-.list.list-style-light > li:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: color(primary);
-    top: 0.75em;
-    left: 0;
-}
 
 /*LIGHT STYLE -- SUBLIST*/
 .list.list-style-light .list-sublist {
