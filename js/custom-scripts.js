@@ -6,9 +6,38 @@ $(document).ready(function(){
 
     toggleNav();
     showEmailDelay();
-    contentToggle(); 
+    contentToggle();
+    myVideoPlayer(); 
 
 });
+
+// Video player
+function myVideoPlayer(){
+    var sectionClass = "video--section"
+    var videoClass = "myvideoplayer-video";
+    var btnClass = "video__btn";
+    var videoRunning = false;
+
+    $("." + sectionClass).click(function(){
+        
+        if(videoRunning){
+            videoRunning = false;
+            $("."  + sectionClass).removeClass("videoplaying");
+            $("." + btnClass).removeClass("hiding pause");
+            $("." + btnClass).addClass("play");
+            $("." + videoClass).get(0).pause(); 
+        } else{
+            videoRunning = true;
+            $("."  + sectionClass).addClass("videoplaying");
+            $("." + btnClass).addClass("hiding pause");
+            $("." + btnClass).removeClass("play");
+            $("." + videoClass).get(0).play();
+        }
+        
+    });
+}
+
+
 
 // Content Toggle
 function contentToggle(){
