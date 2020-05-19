@@ -699,15 +699,13 @@ hr {
 
 /*LIGHT STYLE*/
 
-.list{   
-
-    &.list-style-light{
-
-       > li{
+.list {
+    &.list-style-light {
+        > li {
             padding: 0 0 0 20px;
             position: relative;
 
-            &::before{
+            &::before {
                 content: "";
                 display: block;
                 position: absolute;
@@ -718,15 +716,14 @@ hr {
                 left: 0;
             }
         }
-        
-        &.list-loose{
-            li{
+
+        &.list-loose {
+            li {
                 padding-bottom: 10px !important;
-            } 
+            }
         }
     }
 }
-
 
 /*LIGHT STYLE -- SUBLIST*/
 .list.list-style-light .list-sublist {
@@ -2039,22 +2036,27 @@ section {
 
 .programs--section {
 
-    .program {        
+    .programs__title{
+        margin-bottom: $padding-medium !important;
+    }
+
+    .program {
         margin-top: 0;
+        margin-bottom: $padding-medium;
 
-        @include mqTablet{
-            margin-top: 2em;
+        @include mqSmallScreen{
+            margin-bottom: 0;
+        }
 
-            &:last-child{
+        &:last-child {
+            margin-bottom: 3em;
+
+            @include mqTablet {
                 margin-bottom: 0;
             }
         }
 
-        &:last-child{
-            margin-bottom: 3em;
-        }
-        
-        span.program-icon{
+        span.program-icon {
             display: block;
             position: absolute;
             top: 32px;
@@ -2063,7 +2065,7 @@ section {
             width: 90px;
             background-color: color(primary);
 
-            &::after{
+            &::after {
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -2076,30 +2078,29 @@ section {
                 width: 44px;
             }
 
-            &.borhajo::after{
+            &.borhajo::after {
                 background-image: url(../img/icons/wine-glasses-white.svg);
             }
 
-            &.naplemente-tura::after{
+            &.naplemente-tura::after {
                 background-image: url(../img/icons/sunset-white.svg);
             }
         }
 
-        .program-header{
+        .program-header {
             padding-bottom: 32px;
-            padding-left: 65px;
+            padding-left: 75px;
 
-            @include mqTablet{
-                padding-left: 45px;
+            @include mqTablet {
+                padding-left: 60px;
             }
 
-            span{
+            span {
                 display: inline-block;
                 vertical-align: middle;
                 margin-bottom: 0;
                 line-height: 100%;
             }
-         
         }
 
         .program-notice {
@@ -2109,7 +2110,7 @@ section {
             background-color: color(primary);
             margin-bottom: 10px;
 
-            .p{
+            .p {
                 padding: 0;
                 line-height: 10px;
                 color: black;
@@ -2121,21 +2122,19 @@ section {
 /*-----------------------------------
     VIDEO SECTION [index.html]
 -----------------------------------*/
-.video--section{
-
+.video--section {
     padding: 0;
     line-height: 0;
     position: relative;
 
-    &.videoplaying{
-        .video__container::after{
+    &.videoplaying {
+        .video__container::after {
             opacity: 0;
         }
     }
 
-    .video__container{        
-
-        &::after{
+    .video__container {
+        &::after {
             content: "";
             position: absolute;
             background-color: black;
@@ -2144,32 +2143,30 @@ section {
             top: 0;
             left: 0;
             display: block;
-            opacity: .65;
-            transition: opacity .3s;
+            opacity: 0.65;
+            transition: opacity 0.3s;
         }
 
-        video{
+        video {
             width: 100%;
             height: 100%;
             z-index: 0;
-            position: relative;        
+            position: relative;
         }
     }
 
-    
-
-    .video__title-box{        
+    .video__title-box {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
         text-align: center;
-        
-        >.video__title{
+
+        > .video__title {
             color: white;
         }
 
-        >.video__btn{
+        > .video__btn {
             font-size: 0;
             line-height: 0;
             padding: 0;
@@ -2179,10 +2176,10 @@ section {
             top: 0;
             left: 0;
             margin-left: 15px;
-            transition: top .5s ease;
+            transition: top 0.5s ease;
             display: block;
 
-            &::before{
+            &::before {
                 content: "";
                 position: absolute;
                 display: block;
@@ -2194,23 +2191,23 @@ section {
                 background-color: color(dark);
                 border-radius: 135px;
                 z-index: -1;
-                box-shadow: 0 0 20px rgba($color: #000000, $alpha: .45);
+                box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.45);
             }
 
-            &.hiding{
+            &.hiding {
                 top: 20px;
                 opacity: 0;
             }
 
-            &.play{
+            &.play {
                 border-style: solid;
                 border-width: 32px 0px 32px 64px;
                 border-color: transparent transparent transparent color(primary);
-                top: 0;               
+                top: 0;
                 opacity: 1;
             }
 
-            &.pause{
+            &.pause {
                 border-style: double;
                 border-width: 0px 0px 0px 64px;
                 border-color: color(primary);
@@ -2218,7 +2215,6 @@ section {
         }
     }
 }
-
 
 /*Slider section*/
 
