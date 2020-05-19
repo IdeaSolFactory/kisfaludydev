@@ -1,0 +1,356 @@
+@import 'mixins';
+@import 'colors';
+@import 'functions';
+@import 'sizes';
+
+// Variables
+$menuItemPadding-big: 36px;
+$menuItemPadding-medium: 32px;
+$menuItemPadding-small: 24px;
+
+.nav--section{
+    padding: 0;
+    z-index: 1000;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    max-height: unset;
+
+    &.nav-absolute-top{
+        position: absolute;
+        top: 0;
+    }
+
+    .bar, .logo{
+        max-height: unset;
+    }
+
+    .nav-container{
+        background-color: transparent;
+        width: 100%;
+        z-index: 1000;
+        transition: all .1s ease;
+        display: block;
+        
+        .hamburger-toggle{
+            .icon {
+                color: color(primary);
+                opacity: 1;
+            }
+        }
+
+        .logo--mobile{
+            height: 100%;
+            > img{
+                max-height: 40px;
+            }
+            
+        }
+
+
+        // STICKY MENU
+        &.sticky{
+            background-color: color(dark); 
+            border-bottom: 4px solid color(primary);
+            max-height: unset;
+            position: fixed;
+            padding: 0;
+            top: 0;    
+
+            .menu-container{
+                padding: 12px 0;
+
+                .logo-container{                        
+                    max-height: 60px;
+                    display: none;
+
+                    @include mqTablet{
+                        margin: 0 $menuItemPadding-small;
+                    }
+
+                    @include mqSmallScreen{
+                        display: block;                        
+                    }
+                    
+                    >.logo{                      
+                        &::before{                               
+                            background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
+                            margin-left: 2px;                          
+                        }
+
+                        @include mqSmallScreen{
+                            max-height: 160px;
+                        }
+                    }                   
+                    
+                }
+            }
+
+                @include mqSmallScreen{
+                    max-height: 160px;
+                }
+            }
+
+        /*NAV -- MENU*/
+         .menu-container{
+            display: none;            
+            flex-direction: column;                
+            height: 100%;
+            padding: $menuItemPadding-small 0;
+            font-size: $textsize-compact;
+
+            &.active{
+                display: flex !important;
+            }
+            
+            @include mqSmallScreen{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+
+            //Menu container
+            >.menu{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+
+
+                &[class*=" menu--"]{
+                    
+                    >li:not(:last-of-type){
+
+                        @include mqSmallScreen{
+                            padding-right: $menuItemPadding-small;
+                        }
+
+                        @include mqMediumScreen{
+                            padding-right: $menuItemPadding-medium;
+                        }
+
+                        @include mqLargeScreen{
+                            padding-right: $menuItemPadding-big;
+                        }
+                    }
+                }
+
+
+                @include mqSmallScreen{
+                    flex-direction: row;
+                    align-items: center;                    
+                    
+                    &.menu--left{ justify-content: flex-end; }
+
+                    &.menu--right{ justify-content: flex-start; }
+                }
+               
+
+                >li{                    
+                    text-align: left;
+                    padding-top: 1.6em;
+                    
+                    @include mqSmallScreen{
+                        text-align: center;
+                        padding-top: 0;
+
+                        a{
+                            font-size: .9em;
+                            &.active{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    >a{
+                        color: white;
+                        text-transform: uppercase;
+                        font-weight: 400;
+
+                        &.highlight{
+                            color: color(primary);
+                        }
+                    }
+                   
+
+                    // Dropdown menu item
+                    &.dropdown{
+                        display: block;
+                        position: relative;
+                        cursor: pointer;
+
+                        &.dropdown--active{
+                            pointer-events: none;
+                        }
+
+                        a{
+                            color: white;
+                            pointer-events: all;                           
+                        }
+                        
+                        
+                        >a::after{
+                            font-family: stack-interface;                            
+                            content: '\e80c';
+                            display: inline-block;                            
+                            height: 100%;
+                            padding-left: 6px;
+
+                            @at-root .dropdown.dropdown--active >a::after {
+                                content: "\e80a" !important;
+                            }
+                        }
+                  
+                        >.dropdown__container{
+                            display: none;                         
+
+                            // Theme reset
+                            position: relative;
+                            left: 0 !important;
+                            
+                            &::before{
+                                content: none;
+                            }
+
+                            >.dropdown__item{
+                                >a{
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    flex-wrap: nowrap;
+                                    justify-content: flex-start;
+                                    color: white;
+                                    font-size: inherit;
+                                    text-transform: uppercase;
+                                    width: min-content;
+                                    padding-top: 1.6em;
+                                    padding-left: 2em;
+                                    vertical-align: middle;
+                                    
+                                    >.icon{
+                                        max-height: 16px;
+                                        max-width: unset;
+                                        padding-right: 16px;
+                                        opacity: 1;
+                                    }
+                                }                               
+                            }    
+                            
+                            @include mqSmallScreen{
+                                
+                                position: absolute;
+                                z-index: 10;
+                                pointer-events: unset;  
+                                padding-top: 0;
+                                background-color: color(dark);
+                                width: auto;
+                                padding: 12px;
+                                @include boxShadowSimple;
+
+                                >.dropdown__item{
+
+                                    &:not(:last-of-type){
+                                        padding-bottom: 6px;
+                                    }
+
+                                    >a{
+                                        flex-flow: nowrap;
+                                        align-content: center;
+                                        flex: 1 auto;
+                                        padding: 0;
+                                        
+                                        &:hover > a{
+                                            text-decoration: underline;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.dropdown--active,
+                        &:active,
+                        &:focus{
+                            >.dropdown__container{
+                                display: block;
+                                
+                            }                                
+                        }
+                    }
+                }               
+            }
+
+            >.logo-container{
+                height: 65px;
+                width: 250px;  
+                display: none;                             
+                
+                @include mqSmallScreen{
+                    height: 120px;
+                    width: 300px;
+                    display: block;
+                    margin: 0 $menuItemPadding-medium;
+                }               
+                
+                @include mqMediumScreen{
+                    height: 120px;
+                    width: 450px;
+                    margin: 0 $menuItemPadding-big;
+                }  
+
+                .logo{
+                    height: 100%;
+                    width: 100%;
+                    max-height: unset;
+                    top: unset;
+
+                    &::before{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url("../img/logo/1x/kisfaludy_logo_compact_colored.png");
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        margin-left: 1px;
+
+                        @include mqMediumScreen{
+                            background-image: url("../img/logo/3x/kisfaludy_logo_multicolored-3x.png");
+                        }                       
+                    }
+                    >a{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        display: block;
+                        z-index: 10;
+                    }
+                    img{
+                        height: 100%;
+                        display: none;
+                    }                 
+                }
+            }
+        }
+
+        // --- GENERIC MENU FUNCTIONS --- /
+        .inactive{
+            pointer-events: none !important;
+            opacity: .4;
+
+            li,a{
+                pointer-events: none !important;
+            }
+        }
+    }
+}
+
+    
