@@ -23,13 +23,13 @@ function myVideoPlayer(){
         if(videoRunning){
             videoRunning = false;
             $("."  + sectionClass).removeClass("videoplaying");
-            $("." + btnClass).removeClass("hiding pause");
+            $("." + btnClass).removeClass("hiding");
             $("." + btnClass).addClass("play");
             $("." + videoClass).get(0).pause(); 
         } else{
             videoRunning = true;
             $("."  + sectionClass).addClass("videoplaying");
-            $("." + btnClass).addClass("hiding pause");
+            $("." + btnClass).addClass("hiding");
             $("." + btnClass).removeClass("play");
             $("." + videoClass).get(0).play();
         }

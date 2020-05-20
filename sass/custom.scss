@@ -2200,53 +2200,34 @@ section {
             color: white;
         }
 
-        > .video__btn {
-            font-size: 0;
-            line-height: 0;
-            padding: 0;
-            margin: 0;
+        > .video__btn {            
             width: 64px;
             height: 64px;
             top: 0;
             left: 0;
-            transition: top 0.5s ease;
+            transition: all 0.5s ease;
             display: block;
             z-index: 1;
-
-            &::before {
-                content: "";
-                position: absolute;
-                display: block;
-                top: 50%;
-                left: 50%;
-                transform: translateY(-50%) translateX(-50%);
-                width: 165px;
-                height: 165px;
-                background-color: color(dark);
-                border-radius: 135px;
-                z-index: -1;
-                box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.45);
+            transform-origin: center;
+            transform: scale(1);
+            opacity: 1;
+            
+            @include mqSmallScreen{
+                width: 80px;
+                height: 80px;
             }
 
-            &.hiding {
-                top: 20px;
+            &.hiding {                
                 opacity: 0;
+                transform: scale(.7);
             }
 
             &.play {
-                border-style: solid;
-                border-width: 32px 0 32px 64px;
-                border-color: transparent transparent transparent color(primary);
+                background-image: url(../img/icons/play-button-primary-col.svg);
                 top: 0;
-                margin-left: 15px;
+                left: 0;
                 opacity: 1;
-            }
-
-            &.pause {
-                border-style: double;
-                border-width: 0 0 0 64px;
-                border-color: color(primary);
-            }
+            }            
         }
     }
 }
