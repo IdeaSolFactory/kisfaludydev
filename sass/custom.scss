@@ -2043,6 +2043,7 @@ section {
     .program {
         margin-top: 0;
         margin-bottom: $padding-medium;
+        padding-bottom: $padding-medium;
 
         @include mqSmallScreen{
             margin-bottom: 0;
