@@ -2043,7 +2043,7 @@ section {
     .program {
         margin-top: 0;
         margin-bottom: $padding-medium;
-        padding-bottom: $padding-medium;
+        padding-bottom: 22px;
 
         @include mqSmallScreen{
             margin-bottom: 0;
@@ -2057,20 +2057,20 @@ section {
             }
         }
 
-        span.program-icon {
+        span.program__icon {
             display: block;
             position: absolute;
             top: 32px;
             left: 0;
             height: 60px;
-            width: 90px;
+            width: 110px;
             background-color: color(primary);
 
             &::after {
                 content: "";
                 position: absolute;
                 top: 50%;
-                right: 15px;
+                right: 20px;
                 transform: translateY(-50%);
                 background-position: center;
                 background-repeat: no-repeat;
@@ -2088,12 +2088,12 @@ section {
             }
         }
 
-        .program-header {
-            padding-bottom: 32px;
-            padding-left: 75px;
+        .program__header {
+            padding-bottom: 45px;
+            padding-left: 90px;
 
             @include mqTablet {
-                padding-left: 60px;
+                padding-left: 80px;
             }
 
             span {
@@ -2101,6 +2101,39 @@ section {
                 vertical-align: middle;
                 margin-bottom: 0;
                 line-height: 100%;
+            }
+        }
+
+        .program__footer-wrapper{
+            margin-top: 6px;
+            width: 100%;
+
+            hr{
+                margin: 20px 0;
+            }
+
+            .program__footer-item-container{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 0;
+                padding: 0;
+
+                .program__footer-item{
+                    margin: 0;
+                    padding: 0;
+                    width: 50%;
+
+                    &:last-of-type{
+                        text-align: right;
+                    }
+                    
+                    &.header-item{
+                        flex-basis: 100%;
+                        padding-bottom: 4px;
+                        line-height: 100%;
+                    }
+                }
             }
         }
 

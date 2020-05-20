@@ -2387,7 +2387,7 @@ section {
 .programs--section .program {
   margin-top: 0;
   margin-bottom: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 22px;
 }
 
 @media screen and (min-width: 991px) {
@@ -2406,21 +2406,21 @@ section {
   }
 }
 
-.programs--section .program span.program-icon {
+.programs--section .program span.program__icon {
   display: block;
   position: absolute;
   top: 32px;
   left: 0;
   height: 60px;
-  width: 90px;
+  width: 110px;
   background-color: #e7cc5e;
 }
 
-.programs--section .program span.program-icon::after {
+.programs--section .program span.program__icon::after {
   content: "";
   position: absolute;
   top: 50%;
-  right: 15px;
+  right: 20px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-position: center;
@@ -2430,29 +2430,69 @@ section {
   width: 44px;
 }
 
-.programs--section .program span.program-icon.borhajo::after {
+.programs--section .program span.program__icon.borhajo::after {
   background-image: url(../img/icons/wine-glasses-white.svg);
 }
 
-.programs--section .program span.program-icon.naplemente-tura::after {
+.programs--section .program span.program__icon.naplemente-tura::after {
   background-image: url(../img/icons/sunset-white.svg);
 }
 
-.programs--section .program .program-header {
-  padding-bottom: 32px;
-  padding-left: 75px;
+.programs--section .program .program__header {
+  padding-bottom: 45px;
+  padding-left: 90px;
 }
 
 @media screen and (min-width: 768px) {
-  .programs--section .program .program-header {
-    padding-left: 60px;
+  .programs--section .program .program__header {
+    padding-left: 80px;
   }
 }
 
-.programs--section .program .program-header span {
+.programs--section .program .program__header span {
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 0;
+  line-height: 100%;
+}
+
+.programs--section .program .program__footer-wrapper {
+  margin-top: 6px;
+  width: 100%;
+}
+
+.programs--section .program .program__footer-wrapper hr {
+  margin: 20px 0;
+}
+
+.programs--section .program .program__footer-wrapper .program__footer-item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.programs--section .program .program__footer-wrapper .program__footer-item-container .program__footer-item {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+
+.programs--section .program .program__footer-wrapper .program__footer-item-container .program__footer-item:last-of-type {
+  text-align: right;
+}
+
+.programs--section .program .program__footer-wrapper .program__footer-item-container .program__footer-item.header-item {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding-bottom: 4px;
   line-height: 100%;
 }
 
