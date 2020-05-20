@@ -2526,10 +2526,10 @@ section {
   height: 64px;
   top: 0;
   left: 0;
-  margin-left: 15px;
   -webkit-transition: top 0.5s ease;
   transition: top 0.5s ease;
   display: block;
+  z-index: 1;
 }
 
 .video--section .video__title-box > .video__btn::before {
@@ -2556,15 +2556,16 @@ section {
 
 .video--section .video__title-box > .video__btn.play {
   border-style: solid;
-  border-width: 32px 0px 32px 64px;
+  border-width: 32px 0 32px 64px;
   border-color: transparent transparent transparent #e7cc5e;
   top: 0;
+  margin-left: 15px;
   opacity: 1;
 }
 
 .video--section .video__title-box > .video__btn.pause {
   border-style: double;
-  border-width: 0px 0px 0px 64px;
+  border-width: 0 0 0 64px;
   border-color: #e7cc5e;
 }
 

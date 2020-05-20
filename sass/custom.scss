@@ -2176,9 +2176,9 @@ section {
             height: 64px;
             top: 0;
             left: 0;
-            margin-left: 15px;
             transition: top 0.5s ease;
             display: block;
+            z-index: 1;
 
             &::before {
                 content: "";
@@ -2202,15 +2202,16 @@ section {
 
             &.play {
                 border-style: solid;
-                border-width: 32px 0px 32px 64px;
+                border-width: 32px 0 32px 64px;
                 border-color: transparent transparent transparent color(primary);
                 top: 0;
+                margin-left: 15px;
                 opacity: 1;
             }
 
             &.pause {
                 border-style: double;
-                border-width: 0px 0px 0px 64px;
+                border-width: 0 0 0 64px;
                 border-color: color(primary);
             }
         }
