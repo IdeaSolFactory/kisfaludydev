@@ -2465,23 +2465,25 @@ footer {
     }
 
     .footer__logo__wrapper {
-        display: flex;
         justify-content: center;
+        position: relative;
+        height: 100%;
 
         .logo {
-            object-fit: contain;
-            width: auto;
-            height: auto;
-            min-width: 100%;
-            min-height: 100%;
-            max-height: 100px;
-            max-width: 100px;
+            object-fit: contain;   
+            text-align: center;    
+            margin: 0 auto;    
+            width: 200px;
+            height: auto;           
             display: block;
+            max-height: unset;
 
             @include mqTablet {
-                max-height: unset;
-                width: auto;
+                margin: 0;
                 vertical-align: center;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
     }
