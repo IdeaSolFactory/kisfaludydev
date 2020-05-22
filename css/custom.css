@@ -862,7 +862,7 @@ th span {
   margin-bottom: 46px;
 }
 
-.boxed .boxed__bodytext > p:not(:last-of-type) {
+.boxed .boxed__bodytext > p {
   margin-bottom: 1em;
 }
 
@@ -897,6 +897,10 @@ th span {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.boxed .btn {
+  margin-top: 12px;
 }
 
 @media screen and (min-width: 768px) {
