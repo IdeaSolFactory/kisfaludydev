@@ -15,20 +15,22 @@ $(document).ready(function(){
 function myVideoPlayer(){
     var sectionClass = "video--section"
     var videoClass = "myvideoplayer-video";
+    var previewPicClass = "video__preview"
     var btnClass = "video__btn";
     var videoRunning = false;
 
     $("." + sectionClass).click(function(){
         
         if(videoRunning){
-            videoRunning = false;
-            $("."  + sectionClass).removeClass("videoplaying");
+            videoRunning = false;;
+            $("."  + sectionClass).removeClass("videoplaying");            
             $("." + btnClass).removeClass("hiding");
             $("." + btnClass).addClass("play");
             $("." + videoClass).get(0).pause(); 
         } else{
             videoRunning = true;
             $("."  + sectionClass).addClass("videoplaying");
+            $("." + previewPicClass).addClass("hiding")
             $("." + btnClass).addClass("hiding");
             $("." + btnClass).removeClass("play");
             $("." + videoClass).get(0).play();
