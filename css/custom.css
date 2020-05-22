@@ -2264,20 +2264,24 @@ section {
         width: 50%;
     }*/
 /*Ticket box*/
-.ticket-block {
+.tickets-box .boxed {
+  padding-bottom: 20px;
+}
+
+.tickets-box .ticket-block {
   position: relative;
   padding: 0;
 }
 
-.ticket-block span {
-  vertical-align: middle;
-}
-
-.ticket-block:not(:first-child) {
+.tickets-box .ticket-block:not(:first-child) {
   border-top: 1px solid rgba(2, 32, 33, 0.1);
 }
 
-.ticket-category {
+.tickets-box .ticket-block span {
+  vertical-align: middle;
+}
+
+.tickets-box .ticket-category {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
