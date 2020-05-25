@@ -1131,6 +1131,20 @@ section {
   max-height: unset;
 }
 
+.nav--section.nav-static {
+  position: relative;
+  width: 100%;
+}
+
+.nav--section.nav-static .nav-container {
+  background-color: #252525;
+  border-bottom: solid 10px #e7cc5e;
+}
+
+.nav--section.nav-static .nav-container .menu-container {
+  padding: 12px;
+}
+
 .nav--section.nav-absolute-top {
   position: absolute;
   top: 0;
@@ -1892,6 +1906,74 @@ section {
   .event-list {
     padding-top: 0;
   }
+}
+
+/*-----------------------------------
+            04 - 404 SECTION
+            [404.html]
+-----------------------------------*/
+.page-not-found--section {
+  padding-top: 10vh !important;
+  padding-bottom: 0;
+  height: 100%;
+  position: relative;
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__errorcode {
+  position: relative;
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__errorcode h1 {
+  font-size: 70px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #e7cc5e;
+}
+
+@media screen and (min-width: 768px) {
+  .page-not-found--section .page-not-found__container .page-not-found__errorcode h1 {
+    font-size: 145px;
+  }
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__text {
+  padding-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .page-not-found--section .page-not-found__container .page-not-found__text {
+    padding-top: 42px;
+  }
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__text p {
+  color: #252525;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__text p:first-child {
+  margin-bottom: 10px;
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__text p:not(:first-child) {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__btn {
+  padding-top: 18px;
+  width: 100%;
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__btn > a {
+  width: 250px !important;
+  margin: 0 auto;
+  display: block;
 }
 
 /*Graphic assets*/

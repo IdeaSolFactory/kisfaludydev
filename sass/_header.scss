@@ -16,6 +16,23 @@ $menuItemPadding-small: 24px;
     top: 0;
     max-height: unset;
 
+    // static navbar
+    &.nav-static{
+        position: relative;
+        width: 100%;
+
+        .nav-container{
+            background-color: color(dark);
+            border-bottom: solid 10px color(primary);
+
+            .menu-container{
+                padding: 12px;
+            }
+        }
+
+    }
+    // end of static navbar
+
     &.nav-absolute-top{
         position: absolute;
         top: 0;

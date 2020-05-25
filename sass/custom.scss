@@ -1522,6 +1522,75 @@ section {
     }
 }
 
+/*-----------------------------------
+            04 - 404 SECTION
+            [404.html]
+-----------------------------------*/
+
+.page-not-found--section{
+    padding-top: 10vh !important;
+    padding-bottom: 0;
+    height: 100%;
+    position: relative;
+
+    .page-not-found__container{
+
+        .page-not-found__errorcode{
+            position: relative;
+            h1{
+                font-size: 70px;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                color: color(primary);
+
+                @include mqTablet{
+                    font-size: 145px;
+                }
+            }
+        }
+    
+        .page-not-found__text{
+            padding-top: 0;
+    
+            @include mqTablet{
+                padding-top: 42px;
+            }
+            p{
+                color: color(dark);
+                font-size: $textsize-subtitle;
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+                line-height: normal;
+    
+                &:first-child{
+                    margin-bottom: 10px;
+                }
+    
+                &:not(:first-child){
+                    font-size: $textsize-body;
+                    font-weight: normal;
+                }
+            }
+        }
+    
+        .page-not-found__btn{
+            padding-top: 18px;
+            width: 100%;
+    
+           >a{
+               width: 250px !important;
+               margin: 0 auto;
+               display: block;
+           }
+        }
+    }
+
+   
+}
+
+
 /*Graphic assets*/
 
 /*ICONS*/
