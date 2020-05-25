@@ -99,16 +99,20 @@ function toggleNav(){
 function showEmailDelay(){
     var emailContainer = $(".email-address-container");
     var btn = $(".show-mail-btn");
-    var loadingText = '<p class="loadingText">(Kis türelmet kérünk...)</p>'
+    var loadingText = '<p class="loading-text">(Kis türelmet kérünk...)</p>';
+    var textIsShown = false;
 
     $(emailContainer).append(loadingText);
 
     setTimeout(function(){        
-        $('.loadingText').remove();
+        $('.loading-text').remove();
         btn.removeClass("hidden");
         $(btn).click(function(){
-            $(this).css('display', 'none');
-            $(emailContainer).append("<h3><strong>info@kisfaludygozos.hu</strong></h3>");
+            if(!textIsShown){
+                $(this).css('display', 'none');
+                $(emailContainer).append("<h3 class=\"email-address\"><strong>info@kisfaludygozos.hu</strong></h3>");
+                textIsShown = true;    
+            }
         });
     }, 1200);
 };
