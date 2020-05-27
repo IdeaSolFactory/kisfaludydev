@@ -1534,11 +1534,20 @@ section {
     position: relative;
 
     .page-not-found__container {
+
+        .page-not-found__illustration{
+            display: block;
+            height: 400px;
+            width: auto;
+            background-image: url(../img/graphic_assets/lighthouse_illustration-01.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
         .page-not-found__errorcode {
-            position: relative;
-            h1 {
+
                 font-size: 70px;
-                text-align: center;
                 margin: 0;
                 padding: 0;
                 color: color(primary);
@@ -1546,15 +1555,11 @@ section {
                 @include mqTablet {
                     font-size: 145px;
                 }
-            }
+            
         }
 
         .page-not-found__text {
             padding-top: 0;
-
-            @include mqTablet {
-                padding-top: 42px;
-            }
             p {
                 color: color(dark);
                 font-size: $textsize-subtitle;
@@ -1575,13 +1580,15 @@ section {
         }
 
         .page-not-found__btn {
-            padding-top: 18px;
-            width: 100%;
+
+            margin-top: 12px;
+            text-align: left;
 
             > a {
-                width: 250px !important;
                 margin: 0 auto;
                 display: block;
+                color: color(dark);
+                text-align: left;
             }
         }
     }

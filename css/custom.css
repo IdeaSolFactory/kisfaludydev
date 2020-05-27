@@ -1919,32 +1919,31 @@ section {
   position: relative;
 }
 
-.page-not-found--section .page-not-found__container .page-not-found__errorcode {
-  position: relative;
+.page-not-found--section .page-not-found__container .page-not-found__illustration {
+  display: block;
+  height: 400px;
+  width: auto;
+  background-image: url(../img/graphic_assets/lighthouse_illustration-01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
-.page-not-found--section .page-not-found__container .page-not-found__errorcode h1 {
+.page-not-found--section .page-not-found__container .page-not-found__errorcode {
   font-size: 70px;
-  text-align: center;
   margin: 0;
   padding: 0;
   color: #e7cc5e;
 }
 
 @media screen and (min-width: 768px) {
-  .page-not-found--section .page-not-found__container .page-not-found__errorcode h1 {
+  .page-not-found--section .page-not-found__container .page-not-found__errorcode {
     font-size: 145px;
   }
 }
 
 .page-not-found--section .page-not-found__container .page-not-found__text {
   padding-top: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .page-not-found--section .page-not-found__container .page-not-found__text {
-    padding-top: 42px;
-  }
 }
 
 .page-not-found--section .page-not-found__container .page-not-found__text p {
@@ -1966,14 +1965,15 @@ section {
 }
 
 .page-not-found--section .page-not-found__container .page-not-found__btn {
-  padding-top: 18px;
-  width: 100%;
+  margin-top: 12px;
+  text-align: left;
 }
 
 .page-not-found--section .page-not-found__container .page-not-found__btn > a {
-  width: 250px !important;
   margin: 0 auto;
   display: block;
+  color: #252525;
+  text-align: left;
 }
 
 /*Graphic assets*/
