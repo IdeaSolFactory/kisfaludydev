@@ -1749,26 +1749,26 @@ section {
             max-width: 650px;
         }
 
-        .departures__map {
-            position: absolute;
-            display: block;
-            width: 120px;
-            height: 120px;
-            top: 25px;
-            left: 25px;
-            background-image: url(../img/departures-map-hun.jpg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            border: 4px solid color(primary);
+        // .departures__map {
+        //     position: absolute;
+        //     display: block;
+        //     width: 120px;
+        //     height: 120px;
+        //     top: 25px;
+        //     left: 25px;
+        //     background-image: url(../img/departures-map-hun.jpg);
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: contain;
+        //     border: 4px solid color(primary);
 
-            @include mqSmallScreen {
-                width: 235px;
-                height: 235px;
-                top: 35px;
-                left: -65px;
-            }
-        }
+        //     @include mqSmallScreen {
+        //         width: 235px;
+        //         height: 235px;
+        //         top: 35px;
+        //         left: -65px;
+        //     }
+        // }
     }
 }
 
