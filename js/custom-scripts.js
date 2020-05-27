@@ -97,21 +97,18 @@ function toggleNav(){
 // Shows email address with a small amount of delay upon clicking the button
 
 function showEmailDelay(){
-    var emailContainer = $(".email-address-container");
     var btn = $(".show-mail-btn");
-    var loadingText = '<p class="loading-text">(Kis türelmet kérünk...)</p>';
+    var btnText = "Email cím megjelenítése";
     var textIsShown = false;
 
-    $(emailContainer).append(loadingText);
+    setTimeout(function(){
 
-    setTimeout(function(){        
-        $('.loading-text').remove();
-        btn.removeClass("hidden");
+        $("span", btn).html(btnText);
+      
         $(btn).click(function(){
             if(!textIsShown){
-                $(this).css('display', 'none');
-                $(emailContainer).append("<h3 class=\"email-address\"><strong>info@kisfaludygozos.hu</strong></h3>");
-                textIsShown = true;    
+                $("span", this).html("<b>info@kisfaludygozos.hu</b>");
+                textIsShown = true;
             }
         });
     }, 1200);

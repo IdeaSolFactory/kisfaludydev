@@ -896,7 +896,7 @@ th span {
             margin-bottom: $padding-big;
         }
 
-        > p  {
+        > p {
             margin-bottom: 1em;
         }
     }
@@ -931,7 +931,7 @@ th span {
         }
     }
 
-    .btn{
+    .btn {
         margin-top: 12px;
     }
 }
@@ -1527,69 +1527,65 @@ section {
             [404.html]
 -----------------------------------*/
 
-.page-not-found--section{
+.page-not-found--section {
     padding-top: 10vh !important;
     padding-bottom: 0;
     height: 100%;
     position: relative;
 
-    .page-not-found__container{
-
-        .page-not-found__errorcode{
+    .page-not-found__container {
+        .page-not-found__errorcode {
             position: relative;
-            h1{
+            h1 {
                 font-size: 70px;
                 text-align: center;
                 margin: 0;
                 padding: 0;
                 color: color(primary);
 
-                @include mqTablet{
+                @include mqTablet {
                     font-size: 145px;
                 }
             }
         }
-    
-        .page-not-found__text{
+
+        .page-not-found__text {
             padding-top: 0;
-    
-            @include mqTablet{
+
+            @include mqTablet {
                 padding-top: 42px;
             }
-            p{
+            p {
                 color: color(dark);
                 font-size: $textsize-subtitle;
                 font-weight: bold;
                 padding: 0;
                 margin: 0;
                 line-height: normal;
-    
-                &:first-child{
+
+                &:first-child {
                     margin-bottom: 10px;
                 }
-    
-                &:not(:first-child){
+
+                &:not(:first-child) {
                     font-size: $textsize-body;
                     font-weight: normal;
                 }
             }
         }
-    
-        .page-not-found__btn{
+
+        .page-not-found__btn {
             padding-top: 18px;
             width: 100%;
-    
-           >a{
-               width: 250px !important;
-               margin: 0 auto;
-               display: block;
-           }
+
+            > a {
+                width: 250px !important;
+                margin: 0 auto;
+                display: block;
+            }
         }
     }
-
-   
 }
-
 
 /*Graphic assets*/
 
@@ -1728,18 +1724,17 @@ section {
     width: 100%;
 }
 
-
- /*-----------------------------------
+/*-----------------------------------
          DEPARTURES SECTION
 -----------------------------------*/
-.departures--section{
+.departures--section {
     position: relative;
 
-    .departures__img-container{
+    .departures__img-container {
         position: relative;
 
-        .departures__img{
-            position: relative;           
+        .departures__img {
+            position: relative;
             display: block;
             height: 100%;
             width: 100%;
@@ -1747,93 +1742,28 @@ section {
             max-width: 650px;
         }
 
-        .departures__map{
+        .departures__map {
             position: absolute;
-                display: block;
-                width: 120px;
-                height: 120px;
-                top: 25px;
-                left: 25px;
-                background-image: url(../img/departures-map-hun.jpg);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: contain;
-                border: 4px solid color(primary);
+            display: block;
+            width: 120px;
+            height: 120px;
+            top: 25px;
+            left: 25px;
+            background-image: url(../img/departures-map-hun.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: 4px solid color(primary);
 
-                @include mqSmallScreen{
-                    width: 235px;
-                    height: 235px;
-                    top: 35px;
-                    left: -65px;                   
-                }
+            @include mqSmallScreen {
+                width: 235px;
+                height: 235px;
+                top: 35px;
+                left: -65px;
+            }
         }
     }
-
-    // .departure-sites-img {
-    //     overflow: hidden;
-    //     background-color: #e4f1f9;
-    //     height: 360px;
-    
-    //     background: url("../img/departures-map.svg") no-repeat;
-    //     background-position: bottom;
-    //     background-size: cover;
-    // }
-    
-    // .departure-sites-img.en {
-    //     background: url("../img/departures-map_en.svg") no-repeat;
-    //     overflow: hidden;
-    //     background-color: #e4f1f9;
-    //     height: 360px;
-    
-    //     background-position: bottom;
-    //     background-size: cover;
-    // }
-    
-    // .departure-sites-img.de {
-    //     background: url("../img/departures-map_de.svg") no-repeat;
-    //     overflow: hidden;
-    //     background-color: #e4f1f9;
-    //     height: 360px;
-    
-    //     background-position: bottom;
-    //     background-size: cover;
-    // }
-    
-    // .route-img {
-    //     background-color: #e4f1f9;
-    //     height: 100%;
-    //     min-height: 400px;
-    //     display: block;
-    
-    //     background: url("../img/route-map.svg") no-repeat;
-    //     background-size: cover;
-    //     background-position: top;
-    // }
-    
-    // .route-img.en {
-    //     background-color: #e4f1f9;
-    //     height: 100%;
-    //     min-height: 400px;
-    //     display: block;
-    
-    //     background: url("../img/route-map_en.svg") no-repeat;
-    //     background-size: cover;
-    //     background-position: top;
-    // }
-    
-    // .route-img.de {
-    //     background-color: #e4f1f9;
-    //     height: 100%;
-    //     min-height: 400px;
-    //     display: block;
-    
-    //     background: url("../img/route-map_de.svg") no-repeat;
-    //     background-size: cover;
-    //     background-position: top;
-    // }
 }
-
-
 
 /*MAP section*/
 
@@ -1870,15 +1800,15 @@ section {
         opacity: .85; 
     } */
 
-.schedule-timetable{
+.schedule-timetable {
     padding: 1em;
 
-    >.schedule-notification{
+    > .schedule-notification {
         width: 100%;
         padding: 18px 18px !important;
         background-color: color(primary);
 
-        >p{
+        > p {
             font-size: 16px;
             color: color(dark);
             display: block;
@@ -1886,7 +1816,7 @@ section {
             line-height: 140%;
             padding-left: 35px;
 
-            &::before{
+            &::before {
                 content: "";
                 position: absolute;
                 left: 0;
@@ -1899,17 +1829,17 @@ section {
         }
     }
 
-    >.schedule-column{
+    > .schedule-column {
         display: flex;
         flex-direction: column;
         justify-content: center;
         min-height: 135px;
         position: relative;
-        border: 1px solid rgba($color: color(light), $alpha: .6);
+        border: 1px solid rgba($color: color(light), $alpha: 0.6);
 
-        &.schedule-column--empty{
+        &.schedule-column--empty {
             overflow: hidden;
-            &::before{
+            &::before {
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -1918,10 +1848,10 @@ section {
                 transform: rotate(45deg);
                 transform-origin: center;
                 width: 150%;
-                border-bottom: solid 2px rgba($color: color(light), $alpha: .6);                
+                border-bottom: solid 2px rgba($color: color(light), $alpha: 0.6);
             }
 
-            &::after{
+            &::after {
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -1930,7 +1860,7 @@ section {
                 transform: rotate(-45deg);
                 transform-origin: center;
                 width: 150%;
-                border-bottom: solid 2px rgba($color: color(light), $alpha: .6);
+                border-bottom: solid 2px rgba($color: color(light), $alpha: 0.6);
             }
         }
     }
@@ -2009,25 +1939,23 @@ section {
 
 /*Ticket box*/
 
-.tickets-box{
-    
-    .boxed{
+.tickets-box {
+    .boxed {
         padding-bottom: 20px;
     }
     .ticket-block {
         position: relative;
         padding: 0;
-    
-        &:not(:first-child){
+
+        &:not(:first-child) {
             border-top: 1px solid rgba(2, 32, 33, 0.1);
         }
-        
-        span{
+
+        span {
             vertical-align: middle;
         }
     }
-    
-    
+
     .ticket-category {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -2146,8 +2074,7 @@ section {
 /*PROGRAMS SECTION*/
 
 .programs--section {
-
-    .programs__title{
+    .programs__title {
         margin-bottom: $padding-medium !important;
     }
 
@@ -2156,7 +2083,7 @@ section {
         margin-bottom: $padding-medium;
         padding-bottom: 22px;
 
-        @include mqSmallScreen{
+        @include mqSmallScreen {
             margin-bottom: 0;
         }
 
@@ -2215,31 +2142,31 @@ section {
             }
         }
 
-        .program__footer-wrapper{
+        .program__footer-wrapper {
             margin-top: 6px;
             width: 100%;
 
-            hr{
+            hr {
                 margin: 20px 0;
             }
 
-            .program__footer-item-container{
+            .program__footer-item-container {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 margin: 0;
                 padding: 0;
 
-                .program__footer-item{
+                .program__footer-item {
                     margin: 0;
                     padding: 0;
                     width: 50%;
 
-                    &:last-of-type{
+                    &:last-of-type {
                         text-align: right;
                     }
-                    
-                    &.header-item{
+
+                    &.header-item {
                         flex-basis: 100%;
                         padding-bottom: 4px;
                         line-height: 100%;
@@ -2277,13 +2204,12 @@ section {
             opacity: 0;
         }
 
-        .video__preview{
+        .video__preview {
             display: none;
         }
     }
 
     .video__container {
-
         &::after {
             content: "";
             position: absolute;
@@ -2298,7 +2224,7 @@ section {
             z-index: 5;
         }
 
-        .video__preview{
+        .video__preview {
             display: block;
             position: absolute;
             top: 0;
@@ -2306,27 +2232,27 @@ section {
             width: 100%;
             height: 100%;
             z-index: 5;
-            
-            &::after{
+
+            &::after {
                 content: "";
-                position: absolute;            
+                position: absolute;
                 width: 100%;
                 height: 100%;
                 top: 0;
                 left: 0;
-                display: block;  
+                display: block;
                 background-image: url(../img/video-preview-01.jpg);
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: cover;          
+                background-size: cover;
                 transition: opacity 0.3s;
             }
 
-            &.hiding{
+            &.hiding {
                 display: none;
                 opacity: 0;
 
-                &::after{
+                &::after {
                     content: none;
                 }
             }
@@ -2352,7 +2278,7 @@ section {
             color: white;
         }
 
-        > .video__btn {            
+        > .video__btn {
             width: 64px;
             height: 64px;
             top: 0;
@@ -2363,15 +2289,15 @@ section {
             transform-origin: center;
             transform: scale(1);
             opacity: 1;
-            
-            @include mqSmallScreen{
+
+            @include mqSmallScreen {
                 width: 80px;
                 height: 80px;
             }
 
-            &.hiding {                
+            &.hiding {
                 opacity: 0;
-                transform: scale(.7);
+                transform: scale(0.7);
             }
 
             &.play {
@@ -2379,7 +2305,7 @@ section {
                 top: 0;
                 left: 0;
                 opacity: 1;
-            }            
+            }
         }
     }
 }
@@ -2542,73 +2468,183 @@ section {
 
 /*EMAIL SECTION*/
 .email--section {
+    position: relative;
+    background-color: color(dark);
+    margin: 0;
+    padding: 0;
+    width: 100%;
 
-    .email-section__subtitle{
-        font-size: $textsize-lead;
-        color: color(dark);
+    @include mqSmallScreen {
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -130px;
+            right: -140px;
+            width: 650px;
+            height: 350px;
+            background-image: url(../img/graphic_assets/decor-lines-A.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotate(35deg);
+            opacity: 0.65;
+        }
     }
 
-    .email-section__button-wrapper{
-        margin-top: 6px;
+    .email-section__bckgrnd-img-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
 
-        .btn.show-mail-btn{
-            background-color: color(light);
-            border: 1px solid rgba($color: color(dark-accent), $alpha: .2) !important;
-            display: block;
-            width: 100% !important;
-            margin: 0 auto;
-            color: rgba($color: color(dark), $alpha: .65);
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: #000000, $alpha: 0.75);
+        }
 
-            @include mqTablet{
-                max-width: 360px;
+        @include mqSmallScreen {
+            position: relative;
+            height: auto;
+
+            &::after {
+                background-color: transparent;
             }
         }
 
-        .email-address-container{
-            display: block;
-            margin: 0 auto;
-            height: 100%;
+        .email-section__bckgrnd-img {
             width: 100%;
+            height: 100%;
+            background-image: url(../img/email-section-bckgrnd-01.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    .email-section__text-container {
+        padding: $padding-huge 0;
+
+        @include mqSmallScreen {
+            padding: 150px $padding-big 150px $padding-big;
+        }
+
+        .email-section__title {
+            font-size: 32px;
+            color: white;
+        }
+        .email-section__subtitle {
+            color: white;
+            font-size: $textsize-lead;
+        }
+
+        .email-address-container {
             text-align: center;
+            display: block;
 
-            .email-address{ 
-                display: inline;               
-                padding: 0;
-                margin: 0 auto;
-                position: relative;
-                z-index: 1;
-                
-                &::after{
-                    content: "";
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    border: 2px solid color(primary);
-                    z-index: 0;
-                }
-            
-                strong{
-                    position: relative;
-                    z-index: 10;
-                }
-
-                
-            }
-
-            .loading-text{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                display: block;
+            > .email-address {
+                color: white;
+                font-size: 22px;
                 line-height: 100%;
                 padding: 0;
                 margin: 0;
+                height: 32px;
             }
         }
-    }   
 
+        .email-section__button {
+            display: block;
+            width: 100%;
+            position: relative;
+
+            >i{
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            span{
+                font-weight: normal;
+            }
+        }
+    }
+
+    // .email-section__subtitle{
+    //     font-size: $textsize-lead;
+    //     color: color(dark);
+    // }
+
+    // .email-section__button-wrapper{
+    //     margin-top: 6px;
+
+    //     .btn.show-mail-btn{
+    //         background-color: color(light);
+    //         border: 1px solid rgba($color: color(dark-accent), $alpha: .2) !important;
+    //         display: block;
+    //         width: 100% !important;
+    //         margin: 0 auto;
+    //         color: rgba($color: color(dark), $alpha: .65);
+
+    //         @include mqTablet{
+    //             max-width: 360px;
+    //         }
+    //     }
+
+    //     .email-address-container{
+    //         display: block;
+    //         margin: 0 auto;
+    //         height: 100%;
+    //         width: 100%;
+    //         text-align: center;
+
+    //         .email-address{
+    //             display: inline;
+    //             padding: 0;
+    //             margin: 0 auto;
+    //             position: relative;
+    //             z-index: 1;
+
+    //             &::after{
+    //                 content: "";
+    //                 position: absolute;
+    //                 bottom: 0;
+    //                 left: 0;
+    //                 width: 100%;
+    //                 border: 2px solid color(primary);
+    //                 z-index: 0;
+    //             }
+
+    //             strong{
+    //                 position: relative;
+    //                 z-index: 10;
+    //             }
+
+    //         }
+
+    //         .loading-text{
+    //             position: absolute;
+    //             top: 50%;
+    //             left: 50%;
+    //             transform: translateX(-50%) translateY(-50%);
+    //             display: block;
+    //             line-height: 100%;
+    //             padding: 0;
+    //             margin: 0;
+    //         }
+    //     }
+    // }
 }
 
 /*Additional Info Section*/
@@ -2633,11 +2669,11 @@ footer {
         height: 100%;
 
         .logo {
-            object-fit: contain;   
-            text-align: center;    
-            margin: 0 auto;    
+            object-fit: contain;
+            text-align: center;
+            margin: 0 auto;
             width: 200px;
-            height: auto;           
+            height: auto;
             display: block;
             max-height: unset;
 

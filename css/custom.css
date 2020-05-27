@@ -2870,71 +2870,126 @@ section {
 }
 
 /*EMAIL SECTION*/
-.email--section .email-section__subtitle {
-  font-size: 1.2em;
-  color: #252525;
+.email--section {
+  position: relative;
+  background-color: #252525;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.email--section .email-section__button-wrapper {
-  margin-top: 6px;
-}
-
-.email--section .email-section__button-wrapper .btn.show-mail-btn {
-  background-color: #ebebeb;
-  border: 1px solid rgba(53, 51, 49, 0.2) !important;
-  display: block;
-  width: 100% !important;
-  margin: 0 auto;
-  color: rgba(37, 37, 37, 0.65);
-}
-
-@media screen and (min-width: 768px) {
-  .email--section .email-section__button-wrapper .btn.show-mail-btn {
-    max-width: 360px;
+@media screen and (min-width: 991px) {
+  .email--section {
+    overflow: hidden;
+  }
+  .email--section::after {
+    content: "";
+    position: absolute;
+    top: -130px;
+    right: -140px;
+    width: 650px;
+    height: 350px;
+    background-image: url(../img/graphic_assets/decor-lines-A.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transform: rotate(35deg);
+            transform: rotate(35deg);
+    opacity: 0.65;
   }
 }
 
-.email--section .email-section__button-wrapper .email-address-container {
-  display: block;
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-
-.email--section .email-section__button-wrapper .email-address-container .email-address {
-  display: inline;
-  padding: 0;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.email--section .email-section__button-wrapper .email-address-container .email-address::after {
-  content: "";
+.email--section .email-section__bckgrnd-img-wrapper {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  border: 2px solid #e7cc5e;
-  z-index: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.email--section .email-section__button-wrapper .email-address-container .email-address strong {
-  position: relative;
-  z-index: 10;
-}
-
-.email--section .email-section__button-wrapper .email-address-container .loading-text {
+.email--section .email-section__bckgrnd-img-wrapper::after {
+  content: "";
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (min-width: 991px) {
+  .email--section .email-section__bckgrnd-img-wrapper {
+    position: relative;
+    height: auto;
+  }
+  .email--section .email-section__bckgrnd-img-wrapper::after {
+    background-color: transparent;
+  }
+}
+
+.email--section .email-section__bckgrnd-img-wrapper .email-section__bckgrnd-img {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/email-section-bckgrnd-01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.email--section .email-section__text-container {
+  padding: 64px 0;
+}
+
+@media screen and (min-width: 991px) {
+  .email--section .email-section__text-container {
+    padding: 150px 46px 150px 46px;
+  }
+}
+
+.email--section .email-section__text-container .email-section__title {
+  font-size: 32px;
+  color: white;
+}
+
+.email--section .email-section__text-container .email-section__subtitle {
+  color: white;
+  font-size: 1.2em;
+}
+
+.email--section .email-section__text-container .email-address-container {
+  text-align: center;
   display: block;
+}
+
+.email--section .email-section__text-container .email-address-container > .email-address {
+  color: white;
+  font-size: 22px;
   line-height: 100%;
   padding: 0;
   margin: 0;
+  height: 32px;
+}
+
+.email--section .email-section__text-container .email-section__button {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.email--section .email-section__text-container .email-section__button > i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.email--section .email-section__text-container .email-section__button span {
+  font-weight: normal;
 }
 
 /*Additional Info Section*/
