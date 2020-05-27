@@ -107,7 +107,7 @@ function showEmailDelay(){
       
         $(btn).click(function(){
             if(!textIsShown){
-                $("span", this).html("<b>info@kisfaludygozos.hu</b>");
+                $("span", this).html("info@kisfaludygozos.hu");
                 textIsShown = true;
             }
         });

@@ -2976,6 +2976,12 @@ section {
   display: block;
   width: 100%;
   position: relative;
+  padding: 12px 0;
+}
+
+.email--section .email-section__text-container .email-section__button:hover {
+  -webkit-transform: none;
+          transform: none;
 }
 
 .email--section .email-section__text-container .email-section__button > i {
@@ -2984,12 +2990,15 @@ section {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
 }
 
 .email--section .email-section__text-container .email-section__button span {
-  font-weight: normal;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-left: 18px;
 }
 
 /*Additional Info Section*/

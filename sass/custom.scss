@@ -2565,18 +2565,26 @@ section {
             display: block;
             width: 100%;
             position: relative;
+            padding: 12px 0;
+
+            &:hover{
+                transform: none;
+            }
 
             >i{
                 position: absolute;
                 left: 15px;
                 top: 50%;
                 transform: translateY(-50%);
-                font-size: 28px;
+                font-size: 36px;
                 font-weight: bold;
             }
 
             span{
-                font-weight: normal;
+                font-size: $textsize-body;
+                font-weight: 900;
+                text-transform: uppercase;
+                padding-left: 18px;
             }
         }
     }
