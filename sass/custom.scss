@@ -1750,8 +1750,8 @@ section {
         .departures__map{
             position: absolute;
                 display: block;
-                width: 200px;
-                height: 200px;
+                width: 120px;
+                height: 120px;
                 top: 25px;
                 left: 25px;
                 background-image: url(../img/departures-map-hun.jpg);
@@ -1759,6 +1759,11 @@ section {
                 background-repeat: no-repeat;
                 background-size: contain;
                 border: 4px solid color(primary);
+
+                @include mqSmallScreen{
+                    width: 200px;
+                    height: 200px;
+                }
         }
     }
 
