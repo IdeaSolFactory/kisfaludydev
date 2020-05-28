@@ -25,6 +25,7 @@ TABLE OF CONTENTS
         02 - TEXT WEIGHTS
         03 - TEXT DECORATIONS
         04 - TEXT BREAKERS
+        05 - TEXT FORMATS
         ----------------------------
 04 ---- BACKGROUNDS
 05 ---- GENERAL FORMATTING----------
@@ -163,8 +164,8 @@ a.white {
 }
 
 /*-----------------------------------
-                01 - TEXT SIZES
-    -----------------------------------*/
+            01 - TEXT SIZES
+-----------------------------------*/
 .text-xs,
 p.text-xs {
   font-size: 0.8em !important;
@@ -218,15 +219,15 @@ h2 {
 }
 
 /*-----------------------------------
-                02 - TEXT WEIGHTS
-    -----------------------------------*/
+        02 - TEXT WEIGHTS
+-----------------------------------*/
 strong {
   font-weight: 800;
 }
 
 /*-----------------------------------
-                03 - TEXT DECORATIONS
-    -----------------------------------*/
+        03 - TEXT DECORATIONS
+-----------------------------------*/
 [class*="decorline-"] {
   position: relative;
   display: inline-block !important;
@@ -273,8 +274,8 @@ strong {
 }
 
 /*-----------------------------------
-            04 - TEXT BREAKERS
-    -----------------------------------*/
+        04 - TEXT BREAKERS
+-----------------------------------*/
 [class*="break-"] {
   display: inline;
   line-height: inherit;
@@ -321,6 +322,34 @@ strong {
   [class*="break-largescreen"][class*="-nobreak"] {
     display: initial;
   }
+}
+
+/*-----------------------------------
+            05 - TEXT FORMATS
+-----------------------------------*/
+/*COMMENTS*/
+.comment--light {
+  display: block;
+  padding: 0;
+  margin: 12px 0;
+  padding: 0;
+  position: relative;
+}
+
+.comment--light > p {
+  display: inline-block;
+  padding-left: 25px;
+}
+
+.comment--light.comment--warning::before {
+  content: url(../img/icons/warn-full-yellow.svg);
+  position: absolute;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  top: 3px;
+  left: 0;
 }
 
 /*=========================================
@@ -2018,7 +2047,13 @@ section {
   max-width: 100%;
   max-height: 100%;
   opacity: 0.45;
+  /*Notification icons*/
   /*Flags*/
+}
+
+.icon.icon-inline-block {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .icon.icon-m {
@@ -2051,6 +2086,10 @@ section {
 
 .icon.ship {
   content: url("../img/icons/ship.svg");
+}
+
+.icon.warning {
+  content: url("../img/icons/warn.svg");
 }
 
 .icon.flag-en {
@@ -2162,7 +2201,7 @@ section {
 
 @media screen and (min-width: 768px) {
   .map--section .map-section__map-container {
-    padding-bottom: 24px;
+    padding-bottom: 0;
   }
 }
 
