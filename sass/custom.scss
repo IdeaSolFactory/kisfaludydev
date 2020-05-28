@@ -1828,16 +1828,28 @@ section {
     }
 
     .map-section__map-container{
-        display: block;
-        width: 100%;
-        height: 360px;
+        display: block;      
 
         @include mqTablet{
             padding-bottom: 0;
         }
 
+        >iframe{
+            width: 100%;
+            height: 420px;
+        }
+    }
+    .map-section__notification{
+        span{
+            margin-bottom: 0;
+            margin-top: 6px;
+        }
+    }
+
+    .map-section__text{
+        
         @include mqSmallScreen{
-            height: 600px;
+            margin-top: -42px;
         }
     }
 }
@@ -1864,10 +1876,11 @@ section {
         .departures__img {
             position: relative;
             display: block;
-            height: 100%;
+            height: auto;
             width: 100%;
-            max-height: 650px;
-            max-width: 650px;
+            object-fit: cover;
+            max-height: 420px;
+            max-width: unset;
         }
 
         // .departures__map {
