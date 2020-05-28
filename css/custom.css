@@ -2909,10 +2909,10 @@ section {
 .email--section .email-section__bckgrnd-img-wrapper .email-section__bckgrnd-img {
   width: 100%;
   height: 100%;
-  background-image: url(../img/email-section-bckgrnd-04.jpg);
+  background-image: url(../img/email-section-bckgrnd-01.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
 }
 
 .email--section .email-section__text-container {
