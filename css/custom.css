@@ -101,7 +101,7 @@ section.bg--secondary:not(.imagebg) + section:not(.imagebg):not([class*="bg-"]) 
             01 - COLORS
 =========================================*/
 .textcol-main {
-  color: #e7cc5e !important;
+  color: #eecf3b !important;
 }
 
 .textcol-dark {
@@ -114,13 +114,13 @@ section.bg--secondary:not(.imagebg) + section:not(.imagebg):not([class*="bg-"]) 
 
 .text--maincol,
 span.text--maincol strong {
-  color: #e7cc5e !important;
+  color: #eecf3b !important;
 }
 
 .bg--maincol,
 .boxed.bg--maincol,
 .boxed.boxed--border.bg-maincol {
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
 }
 
 .bg--secondarycol,
@@ -130,7 +130,7 @@ span.text--maincol strong {
 }
 
 .boxed.boxed--border.border--main {
-  border: 1px solid #e7cc5e;
+  border: 1px solid #eecf3b;
 }
 
 .boxed.boxed--border.border--secondary {
@@ -156,7 +156,7 @@ span.text--maincol strong {
             03 - TEXTS
 =========================================*/
 a {
-  color: #e7cc5e;
+  color: #eecf3b;
 }
 
 a.white {
@@ -245,7 +245,7 @@ strong {
 .decorline-main::after {
   width: 40px;
   height: 6px;
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
 }
 
 .decorline-thin::after {
@@ -538,14 +538,14 @@ hr.compact {
 hr.medium {
   border-width: 0.25em;
   width: 35%;
-  border-color: #e7cc5e;
+  border-color: #eecf3b;
   opacity: 1 !important;
 }
 
 hr.short {
   width: 6.5em;
   border-width: 0.45em;
-  border-color: #e7cc5e;
+  border-color: #eecf3b;
 }
 
 hr.short.dark {
@@ -556,7 +556,7 @@ hr.short.dark {
         05 - BORDERS
     -----------------------------------*/
 .border--main {
-  border-color: #e7cc5e;
+  border-color: #eecf3b;
 }
 
 .border--light {
@@ -708,7 +708,7 @@ hr.short.dark {
   position: absolute;
   width: 8px;
   height: 8px;
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
   top: 0.75em;
   left: 0;
 }
@@ -766,14 +766,14 @@ hr.short.dark {
 
 .list.button-list > li:focus,
 .list.button-list > li:hover {
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
 }
 
 .list.button-list.theme-dark > li:focus,
 .list.button-list.theme-dark > li:hover,
 .list.button-list.theme-dark > li.active {
   background-color: #252525;
-  color: #e7cc5e;
+  color: #eecf3b;
 }
 
 .simple-list li {
@@ -822,7 +822,7 @@ th span {
   display: block;
   width: 100%;
   color: white;
-  border-bottom: 5px solid #e7cc5e;
+  border-bottom: 5px solid #eecf3b;
   padding: 1em 2.5em;
 }
 
@@ -835,7 +835,7 @@ th span {
 .boxed--style1 .box-header h6 {
   padding: 0 !important;
   margin: 0 !important;
-  color: #e7cc5e;
+  color: #eecf3b;
 }
 
 .boxed--style1 .box-header h3 {
@@ -1046,7 +1046,7 @@ section {
 }
 
 .btn.btn-circle {
-  background-color: #e7cc5e !important;
+  background-color: #eecf3b !important;
   min-width: unset !important;
   width: 40px !important;
   height: 40px !important;
@@ -1104,11 +1104,11 @@ section {
 
 .btn:hover,
 .btn--primary:hover {
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
 }
 
 .btn--primary {
-  background-color: #e7cc5e !important;
+  background-color: #eecf3b !important;
   color: #212023 !important;
   border: #212023 1px solid !important;
 }
@@ -1116,11 +1116,11 @@ section {
 .btn--primary.bordered {
   background-color: transparent !important;
   color: white !important;
-  border: #e7cc5e 1px solid !important;
+  border: #eecf3b 1px solid !important;
 }
 
 .btn--primary.bordered:hover {
-  background-color: #e7cc5e !important;
+  background-color: #eecf3b !important;
   color: #252525 !important;
 }
 
@@ -1129,7 +1129,7 @@ section {
     -----------------------------------*/
 .btn.btn--main {
   min-width: 100%;
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
 }
 
 .bg--dark .btn--main {
@@ -1197,7 +1197,7 @@ section {
 
 .nav--section.nav-static .nav-container {
   background-color: #252525;
-  border-bottom: solid 10px #e7cc5e;
+  border-bottom: solid 10px #eecf3b;
 }
 
 .nav--section.nav-static .nav-container .menu-container {
@@ -1224,7 +1224,7 @@ section {
 }
 
 .nav--section .nav-container .hamburger-toggle .icon {
-  color: #e7cc5e;
+  color: #eecf3b;
   opacity: 1;
 }
 
@@ -1238,7 +1238,7 @@ section {
 
 .nav--section .nav-container.sticky {
   background-color: #252525;
-  border-bottom: 4px solid #e7cc5e;
+  border-bottom: 4px solid #eecf3b;
   max-height: unset;
   position: fixed;
   padding: 0;
@@ -1399,7 +1399,7 @@ section {
 }
 
 .nav--section .nav-container .menu-container > .menu > li > a.highlight {
-  color: #e7cc5e;
+  color: #eecf3b;
 }
 
 .nav--section .nav-container .menu-container > .menu > li.dropdown {
@@ -1992,7 +1992,7 @@ section {
   font-size: 70px;
   margin: 0;
   padding: 0;
-  color: #e7cc5e;
+  color: #eecf3b;
 }
 
 @media screen and (min-width: 768px) {
@@ -2135,7 +2135,7 @@ section {
 /*HEADER*/
 /*BODY*/
 .notification--section {
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
   color: #252525;
 }
 
@@ -2159,7 +2159,7 @@ section {
 .notification--section .notification-wrapper {
   padding: 15px;
   border: 2px solid #212023;
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
 }
 
 .notification--section h3 {
@@ -2285,7 +2285,7 @@ section {
 .schedule-timetable > .schedule-notification {
   width: 100%;
   padding: 18px 18px !important;
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
 }
 
 .schedule-timetable > .schedule-notification > p {
@@ -2589,7 +2589,7 @@ section {
   left: 0;
   height: 60px;
   width: 110px;
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
 }
 
 .programs--section .program span.program__icon::after {
@@ -2676,7 +2676,7 @@ section {
   height: 30px;
   padding: 10px;
   display: block;
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
   margin-bottom: 10px;
 }
 
@@ -2886,7 +2886,7 @@ section {
 }
 
 .accordion-1 li.active .accordion__title {
-  background-color: #e7cc5e;
+  background-color: #eecf3b;
   border-color: black;
 }
 
