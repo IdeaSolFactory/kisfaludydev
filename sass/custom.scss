@@ -1058,6 +1058,35 @@ section {
 }
 
 .btn {
+
+    &.btn-circle{
+        background-color: color(primary) !important;
+        min-width: unset !important;
+        width: 40px !important;
+        height: 40px !important;
+        display: inline-block;
+        border: none !important;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        margin-right: 15px;       
+
+        &.btn-back{
+            position: relative;
+            &::after{
+                content: "←";
+                position: absolute;
+                display: block;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                font-size: 22px;
+                margin-top: -2px;
+                line-height: 0;
+            }
+        }
+    }
+
     &.autowidth {
         @include mqTablet {
             width: auto !important;
@@ -1589,6 +1618,12 @@ section {
                 display: block;
                 color: color(dark);
                 text-align: left;
+                vertical-align: middle;
+                line-height: 100%;
+
+                >i{
+                    vertical-align: middle;
+                }
             }
         }
     }

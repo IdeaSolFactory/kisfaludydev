@@ -1016,6 +1016,36 @@ section {
   box-shadow: none;
 }
 
+.btn.btn-circle {
+  background-color: #e7cc5e !important;
+  min-width: unset !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-block;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.btn.btn-circle.btn-back {
+  position: relative;
+}
+
+.btn.btn-circle.btn-back::after {
+  content: "←";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  font-size: 22px;
+  margin-top: -2px;
+  line-height: 0;
+}
+
 @media screen and (min-width: 768px) {
   .btn.autowidth {
     width: auto !important;
@@ -1974,6 +2004,12 @@ section {
   display: block;
   color: #252525;
   text-align: left;
+  vertical-align: middle;
+  line-height: 100%;
+}
+
+.page-not-found--section .page-not-found__container .page-not-found__btn > a > i {
+  vertical-align: middle;
 }
 
 /*Graphic assets*/
