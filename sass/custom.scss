@@ -335,26 +335,36 @@ strong {
     .comment--light{
         display:block;
         padding: 0;
-        margin: 12px auto;
+        margin: 12px 0;
         padding: 0;
         position: relative;
         width: 100%;
-        text-align: center;
 
         >p{
             display: inline;
             padding-left: 6px;
-            text-align: center;
             vertical-align: middle;
+        }
+
+        &::before{
+            content: none;                
+            vertical-align: middle;
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+        }
+
+        &.centered{
+            text-align: center;
+
+            >p{
+                text-align: center;
+            }
         }
 
         &.comment--warning{
             &::before{
-                content: url(../img/icons/warn-full-yellow.svg);                
-                vertical-align: middle;
-                height: 20px;
-                width: 20px;
-                display: inline-block;
+                content: url(../img/icons/warn-full-yellow.svg);
             }
         }
     }
