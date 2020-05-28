@@ -1762,15 +1762,48 @@ section {
     max-width: 450px;
 }
 
-.gmap {
-    width: 100%;
+/*-----------------------------------
+            MAP SECTION
+-----------------------------------*/
+.map--section{
+
+    padding-top: $padding-big;
+    padding-bottom: $padding-big;
+
+    @include mqSmallScreen{
+        padding-top: $padding-xl;
+    }
+
+    .map-section__map-container{
+        display: block;
+        width: 100%;
+        height: 360px;
+
+        @include mqTablet{
+            padding-bottom: $padding-small;
+        }
+
+        @include mqSmallScreen{
+            height: 600px;
+        }
+    }
 }
 
 /*-----------------------------------
          DEPARTURES SECTION
 -----------------------------------*/
 .departures--section {
+    padding-top: 0;
+    padding-bottom: $padding-big;
     position: relative;
+
+    @include mqTablet{
+        padding-bottom: $padding-huge;
+    }
+
+    @include mqSmallScreen{
+        padding-bottom: $padding-xl;
+    }
 
     .departures__img-container {
         position: relative;
