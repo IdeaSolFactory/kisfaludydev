@@ -2262,8 +2262,17 @@ section {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   max-height: 420px;
   max-width: unset;
+}
+
+@media screen and (min-width: 991px) {
+  .departures--section .departures__img-container .departures__img {
+    -o-object-position: 50% 75%;
+       object-position: 50% 75%;
+  }
 }
 
 /*MAP section*/
@@ -2448,7 +2457,7 @@ section {
     }*/
 /*Ticket box*/
 .tickets-box .boxed {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 .tickets-box .ticket-block {

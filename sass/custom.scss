@@ -1879,8 +1879,13 @@ section {
             height: auto;
             width: 100%;
             object-fit: cover;
+            object-position: center;
             max-height: 420px;
             max-width: unset;
+
+            @include mqSmallScreen{
+                object-position: 50% 75%;
+            }
         }
 
         // .departures__map {
@@ -2082,7 +2087,7 @@ section {
 
 .tickets-box {
     .boxed {
-        padding-bottom: 20px;
+        padding-bottom: 5px;
     }
     .ticket-block {
         position: relative;
