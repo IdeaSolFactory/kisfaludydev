@@ -2347,16 +2347,27 @@ section {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding-bottom: 24px;
+  padding-bottom: 32px;
+}
+
+@media screen and (min-width: 991px) {
+  .ship-route--section .ship-route__text .ship-route__list > li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 .ship-route--section .ship-route__text .ship-route__list > li > i {
@@ -2369,7 +2380,21 @@ section {
   position: relative;
   width: 50px;
   height: 50px;
-  margin-right: 24px;
+  margin-right: 0 auto;
+  margin-bottom: 10px;
+}
+
+.ship-route--section .ship-route__text .ship-route__list > li > i:first-of-type {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 991px) {
+  .ship-route--section .ship-route__text .ship-route__list > li > i {
+    margin-right: 24px;
+  }
+  .ship-route--section .ship-route__text .ship-route__list > li > i:first-of-type {
+    margin-top: 0;
+  }
 }
 
 .ship-route--section .ship-route__text .ship-route__list > li > i.route-point::after {
@@ -2394,11 +2419,22 @@ section {
   background-image: url(../img/graphic_assets/route-icon-wine.svg);
 }
 
+.ship-route--section .ship-route__text .ship-route__list > li > i.route-point.gramophone::after {
+  background-image: url(../img/graphic_assets/route-icon-gramophone.svg);
+}
+
 .ship-route--section .ship-route__text .ship-route__list > li > p {
+  text-align: center;
   font-size: 16px;
   color: #252525;
   display: block;
   width: 100%;
+}
+
+@media screen and (min-width: 991px) {
+  .ship-route--section .ship-route__text .ship-route__list > li > p {
+    text-align: left;
+  }
 }
 
 /*Infos section*/

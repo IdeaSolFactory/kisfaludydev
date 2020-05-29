@@ -1949,19 +1949,37 @@ section {
             > li {
                 display: flex;
                 width: 100%;
-                flex-direction: row;
-                flex-wrap: nowrap;
+                flex-direction: column;
+                flex-wrap: wrap;
                 justify-content: flex-start;
-                padding-bottom: $padding-small;
+                padding-bottom: $padding-medium;
 
-                > i {
+                @include mqSmallScreen{
+                    flex-direction: row;
+                    flex-wrap: nowrap;                  
+                }
+
+                >i {
                     flex-shrink: 0;
                     align-self: center;
                     display: block;
                     position: relative;
                     width: 50px;
                     height: 50px;
-                    margin-right: $padding-small;
+                    margin-right: 0 auto;
+                    margin-bottom: 10px;
+
+                    &:first-of-type{
+                        margin-top: 10px;
+                    }
+
+                    @include mqSmallScreen{
+                        margin-right: $padding-small;
+                        
+                        &:first-of-type{
+                            margin-top: 0;
+                        }
+                    }
 
                     &.route-point {
                         &::after {
@@ -1992,15 +2010,26 @@ section {
                             }
                         }
 
+                        &.gramophone{
+                            &::after{
+                                background-image: url(../img/graphic_assets/route-icon-gramophone.svg);
+                            }
+                        }
+
                         
                     }
                 }
 
                 > p {
+                    text-align: center;
                     font-size: $textsize-body;
                     color: color(dark);
                     display: block;
                     width: 100%;
+
+                    @include mqSmallScreen{
+                        text-align: left;
+                    }
                 }
             }
         }
