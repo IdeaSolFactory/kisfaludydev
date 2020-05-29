@@ -1890,7 +1890,7 @@ section {
             ROUTE SECTION
 -----------------------------------*/
 .ship-route--section {
-    padding: $padding-big 0;
+    padding: 0;
     position: relative;
     overflow: hidden;
 
@@ -1911,7 +1911,7 @@ section {
     }
 
     @include mqSmallScreen {
-        padding: $padding-xl 0;    
+        padding: 0;    
         
         &::after{
             left: -120px;
