@@ -2282,7 +2282,7 @@ section {
             ROUTE SECTION
 -----------------------------------*/
 .ship-route--section {
-  padding: 0;
+  padding: 46px 0;
   position: relative;
   overflow: hidden;
 }
@@ -2306,7 +2306,7 @@ section {
 
 @media screen and (min-width: 991px) {
   .ship-route--section {
-    padding: 0;
+    padding: 80px 0;
   }
   .ship-route--section::after {
     left: -120px;
