@@ -38,6 +38,7 @@ TABLE OF CONTENTS
         07 - LISTS
         08 - TABLES
         09 - ANCHOR OFFSETS
+        10 - GRAPHICS ELEMENTS
 
 06 ---- ELEMENTS --------------------
         01 - BOXED CONTENT
@@ -808,13 +809,106 @@ th span {
 }
 
 /*-----------------------------------
-                09 - ANCHOR OFFSETS
-    -----------------------------------*/
+        09 - ANCHOR OFFSETS
+-----------------------------------*/
 :target:before {
   content: "";
   display: block;
   height: 100px;
   margin: -100px 0 0;
+}
+
+/*-----------------------------------
+        10 - GRAPHIC ASSETS
+-----------------------------------*/
+/*ICONS*/
+.icon {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.45;
+  /*Notification icons*/
+  /*Flags*/
+}
+
+.icon.icon-inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon.icon-m {
+  height: 20px;
+}
+
+.icon.icon-sm {
+  height: 16px !important;
+}
+
+.icon.icon-xs {
+  height: 8px !important;
+}
+
+.icon.pirate-flag {
+  content: url("../img/icons/pirate-flag.svg");
+}
+
+.icon.wine-glass {
+  content: url("../img/icons/wine-glasses.svg");
+}
+
+.icon.sunset {
+  content: url("../img/icons/sunset.svg");
+}
+
+.icon.moon {
+  content: url("../img/icons/moon.svg");
+}
+
+.icon.ship {
+  content: url("../img/icons/ship.svg");
+}
+
+.icon.warning {
+  content: url("../img/icons/warn.svg");
+}
+
+.icon.flag-en {
+  content: url("../img/graphic_assets/flag_en.jpg");
+}
+
+.icon.flag-de {
+  content: url("../img/graphic_assets/flag_de.jpg");
+}
+
+.icon.flag-hu {
+  content: url("../img/graphic_assets/flag_hu.jpg");
+}
+
+/*Symbols*/
+.symbol-container {
+  display: block;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+}
+
+.symbol-1,
+.symbol-star {
+  max-height: 45px;
+  max-width: 100%;
+}
+
+.symbol-1 {
+  content: url("../img/graphic_assets/symbol-01.svg");
+  width: 220px;
+}
+
+.symbol-star {
+  content: url("../img/graphic_assets/symbol-star.svg");
+  width: 50px;
+}
+
+[class*="symbol"] {
+  display: inline-block;
 }
 
 /*=========================================
@@ -2052,97 +2146,6 @@ section {
   vertical-align: middle;
 }
 
-/*Graphic assets*/
-/*ICONS*/
-.icon {
-  max-width: 100%;
-  max-height: 100%;
-  opacity: 0.45;
-  /*Notification icons*/
-  /*Flags*/
-}
-
-.icon.icon-inline-block {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.icon.icon-m {
-  height: 20px;
-}
-
-.icon.icon-sm {
-  height: 16px !important;
-}
-
-.icon.icon-xs {
-  height: 8px !important;
-}
-
-.icon.pirate-flag {
-  content: url("../img/icons/pirate-flag.svg");
-}
-
-.icon.wine-glass {
-  content: url("../img/icons/wine-glasses.svg");
-}
-
-.icon.sunset {
-  content: url("../img/icons/sunset.svg");
-}
-
-.icon.moon {
-  content: url("../img/icons/moon.svg");
-}
-
-.icon.ship {
-  content: url("../img/icons/ship.svg");
-}
-
-.icon.warning {
-  content: url("../img/icons/warn.svg");
-}
-
-.icon.flag-en {
-  content: url("../img/graphic_assets/flag_en.jpg");
-}
-
-.icon.flag-de {
-  content: url("../img/graphic_assets/flag_de.jpg");
-}
-
-.icon.flag-hu {
-  content: url("../img/graphic_assets/flag_hu.jpg");
-}
-
-/*Symbols*/
-.symbol-container {
-  display: block;
-  width: 100%;
-  height: 80px;
-  text-align: center;
-}
-
-.symbol-1,
-.symbol-star {
-  max-height: 45px;
-  max-width: 100%;
-}
-
-.symbol-1 {
-  content: url("../img/graphic_assets/symbol-01.svg");
-  width: 220px;
-}
-
-.symbol-star {
-  content: url("../img/graphic_assets/symbol-star.svg");
-  width: 50px;
-}
-
-[class*="symbol"] {
-  display: inline-block;
-}
-
 /*HEADER*/
 /*BODY*/
 .notification--section {
@@ -2275,7 +2278,9 @@ section {
   }
 }
 
-/*MAP section*/
+/*-----------------------------------
+            ROUTE SECTION
+-----------------------------------*/
 /*Infos section*/
 .info--section {
   position: relative;

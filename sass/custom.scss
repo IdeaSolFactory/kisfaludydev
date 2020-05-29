@@ -38,6 +38,7 @@ TABLE OF CONTENTS
         07 - LISTS
         08 - TABLES
         09 - ANCHOR OFFSETS
+        10 - GRAPHICS ELEMENTS
 
 06 ---- ELEMENTS --------------------
         01 - BOXED CONTENT
@@ -849,13 +850,108 @@ th span {
 }
 
 /*-----------------------------------
-                09 - ANCHOR OFFSETS
-    -----------------------------------*/
+        09 - ANCHOR OFFSETS
+-----------------------------------*/
 :target:before {
     content: "";
     display: block;
     height: 100px;
     margin: -100px 0 0;
+}
+
+/*-----------------------------------
+        10 - GRAPHIC ASSETS
+-----------------------------------*/
+
+/*ICONS*/
+
+.icon {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.45;
+
+    &.icon-inline-block{
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.icon-m {
+        height: 20px;
+    }
+
+    &.icon-sm {
+        height: 16px !important;
+    }
+
+    &.icon-xs {
+        height: 8px !important;
+    }
+
+    &.pirate-flag {
+        content: url("../img/icons/pirate-flag.svg");
+    }
+
+    &.wine-glass {
+        content: url("../img/icons/wine-glasses.svg");
+    }
+
+    &.sunset {
+        content: url("../img/icons/sunset.svg");
+    }
+
+    &.moon {
+        content: url("../img/icons/moon.svg");
+    }
+
+    &.ship {
+        content: url("../img/icons/ship.svg");
+    }
+
+    /*Notification icons*/
+    &.warning{
+        content: url("../img/icons/warn.svg");
+    }
+
+    /*Flags*/
+    &.flag-en {
+        content: url("../img/graphic_assets/flag_en.jpg");
+    }
+
+    &.flag-de {
+        content: url("../img/graphic_assets/flag_de.jpg");
+    }
+
+    &.flag-hu {
+        content: url("../img/graphic_assets/flag_hu.jpg");
+    }
+}
+
+/*Symbols*/
+.symbol-container {
+    display: block;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
+
+.symbol-1,
+.symbol-star {
+    max-height: 45px;
+    max-width: 100%;
+}
+
+.symbol-1 {
+    content: url("../img/graphic_assets/symbol-01.svg");
+    width: 220px;
+}
+
+.symbol-star {
+    content: url("../img/graphic_assets/symbol-star.svg");
+    width: 50px;
+}
+
+[class*="symbol"] {
+    display: inline-block;
 }
 
 /*=========================================
@@ -1672,99 +1768,6 @@ section {
     }
 }
 
-/*Graphic assets*/
-
-/*ICONS*/
-
-.icon {
-    max-width: 100%;
-    max-height: 100%;
-    opacity: 0.45;
-
-    &.icon-inline-block{
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    &.icon-m {
-        height: 20px;
-    }
-
-    &.icon-sm {
-        height: 16px !important;
-    }
-
-    &.icon-xs {
-        height: 8px !important;
-    }
-
-    &.pirate-flag {
-        content: url("../img/icons/pirate-flag.svg");
-    }
-
-    &.wine-glass {
-        content: url("../img/icons/wine-glasses.svg");
-    }
-
-    &.sunset {
-        content: url("../img/icons/sunset.svg");
-    }
-
-    &.moon {
-        content: url("../img/icons/moon.svg");
-    }
-
-    &.ship {
-        content: url("../img/icons/ship.svg");
-    }
-
-    /*Notification icons*/
-    &.warning{
-        content: url("../img/icons/warn.svg");
-    }
-
-    /*Flags*/
-    &.flag-en {
-        content: url("../img/graphic_assets/flag_en.jpg");
-    }
-
-    &.flag-de {
-        content: url("../img/graphic_assets/flag_de.jpg");
-    }
-
-    &.flag-hu {
-        content: url("../img/graphic_assets/flag_hu.jpg");
-    }
-}
-
-/*Symbols*/
-.symbol-container {
-    display: block;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-}
-
-.symbol-1,
-.symbol-star {
-    max-height: 45px;
-    max-width: 100%;
-}
-
-.symbol-1 {
-    content: url("../img/graphic_assets/symbol-01.svg");
-    width: 220px;
-}
-
-.symbol-star {
-    content: url("../img/graphic_assets/symbol-star.svg");
-    width: 50px;
-}
-
-[class*="symbol"] {
-    display: inline-block;
-}
-
 /*HEADER*/
 
 /*BODY*/
@@ -1887,31 +1890,14 @@ section {
                 object-position: 50% 75%;
             }
         }
-
-        // .departures__map {
-        //     position: absolute;
-        //     display: block;
-        //     width: 120px;
-        //     height: 120px;
-        //     top: 25px;
-        //     left: 25px;
-        //     background-image: url(../img/departures-map-hun.jpg);
-        //     background-position: center;
-        //     background-repeat: no-repeat;
-        //     background-size: contain;
-        //     border: 4px solid color(primary);
-
-        //     @include mqSmallScreen {
-        //         width: 235px;
-        //         height: 235px;
-        //         top: 35px;
-        //         left: -65px;
-        //     }
-        // }
     }
 }
 
-/*MAP section*/
+/*-----------------------------------
+            ROUTE SECTION
+-----------------------------------*/
+
+
 
 /*Infos section*/
 .info--section {
