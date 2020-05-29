@@ -2281,6 +2281,126 @@ section {
 /*-----------------------------------
             ROUTE SECTION
 -----------------------------------*/
+.ship-route--section {
+  padding: 46px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ship-route--section::after {
+  content: "";
+  position: absolute;
+  left: -65px;
+  top: -180px;
+  width: 420px;
+  height: 420px;
+  background-image: url("../img/graphic_assets/decor-lines-A.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  -webkit-transform: rotate(-36deg);
+          transform: rotate(-36deg);
+  opacity: .075;
+}
+
+@media screen and (min-width: 991px) {
+  .ship-route--section {
+    padding: 80px 0;
+  }
+  .ship-route--section::after {
+    left: -120px;
+    top: -250px;
+    width: 650px;
+    height: 650px;
+  }
+}
+
+.ship-route--section .ship-route__map {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 991px) {
+  .ship-route--section .ship-route__map {
+    padding-right: 28px;
+  }
+}
+
+.ship-route--section .ship-route__map > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: -35px -10px 40px rgba(94, 92, 100, 0.07);
+          box-shadow: -35px -10px 40px rgba(94, 92, 100, 0.07);
+}
+
+.ship-route--section .ship-route__text .ship-route__subtitle {
+  font-size: 2rem;
+  color: #252525;
+  line-height: 140%;
+  margin-bottom: 0;
+  padding-bottom: 24px;
+}
+
+.ship-route--section .ship-route__text .ship-route__list > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-bottom: 24px;
+}
+
+.ship-route--section .ship-route__text .ship-route__list > li > i {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-right: 24px;
+}
+
+.ship-route--section .ship-route__text .ship-route__list > li > i.route-point::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ship-route--section .ship-route__text .ship-route__list > li > i.route-point.coffee::after {
+  background-image: url(../img/graphic_assets/route-icon-coffee.svg);
+}
+
+.ship-route--section .ship-route__text .ship-route__list > li > i.route-point.photo::after {
+  background-image: url(../img/graphic_assets/route-icon-photo.svg);
+}
+
+.ship-route--section .ship-route__text .ship-route__list > li > i.route-point.wine::after {
+  background-image: url(../img/graphic_assets/route-icon-wine.svg);
+}
+
+.ship-route--section .ship-route__text .ship-route__list > li > p {
+  font-size: 16px;
+  color: #252525;
+  display: block;
+  width: 100%;
+}
+
 /*Infos section*/
 .info--section {
   position: relative;

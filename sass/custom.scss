@@ -332,43 +332,43 @@ strong {
             05 - TEXT FORMATS
 -----------------------------------*/
 
-    /*COMMENTS*/
-    .comment--light{
-        display:block;
-        padding: 0;
-        margin: 12px 0;
-        padding: 0;
-        position: relative;
-        width: 100%;
+/*COMMENTS*/
+.comment--light {
+    display: block;
+    padding: 0;
+    margin: 12px 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
 
-        >p{
-            display: inline;
-            padding-left: 6px;
-            vertical-align: middle;
-        }
+    > p {
+        display: inline;
+        padding-left: 6px;
+        vertical-align: middle;
+    }
 
-        &::before{
-            content: none;                
-            vertical-align: middle;
-            height: 20px;
-            width: 20px;
-            display: inline-block;
-        }
+    &::before {
+        content: none;
+        vertical-align: middle;
+        height: 20px;
+        width: 20px;
+        display: inline-block;
+    }
 
-        &.centered{
+    &.centered {
+        text-align: center;
+
+        > p {
             text-align: center;
-
-            >p{
-                text-align: center;
-            }
-        }
-
-        &.comment--warning{
-            &::before{
-                content: url(../img/icons/warn-full-yellow.svg);
-            }
         }
     }
+
+    &.comment--warning {
+        &::before {
+            content: url(../img/icons/warn-full-yellow.svg);
+        }
+    }
+}
 
 /*=========================================
             04 - BACKGROUNDS
@@ -870,7 +870,7 @@ th span {
     max-height: 100%;
     opacity: 0.45;
 
-    &.icon-inline-block{
+    &.icon-inline-block {
         display: inline-block;
         vertical-align: middle;
     }
@@ -908,7 +908,7 @@ th span {
     }
 
     /*Notification icons*/
-    &.warning{
+    &.warning {
         content: url("../img/icons/warn.svg");
     }
 
@@ -1197,8 +1197,7 @@ section {
 }
 
 .btn {
-
-    &.btn-circle{
+    &.btn-circle {
         background-color: color(primary) !important;
         min-width: unset !important;
         width: 40px !important;
@@ -1208,11 +1207,11 @@ section {
         margin: 0;
         padding: 0;
         border-radius: 50%;
-        margin-right: 15px;       
+        margin-right: 15px;
 
-        &.btn-back{
+        &.btn-back {
             position: relative;
-            &::after{
+            &::after {
                 content: "←";
                 position: absolute;
                 display: block;
@@ -1702,8 +1701,7 @@ section {
     position: relative;
 
     .page-not-found__container {
-
-        .page-not-found__illustration{
+        .page-not-found__illustration {
             display: block;
             height: 400px;
             width: auto;
@@ -1714,16 +1712,14 @@ section {
         }
 
         .page-not-found__errorcode {
+            font-size: 70px;
+            margin: 0;
+            padding: 0;
+            color: color(primary);
 
-                font-size: 70px;
-                margin: 0;
-                padding: 0;
-                color: color(primary);
-
-                @include mqTablet {
-                    font-size: 145px;
-                }
-            
+            @include mqTablet {
+                font-size: 145px;
+            }
         }
 
         .page-not-found__text {
@@ -1748,7 +1744,6 @@ section {
         }
 
         .page-not-found__btn {
-
             margin-top: 12px;
             text-align: left;
 
@@ -1760,7 +1755,7 @@ section {
                 vertical-align: middle;
                 line-height: 100%;
 
-                >i{
+                > i {
                     vertical-align: middle;
                 }
             }
@@ -1821,37 +1816,35 @@ section {
 /*-----------------------------------
             MAP SECTION
 -----------------------------------*/
-.map--section{
-
+.map--section {
     padding-top: $padding-big;
     padding-bottom: $padding-big;
 
-    @include mqSmallScreen{
+    @include mqSmallScreen {
         padding-top: $padding-xl;
     }
 
-    .map-section__map-container{
-        display: block;      
+    .map-section__map-container {
+        display: block;
 
-        @include mqTablet{
+        @include mqTablet {
             padding-bottom: 0;
         }
 
-        >iframe{
+        > iframe {
             width: 100%;
             height: 420px;
         }
     }
-    .map-section__notification{
-        span{
+    .map-section__notification {
+        span {
             margin-bottom: 0;
             margin-top: 6px;
         }
     }
 
-    .map-section__text{
-        
-        @include mqSmallScreen{
+    .map-section__text {
+        @include mqSmallScreen {
             margin-top: -42px;
         }
     }
@@ -1865,11 +1858,11 @@ section {
     padding-bottom: $padding-big;
     position: relative;
 
-    @include mqTablet{
+    @include mqTablet {
         padding-bottom: $padding-huge;
     }
 
-    @include mqSmallScreen{
+    @include mqSmallScreen {
         padding-bottom: $padding-xl;
     }
 
@@ -1886,7 +1879,7 @@ section {
             max-height: 420px;
             max-width: unset;
 
-            @include mqSmallScreen{
+            @include mqSmallScreen {
                 object-position: 50% 75%;
             }
         }
@@ -1896,8 +1889,123 @@ section {
 /*-----------------------------------
             ROUTE SECTION
 -----------------------------------*/
+.ship-route--section {
+    padding: $padding-big 0;
+    position: relative;
+    overflow: hidden;
 
+    &::after{
+        content: "";
+        position: absolute;
+        left: -65px;
+        top: -180px;
+        width: 420px;
+        height: 420px;
+        background-image: url("../img/graphic_assets/decor-lines-A.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        transform: rotate(-36deg);
+        opacity: .075;
+    }
 
+    @include mqSmallScreen {
+        padding: $padding-xl 0;    
+        
+        &::after{
+            left: -120px;
+            top: -250px;
+            width: 650px;
+            height: 650px;
+        }
+    }
+
+    .ship-route__map {
+        height: 100%;
+        width: 100%;        
+
+        @include mqSmallScreen{
+            padding-right: 28px;
+        }
+
+        > img {
+            object-fit: cover;
+            box-shadow: -35px -10px 40px rgba($color: #5e5c64, $alpha: 0.07);
+        }
+    }
+
+    .ship-route__text {
+
+        .ship-route__subtitle{
+            font-size: $textsize-title-medium;
+            color: color(dark);
+            line-height: 140%;
+            margin-bottom: 0;
+            padding-bottom: $padding-small;
+        }
+
+        .ship-route__list {
+            > li {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-bottom: $padding-small;
+
+                > i {
+                    flex-shrink: 0;
+                    align-self: center;
+                    display: block;
+                    position: relative;
+                    width: 50px;
+                    height: 50px;
+                    margin-right: $padding-small;
+
+                    &.route-point {
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                        }
+
+                        &.coffee {
+                            &::after {
+                                background-image: url(../img/graphic_assets/route-icon-coffee.svg);
+                            }
+                        }
+
+                        &.photo{
+                            &::after {
+                                background-image: url(../img/graphic_assets/route-icon-photo.svg);
+                            }
+                        }
+
+                        &.wine{
+                            &::after {
+                                background-image: url(../img/graphic_assets/route-icon-wine.svg);
+                            }
+                        }
+
+                        
+                    }
+                }
+
+                > p {
+                    font-size: $textsize-body;
+                    color: color(dark);
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
 
 /*Infos section*/
 .info--section {
@@ -2699,11 +2807,11 @@ section {
             position: relative;
             padding: 12px 0;
 
-            &:hover{
+            &:hover {
                 transform: none;
             }
 
-            >i{
+            > i {
                 position: absolute;
                 left: 15px;
                 top: 50%;
@@ -2712,7 +2820,7 @@ section {
                 font-weight: bold;
             }
 
-            span{
+            span {
                 font-size: $textsize-body;
                 font-weight: 900;
                 text-transform: uppercase;
