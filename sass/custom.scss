@@ -25,6 +25,7 @@ TABLE OF CONTENTS
         02 - TEXT WEIGHTS
         03 - TEXT DECORATIONS
         04 - TEXT BREAKERS
+        05 - TEXT FORMATS
         ----------------------------
 04 ---- BACKGROUNDS
 05 ---- GENERAL FORMATTING----------
@@ -37,6 +38,7 @@ TABLE OF CONTENTS
         07 - LISTS
         08 - TABLES
         09 - ANCHOR OFFSETS
+        10 - GRAPHICS ELEMENTS
 
 06 ---- ELEMENTS --------------------
         01 - BOXED CONTENT
@@ -167,8 +169,8 @@ a {
 }
 
 /*-----------------------------------
-                01 - TEXT SIZES
-    -----------------------------------*/
+            01 - TEXT SIZES
+-----------------------------------*/
 .text-xs,
 p.text-xs {
     font-size: 0.8em !important;
@@ -216,15 +218,15 @@ h2 {
 }
 
 /*-----------------------------------
-                02 - TEXT WEIGHTS
-    -----------------------------------*/
+        02 - TEXT WEIGHTS
+-----------------------------------*/
 strong {
     font-weight: 800;
 }
 
 /*-----------------------------------
-                03 - TEXT DECORATIONS
-    -----------------------------------*/
+        03 - TEXT DECORATIONS
+-----------------------------------*/
 
 [class*="decorline-"] {
     position: relative;
@@ -272,8 +274,8 @@ strong {
 }
 
 /*-----------------------------------
-            04 - TEXT BREAKERS
-    -----------------------------------*/
+        04 - TEXT BREAKERS
+-----------------------------------*/
 [class*="break-"] {
     display: inline;
     line-height: inherit;
@@ -322,6 +324,48 @@ strong {
 
         &[class*="-nobreak"] {
             display: initial;
+        }
+    }
+}
+
+/*-----------------------------------
+            05 - TEXT FORMATS
+-----------------------------------*/
+
+/*COMMENTS*/
+.comment--light {
+    display: block;
+    padding: 0;
+    margin: 12px 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+
+    > p {
+        display: inline;
+        padding-left: 6px;
+        vertical-align: middle;
+    }
+
+    &::before {
+        content: none;
+        vertical-align: middle;
+        height: 20px;
+        width: 20px;
+        display: inline-block;
+    }
+
+    &.centered {
+        text-align: center;
+
+        > p {
+            text-align: center;
+        }
+    }
+
+    &.comment--warning {
+        &::before {
+            content: url(../img/icons/warn-full-yellow.svg);
         }
     }
 }
@@ -806,13 +850,108 @@ th span {
 }
 
 /*-----------------------------------
-                09 - ANCHOR OFFSETS
-    -----------------------------------*/
+        09 - ANCHOR OFFSETS
+-----------------------------------*/
 :target:before {
     content: "";
     display: block;
     height: 100px;
     margin: -100px 0 0;
+}
+
+/*-----------------------------------
+        10 - GRAPHIC ASSETS
+-----------------------------------*/
+
+/*ICONS*/
+
+.icon {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.45;
+
+    &.icon-inline-block {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.icon-m {
+        height: 20px;
+    }
+
+    &.icon-sm {
+        height: 16px !important;
+    }
+
+    &.icon-xs {
+        height: 8px !important;
+    }
+
+    &.pirate-flag {
+        content: url("../img/icons/pirate-flag.svg");
+    }
+
+    &.wine-glass {
+        content: url("../img/icons/wine-glasses.svg");
+    }
+
+    &.sunset {
+        content: url("../img/icons/sunset.svg");
+    }
+
+    &.moon {
+        content: url("../img/icons/moon.svg");
+    }
+
+    &.ship {
+        content: url("../img/icons/ship.svg");
+    }
+
+    /*Notification icons*/
+    &.warning {
+        content: url("../img/icons/warn.svg");
+    }
+
+    /*Flags*/
+    &.flag-en {
+        content: url("../img/graphic_assets/flag_en.jpg");
+    }
+
+    &.flag-de {
+        content: url("../img/graphic_assets/flag_de.jpg");
+    }
+
+    &.flag-hu {
+        content: url("../img/graphic_assets/flag_hu.jpg");
+    }
+}
+
+/*Symbols*/
+.symbol-container {
+    display: block;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
+
+.symbol-1,
+.symbol-star {
+    max-height: 45px;
+    max-width: 100%;
+}
+
+.symbol-1 {
+    content: url("../img/graphic_assets/symbol-01.svg");
+    width: 220px;
+}
+
+.symbol-star {
+    content: url("../img/graphic_assets/symbol-star.svg");
+    width: 50px;
+}
+
+[class*="symbol"] {
+    display: inline-block;
 }
 
 /*=========================================
@@ -896,7 +1035,7 @@ th span {
             margin-bottom: $padding-big;
         }
 
-        > p:not(:last-of-type) {
+        > p {
             margin-bottom: 1em;
         }
     }
@@ -929,6 +1068,10 @@ th span {
                 background-repeat: no-repeat;
             }
         }
+    }
+
+    .btn {
+        margin-top: 12px;
     }
 }
 
@@ -1054,6 +1197,34 @@ section {
 }
 
 .btn {
+    &.btn-circle {
+        background-color: color(primary) !important;
+        min-width: unset !important;
+        width: 40px !important;
+        height: 40px !important;
+        display: inline-block;
+        border: none !important;
+        margin: 0;
+        padding: 0;
+        border-radius: 50%;
+        margin-right: 15px;
+
+        &.btn-back {
+            position: relative;
+            &::after {
+                content: "←";
+                position: absolute;
+                display: block;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                font-size: 22px;
+                margin-top: -2px;
+                line-height: 0;
+            }
+        }
+    }
+
     &.autowidth {
         @include mqTablet {
             width: auto !important;
@@ -1518,87 +1689,78 @@ section {
     }
 }
 
-/*Graphic assets*/
+/*-----------------------------------
+            04 - 404 SECTION
+            [404.html]
+-----------------------------------*/
 
-/*ICONS*/
+.page-not-found--section {
+    padding-top: 10vh !important;
+    padding-bottom: 0;
+    height: 100%;
+    position: relative;
 
-.icon {
-    max-width: 100%;
-    max-height: 100%;
-    opacity: 0.45;
+    .page-not-found__container {
+        .page-not-found__illustration {
+            display: block;
+            height: 400px;
+            width: auto;
+            background-image: url(../img/graphic_assets/lighthouse_illustration-01.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
 
-    &.icon-m {
-        height: 20px;
+        .page-not-found__errorcode {
+            font-size: 70px;
+            margin: 0;
+            padding: 0;
+            color: color(primary);
+
+            @include mqTablet {
+                font-size: 145px;
+            }
+        }
+
+        .page-not-found__text {
+            padding-top: 0;
+            p {
+                color: color(dark);
+                font-size: $textsize-subtitle;
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+                line-height: normal;
+
+                &:first-child {
+                    margin-bottom: 10px;
+                }
+
+                &:not(:first-child) {
+                    font-size: $textsize-body;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        .page-not-found__btn {
+            margin-top: 12px;
+            text-align: left;
+
+            > a {
+                margin: 0 auto;
+                display: block;
+                color: color(dark);
+                text-align: left;
+                vertical-align: middle;
+                line-height: 100%;
+
+                > i {
+                    vertical-align: middle;
+                }
+            }
+        }
     }
-
-    &.icon-sm {
-        height: 16px !important;
-    }
-
-    &.icon-xs {
-        height: 8px !important;
-    }
-
-    &.pirate-flag {
-        content: url("../img/icons/pirate-flag.svg");
-    }
-
-    &.wine-glass {
-        content: url("../img/icons/wine-glasses.svg");
-    }
-
-    &.sunset {
-        content: url("../img/icons/sunset.svg");
-    }
-
-    &.moon {
-        content: url("../img/icons/moon.svg");
-    }
-
-    &.ship {
-        content: url("../img/icons/ship.svg");
-    }
-
-    /*Flags*/
-    &.flag-en {
-        content: url("../img/graphic_assets/flag_en.jpg");
-    }
-
-    &.flag-de {
-        content: url("../img/graphic_assets/flag_de.jpg");
-    }
-
-    &.flag-hu {
-        content: url("../img/graphic_assets/flag_hu.jpg");
-    }
-}
-
-/*Symbols*/
-.symbol-container {
-    display: block;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-}
-
-.symbol-1,
-.symbol-star {
-    max-height: 45px;
-    max-width: 100%;
-}
-
-.symbol-1 {
-    content: url("../img/graphic_assets/symbol-01.svg");
-    width: 220px;
-}
-
-.symbol-star {
-    content: url("../img/graphic_assets/symbol-star.svg");
-    width: 50px;
-}
-
-[class*="symbol"] {
-    display: inline-block;
 }
 
 /*HEADER*/
@@ -1651,78 +1813,228 @@ section {
     max-width: 450px;
 }
 
-.gmap {
-    width: 100%;
+/*-----------------------------------
+            MAP SECTION
+-----------------------------------*/
+.map--section {
+    padding-top: $padding-big;
+    padding-bottom: $padding-big;
+
+    @include mqSmallScreen {
+        padding-top: $padding-xl;
+    }
+
+    .map-section__map-container {
+        display: block;
+
+        @include mqTablet {
+            padding-bottom: 0;
+        }
+
+        > iframe {
+            width: 100%;
+            height: 420px;
+        }
+    }
+    .map-section__notification {
+        span {
+            margin-bottom: 0;
+            margin-top: 6px;
+        }
+    }
+
+    .map-section__text {
+        @include mqSmallScreen {
+            margin-top: -42px;
+        }
+    }
 }
 
-.departure-sites-img {
-    overflow: hidden;
-    background-color: #e4f1f9;
-    height: 360px;
-
-    background: url("../img/departures-map.svg") no-repeat;
-    background-position: bottom;
-    background-size: cover;
-}
-
-.departure-sites-img.en {
-    background: url("../img/departures-map_en.svg") no-repeat;
-    overflow: hidden;
-    background-color: #e4f1f9;
-    height: 360px;
-
-    background-position: bottom;
-    background-size: cover;
-}
-
-.departure-sites-img.de {
-    background: url("../img/departures-map_de.svg") no-repeat;
-    overflow: hidden;
-    background-color: #e4f1f9;
-    height: 360px;
-
-    background-position: bottom;
-    background-size: cover;
-}
-
-.route-img {
-    background-color: #e4f1f9;
-    height: 100%;
-    min-height: 400px;
-    display: block;
-
-    background: url("../img/route-map.svg") no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-
-.route-img.en {
-    background-color: #e4f1f9;
-    height: 100%;
-    min-height: 400px;
-    display: block;
-
-    background: url("../img/route-map_en.svg") no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-
-.route-img.de {
-    background-color: #e4f1f9;
-    height: 100%;
-    min-height: 400px;
-    display: block;
-
-    background: url("../img/route-map_de.svg") no-repeat;
-    background-size: cover;
-    background-position: top;
-}
-
+/*-----------------------------------
+         DEPARTURES SECTION
+-----------------------------------*/
 .departures--section {
+    padding-top: 0;
+    padding-bottom: $padding-big;
     position: relative;
+
+    @include mqTablet {
+        padding-bottom: $padding-huge;
+    }
+
+    @include mqSmallScreen {
+        padding-bottom: $padding-xl;
+    }
+
+    .departures__img-container {
+        position: relative;
+
+        .departures__img {
+            position: relative;
+            display: block;
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            max-height: 420px;
+            max-width: unset;
+
+            @include mqSmallScreen {
+                object-position: 50% 75%;
+            }
+        }
+    }
 }
 
-/*MAP section*/
+/*-----------------------------------
+            ROUTE SECTION
+-----------------------------------*/
+.ship-route--section {
+    padding: $padding-big 0;
+    position: relative;
+    overflow: hidden;
+
+    &::after{
+        content: "";
+        position: absolute;
+        left: -65px;
+        top: -180px;
+        width: 420px;
+        height: 420px;
+        background-image: url("../img/graphic_assets/decor-lines-A.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        transform: rotate(-36deg);
+        opacity: .075;
+    }
+
+    @include mqSmallScreen {
+        padding: $padding-xl 0;    
+        
+        &::after{
+            left: -120px;
+            top: -250px;
+            width: 650px;
+            height: 650px;
+        }
+    }
+
+    .ship-route__map {
+        height: 100%;
+        width: 100%;        
+
+        @include mqSmallScreen{
+            padding-right: 28px;
+        }
+
+        > img {
+            object-fit: cover;
+            box-shadow: -35px -10px 40px rgba($color: #5e5c64, $alpha: 0.07);
+        }
+    }
+
+    .ship-route__text {
+
+        .ship-route__subtitle{
+            font-size: $textsize-title-medium;
+            color: color(dark);
+            line-height: 140%;
+            margin-bottom: 0;
+            padding-bottom: $padding-small;
+        }
+
+        .ship-route__list {
+            > li {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding-bottom: $padding-medium;
+
+                @include mqSmallScreen{
+                    flex-direction: row;
+                    flex-wrap: nowrap;                  
+                }
+
+                >i {
+                    flex-shrink: 0;
+                    align-self: center;
+                    display: block;
+                    position: relative;
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 0 auto;
+                    margin-bottom: 10px;
+
+                    &:first-of-type{
+                        margin-top: 10px;
+                    }
+
+                    @include mqSmallScreen{
+                        margin-right: $padding-small;
+                        
+                        &:first-of-type{
+                            margin-top: 0;
+                        }
+                    }
+
+                    &.route-point {
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                        }
+
+                        &.coffee {
+                            &::after {
+                                background-image: url(../img/graphic_assets/route-icon-coffee.svg);
+                            }
+                        }
+
+                        &.photo{
+                            &::after {
+                                background-image: url(../img/graphic_assets/route-icon-photo.svg);
+                            }
+                        }
+
+                        &.wine{
+                            &::after {
+                                background-image: url(../img/graphic_assets/route-icon-wine.svg);
+                            }
+                        }
+
+                        &.gramophone{
+                            &::after{
+                                background-image: url(../img/graphic_assets/route-icon-gramophone.svg);
+                            }
+                        }
+
+                        
+                    }
+                }
+
+                > p {
+                    text-align: center;
+                    font-size: $textsize-body;
+                    color: color(dark);
+                    display: block;
+                    width: 100%;
+
+                    @include mqSmallScreen{
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
 
 /*Infos section*/
 .info--section {
@@ -1759,78 +2071,68 @@ section {
 
 .schedule-timetable {
     padding: 1em;
-}
 
-.schedule-timetable > div:not(:nth-child(2n + 1)) {
-    border-right: 1px solid rgba(2, 32, 33, 0.05);
-}
+    > .schedule-notification {
+        width: 100%;
+        padding: 18px 18px !important;
+        background-color: color(primary);
 
-.schedule-timetable > div {
-    border-bottom: 1px solid rgba(2, 32, 33, 0.05);
-    position: relative;
-}
+        > p {
+            font-size: 16px;
+            color: color(dark);
+            display: block;
+            position: relative;
+            line-height: 140%;
+            padding-left: 35px;
 
-.schedule-timetable > div:last-child {
-    border-bottom: none;
-}
-
-.schedule-timetable > .schedule-column {
-    min-height: 150px;
-
-    display: -webkit-box;
-
-    display: -ms-flexbox;
-
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-}
-
-.schedule-timetable > .schedule-column:nth-last-of-type(-n + 1) {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    .schedule-timetable > div:not(:nth-child(2n + 2)) {
-        border-right: transparent;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 25px;
+                width: 25px;
+                background-image: url(../img/icons/warn.svg);
+                background-size: contain;
+            }
+        }
     }
 
-    .schedule-timetable > div:not(:nth-child(3n + 1)) {
-        border-right: 1px solid rgba(2, 32, 33, 0.05);
-    }
+    > .schedule-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 135px;
+        position: relative;
+        border: 1px solid rgba($color: color(light), $alpha: 0.6);
 
-    .schedule-timetable > div:last-child {
-        border-right: none;
-    }
+        &.schedule-column--empty {
+            overflow: hidden;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -25%;
+                display: block;
+                transform: rotate(45deg);
+                transform-origin: center;
+                width: 150%;
+                border-bottom: solid 2px rgba($color: color(light), $alpha: 0.6);
+            }
 
-    .schedule-timetable > div {
-        border-bottom: 1px solid rgba(2, 32, 33, 0.05);
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -25%;
+                display: block;
+                transform: rotate(-45deg);
+                transform-origin: center;
+                width: 150%;
+                border-bottom: solid 2px rgba($color: color(light), $alpha: 0.6);
+            }
+        }
     }
-
-    .schedule-timetable > div:nth-last-child(-n + 2) {
-        border-bottom: none;
-    }
-
-    .schedule-timetable > [class*="col"]:nth-last-of-type(-n + 1) {
-        display: unset;
-    }
-}
-
-.schedule-timetable .schedule-header {
-    width: 100%;
-    text-align: center;
-    font-weight: 800;
-    padding-top: 10px;
 }
 
 .schedule-timetable .schedule-header span {
@@ -1905,33 +2207,39 @@ section {
     }*/
 
 /*Ticket box*/
-.ticket-block {
-    position: relative;
-    padding: 0;
-}
 
-.ticket-block span {
-    vertical-align: middle;
-}
+.tickets-box {
+    .boxed {
+        padding-bottom: 5px;
+    }
+    .ticket-block {
+        position: relative;
+        padding: 0;
 
-.ticket-block:not(:first-child) {
-    border-top: 1px solid rgba(2, 32, 33, 0.1);
-}
+        &:not(:first-child) {
+            border-top: 1px solid rgba(2, 32, 33, 0.1);
+        }
 
-.ticket-category {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    min-height: 65px;
-    height: auto;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+        span {
+            vertical-align: middle;
+        }
+    }
+
+    .ticket-category {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        min-height: 65px;
+        height: auto;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
 }
 
 .ticket-category:not(:first-child) {
@@ -2035,8 +2343,7 @@ section {
 /*PROGRAMS SECTION*/
 
 .programs--section {
-
-    .programs__title{
+    .programs__title {
         margin-bottom: $padding-medium !important;
     }
 
@@ -2045,7 +2352,7 @@ section {
         margin-bottom: $padding-medium;
         padding-bottom: 22px;
 
-        @include mqSmallScreen{
+        @include mqSmallScreen {
             margin-bottom: 0;
         }
 
@@ -2104,31 +2411,31 @@ section {
             }
         }
 
-        .program__footer-wrapper{
+        .program__footer-wrapper {
             margin-top: 6px;
             width: 100%;
 
-            hr{
+            hr {
                 margin: 20px 0;
             }
 
-            .program__footer-item-container{
+            .program__footer-item-container {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 margin: 0;
                 padding: 0;
 
-                .program__footer-item{
+                .program__footer-item {
                     margin: 0;
                     padding: 0;
                     width: 50%;
 
-                    &:last-of-type{
+                    &:last-of-type {
                         text-align: right;
                     }
-                    
-                    &.header-item{
+
+                    &.header-item {
                         flex-basis: 100%;
                         padding-bottom: 4px;
                         line-height: 100%;
@@ -2165,6 +2472,10 @@ section {
         .video__container::after {
             opacity: 0;
         }
+
+        .video__preview {
+            display: none;
+        }
     }
 
     .video__container {
@@ -2179,6 +2490,41 @@ section {
             display: block;
             opacity: 0.65;
             transition: opacity 0.3s;
+            z-index: 5;
+        }
+
+        .video__preview {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                display: block;
+                background-image: url(../img/video-preview-01.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                transition: opacity 0.3s;
+            }
+
+            &.hiding {
+                display: none;
+                opacity: 0;
+
+                &::after {
+                    content: none;
+                }
+            }
         }
 
         video {
@@ -2195,12 +2541,13 @@ section {
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
         text-align: center;
+        z-index: 10;
 
         > .video__title {
             color: white;
         }
 
-        > .video__btn {            
+        > .video__btn {
             width: 64px;
             height: 64px;
             top: 0;
@@ -2211,15 +2558,15 @@ section {
             transform-origin: center;
             transform: scale(1);
             opacity: 1;
-            
-            @include mqSmallScreen{
+
+            @include mqSmallScreen {
                 width: 80px;
                 height: 80px;
             }
 
-            &.hiding {                
+            &.hiding {
                 opacity: 0;
-                transform: scale(.7);
+                transform: scale(0.7);
             }
 
             &.play {
@@ -2227,7 +2574,7 @@ section {
                 top: 0;
                 left: 0;
                 opacity: 1;
-            }            
+            }
         }
     }
 }
@@ -2389,20 +2736,192 @@ section {
 }
 
 /*EMAIL SECTION*/
-.email--section [class*="col"]:first-child {
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-}
+.email--section {
+    position: relative;
+    background-color: color(dark);
+    margin: 0;
+    padding: 0;
+    width: 100%;
 
-@media (max-width: 768px) {
-    .email--section [class*="col"]:first-child {
-        border-right: none;
-    }
-}
-
-.email--section [class*="col"] {
     @include mqSmallScreen {
-        padding: 0 5em;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -130px;
+            right: -140px;
+            width: 650px;
+            height: 350px;
+            background-image: url(../img/graphic_assets/decor-lines-A.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotate(35deg);
+            opacity: 0.65;
+        }
     }
+
+    .email-section__bckgrnd-img-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: #000000, $alpha: 0.75);
+        }
+
+        @include mqSmallScreen {
+            position: relative;
+            height: auto;
+
+            &::after {
+                background-color: transparent;
+            }
+        }
+
+        .email-section__bckgrnd-img {
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/email-section-bckgrnd-01.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+        }
+    }
+
+    .email-section__text-container {
+        padding: $padding-huge 0;
+
+        @include mqSmallScreen {
+            padding: 150px $padding-big 150px $padding-big;
+        }
+
+        .email-section__title {
+            font-size: 32px;
+            color: white;
+        }
+        .email-section__subtitle {
+            color: white;
+            font-size: $textsize-lead;
+        }
+
+        .email-address-container {
+            text-align: center;
+            display: block;
+
+            > .email-address {
+                color: white;
+                font-size: 22px;
+                line-height: 100%;
+                padding: 0;
+                margin: 0;
+                height: 32px;
+            }
+        }
+
+        .email-section__button {
+            display: block;
+            width: 100%;
+            position: relative;
+            padding: 12px 0;
+
+            &:hover {
+                transform: none;
+            }
+
+            > i {
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 36px;
+                font-weight: bold;
+            }
+
+            span {
+                font-size: $textsize-body;
+                font-weight: 900;
+                text-transform: uppercase;
+                padding-left: 18px;
+            }
+        }
+    }
+
+    // .email-section__subtitle{
+    //     font-size: $textsize-lead;
+    //     color: color(dark);
+    // }
+
+    // .email-section__button-wrapper{
+    //     margin-top: 6px;
+
+    //     .btn.show-mail-btn{
+    //         background-color: color(light);
+    //         border: 1px solid rgba($color: color(dark-accent), $alpha: .2) !important;
+    //         display: block;
+    //         width: 100% !important;
+    //         margin: 0 auto;
+    //         color: rgba($color: color(dark), $alpha: .65);
+
+    //         @include mqTablet{
+    //             max-width: 360px;
+    //         }
+    //     }
+
+    //     .email-address-container{
+    //         display: block;
+    //         margin: 0 auto;
+    //         height: 100%;
+    //         width: 100%;
+    //         text-align: center;
+
+    //         .email-address{
+    //             display: inline;
+    //             padding: 0;
+    //             margin: 0 auto;
+    //             position: relative;
+    //             z-index: 1;
+
+    //             &::after{
+    //                 content: "";
+    //                 position: absolute;
+    //                 bottom: 0;
+    //                 left: 0;
+    //                 width: 100%;
+    //                 border: 2px solid color(primary);
+    //                 z-index: 0;
+    //             }
+
+    //             strong{
+    //                 position: relative;
+    //                 z-index: 10;
+    //             }
+
+    //         }
+
+    //         .loading-text{
+    //             position: absolute;
+    //             top: 50%;
+    //             left: 50%;
+    //             transform: translateX(-50%) translateY(-50%);
+    //             display: block;
+    //             line-height: 100%;
+    //             padding: 0;
+    //             margin: 0;
+    //         }
+    //     }
+    // }
 }
 
 /*Additional Info Section*/
@@ -2422,23 +2941,25 @@ footer {
     }
 
     .footer__logo__wrapper {
-        display: flex;
         justify-content: center;
+        position: relative;
+        height: 100%;
 
         .logo {
             object-fit: contain;
-            width: auto;
+            text-align: center;
+            margin: 0 auto;
+            width: 200px;
             height: auto;
-            min-width: 100%;
-            min-height: 100%;
-            max-height: 100px;
-            max-width: 100px;
             display: block;
+            max-height: unset;
 
             @include mqTablet {
-                max-height: unset;
-                width: auto;
+                margin: 0;
                 vertical-align: center;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
     }

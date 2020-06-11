@@ -115,7 +115,7 @@
 
                         <ul class="menu menu--horizontal menu--right">
                             <li><a href="/tortenelem.html">Történelem</a></li>
-                            <li class="dropdown"><a>Language</a>
+                            <li class="dropdown inactive"><a>Language</a>
                                 <ul class="dropdown__container">
                                     <li class="dropdown__item lang-select">
                                         <a href="kisfaludy-cruise-ship.html">
@@ -126,7 +126,7 @@
 
 
                                     </li>
-                                    <li class="dropdown__item lang-select">
+                                    <li class="dropdown__item inactive lang-select">
                                         <a href="kisfaludy-kreuzfahrtschiff.html">
                                             <i class="icon flag-de"></i>
                                             DEUTSCH
@@ -170,7 +170,6 @@
                                 <a class="btn autowidth hero-CTA btn--primary type--uppercase" href="#bemutatkozas">
                                     Olvass tovább!
                                 </a>
-
                             </div>
 
                         </div>
@@ -262,11 +261,10 @@
                                         beállításra, környezetre? Egyedi elképezléseiddel keress minket bátran és
                                         segítünk, hogy igazán emlékezetes, különleges legyen a tervezett esemény.
                                     </p>
-                                </div>
-
-                                <div class="text-center">
-                                    <a class="btn type--uppercase autowidth" href="rendezvenyek.html">
-                                        Tovább</a>
+                                    <div class="text-center">
+                                        <a class="btn type--uppercase autowidth" href="rendezvenyek.html">
+                                            Tovább</a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -324,7 +322,13 @@
                                         később, 2015-ben megépítették korhű mását, ami jelenleg az egyetlen
                                         lapátkerekes
                                         gőzhajó a Balatonon.</p>
+
+                                    <div class="text-center">
+                                        <a class="btn type--uppercase autowidth" href="tortenelem.html">
+                                            Tovább</a>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -340,31 +344,24 @@
 
         <!--DEPARTURES-->
         <section class="tickets--section">
-            
+
             <a id="menetrendjegyarak"></a>
-            <div class="container container-xl blur-me">
+            <div class="container container-xl">
 
                 <div class="row justify-content-center justify-content-lg-between">
 
                     <div class="col-12 col-lg-6">
                         <div class="boxed boxed--border boxed--shadow boxed--style1">
                             <div class="box-header bg--dark">
-                                <h3>Menetrend</h3>
+                                <h3>Hétvégi menetrend</h3>
                             </div>
 
                             <div class="container">
                                 <div class="schedule-timetable row justify-content-between p-0">
 
-                                    <div class="schedule-column justify-content-between col-6 col-md-4 bg--secondary p-0"
-                                        style="display: none">
-                                        <div class="schedule-header"><span class="icon pirate-flag"></span> Különjárat
-                                        </div>
-                                        <div class="schedule-time">
-                                            10:00*
-                                        </div>
-                                        <div class="schedule-details text-center px-2">
-                                            <span>*Csak kedden / csütörtökön</span>
-                                        </div>
+                                    <div class="schedule-notification col-12">
+                                        <p>Menetrendszerinti járataink júniusban <strong><u>csak hétvégén</u></strong>
+                                            indulnak</p>
                                     </div>
 
                                     <div class="schedule-column col-6 col-md-4 p-0">
@@ -372,6 +369,7 @@
                                             11:00
                                         </div>
                                     </div>
+
                                     <div class="schedule-column col-6 col-md-4 p-0">
                                         <div class="schedule-time">
                                             12:30
@@ -379,48 +377,22 @@
                                     </div>
                                     <div class="schedule-column col-6 col-md-4 p-0">
                                         <div class="schedule-time">
-                                            14:45
+                                            15:00
                                         </div>
                                     </div>
-
                                     <div class="schedule-column col-6 col-md-4 p-0">
                                         <div class="schedule-time">
                                             16:30
                                         </div>
                                     </div>
+
                                     <div class="schedule-column col-6 col-md-4 p-0">
-                                        <div></div>
                                         <div class="schedule-time">
                                             18:00
                                         </div>
-                                        <div class="schedule-details bg--secondary opacity-medium"
-                                            style="display: none">
-                                            <span class="icon pirate-flag"></span>
-                                            <span class="text-left"><strong>+Kalózhajó</strong> <br>
-                                                Pénteken / Szombaton</span>
-                                        </div>
-                                    </div>
-                                    <div class="schedule-column col-6 col-md-4">
-                                        <div class="schedule-time">
-                                            19:30
-                                        </div>
-                                        <div class="schedule-details">
-                                            <span class="icon wine-glass"></span>
-                                        </div>
                                     </div>
 
-                                    <div class="schedule-column col-6 col-md-4">
-                                        <div class="schedule-time">
-                                            20:30
-
-                                        </div>
-                                        <div class="schedule-details">
-                                            <span class="icon wine-glass"></span>
-                                            <span class="icon sunset"></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="schedule-column col-6 col-md-4">
+                                    <div class="schedule-column schedule-column--empty col-6 col-md-4">
                                         <div class="schedule-time">
 
                                         </div>
@@ -448,32 +420,32 @@
                                     <div class="ticket-block col-12">
 
                                         <div class="row justify-content-between align-items-stretch no-gutters">
-                                            <div class="col-6">
+                                            <!-- <div class="col-6">
                                                 <div class="ticket-category-block  bg--secondary">
                                                     <div class="ticket-category">
                                                         <span class="ticket-block-icon icon ship"></span>
                                                         <span class="ticket-block-header-text"> Általános</span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-6 ticket-block-content align-self-center">
+                                            </div> -->
+                                            <div class="col-12 ticket-block-content align-self-center">
                                                 <div class="d-flex flex-column align-items-stretch">
                                                     <div
-                                                        class="row no-gutters justify-content-center block-content-row">
-                                                        <div class="col-5">
+                                                        class="row no-gutters justify-content-between block-content-row">
+                                                        <div class="col-6">
                                                             <p><strong>Felnőtt:</strong></p>
                                                         </div>
                                                         <div class="col-6 text-right">
-                                                            <p>2.000 Ft</p>
+                                                            <p>2.200 Ft</p>
                                                         </div>
                                                     </div>
                                                     <div
-                                                        class="row no-gutters justify-content-center block-content-row">
-                                                        <div class="col-5">
+                                                        class="row no-gutters justify-content-between block-content-row">
+                                                        <div class="col-6">
                                                             <p><strong>Gyermek:</strong></p>
                                                         </div>
                                                         <div class="col-6 text-right">
-                                                            <p>1.000 Ft</p>
+                                                            <p>1.100 Ft</p>
                                                         </div>
                                                         <div class="col-11"> <span class="type--fine-print">4-14 év
                                                                 között</span></div>
@@ -482,92 +454,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-                                    <!--Ticket block-->
-                                    <div class="ticket-block col-12" style="display: none">
-
-                                        <div class="row justify-content-between align-items-stretch no-gutters">
-                                            <div class="col-6">
-                                                <div class="ticket-category-block  bg--secondary opacity-medium">
-                                                    <div class="ticket-category">
-                                                        <span class="ticket-block-icon icon pirate-flag"></span>
-                                                        <span class="ticket-block-header-text">Kalózhajó</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 ticket-block-content align-self-center opacity-medium">
-                                                <div class="d-flex flex-column align-items-stretch">
-                                                    <div
-                                                        class="row no-gutters justify-content-center block-content-row">
-                                                        <div class="col-5">
-                                                            <p><strong>Felnőtt:</strong></p>
-                                                        </div>
-                                                        <div class="col-6 text-right">
-                                                            <p>2.000 Ft</p>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="row no-gutters justify-content-center block-content-row">
-                                                        <div class="col-5">
-                                                            <p><strong>Gyermek:</strong></p>
-                                                        </div>
-                                                        <div class="col-6 text-right">
-                                                            <p>1.600 Ft</p>
-                                                        </div>
-                                                        <div class="col-11"> <span class="type--fine-print">2-14 év
-                                                                között</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <!--Ticket block-->
-                                    <div class="ticket-block col-12">
-
-                                        <div class="row justify-content-between align-items-stretch no-gutters">
-                                            <div class="col-6">
-                                                <div class="ticket-category-block  bg--secondary">
-                                                    <div class="ticket-category">
-                                                        <span class="ticket-block-icon icon wine-glass"></span>
-                                                        <span class="ticket-block-header-text">Borhajó</span>
-                                                    </div>
-                                                    <div class="ticket-category">
-                                                        <span class="ticket-block-icon icon sunset"></span>
-                                                        <span class="ticket-block-header-text">Naplemente túra</span>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-6 ticket-block-content align-self-center">
-                                                <div class="d-flex flex-column align-items-stretch">
-                                                    <div
-                                                        class="row no-gutters justify-content-center block-content-row">
-                                                        <div class="col-5">
-                                                            <p><strong>Felnőtt:</strong></p>
-                                                        </div>
-                                                        <div class="col-6 text-right">
-                                                            <p>2.000 Ft</p>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="row no-gutters justify-content-center block-content-row">
-                                                        <div class="col-5">
-                                                            <p><strong>Gyermek:</strong></p>
-                                                        </div>
-                                                        <div class="col-6 text-right">
-                                                            <p>1.000 Ft</p>
-                                                        </div>
-                                                        <div class="col-11"> <span class="type--fine-print">4-14 év
-                                                                között</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
 
@@ -579,7 +465,7 @@
             </div>
         </section>
 
-        <section class="programs--section bg--secondary pb-0 pb-md-5 pt-5">
+        <section class="programs--section bg--secondary pb-0 pb-md-5 pt-5 hidden">
             <div class="container container-xl my-3 my-lg-5">
                 <div class="row justify-content-center justify-content-md-around align-items-stretch">
                     <div class="switchable__text text-center programs__title col-12 mb-4 mb-md-2">
@@ -587,7 +473,8 @@
                     </div>
 
                     <!--Program-->
-                    <div class="program d-flex col-12 col-lg-5 text-left boxed boxed--border boxed--shadow align-self-stretch">
+                    <div
+                        class="program d-flex col-12 col-lg-5 text-left boxed boxed--border boxed--shadow align-self-stretch">
 
                         <span class="program__icon borhajo"></span>
 
@@ -609,7 +496,7 @@
                                     <div class="program__footer-item header-item"><strong>Jegyárak</strong></div>
                                     <div class="program__footer-item">Felnőtt: 2.000 Ft</div>
                                     <div class="program__footer-item">Gyermek: 1.000 Ft</div>
-                                </div>                              
+                                </div>
                             </div>
                         </div>
 
@@ -637,7 +524,7 @@
                                     <div class="program__footer-item header-item"><strong>Jegyárak</strong></div>
                                     <div class="program__footer-item">Felnőtt: 2.000 Ft</div>
                                     <div class="program__footer-item">Gyermek: 1.000 Ft</div>
-                                </div>                              
+                                </div>
                             </div>
                         </div>
 
@@ -652,84 +539,121 @@
 
         <section class="map--section bg--lightm border--light border-top-sm">
             <a id="terkep"></a>
-            <div class="container container-xl my-3 my-lg-5">
+            <div class="container container-xl">
                 <div class="row justify-content-stretch justify-content-lg-between align-items-stretch">
-                    <div class="col-12 col-md-5 align-self-center mb-4 mb-md-0 order-1 order-md-2">
-                        <h1><strong>Hogyan találsz meg minket?</strong></h1>
-                        <hr class="short">
-                        <h4><strong>Cím: </strong>8230 Balatonfüred, Vitorlás tér (a moló végén balra)</h4>
-                        <p>Hajónk Balatonfüreden a Tagore sétányról közelíthető meg a molón keresztül. Indulási pontok
-                            részünkben láthatod, milyen módon találhatod meg legénységünket akkor is, ha a hajó épp
-                            nincs a kikötőben.</p>
+                    <div class="col-12 col-lg-6 align-self-center mb-4 mb-md-0 order-1 order-lg-2">
+                        <div class="map-section__text">
+                            <h1><strong>Hogyan találsz meg minket?</strong></h1>
+                            <hr class="short">
+                            <h4><strong>Cím: </strong>Balatonfüred, Vitorlás tér</h4>
+                            <p>Lapátkerekes Gőzhajónk Balatonfüreden, a <strong>Tagore sétányról</strong> közelíthető
+                                meg a molón keresztül. A fedélzetre a Kisfaludy Kasszánál megváltott jegyekkel a
+                                mellékelt ábrán jelzett beszállási pontok egyikén juthatsz fel.
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="col-12 col-md-6 order-2 order-md-1">
-                        <div class="gmap">
+                    <div class="col-12 col-lg-6 order-2 order-md-1">
+                        <div class="map-section__map-container gmap">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1283.8212785744724!2d17.895848515702017!3d46.95251602826476!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4769bdee9eebe9d3%3A0xe6711846557d52f5!2zS2lzZmFsdWR5IEfFkXpoYWrDsw!5e0!3m2!1sen!2shu!4v1561385744375!5m2!1sen!2shu"
+                                src="https://www.google.com/maps/d/u/0/embed?mid=1zfTEN8q4zQWKyGA9mECkmsB43j_rQEQ4&z=17"
                                 width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
+                        <div class="map-section__notification">
+                            <span class="comment--light comment--warning centered">
+                                <p><strong>Fontos!</strong> Kasszánk a térképen megjelölt két pont egyikén található
+                                    hajónk kikötési helyétől függően!
+                                </p>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </section>
 
-        <section class="departures--section">
-
+        <section class="departures--section bg--lightm">
             <div class="container container-xl">
-                <div class="row justify-content-between align-items-stretch">
-
-                    <div class="col-12 col-md-5 col-lg-5">
-
-                        <div class="switchable__text mb-4">
-                            <h1><strong>Indulási pontok</strong></h1>
-                            <p>Az alábbi beszállási pontok egyikén találkozhatsz személyzetünk tagjaival, akik egész nap
-                                rendelkezésedre állnak, A jegyváltás a beszállási pontok mellett kihelyezett Kisfaludy
-                                Kassza feliratú pultnál lehetséges. A telefonodra letöltött vagy kinyomtatott
-                                <strong>10%-os kedvezményre feljogosító kuponodat</strong> itt lesz lehetőséged
-                                bemutatni.
-                                <br>
-                                <i>Indulás előtt minimum 15 perccel gyere a hajóhoz, így biztosan nem késed le a
-                                    járatot!</i>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-12 col-lg-6 pb-5 pb-lg-0">
+                        <div class="departures__text-container">
+                            <h1>Jegyváltás és indulási pontok</h1>
+                            <hr class="short">
+                            <p><strong>Jegyedet kizárólag a Kisfaludy Kasszánál tudod megváltani</strong>, ahol
+                                munkatársaink örömmel állnak rendelkezésedre a szabad férőhelyekkel, menetrenddel és
+                                egyéb információkkal kapcsolatban.
                             </p>
-
-                            <!--<div class="mb-5">
-                                                        <p><strong>Töltsd le a 10%-os kedvezményt biztosító vouchert!</strong></p>
-                                                            <a id="voucher-btn-2"  class="btn type--uppercase" target="_blank" href="files/Kisfaludy_voucher_HU.png">
-                                                            Letöltöm a 10%-os voucherem!</a>
-                                                    </div> -->
+                            <p>
+                                <strong>Indulás előtt minimum 15 perccel gyere a hajóhoz, így biztosan nem késed le a
+                                    járatot!</strong>
+                            </p>
                         </div>
-
-                        <div class="departure-sites-img" role="img"
-                            title="Kisfaludy sétahajó indulási pontjai a balatonfüredi mólón"></div>
                     </div>
-
-                    <div class="col-12 col-md-6 pt-5 pt-md-0">
-                        <div class="d-flex flex-column align-items-stretch h-100 justify-content-between">
-                            <div class="switchable__text mb-4">
-                                <h1><strong>Hajózási útvonal</strong></h1>
-                            </div>
-                            <div class="route-img" role="img"
-                                title="Kisfaludy sétahajó útvonala Balatonfüred és Tihany között"></div>
+                    <div class="col-12 col-lg-6">
+                        <div class="departures__img-container">
+                            <img src="img/departures-location-hun-480.jpg" srcset="img/departures-location-hun-480.jpg 480w,
+                            img/departures-location-hun-768.jpg 768w,
+                            img/departures-location-hun-992.jpg 992w,
+                            img/departures-location-hun-1280.jpg 1280w,
+                            img/departures-location-hun.jpg 1680w" class="departures__img" />
+                            <!-- <span class="departures__map"></span> -->
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </section>
-        <!--end of departures-->
+
+        <section class="ship-route--section">
+            <div class="container container-xl">
+                <div class="row justify-content-center justify-content-lg-between align-items-lg-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="ship-route__map">
+                            <img src="img/graphic_assets/route-map-01.svg"
+                                alt="A Kisfaludy Lapátkerekes Gőzhajó útvonala">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 pt-5 pt-lg-0">
+                        <div class="ship-route__text">
+                            <h1 class="ship-route__title">Sétahajós útvonalunk</h1>
+                            <hr class="short">
+                            <p class="ship-route__subtitle">Tarts velünk egy kellemes egyórás utazásra a Kisfaludy
+                                Gőzössel!</p>
+                            <ul class="ship-route__list">
+                                <li>
+                                    <i class="route-point gramophone"></i>
+                                    <p>Még indulás előtt forgasd vissza az idő kerekét: tekintsd meg a hajótörténeti múzeumot, találkozz gróf Széchenyivel és a reformkori legénységgel!</p>
+                                </li>
+                                <li>
+                                    <i class="route-point coffee"></i>
+                                    <p>A balatonfüredi kikötőt elhagyva rendelj matrózainktól egy habos capuccinót, és csodáld meg a Balaton víztükrének sajátos árnyalatait.</p>
+                                </li>
+                                <li>
+                                    <i class="route-point photo"></i>
+                                    <p>A Tihanyi Apátság az alatta vízbe futó félszigettel páratlan panorámát biztosít a hajó orrából. Mi sokszor elcsodálkozunk a szépségén, készíts róla egy fotót te is!</p>
+                                </li>
+                                <li>
+                                    <i class="route-point wine"></i>
+                                    <p>Visszafelé frissülj fel egy pohár borral, miközben feltűnnek a térség pincészetei és nyaralói a várostól távoleső lankás területeken.</p>
+                                </li>
+                            </ul>
+                            <p class="text-center">Találkozunk a Kisfaludy Gőzös következő útján!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- VIDEO SECTION -->
         <section class="video--section">
             <div class="video__container">
                 <video class="myvideoplayer-video">
                     <source src="video/Kisfaludy_promo-compact.mp4" type="video/mp4">
-                    <source src="video/Kisfaludy_promo.webm" type="video/webm">                
+                    <source src="video/Kisfaludy_promo.webm" type="video/webm">
                 </video>
-                    A böngésző nem támogatja a videólejátszást!
+                A böngésző nem támogatja a videólejátszást!
                 </video>
+
+                <span class="video__preview"></span>
             </div>
 
 
@@ -1097,25 +1021,52 @@
                     </div>
                 </section> -->
 
-        <section class="email--section bg--secondary">
-            <a id="kapcsolat"></a>
-            <div class="container container-xl">
-                <div class="row justify-content-center justify-content-md-between align-items-center">
-                    <div class="col-12 col-md-7">
-                        <div class=" text-center">
-                            <h2 class="h2">Kérdésed van vagy egyedi programot szeretnél?</h2>
-                            <p class="lead">Keress fel bennünket emailben:</p>
-                        </div>
+        <section class="email--section">
+            <div class="container-fluid nopadding">
+                <div class="row no-gutters">
+                    <div class="col-12 col-lg-6 email-section__bckgrnd-img-wrapper">
+                        <div class="email-section__bckgrnd-img"></div>
                     </div>
-
-                    <div class="col-12 col-md-5 mt-5 mt-md-0 text-center text-md-left">
-                        <span>E-mail címünk:</span>
-                        <div class="btn show-mail-btn hidden">Email cím megjelenítése</div>
-                        <div class="email-address-container"></div>
+                    <div class="col-12 col-lg-5 col-xl-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="email-section__text-container">
+                                        <h1 class="email-section__title">Kérdésed van vagy egyedi programot szeretnél?
+                                        </h1>
+                                        <p class="email-section__subtitle">Keress fel bennünket emailben!</p>
+                                        <span class="email-address-container"></span>
+                                        <span class="email-section__button btn btn--primary show-mail-btn"><i
+                                                class="icon-Envelope"></i><span>Kis türelmet kérünk...</span> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- <section class="email--section bg--secondary">
+            <a id="kapcsolat"></a>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-7">
+                        <div class=" text-center">
+                            <h1 class="email-section__title">Kérdésed van vagy egyedi programot szeretnél?</h1>
+                            <p class="email-section__subtitle">Keress fel bennünket emailben:</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-7">
+                        <div class="email-section__button-wrapper">
+                            <div class="btn show-mail-btn hidden">Email cím megjelenítése</div>
+                            <div class="email-address-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
 
         <section class="additional-info--section bg--white border--light border-top-sm py-4">
             <div class="container">
@@ -1147,28 +1098,24 @@
         <footer class="bg--dark texture-dark text-center-xs text-left space--xs border--main border-top-m pb-4">
             <div class="container container-xl">
 
-                <div class="row align-items-start justify-content-center justify-content-md-between">
+                <div class="row align-items-start justify-content-center justify-content-md-center">
 
-                    <div class="col-12 col-md-8 col-lg-6 pb-5 pb-md-0 align-self-center">
+                    <div class="col-12 col-md-3 pb-5 pb-md-0 align-self-stretch">
 
-                        <div class="row justify-content-between align-content-center">
-                            <div class="footer__logo__wrapper col-12 col-sm-6 col-md-5">
-                                <img src="img/logo/2x/kisfaludy_logo_multicolored-2x.png" class="logo"
-                                    alt="Kisfaludy Logó">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-7">
+                        <div class="footer__logo__wrapper">
+                            <img src="img/logo/2x/kisfaludy_logo_multicolored-2x.png" class="logo" alt="Kisfaludy Logó">
+                        </div>
+                        <!-- <div class="col-12 col-sm-6 col-md-7">
                                 <p class="footer__desc type--fine-print">Legyél részese te is a kalandnak, amely során
                                     egyedülálló hajónk ad különleges élményt a Balatonon. A Kisfaludy gőzös legénysége
                                     szeretettel áll rendelkezésedre bármikor akár online, akár a helyszínen. Tarts
                                     velünk a
                                     következő induláskor!
                                 </p>
-                            </div>
-                        </div>
-
+                            </div> -->
                     </div>
 
-                    <div class="col-12 text-center text-md-left col-md-4 col-lg-3">
+                    <div class="col-12 text-center text-md-left col-md-4 col-xl-3">
                         <ul class="list list--hover footer__nav">
                             <a href="#start">
                                 <li>Vissza az oldal tetejére</li>
