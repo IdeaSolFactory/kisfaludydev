@@ -3054,6 +3054,24 @@ section {
 }
 
 /*FAQ section*/
+.faq--section .faq__img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.faq--section .faq__img > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
 /*resets*/
 .accordion .accordion__title {
   position: relative;
