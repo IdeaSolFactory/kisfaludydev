@@ -1419,6 +1419,21 @@ section {
                 background-image: url("../img/tortenelem_intro.jpg");
             }
         }
+
+        &.hero-section--eskuvo{
+            &::before {
+                background-position: bottom;
+                background-image: url("../img/events/eskuvo/eskuvo_intro_mobile.jpg");
+    
+                @include mqTablet {
+                    background-image: url("../img/events/eskuvo/eskuvo_intro_tablet.jpg");
+                }
+    
+                @include mqMediumScreen {
+                    background-image: url("../img/events/eskuvo/eskuvo_intro_bigpic.jpg");
+                }
+            }
+        }
     }
 
     .hero-section__content {
