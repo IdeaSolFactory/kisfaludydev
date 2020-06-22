@@ -14,7 +14,7 @@ Author:     Gábor Tamási
 Email:      tamasi@isf.hu
 
 ===========================================
-TABLE OF CONTENTS
+TABLE OF beer
 -----------------
 
 00 ---- RESETS
@@ -1434,8 +1434,22 @@ section {
                 }
             }
         }
-    }
+    
+    &.hero-section--ceges{
+        &::before {
+            background-position: bottom;
+            background-image: url("../img/events/ceges/ceges_intro_mobile.jpg");
 
+            @include mqTablet {
+                background-image: url("../img/events/ceges/ceges_intro_tablet.jpg");
+            }
+
+            @include mqMediumScreen {
+                background-image: url("../img/events/ceges/ceges_intro_bigpic.jpg");
+             }
+         }
+    }
+}
     .hero-section__content {
         height: 100%;
         width: 100%;
