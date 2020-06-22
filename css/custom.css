@@ -1786,36 +1786,36 @@ section {
   }
 }
 
-.hero-section.hero-section--tortenelem.hero-section--eskuvo::before {
+.hero-section.hero-section--eskuvo::before {
   background-position: bottom;
   background-image: url("../img/events/eskuvo/eskuvo_intro_mobile.jpg");
 }
 
 @media screen and (min-width: 768px) {
-  .hero-section.hero-section--tortenelem.hero-section--eskuvo::before {
+  .hero-section.hero-section--eskuvo::before {
     background-image: url("../img/events/eskuvo/eskuvo_intro_tablet.jpg");
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .hero-section.hero-section--tortenelem.hero-section--eskuvo::before {
+  .hero-section.hero-section--eskuvo::before {
     background-image: url("../img/events/eskuvo/eskuvo_intro_bigpic.jpg");
   }
 }
 
-.hero-section.hero-section--tortenelem.hero-section--ceges::before {
+.hero-section.hero-section--ceges::before {
   background-position: bottom;
   background-image: url("../img/events/ceges/ceges_intro_mobile.jpg");
 }
 
 @media screen and (min-width: 768px) {
-  .hero-section.hero-section--tortenelem.hero-section--ceges::before {
+  .hero-section.hero-section--ceges::before {
     background-image: url("../img/events/ceges/ceges_intro_tablet.jpg");
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .hero-section.hero-section--tortenelem.hero-section--ceges::before {
+  .hero-section.hero-section--ceges::before {
     background-image: url("../img/events/ceges/ceges_intro_bigpic.jpg");
   }
 }
@@ -2335,7 +2335,7 @@ section {
   z-index: -1;
   -webkit-transform: rotate(-36deg);
           transform: rotate(-36deg);
-  opacity: .075;
+  opacity: 0.075;
 }
 
 @media screen and (min-width: 991px) {
