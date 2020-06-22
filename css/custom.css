@@ -1095,8 +1095,8 @@ section {
 .section-content__wrapper .section-content__pic > img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 768px) {
