@@ -1787,7 +1787,7 @@ section {
 }
 
 .hero-section.hero-section--eskuvo::before {
-  background-position: bottom;
+  background-position: top;
   background-image: url("../img/events/eskuvo/eskuvo_intro_mobile.jpg");
 }
 
@@ -1804,7 +1804,6 @@ section {
 }
 
 .hero-section.hero-section--ceges::before {
-  background-position: bottom;
   background-image: url("../img/events/ceges/ceges_intro_mobile.jpg");
 }
 
@@ -1817,6 +1816,23 @@ section {
 @media screen and (min-width: 1200px) {
   .hero-section.hero-section--ceges::before {
     background-image: url("../img/events/ceges/ceges_intro_bigpic.jpg");
+  }
+}
+
+.hero-section.hero-section--csaladi::before {
+  background-position: top;
+  background-image: url("../img/events/csaladi/csaladi_intro_mobile.jpg");
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section.hero-section--csaladi::before {
+    background-image: url("../img/events/csaladi/csaladi_intro_tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-section.hero-section--csaladi::before {
+    background-image: url("../img/events/csaladi/csaladi_intro_bigpic.jpg");
   }
 }
 

@@ -1425,7 +1425,7 @@ section {
 
         &.hero-section--eskuvo {
             &::before {
-                background-position: bottom;
+                background-position: top;
                 background-image: url("../img/events/eskuvo/eskuvo_intro_mobile.jpg");
 
                 @include mqTablet {
@@ -1440,7 +1440,7 @@ section {
 
         &.hero-section--ceges {
             &::before {
-                background-position: bottom;
+                
                 background-image: url("../img/events/ceges/ceges_intro_mobile.jpg");
 
                 @include mqTablet {
@@ -1452,7 +1452,20 @@ section {
                 }
             }
         }
-            
+        &.hero-section--csaladi {
+            &::before {
+                background-position: top;
+                background-image: url("../img/events/csaladi/csaladi_intro_mobile.jpg");
+
+                @include mqTablet {
+                    background-image: url("../img/events/csaladi/csaladi_intro_tablet.jpg");
+                }
+
+                @include mqMediumScreen {
+                    background-image: url("../img/events/csaladi/csaladi_intro_bigpic.jpg");
+                }
+            }
+        }
     .hero-section__content {
         height: 100%;
         width: 100%;
