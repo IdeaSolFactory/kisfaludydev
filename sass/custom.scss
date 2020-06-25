@@ -1092,33 +1092,39 @@ th span {
             02 - SECTION CONTENT
     -----------------------------------*/
 
-    // TWO COLUMN CONTENT
-    .container--two-column{
-        padding: 32px 0;
+// SECTION CONTENT TYPES
+.content-type {
 
-        @include mqLargeScreen{
-            padding: 80px 0;
+    //TWO COLUMN CONTENT
+    &--two-column {
+        padding: 32px 0 !important;
+
+        @include mqLargeScreen {
+            padding: 80px 0 !important;
         }
 
-        >.section{
-            &--two-column{
+        >.content-type__item{
+            // restructure code
+        }
+
+        > .section {
+            &--two-column {
                 padding: 0;
 
-                &:not(:first-of-type){
+                &:not(:first-of-type) {
                     padding-top: 64px;
-                    
-                    @include mqLargeScreen{
+
+                    @include mqLargeScreen {
                         padding-top: 120px;
                     }
                 }
             }
         }
-
     }
-
+}
 
 section {
-    font-size: $textsize-body;    
+    font-size: $textsize-body;
 }
 
 .section-content__wrapper {
