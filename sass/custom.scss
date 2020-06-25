@@ -1092,7 +1092,8 @@ th span {
             02 - SECTION CONTENT
     -----------------------------------*/
 
-    #main-content{
+    // TWO COLUMN CONTENT
+    .container--two-column{
         padding: 32px 0;
 
         @include mqLargeScreen{
