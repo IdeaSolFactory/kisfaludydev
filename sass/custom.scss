@@ -1091,11 +1091,38 @@ th span {
 /*-----------------------------------
             02 - SECTION CONTENT
     -----------------------------------*/
+
+    #main-content{
+        padding: 32px 0;
+
+        @include mqLargeScreen{
+            padding: 80px 0;
+        }
+
+        >.section{
+            &--two-column{
+                padding: 0;
+
+                &:not(:first-of-type){
+                    padding-top: 64px;
+                    
+                    @include mqLargeScreen{
+                        padding-top: 120px;
+                    }
+                }
+            }
+        }
+
+    }
+
+
 section {
-    font-size: $textsize-body;
+    font-size: $textsize-body;    
 }
 
 .section-content__wrapper {
+    align-items: center;
+
     .section-content__text {
         &:not(:last-of-type) {
             padding-bottom: 1em;
@@ -1121,6 +1148,9 @@ section {
 
     .section-content__pic {
         position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
 
         &::after {
             content: "";
@@ -1129,18 +1159,39 @@ section {
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
 
         > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             object-fit: cover;
+            height: 100%;
             // width: auto;
             // height: 100%;
-            width: 100%;
-            height: auto;
+        }
+
+        &.pic--center {
+            > img {
+                object-position: center;
+            }
+        }
+
+        &.pic--bottom {
+            > img {
+                object-position: bottom;
+            }
+        }
+
+        &.pic--top {
+            > img {
+                object-position: top;
+            }
         }
 
         // Tortenelem.html
@@ -1423,49 +1474,48 @@ section {
         }
     }
 
-        &.hero-section--eskuvo {
-            &::before {
-                background-position: top;
-                background-image: url("../img/events/eskuvo/eskuvo_intro_mobile.jpg");
+    &.hero-section--eskuvo {
+        &::before {
+            background-position: top;
+            background-image: url("../img/events/eskuvo/eskuvo_intro_mobile.jpg");
 
-                @include mqTablet {
-                    background-image: url("../img/events/eskuvo/eskuvo_intro_tablet.jpg");
-                }
+            @include mqTablet {
+                background-image: url("../img/events/eskuvo/eskuvo_intro_tablet.jpg");
+            }
 
-                @include mqMediumScreen {
-                    background-image: url("../img/events/eskuvo/eskuvo_intro_bigpic.jpg");
-                }
+            @include mqMediumScreen {
+                background-image: url("../img/events/eskuvo/eskuvo_intro_bigpic.jpg");
             }
         }
+    }
 
-        &.hero-section--ceges {
-            &::before {
-                
-                background-image: url("../img/events/ceges/ceges_intro_mobile.jpg");
+    &.hero-section--ceges {
+        &::before {
+            background-image: url("../img/events/ceges/ceges_intro_mobile.jpg");
 
-                @include mqTablet {
-                    background-image: url("../img/events/ceges/ceges_intro_tablet.jpg");
-                }
+            @include mqTablet {
+                background-image: url("../img/events/ceges/ceges_intro_tablet.jpg");
+            }
 
-                @include mqMediumScreen {
-                    background-image: url("../img/events/ceges/ceges_intro_bigpic.jpg");
-                }
+            @include mqMediumScreen {
+                background-image: url("../img/events/ceges/ceges_intro_bigpic.jpg");
             }
         }
-        &.hero-section--csaladi {
-            &::before {
-                background-position: top;
-                background-image: url("../img/events/csaladi/csaladi_intro_mobile.jpg");
+    }
+    &.hero-section--csaladi {
+        &::before {
+            background-position: top;
+            background-image: url("../img/events/csaladi/csaladi_intro_mobile.jpg");
 
-                @include mqTablet {
-                    background-image: url("../img/events/csaladi/csaladi_intro_tablet.jpg");
-                }
+            @include mqTablet {
+                background-image: url("../img/events/csaladi/csaladi_intro_tablet.jpg");
+            }
 
-                @include mqMediumScreen {
-                    background-image: url("../img/events/csaladi/csaladi_intro_bigpic.jpg");
-                }
+            @include mqMediumScreen {
+                background-image: url("../img/events/csaladi/csaladi_intro_bigpic.jpg");
             }
         }
+    }
     .hero-section__content {
         height: 100%;
         width: 100%;
@@ -1495,7 +1545,6 @@ section {
         }
     }
 }
-
 
 /*INDEX HERO*/
 .hero-wrapper {
