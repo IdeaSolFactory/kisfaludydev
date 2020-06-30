@@ -2570,17 +2570,30 @@ section {
         background-color: black;
         opacity: .85; 
     } */
-.schedule-timetable {
+.tickets--section {
+  /*schedule details / icons */
+}
+
+.tickets--section .schedule__header > h3 {
+  line-height: 120%;
+}
+
+.tickets--section .schedule__header > span {
+  font-size: 0.9em;
+  line-height: 100%;
+}
+
+.tickets--section .schedule-timetable {
   padding: 1em;
 }
 
-.schedule-timetable > .schedule-notification {
+.tickets--section .schedule-timetable > .schedule-notification {
   width: 100%;
   padding: 18px 18px !important;
   background-color: #eecf3b;
 }
 
-.schedule-timetable > .schedule-notification > p {
+.tickets--section .schedule-timetable > .schedule-notification > p {
   font-size: 16px;
   color: #252525;
   display: block;
@@ -2589,7 +2602,7 @@ section {
   padding-left: 35px;
 }
 
-.schedule-timetable > .schedule-notification > p::before {
+.tickets--section .schedule-timetable > .schedule-notification > p::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2600,60 +2613,91 @@ section {
   background-size: contain;
 }
 
-.schedule-timetable > .schedule-column {
+.tickets--section .schedule-timetable > .schedule-timetable__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  min-height: 135px;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
-  border: 1px solid rgba(235, 235, 235, 0.6);
+  width: 100%;
+  padding: 20px 0;
 }
 
-.schedule-timetable > .schedule-column.schedule-column--empty {
-  overflow: hidden;
+.tickets--section .schedule-timetable > .schedule-timetable__item:nth-of-type(even) {
+  background-color: rgba(231, 231, 230, 0.45);
 }
 
-.schedule-timetable > .schedule-column.schedule-column--empty::before {
+.tickets--section .schedule-timetable > .schedule-timetable__item > .schedule__time {
+  width: 55%;
+  display: block;
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #252525;
+}
+
+.tickets--section .schedule-timetable > .schedule-timetable__item > .special-route-icons {
+  width: 45%;
+  padding-left: 12px;
+  height: 10px;
+  line-height: 0;
+}
+
+.tickets--section .schedule-timetable > .schedule-timetable__item > .special-route-icons > i {
+  position: relative;
+  opacity: 100%;
+  display: block;
+  width: 42px;
+  height: 42px;
+  content: none;
+}
+
+.tickets--section .schedule-timetable > .schedule-timetable__item > .special-route-icons > i::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background-color: #eecf3b;
+  border-radius: 100%;
+  z-index: 0;
+}
+
+.tickets--section .schedule-timetable > .schedule-timetable__item > .special-route-icons > i::after {
   content: "";
   position: absolute;
   top: 50%;
-  left: -25%;
-  display: block;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  width: 150%;
-  border-bottom: solid 2px rgba(235, 235, 235, 0.6);
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
 }
 
-.schedule-timetable > .schedule-column.schedule-column--empty::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -25%;
-  display: block;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  width: 150%;
-  border-bottom: solid 2px rgba(235, 235, 235, 0.6);
+.tickets--section .schedule-timetable > .schedule-timetable__item > .special-route-icons > i.wine-glass::after {
+  background-image: url(../img/icons/wine-glasses.svg);
 }
 
-.schedule-timetable .schedule-header span {
+.tickets--section .schedule-timetable .schedule-header span {
   vertical-align: middle;
   padding-right: 5px;
 }
 
-.schedule-timetable .schedule-time {
+.tickets--section .schedule-timetable .schedule-time {
   text-align: center;
   -ms-flex-item-align: stretch;
   -ms-grid-row-align: stretch;
@@ -2663,8 +2707,7 @@ section {
   color: black;
 }
 
-/*schedule details / icons */
-.schedule-timetable .schedule-details {
+.tickets--section .schedule-timetable .schedule-details {
   display: block;
   width: 100%;
   font-size: 0.8em;
@@ -2673,65 +2716,42 @@ section {
   text-align: center;
 }
 
-.schedule-timetable .schedule-details span {
+.tickets--section .schedule-timetable .schedule-details span {
   display: inline-block;
   vertical-align: middle;
   opacity: 0.5;
 }
 
-.schedule-timetable .icon:not(:only-child) {
+.tickets--section .schedule-timetable .icon:not(:only-child) {
   padding-right: 5px;
 }
 
-.schedule-timetable .icon {
+.tickets--section .schedule-timetable .icon {
   height: 0.65em;
   opacity: 0.4;
 }
 
-.schedule-timetable .icon.pirate-flag,
-.schedule-timetable .icon.moon,
-.schedule-timetable .icon.sunset {
+.tickets--section .schedule-timetable .icon.pirate-flag,
+.tickets--section .schedule-timetable .icon.moon,
+.tickets--section .schedule-timetable .icon.sunset {
   height: 0.5em;
 }
 
-/*.timetable table{
-        table-layout: fixed;
-    }
-    
-    .timetable tr:not(:last-child) td{
-        border-bottom: 1px solid color(primary);
-    }
-
-    .timetable td{
-        font-size: 1.65em;
-        text-align: center;
-        padding: 1em;
-        font-weight: 600;
-    }
-
-    .timetable td:not(:last-child)
-    {
-        border-right: 1px solid color(primary);
-    }
-
-    .ticket-table td{
-        width: 50%;
-    }*/
 /*Ticket box*/
 .tickets-box .boxed {
   padding-bottom: 5px;
 }
 
-.tickets-box .ticket-block {
+.tickets-box .tickets__block {
   position: relative;
   padding: 0;
 }
 
-.tickets-box .ticket-block:not(:first-child) {
+.tickets-box .tickets__block:not(:first-child) {
   border-top: 1px solid rgba(2, 32, 33, 0.1);
 }
 
-.tickets-box .ticket-block span {
+.tickets-box .tickets__block span {
   vertical-align: middle;
 }
 
@@ -2772,34 +2792,34 @@ section {
   justify-content: stretch;
 }
 
-.ticket-block .ticket-block-content {
+.ticket-block .tickets-block__content {
   padding: 0;
   font-size: 1em;
 }
 
-.ticket-block .ticket-block-content .block-content-row div {
+.ticket-block .tickets-block__content .block-content-row div {
   padding: 0 1em;
 }
 
-.ticket-block .ticket-block-content p {
+.ticket-block .tickets-block__content p {
   padding: 0;
   margin: 0;
   line-height: 100%;
 }
 
-.ticket-block .ticket-block-content .block-content-row {
+.ticket-block .tickets-block__content .block-content-row {
   padding: 1.25em 0;
 }
 
-.ticket-block .ticket-block-content .block-content-row:last-child {
+.ticket-block .tickets-block__content .block-content-row:last-child {
   padding-bottom: 0.5em;
 }
 
-.ticket-block .ticket-block-content .block-content-row:not(:first-child) {
+.ticket-block .ticket-block__content .block-content-row:not(:first-child) {
   border-top: 1px solid rgba(2, 32, 33, 0.05);
 }
 
-.ticket-block-header-text {
+.ticket-block__header-text {
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
@@ -2810,7 +2830,7 @@ section {
   padding-right: 1em;
 }
 
-.ticket-block-header-subtext {
+.tickets-block__header-subtext {
   font-weight: 400;
   text-transform: none;
   padding: 0;
@@ -2819,7 +2839,7 @@ section {
   color: #666666;
 }
 
-.ticket-block-icon {
+.tickets-block__icon {
   display: block;
   height: auto;
   max-width: 60px;
