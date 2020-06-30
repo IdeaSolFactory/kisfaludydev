@@ -2585,8 +2585,25 @@ section {
   /*schedule details / icons */
 }
 
+.tickets--section .schedule__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 97px;
+}
+
 .tickets--section .schedule__header > h3 {
-  line-height: 120%;
+  line-height: 140%;
 }
 
 .tickets--section .schedule__header > span {
@@ -2747,6 +2764,24 @@ section {
 /*Ticket box*/
 .tickets-box .boxed {
   padding-bottom: 5px;
+}
+
+.tickets-box .tickets__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 97px;
+}
+
+.tickets-box .tickets__header h3 {
+  width: 100%;
 }
 
 .tickets-box .tickets-block {
