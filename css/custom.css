@@ -1048,6 +1048,18 @@ th span {
   padding: 25px 25px 0 25px;
 }
 
+@media screen and (min-width: 1600px) {
+  .boxed--style1 .boxed-content {
+    padding: 32px;
+  }
+  .boxed--style1 .boxed-content.no-top-bottom {
+    padding: 0 32px 0 32px;
+  }
+  .boxed--style1 .boxed-content.no-bottom {
+    padding: 32px 32px 0 32px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .boxed__pic.boxed__overview::after {
     background-image: url("../img/kisfaludy_balatonfured_elott_tablet.jpg");
