@@ -917,56 +917,6 @@ th span {
 /*-----------------------------------
                 01 - BOXED CONTENT
         -----------------------------------*/
-.boxed--style1 {
-  padding: 0;
-  background-color: white;
-}
-
-.boxed--style1 .box-header {
-  text-align: center;
-  display: block;
-  width: 100%;
-  color: white;
-  border-bottom: 5px solid #eecf3b;
-  padding: 1em 2.5em;
-}
-
-/*box-header fonts*/
-.boxed--style1 .box-header h1,
-.boxed--style1 .box-header h2,
-.boxed--style1 .box-header h3,
-.boxed--style1 .box-header h4,
-.boxed--style1 .box-header h5,
-.boxed--style1 .box-header h6 {
-  padding: 0 !important;
-  margin: 0 !important;
-  color: #eecf3b;
-}
-
-.boxed--style1 .box-header h3 {
-  font-weight: 600;
-}
-
-.boxed--style1 .box-content {
-  padding: 1em 2.5em;
-}
-
-.boxed--style1 .box-content-section:not(:last-of-type) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.boxed--style1 .box-content-section div {
-  padding-right: 25px;
-  padding-left: 25px;
-}
-
-.box-content-section .box-section-header {
-  font-size: 1.65em;
-  background-color: rgba(0, 0, 0, 0.045);
-  padding-top: 0.65em;
-  padding-bottom: 0.65em;
-}
-
 .boxed {
   padding: 46px;
 }
@@ -1035,6 +985,67 @@ th span {
 
 .boxed .btn {
   margin-top: 12px;
+}
+
+.boxed--style1 {
+  padding: 0;
+  background-color: white;
+}
+
+.boxed--style1 .box-header {
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: white;
+  border-bottom: 5px solid #eecf3b;
+  padding: 1em 2.5em;
+}
+
+.boxed--style1 .box-header h1,
+.boxed--style1 .box-header h2,
+.boxed--style1 .box-header h3,
+.boxed--style1 .box-header h4,
+.boxed--style1 .box-header h5,
+.boxed--style1 .box-header h6 {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #eecf3b;
+}
+
+.boxed--style1 .box-header h3 {
+  font-weight: 600;
+}
+
+.boxed--style1 .box-header .header-content {
+  padding: 1em 2.5em;
+}
+
+.boxed--style1 .box-header .box-content-section:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.boxed--style1 .box-header .box-content-section div {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.boxed--style1 .box-header .box-content-section .box-section-header {
+  font-size: 1.65em;
+  background-color: rgba(0, 0, 0, 0.045);
+  padding-top: 0.65em;
+  padding-bottom: 0.65em;
+}
+
+.boxed--style1 .boxed-content {
+  padding: 25px;
+}
+
+.boxed--style1 .boxed-content.no-top-bottom {
+  padding: 0 25px 0px 25px;
+}
+
+.boxed--style1 .boxed-content.no-bottom {
+  padding: 25px 25px 0 25px;
 }
 
 @media screen and (min-width: 768px) {
@@ -2581,10 +2592,6 @@ section {
 .tickets--section .schedule__header > span {
   font-size: 0.9em;
   line-height: 100%;
-}
-
-.tickets--section .schedule-timetable {
-  padding: 1em;
 }
 
 .tickets--section .schedule-timetable > .schedule-notification {

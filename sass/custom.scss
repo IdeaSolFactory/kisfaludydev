@@ -961,54 +961,6 @@ th span {
 /*-----------------------------------
                 01 - BOXED CONTENT
         -----------------------------------*/
-.boxed--style1 {
-    padding: 0;
-    background-color: white;
-}
-
-.boxed--style1 .box-header {
-    text-align: center;
-    display: block;
-    width: 100%;
-    color: white;
-    border-bottom: 5px solid color(primary);
-    padding: 1em 2.5em;
-}
-
-/*box-header fonts*/
-.boxed--style1 .box-header h1,
-.boxed--style1 .box-header h2,
-.boxed--style1 .box-header h3,
-.boxed--style1 .box-header h4,
-.boxed--style1 .box-header h5,
-.boxed--style1 .box-header h6 {
-    padding: 0 !important;
-    margin: 0 !important;
-    color: color(primary);
-}
-
-.boxed--style1 .box-header h3 {
-    font-weight: 600;
-}
-
-.boxed--style1 .box-content {
-    padding: 1em 2.5em;
-}
-
-.boxed--style1 .box-content-section:not(:last-of-type) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-.boxed--style1 .box-content-section div {
-    padding-right: 25px;
-    padding-left: 25px;
-}
-
-.box-content-section .box-section-header {
-    font-size: 1.65em;
-    background-color: rgba(0, 0, 0, 0.045);
-    padding-top: 0.65em;
-    padding-bottom: 0.65em;
-}
 
 .boxed {
     padding: $padding-big;
@@ -1072,6 +1024,69 @@ th span {
 
     .btn {
         margin-top: 12px;
+    }
+}
+
+.boxed--style1 {
+    padding: 0;
+    background-color: white;
+
+    .box-header {
+        text-align: center;
+        display: block;
+        width: 100%;
+        color: white;
+        border-bottom: 5px solid color(primary);
+        padding: 1em 2.5em;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            padding: 0 !important;
+            margin: 0 !important;
+            color: color(primary);
+        }
+
+        h3 {
+            font-weight: 600;
+        }
+
+        .header-content {
+            padding: 1em 2.5em;
+        }
+
+        .box-content-section {
+            &:not(:last-of-type) {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+            }
+
+            div {
+                padding-right: 25px;
+                padding-left: 25px;
+            }
+
+            .box-section-header {
+                font-size: 1.65em;
+                background-color: rgba(0, 0, 0, 0.045);
+                padding-top: 0.65em;
+                padding-bottom: 0.65em;
+            }
+        }
+    }
+
+    .boxed-content{
+        padding: 25px;
+        
+        &.no-top-bottom{
+            padding: 0 25px 0px 25px;
+        }
+
+        &.no-bottom{
+            padding: 25px 25px 0 25px;
+        }
     }
 }
 
@@ -2168,9 +2183,7 @@ section {
     } */
 
 .tickets--section {
-    
     // Header legyen teljes box szélességű
-
 
     .schedule__header {
         > h3 {
@@ -2183,7 +2196,6 @@ section {
     }
 
     .schedule-timetable {
-        padding: 1em;
 
         > .schedule-notification {
             width: 100%;
@@ -2244,7 +2256,7 @@ section {
                     display: block;
                     width: 42px;
                     height: 42px;
-                    content: none;                    
+                    content: none;
 
                     &::before {
                         content: "";
@@ -2267,22 +2279,18 @@ section {
                         left: 50%;
                         width: 28px;
                         height: 28px;
-                        transform: translateX(-50%) translateY(-50%);                       
+                        transform: translateX(-50%) translateY(-50%);
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: contain;
                         z-index: 1;
                     }
 
-
-
-                    &.wine-glass{
-                        &::after{
+                    &.wine-glass {
+                        &::after {
                             background-image: url(../img/icons/wine-glasses.svg);
                         }
                     }
-
-                    
                 }
             }
         }
@@ -2375,18 +2383,16 @@ section {
 /*Ticket box*/
 
 .tickets-box {
-
     .boxed {
         padding-bottom: 5px;
     }
-    .tickets__header{
-
+    .tickets__header {
     }
 
-    .tickets-block{
+    .tickets-block {
         width: 100%;
 
-        .tickets-block__item{
+        .tickets-block__item {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -2394,17 +2400,17 @@ section {
             width: 100%;
             padding: 20px 0;
 
-            &:not(:first-of-type){
+            &:not(:first-of-type) {
                 border-top: 1px solid color(lighter);
             }
 
-            >.ticket__details{
-                display:block;
+            > .ticket__details {
+                display: block;
                 width: 50%;
-                font-size: $textsize-body;                
+                font-size: $textsize-body;
 
-                &.wine-boat{
-                    i{
+                &.wine-boat {
+                    i {
                         position: relative;
                         width: 42px;
                         height: 42px;
@@ -2413,7 +2419,7 @@ section {
                         margin: 0 6px 0 0;
                         vertical-align: middle;
 
-                        &::before{
+                        &::before {
                             content: "";
                             position: absolute;
                             top: 0;
@@ -2424,7 +2430,7 @@ section {
                             border-radius: 100%;
                         }
 
-                        &::after{
+                        &::after {
                             content: "";
                             width: 100%;
                             height: 100%;
@@ -2439,7 +2445,7 @@ section {
                     }
                 }
 
-                >.ticket__title{
+                > .ticket__title {
                     font-size: $textsize-lead;
                     font-weight: bold;
                     padding: 0;
@@ -2449,9 +2455,9 @@ section {
                 }
             }
 
-            >.ticket__price{
-                width: 50%;                
-                >h3{
+            > .ticket__price {
+                width: 50%;
+                > h3 {
                     text-align: right;
                     font-size: $textsize-lead;
                     font-weight: bold;
@@ -2460,7 +2466,7 @@ section {
                 }
             }
 
-            >.ticket__description{
+            > .ticket__description {
                 width: 100%;
                 padding-top: 12px;
             }
