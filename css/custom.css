@@ -307,7 +307,7 @@ strong {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   [class*="break-mediumscreen"] {
     display: block;
   }
@@ -316,7 +316,7 @@ strong {
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1280px) {
   [class*="break-largescreen"] {
     display: block;
   }
@@ -1048,7 +1048,7 @@ th span {
   padding: 25px 25px 0 25px;
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1280px) {
   .boxed--style1 .boxed-content {
     padding: 32px;
   }
@@ -1079,7 +1079,7 @@ th span {
   padding: 32px 0 !important;
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1280px) {
   .content-type--two-column {
     padding: 80px 0 !important;
   }
@@ -1093,7 +1093,7 @@ th span {
   padding-top: 64px;
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1280px) {
   .content-type--two-column > .section--two-column:not(:first-of-type) {
     padding-top: 120px;
   }
@@ -1519,13 +1519,13 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .nav--section .nav-container .menu-container > .menu[class*=" menu--"] > li:not(:last-of-type) {
     padding-right: 32px;
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1280px) {
   .nav--section .nav-container .menu-container > .menu[class*=" menu--"] > li:not(:last-of-type) {
     padding-right: 36px;
   }
@@ -1701,7 +1701,7 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .nav--section .nav-container .menu-container > .logo-container {
     height: 120px;
     width: 450px;
@@ -1730,7 +1730,7 @@ section {
   margin-left: 1px;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .nav--section .nav-container .menu-container > .logo-container .logo::before {
     background-image: url("../img/logo/3x/kisfaludy_logo_multicolored-3x.png");
   }
@@ -1837,7 +1837,7 @@ section {
   background-image: url("../img/rendezveny_intro_01_tablet.jpg");
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hero-section.hero-section--rendezvenyek::before {
     background-image: url("../img/rendezveny_intro_01.jpg");
   }
@@ -1854,7 +1854,7 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hero-section.hero-section--tortenelem::before {
     background-image: url("../img/tortenelem_intro.jpg");
   }
@@ -1871,7 +1871,7 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hero-section.hero-section--eskuvo::before {
     background-image: url("../img/events/eskuvo/eskuvo_intro_bigpic.jpg");
   }
@@ -1887,7 +1887,7 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hero-section.hero-section--ceges::before {
     background-image: url("../img/events/ceges/ceges_intro_bigpic.jpg");
   }
@@ -1904,7 +1904,7 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hero-section.hero-section--csaladi::before {
     background-image: url("../img/events/csaladi/csaladi_intro_bigpic.jpg");
   }
@@ -1963,31 +1963,58 @@ section {
   top: 0;
   right: 0;
   display: block;
-  background: url("../img/hero-pic-small.jpg") no-repeat center;
+  background: url("../img/480/kisfaludy-480-04.jpg") no-repeat center;
   background-size: cover;
   -webkit-filter: sepia(10%) grayscale(100%);
   filter: sepia(10%) grayscale(100%);
   z-index: -20;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 312px) {
   .hero-wrapper:before {
-    background: url("../img/hero-pic-medium.jpg") no-repeat center;
-    background-size: cover;
+    background: url("../img/480/kisfaludy-480-04.jpg") no-repeat center cover;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 512px) {
   .hero-wrapper:before {
-    background: url("../img/hero-pic.jpg") no-repeat center;
-    background-size: cover;
+    background: url("../img/512/kisfaludy-512-04.jpg") no-repeat center cover;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-wrapper:before {
+    background: url("../img/768/kisfaludy-768-04.jpg") no-repeat center cover;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .hero-wrapper:before {
+    background: url("../img/992/kisfaludy-992-04.jpg") no-repeat center cover;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-wrapper:before {
+    background: url("../img/1024/kisfaludy-1024-04.jpg") no-repeat center cover;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-wrapper:before {
+    background: url("../img/1280/kisfaludy-1280-04.jpg") no-repeat center;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .hero-wrapper:before {
+    background: url("../img/1680/kisfaludy-1680-04.jpg") no-repeat center;
   }
 }
 
 @media screen and (min-width: 1920px) {
   .hero-wrapper:before {
-    background: url("../img/hero-pic-xl.jpg") no-repeat center;
-    background-size: cover;
+    background: url("../img/1920/kisfaludy-1920-04.jpg") no-repeat center;
   }
 }
 
@@ -2038,7 +2065,7 @@ section {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hero-wrapper .hero__content .hero__text .hero__title {
     font-size: 3.2em;
   }
