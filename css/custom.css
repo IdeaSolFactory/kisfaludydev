@@ -3409,6 +3409,18 @@ section {
   background-position: bottom;
 }
 
+@media screen and (min-width: 512px) {
+  .email--section .email-section__bckgrnd-img-wrapper .email-section__bckgrnd-img {
+    background-image: url(../img/512/email-section-bckgrnd-01-512x.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .email--section .email-section__bckgrnd-img-wrapper .email-section__bckgrnd-img {
+    background-image: url(../img/768/email-section-bckgrnd-01-768x.jpg);
+  }
+}
+
 .email--section .email-section__text-container {
   padding: 64px 0;
 }

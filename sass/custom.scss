@@ -3119,6 +3119,14 @@ section {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: bottom;
+
+            @include mqMobileBig{
+                background-image: url(../img/512/email-section-bckgrnd-01-512x.jpg);
+            }
+
+            @include mqTablet{
+                background-image: url(../img/768/email-section-bckgrnd-01-768x.jpg);
+            }
         }
     }
 
