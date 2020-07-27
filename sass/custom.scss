@@ -1596,26 +1596,45 @@ section {
         top: 0;
         right: 0;
         display: block;
-        background: url("../img/hero-pic-small.jpg") no-repeat center;
+        background-image: url("../img/480/kisfaludy-480-04.jpg");
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         -webkit-filter: sepia(10%) grayscale(100%);
         filter: sepia(10%) grayscale(100%);
         z-index: -20;
 
-        @media screen and (min-width: 768px) {
-            background: url("../img/hero-pic-medium.jpg") no-repeat center;
-            background-size: cover;
+        @include mqMobile{
+            background-image: url("../img/480/kisfaludy-480-04.jpg");
         }
 
-        @media screen and (min-width: 1200px) {
-            background: url("../img/hero-pic.jpg") no-repeat center;
-            background-size: cover;
+        @include mqMobileBig{
+            background-image: url("../img/512/kisfaludy-512-04.jpg");
         }
 
-        @media screen and (min-width: 1920px) {
-            background: url("../img/hero-pic-xl.jpg") no-repeat center;
-            background-size: cover;
+        @include mqTablet{
+            background-image: url("../img/768/kisfaludy-768-04.jpg");
         }
+
+        @include mqSmallScreen{
+            background-image: url("../img/992/kisfaludy-992-04.jpg");
+        }
+
+        @include mqMediumScreen{
+            background-image: url("../img/1024/kisfaludy-1024-04.jpg");
+        }
+
+        @include mqLargeScreen{
+            background-image: url("../img/1280/kisfaludy-1280-04.jpg");
+        }
+
+        @include mqXLScreen{
+            background-image: url("../img/1680/kisfaludy-1680-04.jpg");
+        }
+
+        @include mqXXLScreen{
+            background-image: url("../img/1920/kisfaludy-1920-04.jpg");
+        }       
     }
 
     &:after {
@@ -3102,6 +3121,14 @@ section {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: bottom;
+
+            @include mqMobileBig{
+                background-image: url(../img/512/email-section-bckgrnd-01-512x.jpg);
+            }
+
+            @include mqTablet{
+                background-image: url(../img/768/email-section-bckgrnd-01-768x.jpg);
+            }
         }
     }
 

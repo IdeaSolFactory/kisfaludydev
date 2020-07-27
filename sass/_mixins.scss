@@ -25,6 +25,12 @@
     }
 }
 
+@mixin mqMobileBig{
+    @media screen and (min-width: $breakpoint-mobile-big){
+        @content;
+    }
+}
+
 @mixin mqTablet{
     @media screen and (min-width: $breakpoint-tablet){
         @content;
@@ -45,6 +51,18 @@
 
 @mixin mqLargeScreen{
     @media screen and (min-width: $breakpoint-large-screen){
+        @content;
+    }
+}
+
+@mixin mqXLScreen{
+    @media screen and (min-width: $breakpoint-xl-screen){
+        @content;
+    }
+}
+
+@mixin mqXXLScreen{
+    @media screen and (min-width: $breakpoint-xxl-screen){
         @content;
     }
 }
