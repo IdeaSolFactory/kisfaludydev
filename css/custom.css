@@ -1407,6 +1407,10 @@ section {
   opacity: 1;
 }
 
+.nav--section .nav-container .hamburger-toggle .icon::before {
+  margin: 0;
+}
+
 .nav--section .nav-container .logo--mobile {
   height: 100%;
 }

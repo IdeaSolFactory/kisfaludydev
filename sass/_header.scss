@@ -53,6 +53,10 @@ $menuItemPadding-small: 24px;
             .icon {
                 color: color(primary);
                 opacity: 1;
+
+                &::before{
+                    margin: 0;
+                }
             }
         }
 
