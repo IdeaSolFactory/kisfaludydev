@@ -1569,14 +1569,34 @@ section {
 
     &.hero-section--ceges {
         &::before {
-            background-image: url("../img/events/ceges/ceges_intro_mobile.jpg");
+            background-image: url("../img/480/kisfaludy-480-46.jpg");
 
-            @include mqTablet {
-                background-image: url("../img/events/ceges/ceges_intro_tablet.jpg");
+            @include mqMobileBig {
+                background-image: url("../img/512/kisfaludy-512-46.jpg");
+            }
+
+            @include mqTablet{
+                background-image: url("../img/768/kisfaludy-768-46.jpg");
+            }
+
+            @include mqSmallScreen {
+                background-image: url("../img/992/kisfaludy-992-46.jpg");
             }
 
             @include mqMediumScreen {
-                background-image: url("../img/events/ceges/ceges_intro_bigpic.jpg");
+                background-image: url("../img/1024/kisfaludy-1024-46.jpg");
+            }
+
+            @include mqLargeScreen{
+                background-image: url("../img/1280/kisfaludy-1280-46.jpg");
+            }
+
+            @include mqXLScreen {
+                background-image: url("../img/1680/kisfaludy-1680-46.jpg");
+            }
+
+            @include mqXXLScreen{
+                background-image: url("../img/1920/kisfaludy-1920-46.jpg");
             }
         }
     }
