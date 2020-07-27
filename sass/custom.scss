@@ -1484,25 +1484,70 @@ section {
     //Site modifiers
     &.hero-section--rendezvenyek {
         &::before {
-            background-image: url("../img/rendezveny_intro_01_tablet.jpg");
+            background-image: url("../img/480/kisfaludy-480-45.jpg");
+
+            @include mqMobileBig{
+                background-image: url("../img/512/kisfaludy-512-45.jpg"); 
+            }
+
+            @include mqTablet{
+                background-image: url("../img/768/kisfaludy-768-45.jpg");
+            }
+
+            @include mqSmallScreen {
+                background-image: url("../img/992/kisfaludy-992-45.jpg");
+            }
 
             @include mqMediumScreen {
-                background-image: url("../img/rendezveny_intro_01.jpg");
+                background-image: url("../img/1024/kisfaludy-1024-45.jpg");
             }
+
+            @include mqLargeScreen{
+                background-image: url("../img/1280/kisfaludy-1280-45.jpg");
+            }
+
+            @include mqXLScreen {
+                background-image: url("../img/1680/kisfaludy-1680-45.jpg");
+            }
+
+            @include mqXXLScreen {
+                background-image: url("../img/1920/kisfaludy-1920-45.jpg");
+            }
+            
         }
     }
 
     &.hero-section--tortenelem {
         &::before {
             background-position: bottom;
-            background-image: url("../img/tortenelem_intro_mobile.jpg");
+            background-image: url("../img/480/kisfaludy-480-28.jpg");
 
-            @include mqTablet {
-                background-image: url("../img/tortenelem_intro_tablet.jpg");
+            @include mqMobileBig{
+                background-image: url("../img/512/kisfaludy-512-28.jpg"); 
+            }
+
+            @include mqTablet{
+                background-image: url("../img/768/kisfaludy-768-28.jpg");
+            }
+
+            @include mqSmallScreen {
+                background-image: url("../img/992/kisfaludy-992-28.jpg");
             }
 
             @include mqMediumScreen {
-                background-image: url("../img/tortenelem_intro.jpg");
+                background-image: url("../img/1024/kisfaludy-1024-28.jpg");
+            }
+
+            @include mqLargeScreen{
+                background-image: url("../img/1280/kisfaludy-1280-28.jpg");
+            }
+
+            @include mqXLScreen {
+                background-image: url("../img/1680/kisfaludy-1680-28.jpg");
+            }
+
+            @include mqXXLScreen {
+                background-image: url("../img/1920/kisfaludy-1920-28.jpg");
             }
         }
     }
