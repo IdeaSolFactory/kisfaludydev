@@ -1963,6 +1963,8 @@ section {
 .notification--section {
     background-color: color(primary);
     color: color(dark);
+    padding: 0;
+    z-index: 10;
 
     .notification__content {
         padding: 24px;

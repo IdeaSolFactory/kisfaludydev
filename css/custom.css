@@ -2370,6 +2370,8 @@ section {
 .notification--section {
   background-color: #eecf3b;
   color: #252525;
+  padding: 0;
+  z-index: 10;
 }
 
 .notification--section .notification__content {
