@@ -1963,8 +1963,10 @@ section {
   top: 0;
   right: 0;
   display: block;
-  background: url("../img/480/kisfaludy-480-04.jpg") no-repeat center;
+  background-image: url("../img/480/kisfaludy-480-04.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   -webkit-filter: sepia(10%) grayscale(100%);
   filter: sepia(10%) grayscale(100%);
   z-index: -20;
@@ -1972,49 +1974,49 @@ section {
 
 @media screen and (min-width: 312px) {
   .hero-wrapper:before {
-    background: url("../img/480/kisfaludy-480-04.jpg") no-repeat center cover;
+    background-image: url("../img/480/kisfaludy-480-04.jpg");
   }
 }
 
 @media screen and (min-width: 512px) {
   .hero-wrapper:before {
-    background: url("../img/512/kisfaludy-512-04.jpg") no-repeat center cover;
+    background-image: url("../img/512/kisfaludy-512-04.jpg");
   }
 }
 
 @media screen and (min-width: 768px) {
   .hero-wrapper:before {
-    background: url("../img/768/kisfaludy-768-04.jpg") no-repeat center cover;
+    background-image: url("../img/768/kisfaludy-768-04.jpg");
   }
 }
 
 @media screen and (min-width: 991px) {
   .hero-wrapper:before {
-    background: url("../img/992/kisfaludy-992-04.jpg") no-repeat center cover;
+    background-image: url("../img/992/kisfaludy-992-04.jpg");
   }
 }
 
 @media screen and (min-width: 1024px) {
   .hero-wrapper:before {
-    background: url("../img/1024/kisfaludy-1024-04.jpg") no-repeat center cover;
+    background-image: url("../img/1024/kisfaludy-1024-04.jpg");
   }
 }
 
 @media screen and (min-width: 1280px) {
   .hero-wrapper:before {
-    background: url("../img/1280/kisfaludy-1280-04.jpg") no-repeat center;
+    background-image: url("../img/1280/kisfaludy-1280-04.jpg");
   }
 }
 
 @media screen and (min-width: 1680px) {
   .hero-wrapper:before {
-    background: url("../img/1680/kisfaludy-1680-04.jpg") no-repeat center;
+    background-image: url("../img/1680/kisfaludy-1680-04.jpg");
   }
 }
 
 @media screen and (min-width: 1920px) {
   .hero-wrapper:before {
-    background: url("../img/1920/kisfaludy-1920-04.jpg") no-repeat center;
+    background-image: url("../img/1920/kisfaludy-1920-04.jpg");
   }
 }
 
