@@ -3553,7 +3553,22 @@ section {
   text-transform: uppercase;
   padding-left: 18px;
 }
+/*Link to different page section*/
+.link-background{
+  background-color: #eecf3b;
+}
+.align-center{
+  align: center;
+}
+.link_button {
+  align: center;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 12px 0;
 
+}
 /*Additional Info Section*/
 .additional-info--section {
   background-color: rgba(2, 32, 33, 0.05);
