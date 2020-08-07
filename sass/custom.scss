@@ -3392,6 +3392,14 @@ footer {
         @include mqSmallScreen {
             padding-top: 0;
         }
+
+        .credits-area{
+            .credits-area__wrapper{
+                a{
+                    display: inline-block;                  
+                }
+            }
+        }
     }
 
     .list-contact {

@@ -3662,6 +3662,10 @@ footer .footer__contact {
   }
 }
 
+footer .footer__contact .credits-area .credits-area__wrapper a {
+  display: inline-block;
+}
+
 footer .list-contact a:not(:last-child) {
   margin-right: 0.25em;
 }
