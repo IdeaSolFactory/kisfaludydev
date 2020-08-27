@@ -3323,6 +3323,35 @@ section {
     // }
 }
 
+
+/* BRAND REF SECTION */
+.brand-ref--section{
+    padding: 60px 0;
+
+    .brand-ref__img-container{
+        margin-bottom: 20px;
+
+        @include mqMediumScreen{
+            margin-bottom: 0;
+        }
+    }
+
+    .brand-ref__text-container{
+        text-align: center;
+
+        @include mqLargeScreen{
+            text-align: left;
+        }
+
+        h4{
+            margin-bottom: 6px;
+        }
+        h1{
+            margin-bottom: 12px;
+        }
+    }
+}
+
 /*Additional Info Section*/
 
 .additional-info--section {

@@ -3588,6 +3588,39 @@ section {
   padding-left: 18px;
 }
 
+/* BRAND REF SECTION */
+.brand-ref--section {
+  padding: 60px 0;
+}
+
+.brand-ref--section .brand-ref__img-container {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .brand-ref--section .brand-ref__img-container {
+    margin-bottom: 0;
+  }
+}
+
+.brand-ref--section .brand-ref__text-container {
+  text-align: center;
+}
+
+@media screen and (min-width: 1280px) {
+  .brand-ref--section .brand-ref__text-container {
+    text-align: left;
+  }
+}
+
+.brand-ref--section .brand-ref__text-container h4 {
+  margin-bottom: 6px;
+}
+
+.brand-ref--section .brand-ref__text-container h1 {
+  margin-bottom: 12px;
+}
+
 /*Additional Info Section*/
 .additional-info--section {
   background-color: rgba(2, 32, 33, 0.05);
