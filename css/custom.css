@@ -2800,6 +2800,10 @@ section {
   background-color: rgba(231, 231, 230, 0.45);
 }
 
+.tickets--section .schedule-timetable > .schedule-timetable__item:last-of-type {
+  margin-bottom: 20px;
+}
+
 .tickets--section .schedule-timetable > .schedule-timetable__item > .schedule__time {
   width: 55%;
   display: block;

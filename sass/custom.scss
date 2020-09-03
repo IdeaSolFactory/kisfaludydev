@@ -2339,6 +2339,10 @@ section {
                 background-color: rgba($color: color(lighter), $alpha: 0.45);
             }
 
+            &:last-of-type{
+                margin-bottom: 20px;
+            }
+
             > .schedule__time {
                 width: 55%;
                 display: block;
