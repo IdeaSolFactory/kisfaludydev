@@ -1995,12 +1995,15 @@ section {
             color: color(dark);
             font-size: $textsize-title-medium;
         }
-
-        .notification__bodytext > p {
-            font-size: $textsize-body;
-            padding: 0;
-            margin: 0;
-        }
+        
+        .notification__bodytext{
+            a, p{color: color(dark);}
+            p{
+                font-size: $textsize-body;
+                padding: 0;
+                margin: 0;
+            }
+        }       
     }
 }
 
