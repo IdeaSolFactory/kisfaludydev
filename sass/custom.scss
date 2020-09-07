@@ -1120,7 +1120,8 @@ th span {
     -----------------------------------*/
 
 // SECTION CONTENT TYPES
-.content-type {
+
+.content-type{    
 
     //TWO COLUMN CONTENT
     &--two-column {
@@ -1146,17 +1147,16 @@ th span {
 
             
             .section-content__wrapper{
+
                 .section-content__text{
+                    padding-left: 0;
+                    padding-right: 0;
                     padding-bottom: 25px;
                     @include mqLargeScreen{
                         padding-bottom: 0;
                     }
-                }
-                .section-content__pic{}
+                }                
             }
-
-
-
         }        
     }
 }

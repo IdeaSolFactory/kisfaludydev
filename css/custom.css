@@ -1102,6 +1102,8 @@ th span {
 }
 
 .content-type--two-column > .content-type__item .section-content__wrapper .section-content__text {
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 25px;
 }
 
