@@ -1076,7 +1076,7 @@ th span {
             02 - SECTION CONTENT
     -----------------------------------*/
 .content-type--two-column {
-  padding: 32px 0 !important;
+  padding: 42px 0 !important;
 }
 
 @media screen and (min-width: 1280px) {
@@ -1085,17 +1085,29 @@ th span {
   }
 }
 
-.content-type--two-column > .section--two-column {
-  padding: 0;
-}
-
-.content-type--two-column > .section--two-column:not(:first-of-type) {
-  padding-top: 64px;
+.content-type--two-column > .content-type__item:not(:first-of-type) {
+  margin-top: 40px;
 }
 
 @media screen and (min-width: 1280px) {
-  .content-type--two-column > .section--two-column:not(:first-of-type) {
-    padding-top: 120px;
+  .content-type--two-column > .content-type__item:not(:first-of-type) {
+    margin-top: 90px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .content-type--two-column > .content-type__item:not(:first-of-type) {
+    margin-top: 120px;
+  }
+}
+
+.content-type--two-column > .content-type__item .section-content__wrapper .section-content__text {
+  padding-bottom: 25px;
+}
+
+@media screen and (min-width: 1280px) {
+  .content-type--two-column > .content-type__item .section-content__wrapper .section-content__text {
+    padding-bottom: 0;
   }
 }
 

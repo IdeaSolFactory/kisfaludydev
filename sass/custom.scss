@@ -1121,31 +1121,43 @@ th span {
 
 // SECTION CONTENT TYPES
 .content-type {
+
     //TWO COLUMN CONTENT
     &--two-column {
-        padding: 32px 0 !important;
+        padding: 42px 0 !important;
 
         @include mqLargeScreen {
             padding: 80px 0 !important;
         }
 
         > .content-type__item {
-            // restructure code
-        }
+            
+            &:not(:first-of-type){
+                margin-top: 40px;
 
-        > .section {
-            &--two-column {
-                padding: 0;
+                @include mqLargeScreen{
+                    margin-top: 90px;
+                }
 
-                &:not(:first-of-type) {
-                    padding-top: 64px;
-
-                    @include mqLargeScreen {
-                        padding-top: 120px;
-                    }
+                @include mqXLScreen{
+                    margin-top: 120px;
                 }
             }
-        }
+
+            
+            .section-content__wrapper{
+                .section-content__text{
+                    padding-bottom: 25px;
+                    @include mqLargeScreen{
+                        padding-bottom: 0;
+                    }
+                }
+                .section-content__pic{}
+            }
+
+
+
+        }        
     }
 }
 
