@@ -1149,10 +1149,17 @@ th span {
             .section-content__wrapper{
 
                 .section-content__text{
-                    padding-left: 0;
-                    padding-right: 0;
+                    padding-left: 20px;
+                    padding-right: 20px;
                     padding-bottom: 25px;
+
+                    @include mqTablet{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+
                     @include mqLargeScreen{
+                        
                         padding-bottom: 0;
                     }
                 }                

@@ -1102,9 +1102,16 @@ th span {
 }
 
 .content-type--two-column > .content-type__item .section-content__wrapper .section-content__text {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .content-type--two-column > .content-type__item .section-content__wrapper .section-content__text {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media screen and (min-width: 1280px) {
