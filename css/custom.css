@@ -2031,6 +2031,35 @@ section {
   }
 }
 
+.hero-section.hero-section--foto::before {
+  background-position: center;
+  background-image: url("../img/events/foto/foto-intro-mobile.jpg");
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section.hero-section--foto::before {
+    background-image: url("../img/events/foto/foto-intro-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-section.hero-section--foto::before {
+    background-image: url("../img/events/foto/foto-intro-smallscreen.jpg");
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-section.hero-section--foto::before {
+    background-image: url("../img/events/foto/foto-intro-largescreen.jpg");
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .hero-section.hero-section--foto::before {
+    background-image: url("../img/events/foto/foto-intro-hd.jpg");
+  }
+}
+
 .hero-section .hero-section__content {
   height: 100%;
   width: 100%;

@@ -1633,6 +1633,30 @@ section {
             }
         }
     }
+
+    &.hero-section--foto{
+        &::before {
+            background-position: center;
+            background-image: url("../img/events/foto/foto-intro-mobile.jpg");
+
+            @include mqTablet {
+                background-image: url("../img/events/foto/foto-intro-tablet.jpg");
+            }
+
+            @include mqMediumScreen {
+                background-image: url("../img/events/foto/foto-intro-smallscreen.jpg");
+            }
+
+            @include mqLargeScreen{
+                background-image: url("../img/events/foto/foto-intro-largescreen.jpg");
+            }
+
+            @include mqXLScreen{
+                background-image: url("../img/events/foto/foto-intro-hd.jpg");
+            }
+        }
+    }
+
     .hero-section__content {
         height: 100%;
         width: 100%;
