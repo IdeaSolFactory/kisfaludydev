@@ -959,8 +959,57 @@ th span {
 =========================================*/
 
 /*-----------------------------------
-                01 - BOXED CONTENT
-        -----------------------------------*/
+            01 - OVERLAYS
+-----------------------------------*/
+.section-overlay {
+    display: block;
+    min-height: 1px;
+    width: 100%;
+    padding: 0 12px;
+
+    @include mqSmallScreen{
+        padding: 0;
+    }
+
+    &.overlay--centered {
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        max-width: 728px;
+        
+        h2{
+            font-size: 32px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        h2, p{
+            text-align: center;
+        }
+    }
+}
+
+.section-filter{
+
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .45);
+        z-index: 998;
+    }
+   
+}
+
+/*-----------------------------------
+            02 - BOXED CONTENT
+-----------------------------------*/
 
 .boxed {
     padding: $padding-big;
@@ -1077,25 +1126,25 @@ th span {
         }
     }
 
-    .boxed-content{
-        padding: 25px;        
-        
-        &.no-top-bottom{
+    .boxed-content {
+        padding: 25px;
+
+        &.no-top-bottom {
             padding: 0 25px 0px 25px;
         }
 
-        &.no-bottom{
+        &.no-bottom {
             padding: 25px 25px 0 25px;
         }
 
-        @include mqLargeScreen{
+        @include mqLargeScreen {
             padding: 32px;
 
-            &.no-top-bottom{
+            &.no-top-bottom {
                 padding: 0 32px 0 32px;
             }
 
-            &.no-bottom{
+            &.no-bottom {
                 padding: 32px 32px 0 32px;
             }
         }
@@ -1116,7 +1165,7 @@ th span {
 }
 
 /*-----------------------------------
-            02 - SECTION CONTENT
+            03 - SECTION CONTENT
     -----------------------------------*/
 
 // SECTION CONTENT TYPES
@@ -1486,11 +1535,11 @@ section {
         &::before {
             background-image: url("../img/480/kisfaludy-480-45.jpg");
 
-            @include mqMobileBig{
-                background-image: url("../img/512/kisfaludy-512-45.jpg"); 
+            @include mqMobileBig {
+                background-image: url("../img/512/kisfaludy-512-45.jpg");
             }
 
-            @include mqTablet{
+            @include mqTablet {
                 background-image: url("../img/768/kisfaludy-768-45.jpg");
             }
 
@@ -1502,7 +1551,7 @@ section {
                 background-image: url("../img/1024/kisfaludy-1024-45.jpg");
             }
 
-            @include mqLargeScreen{
+            @include mqLargeScreen {
                 background-image: url("../img/1280/kisfaludy-1280-45.jpg");
             }
 
@@ -1513,7 +1562,6 @@ section {
             @include mqXXLScreen {
                 background-image: url("../img/1920/kisfaludy-1920-45.jpg");
             }
-            
         }
     }
 
@@ -1522,11 +1570,11 @@ section {
             background-position: bottom;
             background-image: url("../img/480/kisfaludy-480-28.jpg");
 
-            @include mqMobileBig{
-                background-image: url("../img/512/kisfaludy-512-28.jpg"); 
+            @include mqMobileBig {
+                background-image: url("../img/512/kisfaludy-512-28.jpg");
             }
 
-            @include mqTablet{
+            @include mqTablet {
                 background-image: url("../img/768/kisfaludy-768-28.jpg");
             }
 
@@ -1538,7 +1586,7 @@ section {
                 background-image: url("../img/1024/kisfaludy-1024-28.jpg");
             }
 
-            @include mqLargeScreen{
+            @include mqLargeScreen {
                 background-image: url("../img/1280/kisfaludy-1280-28.jpg");
             }
 
@@ -1575,7 +1623,7 @@ section {
                 background-image: url("../img/512/kisfaludy-512-46.jpg");
             }
 
-            @include mqTablet{
+            @include mqTablet {
                 background-image: url("../img/768/kisfaludy-768-46.jpg");
             }
 
@@ -1587,7 +1635,7 @@ section {
                 background-image: url("../img/1024/kisfaludy-1024-46.jpg");
             }
 
-            @include mqLargeScreen{
+            @include mqLargeScreen {
                 background-image: url("../img/1280/kisfaludy-1280-46.jpg");
             }
 
@@ -1595,7 +1643,7 @@ section {
                 background-image: url("../img/1680/kisfaludy-1680-46.jpg");
             }
 
-            @include mqXXLScreen{
+            @include mqXXLScreen {
                 background-image: url("../img/1920/kisfaludy-1920-46.jpg");
             }
         }
@@ -1669,37 +1717,37 @@ section {
         filter: sepia(10%) grayscale(100%);
         z-index: -20;
 
-        @include mqMobile{
+        @include mqMobile {
             background-image: url("../img/480/kisfaludy-480-04.jpg");
         }
 
-        @include mqMobileBig{
+        @include mqMobileBig {
             background-image: url("../img/512/kisfaludy-512-04.jpg");
         }
 
-        @include mqTablet{
+        @include mqTablet {
             background-image: url("../img/768/kisfaludy-768-04.jpg");
         }
 
-        @include mqSmallScreen{
+        @include mqSmallScreen {
             background-image: url("../img/992/kisfaludy-992-04.jpg");
         }
 
-        @include mqMediumScreen{
+        @include mqMediumScreen {
             background-image: url("../img/1024/kisfaludy-1024-04.jpg");
         }
 
-        @include mqLargeScreen{
+        @include mqLargeScreen {
             background-image: url("../img/1280/kisfaludy-1280-04.jpg");
         }
 
-        @include mqXLScreen{
+        @include mqXLScreen {
             background-image: url("../img/1680/kisfaludy-1680-04.jpg");
         }
 
-        @include mqXXLScreen{
+        @include mqXXLScreen {
             background-image: url("../img/1920/kisfaludy-1920-04.jpg");
-        }       
+        }
     }
 
     &:after {
@@ -1995,15 +2043,18 @@ section {
             color: color(dark);
             font-size: $textsize-title-medium;
         }
-        
-        .notification__bodytext{
-            a, p{color: color(dark);}
-            p{
+
+        .notification__bodytext {
+            a,
+            p {
+                color: color(dark);
+            }
+            p {
                 font-size: $textsize-body;
                 padding: 0;
                 margin: 0;
             }
-        }       
+        }
     }
 }
 
@@ -2303,7 +2354,6 @@ section {
     }
 
     .schedule-timetable {
-
         > .schedule-notification {
             width: 100%;
             padding: 18px 18px !important;
@@ -2342,7 +2392,7 @@ section {
                 background-color: rgba($color: color(lighter), $alpha: 0.45);
             }
 
-            &:last-of-type{
+            &:last-of-type {
                 margin-bottom: 20px;
             }
 
@@ -2503,7 +2553,7 @@ section {
         align-items: center;
         height: 97px;
 
-        h3{
+        h3 {
             width: 100%;
         }
     }
@@ -3196,11 +3246,11 @@ section {
             background-size: cover;
             background-position: bottom;
 
-            @include mqMobileBig{
+            @include mqMobileBig {
                 background-image: url(../img/512/email-section-bckgrnd-01-512x.jpg);
             }
 
-            @include mqTablet{
+            @include mqTablet {
                 background-image: url(../img/768/email-section-bckgrnd-01-768x.jpg);
             }
         }
@@ -3330,30 +3380,29 @@ section {
     // }
 }
 
-
 /* BRAND REF SECTION */
-.brand-ref--section{
+.brand-ref--section {
     padding: 60px 0;
 
-    .brand-ref__img-container{
+    .brand-ref__img-container {
         margin-bottom: 20px;
 
-        @include mqMediumScreen{
+        @include mqMediumScreen {
             margin-bottom: 0;
         }
     }
 
-    .brand-ref__text-container{
+    .brand-ref__text-container {
         text-align: center;
 
-        @include mqLargeScreen{
+        @include mqLargeScreen {
             text-align: left;
         }
 
-        h4{
+        h4 {
             margin-bottom: 6px;
         }
-        h1{
+        h1 {
             margin-bottom: 12px;
         }
     }
@@ -3429,10 +3478,10 @@ footer {
             padding-top: 0;
         }
 
-        .credits-area{
-            .credits-area__wrapper{
-                a{
-                    display: inline-block;                  
+        .credits-area {
+            .credits-area__wrapper {
+                a {
+                    display: inline-block;
                 }
             }
         }
